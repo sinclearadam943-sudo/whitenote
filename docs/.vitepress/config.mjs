@@ -13,15 +13,16 @@ export default defineConfig({
     ],
     sidebar: [
       {
-        text: '文章列表',
+        text: '随笔杂谈',
         items: [
           { text: '你好，世界', link: '/posts/hello-world' },
+          { text: '面对学校霸凌，要不要打回去？', link: '/posts/school-bullying-resist' },
         ],
       },
       {
-        text: '浩哥的文字花园',
+        text: '原创连载',
         items: [
-          { text: '《字节阿赖耶》· 连载', link: '/posts/byte-alaya' },
+          { text: '《字节阿赖耶》· 十章完整', link: '/posts/byte-alaya' },
         ],
       },
     ],
