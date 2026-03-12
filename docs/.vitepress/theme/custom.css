@@ -1,0 +1,28 @@
+/* 柔和风格自定义 */
+:root {
+  --vp-c-brand-1: #6b9080;
+  --vp-c-brand-2: #a5c9ca;
+  --vp-c-brand-3: #6b9080;
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #6b9080 30%, #a5c9ca);
+  --vp-bg: #f8f9fa;
+}
+
+.VPSurface {
+  background-color: var(--vp-bg);
+}
+
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3 {
+  font-weight: 500;
+}
+
+.vp-doc p {
+  line-height: 1.8;
+}
+
+/* 柔和边框和阴影 */
+.vp-doc .custom-block {
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}

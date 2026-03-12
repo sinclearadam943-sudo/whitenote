@@ -1,0 +1,16 @@
+{
+  "name": "whitenote",
+  "version": "1.0.0",
+  "description": "A clean, soft notes site built on VitePress",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
+  },
+  "keywords": ["vitepress", "notes", "blog"],
+  "author": "浩哥",
+  "license": "MIT",
+  "devDependencies": {
+    "vitepress": "^1.0.0"
+  }
+}
