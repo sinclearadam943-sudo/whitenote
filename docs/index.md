@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: 走进花园
-      link: /landing.html
+      link: /whitenote/landing.html
     - theme: alt
       text: 开始阅读《字节阿赖耶》
       link: /posts/byte-alaya
