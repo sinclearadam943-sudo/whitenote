@@ -20,6 +20,12 @@ export default defineConfig({
         ],
       },
       {
+        text: '技术笔记',
+        items: [
+          { text: '从零搭建私人博客（GitHub Pages）', link: '/posts/build-private-blog-on-github-pages' },
+        ],
+      },
+      {
         text: '原创连载',
         items: [
           { text: '《字节阿赖耶》· 十章完整', link: '/posts/byte-alaya' },
