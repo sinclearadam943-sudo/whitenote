@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登录 - 浩哥的文字花园</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: #f7f8f9;
+      color: #2c3e50;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .login-card {
+      background-color: #fff;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 4px 16px rgba(107, 144, 128, 0.12);
+      width: 100%;
+      max-width: 400px;
+      border-top: 4px solid #6b9080;
+    }
+
+    h1 {
+      text-align: center;
+      color: #6b9080;
+      margin-bottom: 12px;
+      font-size: 1.8rem;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #888;
+      margin-bottom: 32px;
+      font-size: 0.9rem;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    input[type="password"] {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    input[type="password"]:focus {
+      border-color: #6b9080;
+      box-shadow: 0 0 0 3px rgba(107, 144, 128, 0.1);
+    }
+
+    .remember {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 24px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background-color: #6b9080;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.1s;
+    }
+
+    button:hover {
+      background-color: #5a7c6b;
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    .error {
+      color: #e74c3c;
+      font-size: 0.85rem;
+      margin-top: 8px;
+      display: none;
+    }
+
+    .error.show {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .login-card {
+        margin: 20px;
+        padding: 30px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-card">
+    <h1>浩哥的文字花园</h1>
+    <p class="subtitle">请输入密码进入</p>
+    
+    <div class="form-group">
+      <label for="password">密码</label>
+      <input type="password" id="password" placeholder="请输入访问密码">
+      <div class="error" id="error">密码错误，请重试</div>
+    </div>
+
+    <div class="remember">
+      <input type="checkbox" id="remember" checked>
+      <label for="remember">记住登录状态（7天内有效）</label>
+    </div>
+
+    <button onclick="login()">进入花园</button>
+  </div>
+
+  <script>
+    // 请在这里修改密码，默认密码可以由用户自己设置
+    const CORRECT_PASSWORD = 'whitenote123';
+    const STORAGE_KEY = 'whitenote_logged_in';
+
+    // 检查是否已经登录
+    if (localStorage.getItem(STORAGE_KEY) === 'true' || sessionStorage.getItem(STORAGE_KEY) === 'true') {
+      window.location.href = '/whitenote/';
+    }
+
+    function login() {
+      const password = document.getElementById('password').value;
+      const remember = document.getElementById('remember').checked;
+      const error = document.getElementById('error');
+
+      if (password === CORRECT_PASSWORD) {
+        if (remember) {
+          localStorage.setItem(STORAGE_KEY, 'true');
+        } else {
+          sessionStorage.setItem(STORAGE_KEY, 'true');
+        }
+        window.location.href = '/whitenote/';
+      } else {
+        error.classList.add('show');
+      }
+    }
+
+    // 按回车键登录
+    document.getElementById('password').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        login();
+      }
+    });
+  </script>
+</body>
+</html>

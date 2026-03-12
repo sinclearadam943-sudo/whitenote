@@ -31,3 +31,10 @@ features:
   - title: 🎨 柔和舒适
     details: 低饱和绿色主调，浅灰背景，充足留白，长时间阅读更护眼
 ---
+
+<script>
+// 登录检测，如果没登录跳转到登录页
+if (!localStorage.getItem('whitenote_logged_in') && !sessionStorage.getItem('whitenote_logged_in')) {
+  window.location.href = '/whitenote/public/login.html';
+}
+</script>
