@@ -4,6 +4,7 @@ export default defineConfig({
   title: "WhiteNote",
   description: "干净柔和的笔记与文章分享站",
   lang: 'zh-CN',
+  base: '/whitenote/',
   
   themeConfig: {
     nav: [
