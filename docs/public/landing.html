@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>浩哥的文字花园 - WhiteNote</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: #f7f8f9;
+      color: #2c3e50;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      color: #6b9080;
+      margin-bottom: 16px;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .intro {
+      background-color: #fff;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 4px 12px rgba(107, 144, 128, 0.08);
+      margin-bottom: 40px;
+    }
+
+    .intro p {
+      margin-bottom: 16px;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .feature-card {
+      background-color: #fff;
+      padding: 24px;
+      border-radius: 12px;
+      border-left: 4px solid #6b9080;
+      box-shadow: 0 2px 8px rgba(107, 144, 128, 0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(107, 144, 128, 0.12);
+    }
+
+    .feature-card h3 {
+      color: #6b9080;
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+    }
+
+    .feature-card p {
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    .cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #6b9080;
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: background-color 0.2s, transform 0.2s;
+    }
+
+    .btn:hover {
+      background-color: #5a7c6b;
+      transform: translateY(-2px);
+    }
+
+    .btn-alt {
+      background-color: transparent;
+      color: #6b9080;
+      border: 2px solid #6b9080;
+      margin-left: 16px;
+    }
+
+    .btn-alt:hover {
+      background-color: #6b9080;
+      color: #fff;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(107, 144, 128, 0.15);
+      color: #999;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .btn {
+        display: block;
+        margin: 16px 0;
+      }
+      .btn-alt {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>浩哥的文字花园</h1>
+      <p class="subtitle">干净柔和的文字空间，记录思想、故事与思考</p>
+    </header>
+
+    <div class="intro">
+      <p>这里是浩哥的私人文字花园，存放原创故事、技术思考、读书笔记与生活感悟。</p>
+      <p>采用柔和绿色低饱和度设计，减少视觉疲劳，让你专注于文字本身，享受阅读与写作的宁静。</p>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>📖 原创连载</h3>
+        <p>《字节阿赖耶》—— Python字节码与佛教唯识学的奇妙碰撞，科幻与哲学的完美融合。</p>
+      </div>
+      <div class="feature-card">
+        <h3>🎨 柔和设计</h3>
+        <p>低饱和绿色主调，浅灰背景，充足留白，长时间阅读也不疲劳，回归文字本质。</p>
+      </div>
+      <div class="feature-card">
+        <h3>✍️ 专注写作</h3>
+        <p>基于 VitePress 构建，自动部署到 GitHub Pages，写作即发布，简单高效。</p>
+      </div>
+    </div>
+
+    <div class="cta">
+      <a href="/whitenote/posts/byte-alaya" class="btn">开始阅读 《字节阿赖耶》</a>
+      <a href="/whitenote/" class="btn btn-alt">进入笔记博客</a>
+    </div>
+
+    <footer>
+      <p>© 2026 浩哥的文字花园 · Powered by WhiteNote</p>
+    </footer>
+  </div>
+</body>
+</html>

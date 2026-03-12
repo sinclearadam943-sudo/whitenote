@@ -9,12 +9,19 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
+      { text: '小说连载', link: '/posts/byte-alaya' },
     ],
     sidebar: [
       {
         text: '文章列表',
         items: [
           { text: '你好，世界', link: '/posts/hello-world' },
+        ],
+      },
+      {
+        text: '浩哥的文字花园',
+        items: [
+          { text: '《字节阿赖耶》· 连载', link: '/posts/byte-alaya' },
         ],
       },
     ],
