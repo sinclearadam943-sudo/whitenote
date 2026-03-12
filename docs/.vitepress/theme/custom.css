@@ -1,28 +1,112 @@
-/* 柔和风格自定义 */
+/* WhiteNote - 柔和风格自定义 */
 :root {
+  /* 主色调：柔和绿色，低饱和度 */
   --vp-c-brand-1: #6b9080;
-  --vp-c-brand-2: #a5c9ca;
-  --vp-c-brand-3: #6b9080;
-  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #6b9080 30%, #a5c9ca);
-  --vp-bg: #f8f9fa;
+  --vp-c-brand-2: #a7c5bd;
+  --vp-c-brand-3: #5a7c6b;
+  --vp-c-brand-dark: #5a7c6b;
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #6b9080 30%, #a7c5bd);
+  
+  /* 整体浅灰色背景，减少视觉疲劳 */
+  --vp-c-bg: #f7f8f9;
+  --vp-c-bg-soft: #f0f2f3;
+  --vp-c-bg-alt: #edf0f2;
 }
 
+/* 深色模式适配（可选保持风格） */
+.dark {
+  --vp-c-brand-1: #8cb8a1;
+  --vp-c-brand-2: #6b9080;
+  --vp-c-bg: #1a1e23;
+  --vp-c-bg-soft: #21262d;
+  --vp-c-bg-alt: #242a31;
+}
+
+/* 整体背景 */
 .VPSurface {
-  background-color: var(--vp-bg);
+  background-color: var(--vp-c-bg);
 }
 
+/* 优化排版，更适合写作 */
 .vp-doc h1,
 .vp-doc h2,
 .vp-doc h3 {
   font-weight: 500;
+  color: var(--vp-c-text-1);
+}
+
+.vp-doc h1 {
+  border-bottom: 1px solid rgba(107, 144, 128, 0.15);
+  padding-bottom: 0.3em;
 }
 
 .vp-doc p {
   line-height: 1.8;
+  color: var(--vp-c-text-2);
 }
 
 /* 柔和边框和阴影 */
 .vp-doc .custom-block {
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-left-width: 4px;
+  border-left-color: var(--vp-c-brand-1);
+  box-shadow: 0 2px 8px rgba(107, 144, 128, 0.08);
+  background-color: var(--vp-c-bg-soft);
+}
+
+.vp-doc a {
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(107, 144, 128, 0.2);
+}
+
+.vp-doc a:hover {
+  border-bottom-color: var(--vp-c-brand-1);
+}
+
+/* 侧边栏优化 */
+.VPSidebar {
+  background-color: var(--vp-c-bg);
+}
+
+/* 导航栏优化 */
+.VPNav {
+  background-color: rgba(247, 248, 249, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(107, 144, 128, 0.1);
+}
+
+.dark .VPNav {
+  background-color: rgba(26, 30, 35, 0.85);
+  border-bottom-color: rgba(107, 144, 128, 0.15);
+}
+
+/* 搜索框优化 */
+.VPSearch {
+  border-radius: 20px;
+}
+
+/* 代码块优化 */
+.vp-doc div[class*='language-'] {
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* 表格优化 */
+.vp-doc table {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(107, 144, 128, 0.1);
+}
+
+.vp-doc thead {
+  background-color: var(--vp-c-bg-soft);
+}
+
+.vp-doc tr:hover {
+  background-color: var(--vp-c-bg-soft);
+}
+
+.vp-doc td {
+  border-color: rgba(107, 144, 128, 0.15);
 }
