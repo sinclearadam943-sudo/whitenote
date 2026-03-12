@@ -34,7 +34,12 @@ features:
 
 <script>
 // 登录检测，如果没登录跳转到登录页
-if (!localStorage.getItem('whitenote_logged_in') && !sessionStorage.getItem('whitenote_logged_in')) {
-  window.location.href = '/whitenote/public/login.html';
+// 兼容SSR：只在浏览器环境执行
+if (typeof window !== 'undefined') {
+  window.addEventListener('load', function() {
+    if (!localStorage.getItem('whitenote_logged_in') && !sessionStorage.getItem('whitenote_logged_in')) {
+      window.location.href = '/whitenote/public/login.html';
+    }
+  });
 }
 </script>
