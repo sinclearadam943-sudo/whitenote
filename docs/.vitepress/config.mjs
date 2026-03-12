@@ -27,9 +27,10 @@ export default defineConfig({
         ],
       },
       {
-        text: '原创连载',
+        text: '原创小说',
         items: [
           { text: '《字节阿赖耶》· 十章完整', link: '/posts/byte-alaya' },
+          { text: '《代码飞升》· AI修仙奇缘', link: '/posts/ai-fairy-tale' },
         ],
       },
     ],
