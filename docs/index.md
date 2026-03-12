@@ -4,8 +4,8 @@ layout: home
 
 hero:
   name: "浩哥的文字花园"
-  text: "WhiteNote · 干净柔和的私人文字空间"
-  tagline: 低饱和柔和绿色调 · 减少视觉疲劳 · 存放原创故事、思考感悟、生活日常
+  text: "WhiteNote"
+  tagline: 
   actions:
     - theme: brand
       text: 走进花园
