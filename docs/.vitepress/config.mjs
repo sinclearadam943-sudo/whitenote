@@ -10,6 +10,7 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: '小说连载', link: '/posts/byte-alaya' },
+      { text: '任务监控', link: '/task-monitor.html', target: '_blank' },
     ],
     sidebar: [
       {
