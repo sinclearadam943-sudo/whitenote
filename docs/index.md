@@ -38,7 +38,7 @@ features:
 if (typeof window !== 'undefined') {
   window.addEventListener('load', function() {
     if (!localStorage.getItem('whitenote_logged_in') && !sessionStorage.getItem('whitenote_logged_in')) {
-      window.location.href = '/whitenote/public/login.html';
+      window.location.href = '/whitenote/login.html';
     }
   });
 }
