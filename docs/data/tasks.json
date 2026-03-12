@@ -1,0 +1,84 @@
+{
+  "stats": {
+    "total": 16,
+    "running": 2,
+    "pending": 4,
+    "completedToday": 8
+  },
+  "running": [
+    {
+      "name": "GitHub Pages 自动部署",
+      "nextRun": "10:35",
+      "status": "running"
+    },
+    {
+      "name": "每日数据库备份",
+      "nextRun": "23:00",
+      "status": "running"
+    }
+  ],
+  "pending": [
+    {
+      "name": "SSL 证书自动更新",
+      "nextRun": "02:00",
+      "status": "pending"
+    },
+    {
+      "name": "系统日志清理",
+      "nextRun": "03:00",
+      "status": "pending"
+    },
+    {
+      "name": "访问统计汇总",
+      "nextRun": "23:30",
+      "status": "pending"
+    },
+    {
+      "name": "博客文章索引更新",
+      "nextRun": "明天 08:00",
+      "status": "pending"
+    }
+  ],
+  "completed": [
+    {
+      "name": "whitenote 博客初始化",
+      "finishTime": "09:15",
+      "status": "success"
+    },
+    {
+      "name": "《字节阿赖耶》发布",
+      "finishTime": "10:30",
+      "status": "success"
+    },
+    {
+      "name": "霸凌议题文章发布",
+      "finishTime": "20:10",
+      "status": "success"
+    },
+    {
+      "name": "搭建经验总结发布",
+      "finishTime": "21:00",
+      "status": "success"
+    },
+    {
+      "name": "任务监控大屏开发",
+      "finishTime": "22:10",
+      "status": "success"
+    },
+    {
+      "name": "依赖包更新",
+      "finishTime": "08:30",
+      "status": "success"
+    },
+    {
+      "name": "隔夜备份归档",
+      "finishTime": "yesterday",
+      "status": "success"
+    }
+  ],
+  "system": {
+    "cpu": 35,
+    "memory": 62,
+    "disk": 51
+  }
+}

@@ -306,9 +306,9 @@
   </div>
 
   <script>
-    // === 模拟数据（实际使用时可以替换成你的 API 接口）===
-    // 如果你有后端接口，把 fetchData 改成调用你的接口就行
-    // 接口返回格式：
+    // === 从JSON文件读取数据 ===
+    // 更新数据只需要修改 /data/tasks.json 即可，不需要改HTML
+    // 格式：
     // {
     //   stats: { total: number, running: number, pending: number, completedToday: number },
     //   running: [{name: string, nextRun: string, status: 'running'}],
@@ -316,92 +316,6 @@
     //   completed: [{name: string, finishTime: string, status: 'success'|'failed'}],
     //   system: { cpu: number, memory: number, disk: number }
     // }
-
-    // 模拟数据生成
-    function generateMockData() {
-      const taskNames = [
-        'GitHub Pages 自动部署', '博客构建', '数据库备份', '日志清理', 
-        'SSL证书更新', '系统更新检查', '数据同步到OSS', '监控数据上报',
-        '新闻爬虫', '文章索引更新', '病毒扫描', '备份归档',
-        'npm 依赖更新', '缓存清理', '访问统计汇总', '域名证书检查'
-      ];
-
-      const statuses = ['success', 'success', 'success', 'failed'];
-      
-      // 随机几个运行中
-      const runningCount = Math.floor(Math.random() * 4) + 1;
-      const running = [];
-      for (let i = 0; i < runningCount; i++) {
-        const idx = Math.floor(Math.random() * taskNames.length);
-        running.push({
-          name: taskNames[idx],
-          nextRun: nextRunTime(60 + Math.floor(Math.random() * 60)),
-          status: 'running'
-        });
-        taskNames.splice(idx, 1);
-      }
-
-      // 随机几个等待中
-      const pendingCount = Math.floor(Math.random() * 6) + 2;
-      const pending = [];
-      for (let i = 0; i < pendingCount; i++) {
-        if (taskNames.length === 0) break;
-        const idx = Math.floor(Math.random() * taskNames.length);
-        pending.push({
-          name: taskNames[idx],
-          nextRun: nextRunTime(Math.floor(Math.random() * 120) + 1),
-          status: 'pending'
-        });
-        taskNames.splice(idx, 1);
-      }
-
-      // 最近完成
-      const completedCount = Math.floor(Math.random() * 8) + 3;
-      const completed = [];
-      for (let i = 0; i < completedCount; i++) {
-        if (taskNames.length === 0) break;
-        const idx = Math.floor(Math.random() * taskNames.length);
-        const status = statuses[Math.floor(Math.random() * statuses.length)];
-        completed.push({
-          name: taskNames[idx],
-          finishTime: finishedAgo(Math.floor(Math.random() * 120)),
-          status: status
-        });
-        taskNames.splice(idx, 1);
-      }
-
-      const total = running.length + pending.length + completed.length + 8; // 加上固定任务
-      const completedToday = completed.length + 10;
-
-      return {
-        stats: {
-          total: total,
-          running: running.length,
-          pending: pending.length,
-          completedToday: completedToday
-        },
-        running: running,
-        pending: pending,
-        completed: completed,
-        system: {
-          cpu: Math.floor(Math.random() * 80) + 10,
-          memory: Math.floor(Math.random() * 70) + 20,
-          disk: Math.floor(Math.random() * 60) + 30
-        }
-      };
-    }
-
-    function nextRunTime(minutesLater) {
-      const date = new Date();
-      date.setMinutes(date.getMinutes() + minutesLater);
-      return `${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`;
-    }
-
-    function finishedAgo(minutesAgo) {
-      const date = new Date();
-      date.setMinutes(date.getMinutes() - minutesAgo);
-      return `${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`;
-    }
 
     // === 渲染函数 ===
     function updateDateTime() {
@@ -423,7 +337,7 @@
     function renderTaskList(containerId, tasks) {
       const container = document.getElementById(containerId);
       container.innerHTML = '';
-      if (tasks.length === 0) {
+      if (!tasks || tasks.length === 0) {
         container.innerHTML = '<p style="color: #888; text-align: center; padding: 20px;">暂无任务</p>';
         return;
       }
@@ -467,22 +381,22 @@
 
     // === 主刷新函数 ===
     function refreshData() {
-      // 如果有真实接口，这里换成：
-      // fetch('/your-api/tasks')
-      //   .then(res => res.json())
-      //   .then(data => {
-      //          render all...
-      //   })
+      // 从JSON文件读取数据
+      fetch('/whitenote/data/tasks.json')
+        .then(res => res.json())
+        .then(data => {
+          renderStats(data.stats);
+          renderTaskList('running-list', data.running);
+          renderTaskList('pending-list', data.pending);
+          renderTaskList('completed-list', data.completed);
+          renderSystem(data.system);
 
-      const data = generateMockData();
-      renderStats(data.stats);
-      renderTaskList('running-list', data.running);
-      renderTaskList('pending-list', data.pending);
-      renderTaskList('completed-list', data.completed);
-      renderSystem(data.system);
-
-      const now = new Date();
-      document.getElementById('last-refresh').textContent = now.toLocaleTimeString('zh-CN');
+          const now = new Date();
+          document.getElementById('last-refresh').textContent = now.toLocaleTimeString('zh-CN');
+        })
+        .catch(err => {
+          console.error('加载数据失败', err);
+        });
     }
 
     // === 初始化 ===
