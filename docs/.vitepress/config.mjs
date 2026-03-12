@@ -27,6 +27,12 @@ export default defineConfig({
         ],
       },
       {
+        text: '禅机笔记',
+        items: [
+          { text: '《Python 禅机》· 数字僧侣的觉醒', link: '/posts/python-dharma' },
+        ],
+      },
+      {
         text: '原创小说',
         items: [
           { text: '《字节阿赖耶》· 十章完整', link: '/posts/byte-alaya' },
