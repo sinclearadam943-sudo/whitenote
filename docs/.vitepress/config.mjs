@@ -5,6 +5,11 @@ export default defineConfig({
   description: "干净柔和的笔记与文章分享站",
   lang: 'zh-CN',
   base: '/whitenote/',
+
+  // 开启数学公式支持
+  markdown: {
+    math: true
+  },
   
   themeConfig: {
     nav: [
@@ -45,6 +50,14 @@ export default defineConfig({
       provider: 'local',
     },
   },
+
+  // 引入KaTeX样式
+  head: [
+    ['link', {
+      rel: 'stylesheet',
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css'
+    }]
+  ],
 
   // 自定义柔和风格样式配置
   vite: {

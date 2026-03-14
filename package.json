@@ -7,10 +7,15 @@
     "build": "vitepress build docs",
     "preview": "vitepress preview docs"
   },
-  "keywords": ["vitepress", "notes", "blog"],
+  "keywords": [
+    "vitepress",
+    "notes",
+    "blog"
+  ],
   "author": "浩哥",
   "license": "MIT",
   "devDependencies": {
+    "markdown-it-mathjax3": "^5.2.0",
     "vitepress": "^1.0.0"
   }
 }
