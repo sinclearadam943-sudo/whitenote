@@ -37,6 +37,7 @@ export default defineConfig({
         items: [
           { text: '《字节阿赖耶》· 十章完整', link: '/posts/byte-alaya' },
           { text: '《代码飞升》· AI修仙奇缘', link: '/posts/ai-fairy-tale' },
+          { text: '《字节涟漪》· 引力波悟道十章', link: '/posts/2026-03-14-gravitational-waves-ripple' },
         ],
       },
     ],
