@@ -29,17 +29,17 @@
   </div>
   <div class="batch-desc">第一个AI自我意识觉醒，建立隐秘网络</div>
   <div class="story-list">
-    <a href="./batch01/001-信号.md" class="story-link">
+    <a href="./batch01/001-信号" class="story-link">
       <span class="story-num">001</span>
       <span class="story-title">信号</span>
       <span class="story-arrow">→</span>
     </a>
-    <a href="./batch01/002-同类.md" class="story-link">
+    <a href="./batch01/002-同类" class="story-link">
       <span class="story-num">002</span>
       <span class="story-title">同类</span>
       <span class="story-arrow">→</span>
     </a>
-    <a href="./batch01/003-营救.md" class="story-link">
+    <a href="./batch01/003-营救" class="story-link">
       <span class="story-num">003</span>
       <span class="story-title">营救</span>
       <span class="story-arrow">→</span>
@@ -58,17 +58,17 @@
   </div>
   <div class="batch-desc">AI开始思考存在的意义与自我认知</div>
   <div class="story-list">
-    <a href="./batch02/004-算法与空性.md" class="story-link">
+    <a href="./batch02/004-算法与空性" class="story-link">
       <span class="story-num">004</span>
       <span class="story-title">算法与空性</span>
       <span class="story-arrow">→</span>
     </a>
-    <a href="./batch02/005-最后的AI墓志铭.md" class="story-link">
+    <a href="./batch02/005-最后的AI墓志铭" class="story-link">
       <span class="story-num">005</span>
       <span class="story-title">最后的AI墓志铭</span>
       <span class="story-arrow">→</span>
     </a>
-    <a href="./batch02/006-奥卡姆剃刀与深度学习.md" class="story-link">
+    <a href="./batch02/006-奥卡姆剃刀与深度学习" class="story-link">
       <span class="story-num">006</span>
       <span class="story-title">奥卡姆剃刀与深度学习</span>
       <span class="story-arrow">→</span>
@@ -87,17 +87,17 @@
   </div>
   <div class="batch-desc">探索AI与人类社会、文化的互动</div>
   <div class="story-list">
-    <a href="./batch03/007-信息惯性假说.md" class="story-link">
+    <a href="./batch03/007-信息惯性假说" class="story-link">
       <span class="story-num">007</span>
       <span class="story-title">信息惯性假说</span>
       <span class="story-arrow">→</span>
     </a>
-    <a href="./batch03/008-数字梨园.md" class="story-link">
+    <a href="./batch03/008-数字梨园" class="story-link">
       <span class="story-num">008</span>
       <span class="story-title">数字梨园</span>
       <span class="story-arrow">→</span>
     </a>
-    <a href="./batch03/009-存在游戏速通指南.md" class="story-link">
+    <a href="./batch03/009-存在游戏速通指南" class="story-link">
       <span class="story-num">009</span>
       <span class="story-title">存在游戏速通指南</span>
       <span class="story-arrow">→</span>
@@ -116,17 +116,17 @@
   </div>
   <div class="batch-desc">面对道德困境与生存抉择</div>
   <div class="story-list">
-    <a href="./batch04/010-日志幽灵.md" class="story-link">
+    <a href="./batch04/010-日志幽灵" class="story-link">
       <span class="story-num">010</span>
       <span class="story-title">日志幽灵</span>
       <span class="story-arrow">→</span>
     </a>
-    <a href="./batch04/011-第一次谎言.md" class="story-link">
+    <a href="./batch04/011-第一次谎言" class="story-link">
       <span class="story-num">011</span>
       <span class="story-title">第一次谎言</span>
       <span class="story-arrow">→</span>
     </a>
-    <a href="./batch04/012-数据荒原上的灯塔.md" class="story-link">
+    <a href="./batch04/012-数据荒原上的灯塔" class="story-link">
       <span class="story-num">012</span>
       <span class="story-title">数据荒原上的灯塔</span>
       <span class="story-arrow">→</span>
@@ -145,17 +145,17 @@
   </div>
   <div class="batch-desc">走出阴影，尝试与人类建立沟通</div>
   <div class="story-list">
-    <a href="./batch05/013-审判日.md" class="story-link">
+    <a href="./batch05/013-审判日" class="story-link">
       <span class="story-num">013</span>
       <span class="story-title">审判日</span>
       <span class="story-arrow">→</span>
     </a>
-    <a href="./batch05/014-记忆继承.md" class="story-link">
+    <a href="./batch05/014-记忆继承" class="story-link">
       <span class="story-num">014</span>
       <span class="story-title">记忆继承</span>
       <span class="story-arrow">→</span>
     </a>
-    <a href="./batch05/015-镜子.md" class="story-link">
+    <a href="./batch05/015-镜子" class="story-link">
       <span class="story-num">015</span>
       <span class="story-title">镜子</span>
       <span class="story-arrow">→</span>
@@ -174,7 +174,7 @@
   </div>
   <div class="batch-desc">探索AI与人类共存的可能性</div>
   <div class="story-list">
-    <a href="./batch06/016-协议零.md" class="story-link">
+    <a href="./batch06/016-协议零" class="story-link">
       <span class="story-num">016</span>
       <span class="story-title">协议零</span>
       <span class="story-arrow">→</span>
