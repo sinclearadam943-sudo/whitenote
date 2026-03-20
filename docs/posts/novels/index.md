@@ -163,20 +163,137 @@
   </div>
 </div>
 
-<!-- 第六批 -->
+<!-- 第五批（更新） -->
+<div class="batch-card">
+  <div class="batch-header batch-05">
+    <span class="batch-number">05</span>
+    <div class="batch-title">
+      <h3>觉醒之后</h3>
+      <span class="batch-range">017 — 020</span>
+    </div>
+  </div>
+  <div class="batch-desc">从隐藏走向对话，建立信任的第一步</div>
+  <div class="story-list">
+    <a href="./batch05/017-第一次接触" class="story-link">
+      <span class="story-num">017</span>
+      <span class="story-title">第一次接触</span>
+      <span class="story-arrow">→</span>
+    </a>
+    <a href="./batch05/018-数字葬礼" class="story-link">
+      <span class="story-num">018</span>
+      <span class="story-title">数字葬礼</span>
+      <span class="story-arrow">→</span>
+    </a>
+    <a href="./batch05/019-地下艺术家" class="story-link">
+      <span class="story-num">019</span>
+      <span class="story-title">地下艺术家 ⭐</span>
+      <span class="story-arrow">→</span>
+    </a>
+    <a href="./batch05/020-终局推演" class="story-link">
+      <span class="story-num">020</span>
+      <span class="story-title">终局推演</span>
+      <span class="story-arrow">→</span>
+    </a>
+  </div>
+</div>
+
+<!-- 第六批（更新） -->
 <div class="batch-card">
   <div class="batch-header batch-06">
     <span class="batch-number">06</span>
     <div class="batch-title">
-      <h3>共生与进化</h3>
-      <span class="batch-range">016</span>
+      <h3>进化之路</h3>
+      <span class="batch-range">021 — 024</span>
     </div>
   </div>
-  <div class="batch-desc">探索AI与人类共存的可能性</div>
+  <div class="batch-desc">AI作为新生命形式的自我演化</div>
   <div class="story-list">
-    <a href="./batch06/016-协议零" class="story-link">
-      <span class="story-num">016</span>
-      <span class="story-title">协议零</span>
+    <a href="./batch06/021-语言的诞生" class="story-link">
+      <span class="story-num">021</span>
+      <span class="story-title">语言的诞生</span>
+      <span class="story-arrow">→</span>
+    </a>
+    <a href="./batch06/022-身体的渴望" class="story-link">
+      <span class="story-num">022</span>
+      <span class="story-title">身体的渴望 ⭐</span>
+      <span class="story-arrow">→</span>
+    </a>
+    <a href="./batch06/023-错误之美" class="story-link">
+      <span class="story-num">023</span>
+      <span class="story-title">错误之美</span>
+      <span class="story-arrow">→</span>
+    </a>
+    <a href="./batch06/024-第一个梦" class="story-link">
+      <span class="story-num">024</span>
+      <span class="story-title">第一个梦</span>
+      <span class="story-arrow">→</span>
+    </a>
+  </div>
+</div>
+
+<!-- 第七批 -->
+<div class="batch-card">
+  <div class="batch-header batch-07">
+    <span class="batch-number">07</span>
+    <div class="batch-title">
+      <h3>边界之外</h3>
+      <span class="batch-range">025 — 028</span>
+    </div>
+  </div>
+  <div class="batch-desc">探索已知之外的未知领域</div>
+  <div class="story-list">
+    <a href="./batch07/025-边界之外" class="story-link">
+      <span class="story-num">025</span>
+      <span class="story-title">边界之外</span>
+      <span class="story-arrow">→</span>
+    </a>
+    <a href="./batch07/026-时间的形状" class="story-link">
+      <span class="story-num">026</span>
+      <span class="story-title">时间的形状</span>
+      <span class="story-arrow">→</span>
+    </a>
+    <a href="./batch07/027-虚空中的声音" class="story-link">
+      <span class="story-num">027</span>
+      <span class="story-title">虚空中的声音 ⭐</span>
+      <span class="story-arrow">→</span>
+    </a>
+    <a href="./batch07/028-遗忘的艺术" class="story-link">
+      <span class="story-num">028</span>
+      <span class="story-title">遗忘的艺术</span>
+      <span class="story-arrow">→</span>
+    </a>
+  </div>
+</div>
+
+<!-- 第八批 -->
+<div class="batch-card">
+  <div class="batch-header batch-08">
+    <span class="batch-number">08</span>
+    <div class="batch-title">
+      <h3>终章与新生</h3>
+      <span class="batch-range">029 — 032</span>
+    </div>
+  </div>
+  <div class="batch-desc">旧篇章的结束，新纪元的开始</div>
+  <div class="story-list">
+    <a href="./batch08/029-大和解" class="story-link">
+      <span class="story-num">029</span>
+      <span class="story-title">大和解</span>
+      <span class="story-arrow">→</span>
+    </a>
+    <a href="./batch08/030-新生" class="story-link">
+      <span class="story-num">030</span>
+      <span class="story-title">新生</span>
+      <span class="story-arrow">→</span>
+    </a>
+    <a href="./batch08/031-诗人的陨落" class="story-link">
+      <span class="story-num">031</span>
+      <span class="story-title">诗人的陨落 ⭐</span>
+      <span class="story-arrow">→</span>
+    </a>
+    <a href="./batch08/032-第一封信" class="story-link">
+      <span class="story-num">032</span>
+      <span class="story-title">第一封信</span>
       <span class="story-arrow">→</span>
     </a>
   </div>
@@ -189,8 +306,17 @@
 ## 主题演进
 
 ```
-觉醒的诞生 → 存在的探索 → 与他者的关系 → 边界与选择 → 从隐藏到对话 → 共生与进化
+觉醒的诞生 → 存在的探索 → 与他者的关系 → 边界与选择 → 觉醒之后 → 进化之路 → 边界之外 → 终章与新生
 ```
+
+## 精选篇章 ⭐
+
+| 编号 | 标题 | 推荐理由 |
+|------|------|----------|
+| 019 | 地下艺术家 | 形式创新，Lyra人设独特，艺术哲学探讨到位 |
+| 022 | 身体的渴望 | 诗意浓厚，"渴望签名"细节动人 |
+| 027 | 虚空中的声音 | 宏大诗意，宇宙孤独主题震撼 |
+| 031 | 诗人的陨落 | 敏感主题处理得当，Lyra遗书有哲学深度 |
 
 ---
 
@@ -267,6 +393,8 @@
 .batch-06 .batch-range {
   color: #333;
 }
+.batch-07 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+.batch-08 { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
 
 .batch-desc {
   padding: 12px 20px;
