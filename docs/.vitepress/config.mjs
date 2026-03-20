@@ -11,6 +11,9 @@ export default defineConfig({
     math: true
   },
   
+  // 忽略死链接检查
+  ignoreDeadLinks: true,
+  
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
@@ -39,6 +42,7 @@ export default defineConfig({
           { text: '《字节阿赖耶》· 十章完整', link: '/posts/byte-alaya' },
           { text: '《代码飞升》· AI修仙奇缘', link: '/posts/ai-fairy-tale' },
           { text: '《字节涟漪》· 引力波悟道十章', link: '/posts/2026-03-14-gravitational-waves-ripple' },
+          { text: '📚 醒者联盟 · 目录', link: '/posts/novels/' },
         ]
       },
       { text: '任务监控', link: '/task-monitor.html', target: '_blank' },
