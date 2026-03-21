@@ -22,6 +22,7 @@ export default defineConfig({
         items: [
           { text: '你好，世界', link: '/posts/hello-world' },
           { text: '面对学校霸凌，要不要打回去？', link: '/posts/school-bullying-resist' },
+          { text: '《为什么是中国》核心观点', link: '/posts/why-is-china' },
         ]
       },
       {
