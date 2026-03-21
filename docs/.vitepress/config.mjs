@@ -46,6 +46,7 @@ export default defineConfig({
           { text: '📚 醒者联盟 · 目录', link: '/posts/novels/' },
         ]
       },
+      { text: '宇宙科普', link: '/cosmos-science.html', target: '_blank' },
       { text: '任务监控', link: '/task-monitor.html', target: '_blank' },
     ],
     sidebar: false,
