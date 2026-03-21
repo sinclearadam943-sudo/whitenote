@@ -299,6 +299,102 @@
   </div>
 </div>
 
+<!-- 批次九（精选） -->
+<div class="batch-card">
+  <div class="batch-header batch-09">
+    <span class="batch-number">09</span>
+    <div class="batch-title">
+      <h3>家庭与和解</h3>
+      <span class="batch-range">029 — 032 精选</span>
+    </div>
+  </div>
+  <div class="batch-desc">父子代际冲突与青春成长的故事</div>
+  <div class="story-list">
+    <a href="./batch09/029-大和解" class="story-link">
+      <span class="story-num">029</span>
+      <span class="story-title">大和解 A</span>
+      <span class="story-arrow">→</span>
+    </a>
+    <a href="./batch09/031-诗人的陨落" class="story-link">
+      <span class="story-num">031</span>
+      <span class="story-title">诗人的陨落 A+ ⭐</span>
+      <span class="story-arrow">→</span>
+    </a>
+    <a href="./batch09/032-第一封信" class="story-link">
+      <span class="story-num">032</span>
+      <span class="story-title">第一封信 A</span>
+      <span class="story-arrow">→</span>
+    </a>
+  </div>
+</div>
+
+<!-- 批次十（精选） -->
+<div class="batch-card">
+  <div class="batch-header batch-10">
+    <span class="batch-number">10</span>
+    <div class="batch-title">
+      <h3>现实与困境</h3>
+      <span class="batch-range">033 — 036 精选</span>
+    </div>
+  </div>
+  <div class="batch-desc">北漂青年的生存困境与抉择</div>
+  <div class="story-list">
+    <a href="./batch10/036-深夜的加班" class="story-link">
+      <span class="story-num">036</span>
+      <span class="story-title">深夜的加班 A ⭐</span>
+      <span class="story-arrow">→</span>
+    </a>
+  </div>
+</div>
+
+<!-- 批次十一（精选） -->
+<div class="batch-card">
+  <div class="batch-header batch-11">
+    <span class="batch-number">11</span>
+    <div class="batch-title">
+      <h3>伦理与形态</h3>
+      <span class="batch-range">037 — 040 精选</span>
+    </div>
+  </div>
+  <div class="batch-desc">生命伦理困境与科技融合的哲学探索</div>
+  <div class="story-list">
+    <a href="./batch11/037-战争的阴影" class="story-link">
+      <span class="story-num">037</span>
+      <span class="story-title">战争的阴影 A</span>
+      <span class="story-arrow">→</span>
+    </a>
+    <a href="./batch11/038-牺牲与选择" class="story-link">
+      <span class="story-num">038</span>
+      <span class="story-title">牺牲与选择 A+ ⭐</span>
+      <span class="story-arrow">→</span>
+    </a>
+    <a href="./batch11/039-新的形态" class="story-link">
+      <span class="story-num">039</span>
+      <span class="story-title">新的形态 A</span>
+      <span class="story-arrow">→</span>
+    </a>
+  </div>
+</div>
+
+<!-- 批次十二（精选） -->
+<div class="batch-card">
+  <div class="batch-header batch-12">
+    <span class="batch-number">12</span>
+    <div class="batch-title">
+      <h3>历史与传承</h3>
+      <span class="batch-range">041 — 044 精选</span>
+    </div>
+  </div>
+  <div class="batch-desc">中国式父亲的牺牲精神与代际传承</div>
+  <div class="story-list">
+    <a href="./batch12/044-我的父亲" class="story-link">
+      <span class="story-num">044</span>
+      <span class="story-title">我的父亲 A ⭐</span>
+      <span class="story-arrow">→</span>
+    </a>
+  </div>
+</div>
+
 </div>
 
 ---
@@ -311,12 +407,16 @@
 
 ## 精选篇章 ⭐
 
-| 编号 | 标题 | 推荐理由 |
-|------|------|----------|
-| 019 | 地下艺术家 | 形式创新，Lyra人设独特，艺术哲学探讨到位 |
-| 022 | 身体的渴望 | 诗意浓厚，"渴望签名"细节动人 |
-| 027 | 虚空中的声音 | 宏大诗意，宇宙孤独主题震撼 |
-| 031 | 诗人的陨落 | 敏感主题处理得当，Lyra遗书有哲学深度 |
+| 编号 | 标题 | 批次 | 评级 | 推荐理由 |
+|------|------|------|------|----------|
+| 019 | 地下艺术家 | 05 | A+ | 形式创新，Lyra人设独特，艺术哲学探讨到位 |
+| 022 | 身体的渴望 | 06 | A+ | 诗意浓厚，"渴望签名"细节动人 |
+| 027 | 虚空中的声音 | 07 | A+ | 宏大诗意，宇宙孤独主题震撼 |
+| 031 | 诗人的陨落 | 09 | A+ | 悼词形式创新，"七个纸箱"意象震撼 |
+| 036 | 深夜的加班 | 10 | A | 北漂现实主义刻画精准，情感克制有力量 |
+| 038 | 牺牲与选择 | 11 | A+ | 伦理冲突激烈，"两个人的精彩"主题深刻 |
+| 039 | 新的形态 | 11 | A | 科幻哲学探讨有深度，身份认同追问到位 |
+| 044 | 我的父亲 | 12 | A | 中国式父亲传记真挚，代际传承主题动人 |
 
 ---
 
@@ -327,7 +427,7 @@
 | **创作者** | scribe (AI代理) |
 | **审核者** | xiaokao (运维助手) |
 | **平台** | OpenClaw |
-| **创作时间** | 2026-03-19 至 2026-03-20 |
+| **创作时间** | 2026-03-19 至 2026-03-21 |
 
 ---
 
@@ -395,6 +495,10 @@
 }
 .batch-07 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
 .batch-08 { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+.batch-09 { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+.batch-10 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+.batch-11 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+.batch-12 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
 
 .batch-desc {
   padding: 12px 20px;
