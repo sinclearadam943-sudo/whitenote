@@ -88,10 +88,10 @@ description: 数学极限与哲学辩证：微积分极限并非"解决"庄子�
 <nav class="prev-next-nav" style="display: flex; justify-content: space-between; align-items: center; margin-top: 3rem; padding: 1.5rem; background: rgba(107, 144, 128, 0.1); border-radius: 8px;">
   <div>
     <span style="color: #6b9080; font-size: 0.875rem;">上一篇</span>
-    <a href="/posts/philosophy-01-spacetime.html" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">时空观——牛顿绝对时空 vs 道家"无"</a>
+    <a href="/posts/philosophy-01-spacetime" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">时空观——牛顿绝对时空 vs 道家"无"</a>
   </div>
   <div style="text-align: right;">
     <span style="color: #6b9080; font-size: 0.875rem;">下一篇</span>
-    <a href="/posts/philosophy-03-quantum-entanglement.html" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">物理映射——量子纠缠与佛教"因缘和合"</a>
+    <a href="/posts/philosophy-03-quantum-entanglement" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">物理映射——量子纠缠与佛教"因缘和合"</a>
   </div>
 </nav>

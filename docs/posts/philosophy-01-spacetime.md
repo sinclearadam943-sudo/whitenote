@@ -66,10 +66,10 @@ description: 从牛顿的容器隐喻到爱因斯坦的参与者隐喻，再到�
 <nav class="prev-next-nav" style="display: flex; justify-content: space-between; align-items: center; margin-top: 3rem; padding: 1.5rem; background: rgba(107, 144, 128, 0.1); border-radius: 8px;">
   <div>
     <span style="color: #6b9080; font-size: 0.875rem;">上一篇</span>
-    <a href="/posts/hello-world.html" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">你好，世界</a>
+    <a href="/posts/hello-world" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">你好，世界</a>
   </div>
   <div style="text-align: right;">
     <span style="color: #6b9080; font-size: 0.875rem;">下一篇</span>
-    <a href="/posts/philosophy-02-math-limit.html" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">数学关联——微积分极限与庄子的"一尺之棰"</a>
+    <a href="/posts/philosophy-02-math-limit" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">数学关联——微积分极限与庄子的"一尺之棰"</a>
   </div>
 </nav>

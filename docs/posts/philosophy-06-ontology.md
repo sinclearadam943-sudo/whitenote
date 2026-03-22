@@ -36,10 +36,10 @@ description: 海德格尔"此在"与儒家"仁"揭示：关系性存在先于个
 <nav class="prev-next-nav" style="display: flex; justify-content: space-between; align-items: center; margin-top: 3rem; padding: 1.5rem; background: rgba(107, 144, 128, 0.1); border-radius: 8px;">
   <div>
     <span style="color: #6b9080; font-size: 0.875rem;">上一篇</span>
-    <a href="/posts/philosophy-05-epistemology.html" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">认识论——康德先验 vs 王阳明"心外无物"</a>
+    <a href="/posts/philosophy-05-epistemology" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">认识论——康德先验 vs 王阳明"心外无物"</a>
   </div>
   <div style="text-align: right;">
     <span style="color: #6b9080; font-size: 0.875rem;">下一篇</span>
-    <a href="/posts/philosophy-07-system-thinking.html" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">系统思维——复杂系统涌现与周易阴阳</a>
+    <a href="/posts/philosophy-07-system-thinking" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">系统思维——复杂系统涌现与周易阴阳</a>
   </div>
 </nav>
