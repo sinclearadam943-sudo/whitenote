@@ -42,10 +42,10 @@ description: 熵增定律（物理宿命）与涅槃寂静（精神证悟）指�
 <nav class="prev-next-nav" style="display: flex; justify-content: space-between; align-items: center; margin-top: 3rem; padding: 1.5rem; background: rgba(107, 144, 128, 0.1); border-radius: 8px;">
   <div>
     <span style="color: #6b9080; font-size: 0.875rem;">上一篇</span>
-    <a href="/posts/philosophy-08-time-philosophy" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">时间哲学——热力学箭头与轮回观念</a>
+    <a href="/posts/philosophy-08-time-philosophy.html" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">时间哲学——热力学箭头与轮回观念</a>
   </div>
   <div style="text-align: right;">
     <span style="color: #6b9080; font-size: 0.875rem;">下一篇</span>
-    <a href="/posts/philosophy-10-unity-transcend" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">统合超越——数学之美=物理真=哲学善=艺术美</a>
+    <a href="/posts/philosophy-10-unity-transcend.html" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">统合超越——数学之美=物理真=哲学善=艺术美</a>
   </div>
 </nav>
