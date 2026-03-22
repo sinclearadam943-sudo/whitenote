@@ -1,9 +1,7 @@
----
 title: 终极关怀——熵增定律与涅槃寂静
 date: 2026-03-22
 tags: [宇宙学, 涅槃, 终极关怀]
 description: 熵增定律（物理宿命）与涅槃寂静（精神证悟）指向两种终极平静
----
 
 ## 熵增定律：宇宙的热寂宿命
 
@@ -33,19 +31,10 @@ description: 熵增定律（物理宿命）与涅槃寂静（精神证悟）指�
 
 东西方智慧在这里相遇：科学告诉我们，宇宙有终点，一切都会过去；灵性告诉我们，涅槃可以证悟，当下就是一切。
 
----
 
 **字数：约2900字** | **完成时间：2026-03-22 21:20**
 
----
 
-<nav class="prev-next-nav" style="display: flex; justify-content: space-between; align-items: center; margin-top: 3rem; padding: 1.5rem; background: rgba(107, 144, 128, 0.1); border-radius: 8px;">
-  <div>
-    <span style="color: #6b9080; font-size: 0.875rem;">上一篇</span>
-    <a href="/posts/philosophy-08-time-philosophy" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">时间哲学——热力学箭头与轮回观念</a>
-  </div>
-  <div style="text-align: right;">
-    <span style="color: #6b9080; font-size: 0.875rem;">下一篇</span>
-    <a href="/posts/philosophy-10-unity-transcend" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">统合超越——数学之美=物理真=哲学善=艺术美</a>
-  </div>
-</nav>
+
+
+[← 上一篇：时间哲学——热力学箭头与轮回观念](philosophy-08-time-philosophy) | [下一篇：统合超越——数学之美=物理真=哲学善=艺术美 →](philosophy-10-unity-transcend)

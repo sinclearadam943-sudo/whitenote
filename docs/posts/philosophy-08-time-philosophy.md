@@ -1,9 +1,7 @@
----
 title: 时间哲学——热力学箭头与轮回观念
 date: 2026-03-22
 tags: [热力学, 轮回, 时间]
 description: 热力学箭头与轮回观念互补：线性时间提供方向，循环时间提供超越
----
 
 ## 热力学第二定律：时间的方向性
 
@@ -33,19 +31,10 @@ description: 热力学箭头与轮回观念互补：线性时间提供方向，�
 
 东西方智慧在这里相遇：西方通过数学和物理精确描述时间的性质和方向，东方通过禅修和直觉体悟时间的超越性和当下性。
 
----
 
 **字数：约2800字** | **完成时间：2026-03-22 21:05**
 
----
 
-<nav class="prev-next-nav" style="display: flex; justify-content: space-between; align-items: center; margin-top: 3rem; padding: 1.5rem; background: rgba(107, 144, 128, 0.1); border-radius: 8px;">
-  <div>
-    <span style="color: #6b9080; font-size: 0.875rem;">上一篇</span>
-    <a href="/posts/philosophy-07-system-thinking" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">系统思维——复杂系统涌现与周易阴阳</a>
-  </div>
-  <div style="text-align: right;">
-    <span style="color: #6b9080; font-size: 0.875rem;">下一篇</span>
-    <a href="/posts/philosophy-09-ultimate-care" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">终极关怀——熵增定律与涅槃寂静</a>
-  </div>
-</nav>
+
+
+[← 上一篇：系统思维——复杂系统涌现与周易阴阳](philosophy-07-system-thinking) | [下一篇：终极关怀——熵增定律与涅槃寂静 →](philosophy-09-ultimate-care)

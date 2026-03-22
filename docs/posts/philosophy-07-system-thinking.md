@@ -1,9 +1,7 @@
----
 title: 系统思维——复杂系统涌现与周易阴阳
 date: 2026-03-22
 tags: [系统科学, 易经, 涌现]
 description: 复杂系统科学与周易阴阳是同一真理的两种表达：整体大于部分之和
----
 
 ## 复杂系统科学：整体大于部分之和
 
@@ -27,19 +25,10 @@ description: 复杂系统科学与周易阴阳是同一真理的两种表达：�
 
 东西方智慧在这里相遇：西方通过数学和实验精确描述复杂系统的行为，东方通过直觉和象征把握系统的本质。
 
----
 
 **字数：约3000字** | **完成时间：2026-03-22 20:50**
 
----
 
-<nav class="prev-next-nav" style="display: flex; justify-content: space-between; align-items: center; margin-top: 3rem; padding: 1.5rem; background: rgba(107, 144, 128, 0.1); border-radius: 8px;">
-  <div>
-    <span style="color: #6b9080; font-size: 0.875rem;">上一篇</span>
-    <a href="/posts/philosophy-06-ontology" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">存在论——海德格尔"此在"与儒家"仁"</a>
-  </div>
-  <div style="text-align: right;">
-    <span style="color: #6b9080; font-size: 0.875rem;">下一篇</span>
-    <a href="/posts/philosophy-08-time-philosophy" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">时间哲学——热力学箭头与轮回观念</a>
-  </div>
-</nav>
+
+
+[← 上一篇：存在论——海德格尔"此在"与儒家"仁"](philosophy-06-ontology) | [下一篇：时间哲学——热力学箭头与轮回观念 →](philosophy-08-time-philosophy)

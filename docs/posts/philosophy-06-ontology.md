@@ -1,9 +1,7 @@
----
 title: 存在论——海德格尔"此在"与儒家"仁"
 date: 2026-03-22
 tags: [存在主义, 儒家, 关系实在]
 description: 海德格尔"此在"与儒家"仁"揭示：关系性存在先于个体性
----
 
 ## 海德格尔的"此在"：能够理解存在的存在者
 
@@ -27,19 +25,10 @@ description: 海德格尔"此在"与儒家"仁"揭示：关系性存在先于个
 
 关系性存在先于个体性。时间性作为存在的展开方式。东西方智慧在这里相遇：西方通过现象学分析揭示人的存在论结构，东方通过修身实践体认人的道德本体。
 
----
 
 **字数：约2800字** | **完成时间：2026-03-22 20:35**
 
----
 
-<nav class="prev-next-nav" style="display: flex; justify-content: space-between; align-items: center; margin-top: 3rem; padding: 1.5rem; background: rgba(107, 144, 128, 0.1); border-radius: 8px;">
-  <div>
-    <span style="color: #6b9080; font-size: 0.875rem;">上一篇</span>
-    <a href="/posts/philosophy-05-epistemology" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">认识论——康德先验 vs 王阳明"心外无物"</a>
-  </div>
-  <div style="text-align: right;">
-    <span style="color: #6b9080; font-size: 0.875rem;">下一篇</span>
-    <a href="/posts/philosophy-07-system-thinking" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">系统思维——复杂系统涌现与周易阴阳</a>
-  </div>
-</nav>
+
+
+[← 上一篇：认识论——康德先验 vs 王阳明"心外无物"](philosophy-05-epistemology) | [下一篇：系统思维——复杂系统涌现与周易阴阳 →](philosophy-07-system-thinking)

@@ -1,9 +1,7 @@
----
 title: 认识论——康德先验 vs 王阳明"心外无物"
 date: 2026-03-22
 tags: [康德, 心学, 认识论]
 description: 康德与王阳明是主体性哲学的两种表达：认知即建构，建构即参与
----
 
 ## 康德的哥白尼革命：对象符合认知能力
 
@@ -25,19 +23,10 @@ description: 康德与王阳明是主体性哲学的两种表达：认知即建�
 
 认知即建构，建构即参与。观测不是被动反映，而是主动参与。观测者也是实在的一部分，观测行为是实在的一个子过程。
 
----
 
 **字数：约2900字** | **完成时间：2026-03-22 20:18**
 
----
 
-<nav class="prev-next-nav" style="display: flex; justify-content: space-between; align-items: center; margin-top: 3rem; padding: 1.5rem; background: rgba(107, 144, 128, 0.1); border-radius: 8px;">
-  <div>
-    <span style="color: #6b9080; font-size: 0.875rem;">上一篇</span>
-    <a href="/posts/philosophy-04-cosmic-origin" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">天文学视域——宇宙大爆炸与道家"道生一"</a>
-  </div>
-  <div style="text-align: right;">
-    <span style="color: #6b9080; font-size: 0.875rem;">下一篇</span>
-    <a href="/posts/philosophy-06-ontology" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">存在论——海德格尔"此在"与儒家"仁"</a>
-  </div>
-</nav>
+
+
+[← 上一篇：天文学视域——宇宙大爆炸与道家"道生一"](philosophy-04-cosmic-origin) | [下一篇：存在论——海德格尔"此在"与儒家"仁" →](philosophy-06-ontology)

@@ -1,9 +1,7 @@
----
 title: 物理映射——量子纠缠与佛教"因缘和合"
 date: 2026-03-22
 tags: [量子力学, 佛教, 关系实在]
 description: 量子纠缠与佛教"因缘和合"揭示：关系性先于个体性，整体性先于部分性
----
 
 ## EPR佯谬：挑战经典实在观的"鬼魅超距作用"
 
@@ -85,19 +83,10 @@ description: 量子纠缠与佛教"因缘和合"揭示：关系性先于个体�
 
 量子纠缠和佛教缘起都指向同一个终极洞见：一切都在关系中，关系就是存在本身。理解这一点，不仅关乎我们对宇宙的认识，也关乎我们如何生活——如何与自己、与他人、与自然、与宇宙建立和谐的关系。这正是古老智慧与现代科学的最终交汇。
 
----
 
 **字数：约3100字** | **完成时间：2026-03-22 19:42**
 
----
 
-<nav class="prev-next-nav" style="display: flex; justify-content: space-between; align-items: center; margin-top: 3rem; padding: 1.5rem; background: rgba(107, 144, 128, 0.1); border-radius: 8px;">
-  <div>
-    <span style="color: #6b9080; font-size: 0.875rem;">上一篇</span>
-    <a href="/posts/philosophy-02-math-limit" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">数学关联——微积分极限与庄子的"一尺之棰"</a>
-  </div>
-  <div style="text-align: right;">
-    <span style="color: #6b9080; font-size: 0.875rem;">下一篇</span>
-    <a href="/posts/philosophy-04-cosmic-origin" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">天文学视域——宇宙大爆炸与道家"道生一"</a>
-  </div>
-</nav>
+
+
+[← 上一篇：数学关联——微积分极限与庄子的"一尺之棰"](philosophy-02-math-limit) | [下一篇：天文学视域——宇宙大爆炸与道家"道生一" →](philosophy-04-cosmic-origin)

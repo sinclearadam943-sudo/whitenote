@@ -1,9 +1,7 @@
----
 title: 统合超越——数学之美=物理真=哲学善=艺术美
 date: 2026-03-22
 tags: [统一, 和谐, 追问]
 description: 数学之美=物理真=哲学善=艺术美，审美是认知，参与是实现，追问是永恒
----
 
 ## 毕达哥拉斯的数学信仰：万物皆数
 
@@ -53,19 +51,10 @@ description: 数学之美=物理真=哲学善=艺术美，审美是认知，参�
 
 这——正是这个选择——定义了我们是谁。
 
----
 
 **字数：约3800字** | **完成时间：2026-03-22 21:35**
 
----
 
-<nav class="prev-next-nav" style="display: flex; justify-content: space-between; align-items: center; margin-top: 3rem; padding: 1.5rem; background: rgba(107, 144, 128, 0.1); border-radius: 8px;">
-  <div>
-    <span style="color: #6b9080; font-size: 0.875rem;">上一篇</span>
-    <a href="/posts/philosophy-09-ultimate-care" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">终极关怀——熵增定律与涅槃寂静</a>
-  </div>
-  <div style="text-align: right;">
-    <span style="color: #6b9080; font-size: 0.875rem;">下一篇</span>
-    <a href="/posts/hello-world" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">回到首页</a>
-  </div>
-</nav>
+
+
+[← 上一篇：终极关怀——熵增定律与涅槃寂静](philosophy-09-ultimate-care) | [下一篇：回到首页 →](/)

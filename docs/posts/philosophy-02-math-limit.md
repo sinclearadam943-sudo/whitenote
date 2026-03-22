@@ -1,9 +1,7 @@
----
 title: 数学关联——微积分极限与庄子的"一尺之棰"
 date: 2026-03-22
 tags: [数学, 名辩学, 有限无限]
 description: 数学极限与哲学辩证：微积分极限并非"解决"庄子问题，而是重构问题框架
----
 
 ## 庄子的千古命题："日取其半，万世不竭"
 
@@ -79,19 +77,10 @@ description: 数学极限与哲学辩证：微积分极限并非"解决"庄子�
 
 东西方思维在这里相遇：西方通过数学精确性处理无限，东方通过直觉和辩证保持对神秘和整体的敬畏。当两种智慧融合，我们获得了对"一尺之棰"问题更完整、更深入的理解——分割既可以是"不竭"的（每一项不为0），也可以是"竭"的（极限为0），这取决于我们从哪个维度来看。真正的智慧在于超越简单的二选一，在辩证统一中把握存在的复杂性。
 
----
 
 **字数：约3000字** | **完成时间：2026-03-22 19:25**
 
----
 
-<nav class="prev-next-nav" style="display: flex; justify-content: space-between; align-items: center; margin-top: 3rem; padding: 1.5rem; background: rgba(107, 144, 128, 0.1); border-radius: 8px;">
-  <div>
-    <span style="color: #6b9080; font-size: 0.875rem;">上一篇</span>
-    <a href="/posts/philosophy-01-spacetime" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">时空观——牛顿绝对时空 vs 道家"无"</a>
-  </div>
-  <div style="text-align: right;">
-    <span style="color: #6b9080; font-size: 0.875rem;">下一篇</span>
-    <a href="/posts/philosophy-03-quantum-entanglement" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">物理映射——量子纠缠与佛教"因缘和合"</a>
-  </div>
-</nav>
+
+
+[← 上一篇：时空观——牛顿绝对时空 vs 道家"无"](philosophy-01-spacetime) | [下一篇：物理映射——量子纠缠与佛教"因缘和合" →](philosophy-03-quantum-entanglement)

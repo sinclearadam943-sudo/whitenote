@@ -1,9 +1,7 @@
----
 title: 天文学视域——宇宙大爆炸与道家"道生一"
 date: 2026-03-22
 tags: [天文学, 道家, 宇宙起源]
 description: 量子涨落实证"有生于无"，暴涨即"道生一"的宇宙学实现
----
 
 ## 大爆炸理论：宇宙的起源故事
 
@@ -25,19 +23,10 @@ description: 量子涨落实证"有生于无"，暴涨即"道生一"的宇宙学
 
 奇点即"道"的数学对应：奇点处物理定律失效，对应着"道可道，非常道"的不可言说性。量子涨落实证"有生于无"：真空涨落导致粒子对创生，宇宙本身可能起源于量子涨落。
 
----
 
 **字数：约3200字** | **完成时间：2026-03-22 20:00**
 
----
 
-<nav class="prev-next-nav" style="display: flex; justify-content: space-between; align-items: center; margin-top: 3rem; padding: 1.5rem; background: rgba(107, 144, 128, 0.1); border-radius: 8px;">
-  <div>
-    <span style="color: #6b9080; font-size: 0.875rem;">上一篇</span>
-    <a href="/posts/philosophy-03-quantum-entanglement" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">物理映射——量子纠缠与佛教"因缘和合"</a>
-  </div>
-  <div style="text-align: right;">
-    <span style="color: #6b9080; font-size: 0.875rem;">下一篇</span>
-    <a href="/posts/philosophy-05-epistemology" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">认识论——康德先验 vs 王阳明"心外无物"</a>
-  </div>
-</nav>
+
+
+[← 上一篇：物理映射——量子纠缠与佛教"因缘和合"](philosophy-03-quantum-entanglement) | [下一篇：认识论——康德先验 vs 王阳明"心外无物" →](philosophy-05-epistemology)

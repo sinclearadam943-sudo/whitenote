@@ -1,9 +1,7 @@
----
 title: 时空观——牛顿绝对时空 vs 道家"无"
 date: 2026-03-22
 tags: [物理学, 中国哲学, 时空观]
 description: 从牛顿的容器隐喻到爱因斯坦的参与者隐喻，再到当代的涌现隐喻，探索时空观的范式转换与东西方智慧融合
----
 
 ## 物理学视角：从容器到参与者的范式转换
 
@@ -57,19 +55,10 @@ description: 从牛顿的容器隐喻到爱因斯坦的参与者隐喻，再到�
 
 东西方思维在这里相遇：西方通过数学精确性征服时空，东方通过直觉洞见超越时空。当两种智慧融合，我们获得了对时空更完整、更深入的理解——时空既是我们认知世界的框架，也是存在的展开方式；既是物理学的对象，也是哲学的洞见；既可以用数学精确描述，也可以用直觉深刻体悟。
 
----
 
 **字数：约2800字** | **完成时间：2026-03-22 19:10**
 
----
 
-<nav class="prev-next-nav" style="display: flex; justify-content: space-between; align-items: center; margin-top: 3rem; padding: 1.5rem; background: rgba(107, 144, 128, 0.1); border-radius: 8px;">
-  <div>
-    <span style="color: #6b9080; font-size: 0.875rem;">上一篇</span>
-    <a href="/posts/hello-world" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">你好，世界</a>
-  </div>
-  <div style="text-align: right;">
-    <span style="color: #6b9080; font-size: 0.875rem;">下一篇</span>
-    <a href="/posts/philosophy-02-math-limit" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">数学关联——微积分极限与庄子的"一尺之棰"</a>
-  </div>
-</nav>
+
+
+[← 上一篇：你好，世界](/posts/hello-world) | [下一篇：数学关联——微积分极限与庄子的"一尺之棰" →](/posts/philosophy-02-math-limit)
