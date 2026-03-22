@@ -27,6 +27,3 @@ description: 量子涨落实证"有生于无"，暴涨即"道生一"的宇宙学
 **字数：约3200字** | **完成时间：2026-03-22 20:00**
 
 
-
-
-[← 上一篇：物理映射——量子纠缠与佛教"因缘和合"](philosophy-03-quantum-entanglement) | [下一篇：认识论——康德先验 vs 王阳明"心外无物" →](philosophy-05-epistemology)
