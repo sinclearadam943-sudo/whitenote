@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>宇宙奥秘 - 探索无垠星空</title>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <script>
         tailwind.config = {
             theme: {
@@ -47,21 +47,21 @@
             }
         }
     </script>
-    
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             background-color: #0a0a0a;
             color: #f5f5f5;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             overflow-x: hidden;
         }
-        
+
         /* 光晕背景 */
         .glow-container {
             position: fixed;
@@ -73,7 +73,7 @@
             z-index: 0;
             overflow: hidden;
         }
-        
+
         .glow-ball {
             position: absolute;
             border-radius: 50%;
@@ -81,7 +81,7 @@
             opacity: 0.4;
             transition: transform 0.3s ease-out;
         }
-        
+
         .glow-ball-1 {
             width: 400px;
             height: 400px;
@@ -90,7 +90,7 @@
             left: 10%;
             animation: glow 4s ease-in-out infinite alternate;
         }
-        
+
         .glow-ball-2 {
             width: 300px;
             height: 300px;
@@ -99,7 +99,7 @@
             right: 10%;
             animation: glow 5s ease-in-out infinite alternate-reverse;
         }
-        
+
         .glow-ball-3 {
             width: 350px;
             height: 350px;
@@ -108,12 +108,12 @@
             left: 30%;
             animation: glow 6s ease-in-out infinite alternate;
         }
-        
+
         @keyframes glow {
             0% { opacity: 0.3; transform: scale(1); }
             100% { opacity: 0.6; transform: scale(1.15); }
         }
-        
+
         /* 字母滑入动画 */
         .letter {
             display: inline-block;
@@ -121,70 +121,70 @@
             transform: translateY(50px);
             animation: slideIn 0.6s ease forwards;
         }
-        
+
         @keyframes slideIn {
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
+
         /* 淡入上移动画 */
         .fade-up {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
-        
+
         .fade-up.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         /* 按钮弹入动画 */
         .btn-bounce {
             opacity: 0;
             transform: scale(0.8);
             animation: bounceIn 0.6s ease 1.2s forwards;
         }
-        
+
         @keyframes bounceIn {
             0% { opacity: 0; transform: scale(0.8); }
             60% { transform: scale(1.05); }
             100% { opacity: 1; transform: scale(1); }
         }
-        
+
         /* 描述文字淡入 */
         .desc-fade {
             opacity: 0;
             animation: fadeIn 0.8s ease 0.8s forwards;
         }
-        
+
         @keyframes fadeIn {
             to { opacity: 1; }
         }
-        
+
         /* 卡片悬停效果 */
         .card {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
         .card:hover {
             transform: translateY(-10px);
             border-color: #ff6b4a;
             box-shadow: 0 0 30px rgba(255, 107, 74, 0.3), 0 10px 40px rgba(0, 0, 0, 0.5);
         }
-        
+
         .card-image {
             transition: transform 0.6s ease;
             overflow: hidden;
         }
-        
+
         .card:hover .card-image img {
             transform: scale(1.05);
         }
-        
+
         /* 渐变文字 */
         .gradient-text {
             background: linear-gradient(135deg, #ff6b4a, #06b6d4, #a855f7);
@@ -192,28 +192,47 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         /* 导航栏 */
         .nav-blur {
             backdrop-filter: blur(20px);
             background: rgba(10, 10, 10, 0.8);
         }
-        
+
         /* 按钮样式 */
         .btn-primary {
             background: linear-gradient(135deg, #ff6b4a, #ff8f70);
             transition: all 0.3s ease;
         }
-        
+
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(255, 107, 74, 0.4);
         }
-        
+
         /* 分割线渐变 */
         .divider-gradient {
             height: 1px;
             background: linear-gradient(90deg, transparent, #ff6b4a, #06b6d4, #a855f7, transparent);
+        }
+
+        /* 哲学卡片特殊样式 */
+        .philosophy-card {
+            background: linear-gradient(135deg, rgba(255, 107, 74, 0.05), rgba(6, 182, 212, 0.05));
+            border: 1px solid rgba(255, 107, 74, 0.2);
+        }
+
+        .philosophy-card:hover {
+            border-color: #a855f7;
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.3);
+        }
+
+        .badge {
+            background: linear-gradient(135deg, #ff6b4a, #06b6d4);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
         }
     </style>
 </head>
@@ -224,7 +243,7 @@
         <div class="glow-ball glow-ball-2"></div>
         <div class="glow-ball glow-ball-3"></div>
     </div>
-    
+
     <!-- 导航栏 -->
     <nav class="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-white/10">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -235,11 +254,12 @@
                 <a href="#hero" class="text-mid-gray hover:text-coral transition-colors">首页</a>
                 <a href="#universe" class="text-mid-gray hover:text-coral transition-colors">宇宙</a>
                 <a href="#planets" class="text-mid-gray hover:text-coral transition-colors">行星</a>
+                <a href="#philosophy" class="text-mid-gray hover:text-coral transition-colors">哲学</a>
                 <a href="#discover" class="text-mid-gray hover:text-coral transition-colors">探索</a>
             </div>
         </div>
     </nav>
-    
+
     <!-- Hero 区域 -->
     <section id="hero" class="relative min-h-screen flex items-center justify-center px-6 pt-20">
         <div class="max-w-5xl mx-auto text-center relative z-10">
@@ -255,7 +275,7 @@
                 </a>
             </div>
         </div>
-        
+
         <!-- 滚动提示 -->
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
             <svg class="w-6 h-6 text-mid-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -263,9 +283,9 @@
             </svg>
         </div>
     </section>
-    
+
     <div class="divider-gradient max-w-4xl mx-auto"></div>
-    
+
     <!-- 宇宙起源 -->
     <section id="universe" class="py-24 px-6 relative">
         <div class="max-w-6xl mx-auto">
@@ -293,7 +313,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- 行星卡片 -->
     <section id="planets" class="py-24 px-6 relative">
         <div class="max-w-6xl mx-auto">
@@ -303,7 +323,7 @@
                     太阳系的<span class="gradient-text">邻居们</span>
                 </h2>
             </div>
-            
+
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- 火星 -->
                 <div class="fade-up card rounded-2xl p-6" style="transition-delay: 0.1s;">
@@ -321,7 +341,7 @@
                         </svg>
                     </div>
                 </div>
-                
+
                 <!-- 木星 -->
                 <div class="fade-up card rounded-2xl p-6" style="transition-delay: 0.2s;">
                     <div class="card-image rounded-xl aspect-video bg-gradient-to-br from-orange-300/30 to-yellow-600/30 mb-6 flex items-center justify-center">
@@ -338,7 +358,7 @@
                         </svg>
                     </div>
                 </div>
-                
+
                 <!-- 土星 -->
                 <div class="fade-up card rounded-2xl p-6" style="transition-delay: 0.3s;">
                     <div class="card-image rounded-xl aspect-video bg-gradient-to-br from-yellow-200/30 to-amber-600/30 mb-6 flex items-center justify-center">
@@ -358,7 +378,184 @@
             </div>
         </div>
     </section>
-    
+
+    <div class="divider-gradient max-w-4xl mx-auto"></div>
+
+    <!-- 哲学思考 - 新增部分 -->
+    <section id="philosophy" class="py-24 px-6 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 fade-up">
+                <span class="text-coral font-sora font-semibold text-sm tracking-wider uppercase mb-4 block">03 / 哲学</span>
+                <h2 class="font-sora font-bold text-4xl md:text-5xl mb-6">
+                    宇宙的<span class="gradient-text">深度思考</span>
+                </h2>
+                <p class="text-mid-gray text-lg max-w-3xl mx-auto">
+                    当科学与哲学相遇，我们重新审视存在的本质。从时空观到终极关怀，十个维度的哲学融合探索。
+                </p>
+            </div>
+
+            <!-- 十轮探索卡片 -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+                <!-- 轮次 1 -->
+                <div class="fade-up philosophy-card rounded-xl p-5 cursor-pointer" style="transition-delay: 0.05s;">
+                    <div class="badge text-white mb-3">01</div>
+                    <h3 class="font-sora font-bold text-lg mb-2 text-soft-white">时空观</h3>
+                    <p class="text-mid-gray text-xs leading-relaxed mb-3">
+                        牛顿绝对时空 vs 道家"无"
+                    </p>
+                    <div class="text-cyan text-xs font-semibold">
+                        物理学 · 中国哲学
+                    </div>
+                </div>
+
+                <!-- 轮次 2 -->
+                <div class="fade-up philosophy-card rounded-xl p-5 cursor-pointer" style="transition-delay: 0.1s;">
+                    <div class="badge text-white mb-3">02</div>
+                    <h3 class="font-sora font-bold text-lg mb-2 text-soft-white">数学关联</h3>
+                    <p class="text-mid-gray text-xs leading-relaxed mb-3">
+                        微积分极限 vs 庄子"一尺之棰"
+                    </p>
+                    <div class="text-purple text-xs font-semibold">
+                        数学 · 名辩学
+                    </div>
+                </div>
+
+                <!-- 轮次 3 -->
+                <div class="fade-up philosophy-card rounded-xl p-5 cursor-pointer" style="transition-delay: 0.15s;">
+                    <div class="badge text-white mb-3">03</div>
+                    <h3 class="font-sora font-bold text-lg mb-2 text-soft-white">物理映射</h3>
+                    <p class="text-mid-gray text-xs leading-relaxed mb-3">
+                        量子纠缠 vs 佛教"因缘和合"
+                    </p>
+                    <div class="text-coral text-xs font-semibold">
+                        量子力学 · 佛教
+                    </div>
+                </div>
+
+                <!-- 轮次 4 -->
+                <div class="fade-up philosophy-card rounded-xl p-5 cursor-pointer" style="transition-delay: 0.2s;">
+                    <div class="badge text-white mb-3">04</div>
+                    <h3 class="font-sora font-bold text-lg mb-2 text-soft-white">宇宙起源</h3>
+                    <p class="text-mid-gray text-xs leading-relaxed mb-3">
+                        大爆炸 vs 道家"道生一"
+                    </p>
+                    <div class="text-cyan text-xs font-semibold">
+                        天文学 · 道家
+                    </div>
+                </div>
+
+                <!-- 轮次 5 -->
+                <div class="fade-up philosophy-card rounded-xl p-5 cursor-pointer" style="transition-delay: 0.25s;">
+                    <div class="badge text-white mb-3">05</div>
+                    <h3 class="font-sora font-bold text-lg mb-2 text-soft-white">认识论</h3>
+                    <p class="text-mid-gray text-xs leading-relaxed mb-3">
+                        康德先验 vs 王阳明"心外无物"
+                    </p>
+                    <div class="text-purple text-xs font-semibold">
+                        康德 · 心学
+                    </div>
+                </div>
+
+                <!-- 轮次 6 -->
+                <div class="fade-up philosophy-card rounded-xl p-5 cursor-pointer" style="transition-delay: 0.3s;">
+                    <div class="badge text-white mb-3">06</div>
+                    <h3 class="font-sora font-bold text-lg mb-2 text-soft-white">存在论</h3>
+                    <p class="text-mid-gray text-xs leading-relaxed mb-3">
+                        海德格尔"此在" vs 儒家"仁"
+                    </p>
+                    <div class="text-coral text-xs font-semibold">
+                        存在主义 · 儒家
+                    </div>
+                </div>
+
+                <!-- 轮次 7 -->
+                <div class="fade-up philosophy-card rounded-xl p-5 cursor-pointer" style="transition-delay: 0.35s;">
+                    <div class="badge text-white mb-3">07</div>
+                    <h3 class="font-sora font-bold text-lg mb-2 text-soft-white">系统思维</h3>
+                    <p class="text-mid-gray text-xs leading-relaxed mb-3">
+                        复杂系统 vs 周易阴阳
+                    </p>
+                    <div class="text-cyan text-xs font-semibold">
+                        系统科学 · 易经
+                    </div>
+                </div>
+
+                <!-- 轮次 8 -->
+                <div class="fade-up philosophy-card rounded-xl p-5 cursor-pointer" style="transition-delay: 0.4s;">
+                    <div class="badge text-white mb-3">08</div>
+                    <h3 class="font-sora font-bold text-lg mb-2 text-soft-white">时间哲学</h3>
+                    <p class="text-mid-gray text-xs leading-relaxed mb-3">
+                        热力学箭头 vs 轮回观念
+                    </p>
+                    <div class="text-purple text-xs font-semibold">
+                        热力学 · 轮回
+                    </div>
+                </div>
+
+                <!-- 轮次 9 -->
+                <div class="fade-up philosophy-card rounded-xl p-5 cursor-pointer" style="transition-delay: 0.45s;">
+                    <div class="badge text-white mb-3">09</div>
+                    <h3 class="font-sora font-bold text-lg mb-2 text-soft-white">终极关怀</h3>
+                    <p class="text-mid-gray text-xs leading-relaxed mb-3">
+                        熵增定律 vs 涅槃寂静
+                    </p>
+                    <div class="text-coral text-xs font-semibold">
+                        宇宙学 · 涅槃
+                    </div>
+                </div>
+
+                <!-- 轮次 10 -->
+                <div class="fade-up philosophy-card rounded-xl p-5 cursor-pointer" style="transition-delay: 0.5s;">
+                    <div class="badge text-white mb-3">10</div>
+                    <h3 class="font-sora font-bold text-lg mb-2 text-soft-white">统合超越</h3>
+                    <p class="text-mid-gray text-xs leading-relaxed mb-3">
+                        数学之美=物理真=哲学善=艺术美
+                    </p>
+                    <div class="text-gradient-to-r text-xs font-semibold">
+                        统一 · 和谐
+                    </div>
+                </div>
+            </div>
+
+            <!-- 核心宣言 -->
+            <div class="mt-16 fade-up">
+                <div class="card rounded-2xl p-8 md:p-12 bg-gradient-to-br from-coral/10 via-purple/10 to-cyan/10 border border-white/10">
+                    <h3 class="font-sora font-bold text-2xl md:text-3xl mb-6 text-center">
+                        <span class="gradient-text">哲学融合宣言</span>
+                    </h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-sm">
+                        <div class="text-center">
+                            <div class="text-coral font-semibold mb-2">一、统一是可能的</div>
+                            <p class="text-mid-gray text-xs">不同领域是同一真理的多种表达</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-cyan font-semibold mb-2">二、审美是认知的</div>
+                            <p class="text-mid-gray text-xs">美是认知系统与真实结构契合的信号</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-purple font-semibold mb-2">三、参与是实现</div>
+                            <p class="text-mid-gray text-xs">人类通过追问参与宇宙的创造</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-coral font-semibold mb-2">四、有限通向无限</div>
+                            <p class="text-mid-gray text-xs">终极真理就在当下的每一刻</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-cyan font-semibold mb-2">五、和谐是根本</div>
+                            <p class="text-mid-gray text-xs">和谐是存在的根本特征</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-purple font-semibold mb-2">六、追问是永恒的</div>
+                            <p class="text-mid-gray text-xs">没有最终答案，但有永恒的追问</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider-gradient max-w-4xl mx-auto"></div>
+
     <!-- 探索发现 -->
     <section id="discover" class="py-24 px-6 relative">
         <div class="max-w-6xl mx-auto">
@@ -372,7 +569,7 @@
                     </div>
                 </div>
                 <div class="fade-up order-1 md:order-2">
-                    <span class="text-coral font-sora font-semibold text-sm tracking-wider uppercase mb-4 block">03 / 边界</span>
+                    <span class="text-coral font-sora font-semibold text-sm tracking-wider uppercase mb-4 block">04 / 边界</span>
                     <h2 class="font-sora font-bold text-4xl md:text-5xl mb-6">
                         可观测<br><span class="gradient-text">宇宙的边界</span>
                     </h2>
@@ -386,9 +583,9 @@
             </div>
         </div>
     </section>
-    
+
     <div class="divider-gradient max-w-4xl mx-auto"></div>
-    
+
     <!-- CTA 区域 -->
     <section class="py-24 px-6 relative">
         <div class="max-w-4xl mx-auto text-center fade-up">
@@ -408,7 +605,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- 页脚 -->
     <footer class="py-12 px-6 border-t border-white/10">
         <div class="max-w-6xl mx-auto">
@@ -422,14 +619,14 @@
             </div>
         </div>
     </footer>
-    
+
     <script>
         // 字母滑入动画
         function animateTitle() {
             const title = document.getElementById('heroTitle');
             const text = title.textContent;
             title.innerHTML = '';
-            
+
             text.split('').forEach((char, index) => {
                 const span = document.createElement('span');
                 span.className = 'letter';
@@ -438,7 +635,7 @@
                 title.appendChild(span);
             });
         }
-        
+
         // 滚动动画
         function initScrollAnimations() {
             const observer = new IntersectionObserver((entries) => {
@@ -451,40 +648,40 @@
                 threshold: 0.1,
                 rootMargin: '0px 0px -50px 0px'
             });
-            
+
             document.querySelectorAll('.fade-up').forEach(el => {
                 observer.observe(el);
             });
         }
-        
+
         // 光晕鼠标跟随
         function initGlowFollow() {
             const container = document.getElementById('glowContainer');
             const balls = container.querySelectorAll('.glow-ball');
-            
+
             let mouseX = 0, mouseY = 0;
             let currentX = 0, currentY = 0;
-            
+
             document.addEventListener('mousemove', (e) => {
                 mouseX = (e.clientX / window.innerWidth - 0.5) * 50;
                 mouseY = (e.clientY / window.innerHeight - 0.5) * 50;
             });
-            
+
             function animate() {
                 currentX += (mouseX - currentX) * 0.05;
                 currentY += (mouseY - currentY) * 0.05;
-                
+
                 balls.forEach((ball, index) => {
                     const factor = (index + 1) * 0.3;
                     ball.style.transform = `translate(${currentX * factor}px, ${currentY * factor}px)`;
                 });
-                
+
                 requestAnimationFrame(animate);
             }
-            
+
             animate();
         }
-        
+
         // 平滑滚动
         function initSmoothScroll() {
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -500,7 +697,7 @@
                 });
             });
         }
-        
+
         // 初始化
         document.addEventListener('DOMContentLoaded', () => {
             animateTitle();
