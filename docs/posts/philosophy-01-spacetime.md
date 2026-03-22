@@ -65,6 +65,3 @@ description: 从牛顿的容器隐喻到爱因斯坦的参与者隐喻，再到�
 
 [← 上一篇：你好，世界](/posts/hello-world) | [下一篇：数学关联——微积分极限与庄子的"一尺之棰" →](/posts/philosophy-02-math-limit)
 
----
-
-[← 上一篇：你好，世界](/posts/hello-world) | [下一篇：数学关联 →](/posts/philosophy-02-math-limit)
