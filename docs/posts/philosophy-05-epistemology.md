@@ -28,3 +28,16 @@ description: 康德与王阳明是主体性哲学的两种表达：认知即建�
 ---
 
 **字数：约2900字** | **完成时间：2026-03-22 20:18**
+
+---
+
+<nav class="prev-next-nav" style="display: flex; justify-content: space-between; align-items: center; margin-top: 3rem; padding: 1.5rem; background: rgba(107, 144, 128, 0.1); border-radius: 8px;">
+  <div>
+    <span style="color: #6b9080; font-size: 0.875rem;">上一篇</span>
+    <a href="/posts/philosophy-04-cosmic-origin" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">天文学视域——宇宙大爆炸与道家"道生一"</a>
+  </div>
+  <div style="text-align: right;">
+    <span style="color: #6b9080; font-size: 0.875rem;">下一篇</span>
+    <a href="/posts/philosophy-06-ontology" style="display: block; color: #333; text-decoration: none; font-weight: 600; margin-top: 0.25rem;">存在论——海德格尔"此在"与儒家"仁"</a>
+  </div>
+</nav>
