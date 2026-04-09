@@ -17,5 +17,8 @@
   "devDependencies": {
     "markdown-it-mathjax3": "^5.2.0",
     "vitepress": "^1.0.0"
+  },
+  "dependencies": {
+    "vue": "^3.5.32"
   }
 }

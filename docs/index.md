@@ -41,4 +41,5 @@ if (typeof window !== 'undefined') {
       window.location.href = '/whitenote/login.html';
     }
   });
+}
 </script>
