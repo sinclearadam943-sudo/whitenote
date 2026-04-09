@@ -43,6 +43,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Clean cache
+        run: rm -rf docs/.vitepress/.temp docs/.vitepress/cache
+
       - name: Build
         run: pnpm run build
 
