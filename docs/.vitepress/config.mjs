@@ -5,6 +5,7 @@ export default defineConfig({
   description: "干净柔和的笔记与文章分享站",
   lang: 'zh-CN',
   base: '/whitenote/',
+  cleanUrls: false, // 禁用 clean URLs，确保 .html 文件可访问
 
   // 开启数学公式支持
   markdown: {
