@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>互联网优质内容源 - 探索高质量信息</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .source-card { transition: all 0.3s ease; }
+        .source-card:hover { transform: translateY(-2px); box-shadow: 0 10px 40px -10px rgba(0,0,0,0.15); }
+        .category-tag { scroll-margin-top: 80px; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- 导航 -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-gray-900">🌐 互联网优质内容源</h1>
+            <a href="https://www.owenyoung.com/sources/" target="_blank" class="text-sm text-gray-500 hover:text-blue-600">
+                原始来源 @Owen Young <i class="fa fa-external-link"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- 简介 -->
+    <header class="bg-white border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 py-12">
+            <p class="text-lg text-gray-600 max-w-3xl">
+                探索互联网上高质量的内容基地，涵盖新闻杂志、独立媒体、科技资讯、中文社区等多个领域。
+                大多数是英文站，建议使用
+                <a href="https://immersivetranslate.com/" target="_blank" class="text-blue-600 hover:underline">沉浸式翻译</a>
+                浏览，效率非常高。
+            </p>
+        </div>
+    </header>
+
+    <!-- 快速导航 -->
+    <div class="bg-gray-100 border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex flex-wrap gap-2 text-sm">
+                <a href="#featured" class="px-3 py-1 bg-white rounded-full hover:bg-blue-50 text-gray-700">精选</a>
+                <a href="#news" class="px-3 py-1 bg-white rounded-full hover:bg-blue-50 text-gray-700">新闻杂志</a>
+                <a href="#tech" class="px-3 py-1 bg-white rounded-full hover:bg-blue-50 text-gray-700">科技</a>
+                <a href="#chinese" class="px-3 py-1 bg-white rounded-full hover:bg-blue-50 text-gray-700">中文</a>
+                <a href="#columns" class="px-3 py-1 bg-white rounded-full hover:bg-blue-50 text-gray-700">专栏</a>
+                <a href="#product" class="px-3 py-1 bg-white rounded-full hover:bg-blue-50 text-gray-700">产品</a>
+                <a href="#newsletter" class="px-3 py-1 bg-white rounded-full hover:bg-blue-50 text-gray-700">Newsletter</a>
+                <a href="#blogs" class="px-3 py-1 bg-white rounded-full hover:bg-blue-50 text-gray-700">博客</a>
+            </div>
+        </div>
+    </div>
+
+    <main class="max-w-6xl mx-auto px-4 py-12">
+        <!-- 202506 精选 -->
+        <section id="featured" class="category-tag mb-16">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <span class="w-8 h-8 bg-yellow-400 rounded-lg flex items-center justify-center mr-3 text-white">⭐</span>
+                202506 精选
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="https://restofworld.org/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">The Rest of World</h3>
+                    <p class="text-sm text-gray-600">美国之外的世界</p>
+                </a>
+                <a href="https://theinitium.com/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">端传媒</h3>
+                    <p class="text-sm text-gray-600">华语最好的媒体之一</p>
+                </a>
+                <a href="https://www.newyorker.com/contributors/cal-newport" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">Cal Newport</h3>
+                    <p class="text-sm text-gray-600">《深度工作》作者专栏</p>
+                </a>
+                <a href="http://paulgraham.com/articles.html" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">Paul Graham</h3>
+                    <p class="text-sm text-gray-600">YC 创始人</p>
+                </a>
+                <a href="https://waitbutwhy.com/homepage" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">Wait but Why</h3>
+                    <p class="text-sm text-gray-600">Tim Urban 的博客，质量非常高</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- News/Magazine -->
+        <section id="news" class="category-tag mb-16">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <span class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center mr-3 text-white">📰</span>
+                News / Magazine
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="https://www.newyorker.com/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900">New Yorker</h3>
+                </a>
+                <a href="https://www.theatlantic.com/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900">The Atlantic</h3>
+                </a>
+                <a href="https://www.axios.com/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">Axios</h3>
+                    <p class="text-sm text-gray-600">简明扼要的新闻，几句话的精髓</p>
+                </a>
+                <a href="https://www.theguardian.com/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900">卫报 The Guardian</h3>
+                </a>
+                <a href="https://www.nplusonemag.com/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">n+1 杂志</h3>
+                    <p class="text-sm text-gray-600">文学、文化和政治杂志</p>
+                </a>
+                <a href="https://www.noemamag.com/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">Noema 杂志</h3>
+                    <p class="text-sm text-gray-600">哲学、治理、地缘政治、技术和文化交叉领域</p>
+                </a>
+                <a href="https://www.semafor.com/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">Semafor</h3>
+                    <p class="text-sm text-gray-600">创新的 Semaform 新闻形式</p>
+                </a>
+                <a href="https://pudding.cool/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">The Pudding</h3>
+                    <p class="text-sm text-gray-600">用视觉解释事情的布丁报道</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Tech -->
+        <section id="tech" class="category-tag mb-16">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <span class="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center mr-3 text-white">💻</span>
+                Tech / 科技
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="https://news.ycombinator.com/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">Hacker News</h3>
+                    <p class="text-sm text-gray-600">科技创业者必看的社区</p>
+                </a>
+                <a href="https://www.wired.com/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900">Wired 连线杂志</h3>
+                </a>
+                <a href="https://www.indiehackers.com/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">Indie Hackers</h3>
+                    <p class="text-sm text-gray-600">独立开发者社区</p>
+                </a>
+                <a href="https://engineeringblogs.xyz/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">Engineering Blogs</h3>
+                    <p class="text-sm text-gray-600">聚合 500+ 程序员博客</p>
+                </a>
+                <a href="https://www.theregister.com/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">The Register</h3>
+                    <p class="text-sm text-gray-600">以批判视角报道科技新闻</p>
+                </a>
+                <a href="https://brutalist.report/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">Brutalist Report</h3>
+                    <p class="text-sm text-gray-600">聚合最权威的报道</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- 中文 -->
+        <section id="chinese" class="category-tag mb-16">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <span class="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center mr-3 text-white">🇨🇳</span>
+                中文 / 华语
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="https://theinitium.com/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">端传媒 The Initium</h3>
+                    <p class="text-sm text-gray-600">Taiwan/Hong Kong media</p>
+                </a>
+                <a href="https://www.thenewslens.com/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">The News Lens 关键评论网</h3>
+                    <p class="text-sm text-gray-600">Taiwan indie media</p>
+                </a>
+                <a href="https://www.wainao.me/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">歪脑</h3>
+                    <p class="text-sm text-gray-600">为讲中文的年轻一代度身定制的新闻杂志</p>
+                </a>
+                <a href="https://matters.news/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">Matters</h3>
+                    <p class="text-sm text-gray-600">UGC 社区，内容托管于区块链</p>
+                </a>
+                <a href="https://www.chinese-future.org/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">中国历史与未来</h3>
+                    <p class="text-sm text-gray-600">立足欧洲的博客平台</p>
+                </a>
+                <a href="https://v2ex.com/go/create" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">V2EX 分享创造</h3>
+                    <p class="text-sm text-gray-600">中文技术社区</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- 专栏 -->
+        <section id="columns" class="category-tag mb-16">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <span class="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center mr-3 text-white">✍️</span>
+                专栏 / Columns
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="http://paulgraham.com/articles.html" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">Paul Graham</h3>
+                    <p class="text-sm text-gray-600">YC 创始人</p>
+                </a>
+                <a href="https://www.newyorker.com/contributors/cal-newport" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">Cal Newport</h3>
+                    <p class="text-sm text-gray-600">《深度工作》作者</p>
+                </a>
+                <a href="https://noahpinion.substack.com/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900">Noah Smith</h3>
+                </a>
+                <a href="https://tynan.com/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">Tynan</h3>
+                    <p class="text-sm text-gray-600">关于财富、投资</p>
+                </a>
+                <a href="https://www.gwern.net/index" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">Gwern</h3>
+                    <p class="text-sm text-gray-600">AI、心理学和统计学，内容硬核</p>
+                </a>
+                <a href="https://waitbutwhy.com/homepage" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">Wait But Why</h3>
+                    <p class="text-sm text-gray-600">Tim Urban，手绘插图，深入长文</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Product -->
+        <section id="product" class="category-tag mb-16">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <span class="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center mr-3 text-white">🚀</span>
+                Product / 产品
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="https://www.producthunt.com/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">Product Hunt</h3>
+                    <p class="text-sm text-gray-600">发现最新科技产品</p>
+                </a>
+                <a href="https://news.ycombinator.com/show" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">Hacker News Show</h3>
+                    <p class="text-sm text-gray-600">创业者展示作品</p>
+                </a>
+                <a href="https://betalist.com/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">BetaList</h3>
+                    <p class="text-sm text-gray-600">Discover tomorrow's startups</p>
+                </a>
+                <a href="https://www.indiehackers.com/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">Indie Hackers</h3>
+                    <p class="text-sm text-gray-600">独立开发者社区</p>
+                </a>
+                <a href="https://www.sideprojectors.com/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">Side Projectors</h3>
+                    <p class="text-sm text-gray-600">分享和交流业余项目</p>
+                </a>
+                <a href="https://read.cv/explore" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">Read.cv Explore</h3>
+                    <p class="text-sm text-gray-600">个人简历聚合平台</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section id="newsletter" class="category-tag mb-16">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <span class="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center mr-3 text-white">📧</span>
+                Newsletter / 邮件订阅
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="https://thebrowser.com/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">The Browser</h3>
+                    <p class="text-sm text-gray-600">每天推荐 5 篇值得阅读的文章</p>
+                </a>
+                <a href="https://www.aldaily.com/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">Arts & Letters Daily</h3>
+                    <p class="text-sm text-gray-600">引用各种杂志、日报的文章</p>
+                </a>
+                <a href="https://marginalrevolution.com/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">Marginal Revolution</h3>
+                    <p class="text-sm text-gray-600">经济学博客，Tyler Cowen</p>
+                </a>
+                <a href="https://weizhou.substack.com/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900">维舟</h3>
+                </a>
+            </div>
+        </section>
+
+        <!-- 博客 -->
+        <section id="blogs" class="category-tag mb-16">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <span class="w-8 h-8 bg-pink-500 rounded-lg flex items-center justify-center mr-3 text-white">📝</span>
+                博客 / Blogs
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="https://levels.io/blog/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900">Levels.io</h3>
+                </a>
+                <a href="https://austinkleon.substack.com/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">Austin Kleon</h3>
+                    <p class="text-sm text-gray-600">《像艺术家一样偷窃》作者</p>
+                </a>
+                <a href="https://adamgrant.bulletin.com/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900">Adam Grant</h3>
+                </a>
+                <a href="https://www.bloomberg.com/opinion/authors/AS6n2t3d_iA/tyler-cowen" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">Tyler Cowen 专栏</h3>
+                    <p class="text-sm text-gray-600">经济相关</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- 文章聚合 -->
+        <section id="aggregator" class="category-tag mb-16">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <span class="w-8 h-8 bg-teal-500 rounded-lg flex items-center justify-center mr-3 text-white">📑</span>
+                文章聚合
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="https://old.reddit.com/r/Foodforthought/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">Food for Thought</h3>
+                    <p class="text-sm text-gray-600">Reddit 精神食粮小组</p>
+                </a>
+                <a href="https://www.metafilter.com/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900">MetaFilter</h3>
+                </a>
+                <a href="https://readsomethingwonderful.com" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">Read Something Wonderful</h3>
+                    <p class="text-sm text-gray-600">以前的好文章</p>
+                </a>
+                <a href="https://www.lesswrong.com/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">LessWrong</h3>
+                    <p class="text-sm text-gray-600">改善人类推理和决策能力的社区</p>
+                </a>
+                <a href="https://pinboard.in/popular/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">Pinboard Popular</h3>
+                    <p class="text-sm text-gray-600">流行书签收藏</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- 视频 -->
+        <section id="video" class="category-tag mb-16">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <span class="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center mr-3 text-white">🎬</span>
+                视频 / Video
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="https://www.youtube.com/c/Vox/featured" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">Vox</h3>
+                    <p class="text-sm text-gray-600">解释各种事物的视频，质量非常高</p>
+                </a>
+                <a href="https://nebula.tv/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">Nebula</h3>
+                    <p class="text-sm text-gray-600">付费视频网站，创作者和平台 5-5 分成</p>
+                </a>
+                <a href="https://www.reddit.com/r/lectures/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">视频讲座</h3>
+                    <p class="text-sm text-gray-600">Reddit 讲座小组</p>
+                </a>
+                <a href="https://www.youtube.com/@leecehao/videos" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">李天豪</h3>
+                    <p class="text-sm text-gray-600">台湾历史老师</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- 索引/导航 -->
+        <section id="indexes" class="category-tag mb-16">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <span class="w-8 h-8 bg-gray-600 rounded-lg flex items-center justify-center mr-3 text-white">🗂️</span>
+                索引 / 导航
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="https://getizumo.com/shibei" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">云海拾贝</h3>
+                    <p class="text-sm text-gray-600">出云整理的国外高质量网站系列</p>
+                </a>
+                <a href="https://shuziyimin.org/" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">数字移民导航</h3>
+                    <p class="text-sm text-gray-600">数字移民整理的国外网站导航</p>
+                </a>
+                <a href="https://github.com/sdmg15/Best-websites-a-programmer-should-visit" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">程序员必访网站</h3>
+                    <p class="text-sm text-gray-600">GitHub 高赞收藏</p>
+                </a>
+                <a href="https://news.ycombinator.com/item?id=36175315" target="_blank" class="source-card bg-white p-5 rounded-xl border border-gray-200 block">
+                    <h3 class="font-semibold text-gray-900 mb-1">Hacker News 推荐</h3>
+                    <p class="text-sm text-gray-600">除了 HN 你还看哪些新闻资讯</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <p class="text-center">
+                内容整理自 <a href="https://www.owenyoung.com/sources/" target="_blank" class="text-gray-300 hover:text-white">Owen Young</a> 的博客
+            </p>
+            <p class="text-center text-sm mt-2">探索互联网上高质量的内容</p>
+        </div>
+    </footer>
+</body>
+</html>
