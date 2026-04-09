@@ -115,6 +115,7 @@ title: 格尔尼卡 - 巴勃罗·毕加索
 - [Museo Reina Sofía](https://www.museoreinasofia.es/en/collection/artwork/guernica)
 - [Wikipedia - Guernica](https://en.wikipedia.org/wiki/Guernica_(Picasso))
 - [MoMA Learning](https://www.moma.org/learn/moma_learning/pablo-picasso-guernica-1937)
+- [artsandculture](https://artsandculture.google.com/)
 
 ---
 
