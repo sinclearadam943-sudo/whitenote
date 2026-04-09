@@ -1,4 +1,7 @@
 ---
+title: 关于艺境
+---
+
 # 关于艺境
 
 ## 项目介绍
@@ -37,7 +40,7 @@
 
 ## 联系
 
-- GitHub: https://github.com/sinclearadam943-sudo/artistwiki
+- GitHub: https://github.com/sinclearadam943-sudo/whitenote
 - 飞书文档: https://www.feishu.cn/wiki/...
 
 ---
