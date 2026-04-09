@@ -66,12 +66,12 @@ export default defineConfig({
         text: '专题',
         items: [
           { text: '🎨 艺境画廊', link: '/gallery/' },
-          { text: '📜 北魏书法', link: '/wei-bei-guide' },
-          { text: '🌐 优质内容源', link: '/quality-sources' },
-          { text: '🌌 宇宙科学', link: '/cosmos-science' },
+          { text: '📜 北魏书法', link: 'https://sinclearadam943-sudo.github.io/whitenote/wei-bei-guide.html' },
+          { text: '🌐 优质内容源', link: 'https://sinclearadam943-sudo.github.io/whitenote/quality-sources.html' },
+          { text: '🌌 宇宙科学', link: 'https://sinclearadam943-sudo.github.io/whitenote/cosmos-science.html' },
         ]
       },
-      { text: '监控', link: '/task-monitor', target: '_blank' },
+      { text: '监控', link: 'https://sinclearadam943-sudo.github.io/whitenote/task-monitor.html', target: '_blank' },
     ],
     sidebar: false,
     search: {
