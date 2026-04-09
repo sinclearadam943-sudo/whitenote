@@ -32,10 +32,8 @@ features:
     details: 每日中外书画艺术赏析，涵盖梵高、齐白石、毕加索等大师名作
   - title: 📜 北魏书法
     details: 北魏历史速记与魏碑书法临习指南，含四字帖范例
-    link: /wei-bei-guide.html
   - title: 🌐 优质内容源
     details: 精选互联网高质量内容源，新闻、科技、中文媒体、专栏等58+网站
-    link: /quality-sources.html
 ---
 
 <script>
