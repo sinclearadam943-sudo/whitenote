@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北魏历史与书法速记手册 - 魏碑楷书临习指南</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B4513',
+                        secondary: '#D2B48C',
+                        accent: '#CD853F',
+                        light: '#F5F5DC',
+                        dark: '#3E2723'
+                    },
+                    fontFamily: {
+                        calligraphy: ['Ma Shan Zheng', 'cursive'],
+                        mono: ['Consolas', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            .border-stone {
+                border-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="4" height="4"><rect width="4" height="4" fill="%238B4513" opacity="0.7"/></svg>') 1 repeat;
+            }
+            .bg-rice-paper {
+                background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><rect width="200" height="200" fill="%23F5F5DC" opacity="0.1"/></svg>');
+                background-size: 200px 200px;
+            }
+        }
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap');
+        
+        .character-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .character-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(139, 69, 19, 0.3);
+        }
+        .timeline-item {
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -25px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #8B4513;
+            border: 3px solid #F5F5DC;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: -18px;
+            top: 100%;
+            width: 2px;
+            height: calc(100% + 20px);
+            background-color: #8B4513;
+        }
+        .timeline-item:last-child::after {
+            display: none;
+        }
+        /* 米字格样式 */
+        .mi-grid {
+            background-image: 
+                linear-gradient(to right, transparent 49.5%, #8B451333 49.5%, #8B451333 50.5%, transparent 50.5%),
+                linear-gradient(to bottom, transparent 49.5%, #8B451333 49.5%, #8B451333 50.5%, transparent 50.5%),
+                linear-gradient(45deg, transparent 49.5%, #8B45131A 49.5%, #8B45131A 50.5%, transparent 50.5%),
+                linear-gradient(135deg, transparent 49.5%, #8B45131A 49.5%, #8B45131A 50.5%, transparent 50.5%);
+        }
+    </style>
+</head>
+<body class="bg-rice-paper text-dark font-sans">
+    <!-- 顶部导航 -->
+    <nav class="sticky top-0 z-50 bg-primary/90 text-light shadow-md backdrop-blur-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <h1 class="text-2xl font-calligraphy tracking-wider">北魏速记手册</h1>
+            <div class="flex space-x-6">
+                <a href="#history" class="hover:text-secondary transition-colors"><i class="fa fa-book mr-1"></i>历史速记</a>
+                <a href="#calligraphy" class="hover:text-secondary transition-colors"><i class="fa fa-pencil mr-1"></i>书法临习</a>
+                <a href="#characters" class="hover:text-secondary transition-colors"><i class="fa fa-font mr-1"></i>范字解析</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <header class="bg-gradient-to-b from-primary to-secondary text-light py-16 md:py-24">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-calligraphy mb-6 text-shadow">北魏王朝与魏碑书法</h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto opacity-90 mb-8">上承汉晋，下启隋唐的关键王朝，雄强峻利的楷书艺术巅峰</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#history" class="bg-light text-primary px-6 py-3 rounded-lg font-semibold hover:bg-secondary hover:text-white transition-all shadow-lg">
+                    <i class="fa fa-angle-down mr-2"></i>开始浏览
+                </a>
+                <a href="#characters" class="bg-transparent border-2 border-light text-light px-6 py-3 rounded-lg font-semibold hover:bg-light/20 transition-all">
+                    <i class="fa fa-font mr-2"></i>范字解析
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+        <!-- 北魏历史速记部分 -->
+        <section id="history" class="mb-20">
+            <div class="flex items-center mb-8">
+                <div class="bg-primary text-light text-3xl p-3 rounded-full mr-4">
+                    <i class="fa fa-history"></i>
+                </div>
+                <h2 class="text-3xl font-calligraphy text-primary">北魏历史速记</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- 基本信息卡片 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-primary">
+                    <h3 class="text-xl font-semibold mb-4 text-primary">基本信息</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-2"></i>
+                            <span><strong>朝代</strong>：北魏（北朝首代王朝）</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-2"></i>
+                            <span><strong>时期</strong>：魏晋南北朝·北朝</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-2"></i>
+                            <span><strong>存续时间</strong>：<span class="font-mono">386年—534年</span>（共148年）</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-2"></i>
+                            <span><strong>建立者</strong>：拓跋珪（鲜卑拓跋部）</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-2"></i>
+                            <span><strong>结局</strong>：534年分裂为东魏、西魏</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 关键节点时间轴 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-accent">
+                    <h3 class="text-xl font-semibold mb-6 text-accent">关键历史节点</h3>
+                    <div class="pl-10 space-y-6">
+                        <div class="timeline-item pb-6">
+                            <h4 class="font-bold text-primary">386年：拓跋珪建魏</h4>
+                            <p class="text-gray-700">鲜卑拓跋部首领拓跋珪在牛川称代王，同年改国号为魏，史称北魏。</p>
+                        </div>
+                        <div class="timeline-item pb-6">
+                            <h4 class="font-bold text-primary">439年：拓跋焘统一北方</h4>
+                            <p class="text-gray-700">太武帝拓跋焘消灭北凉，结束"五胡十六国"分裂局面，统一北方。</p>
+                        </div>
+                        <div class="timeline-item pb-6">
+                            <h4 class="font-bold text-primary">485-494年：孝文帝汉化改革</h4>
+                            <p class="text-gray-700">推行均田制、三长制、班禄制，494年迁都洛阳，全面汉化。</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="font-bold text-primary">534年：北魏分裂</h4>
+                            <p class="text-gray-700">北魏分裂为东魏（高欢）、西魏（宇文泰），北魏正式灭亡。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 历史功绩 -->
+            <div class="mt-10 bg-white rounded-xl shadow-lg p-6 border-t-4 border-primary">
+                <h3 class="text-xl font-semibold mb-6 text-primary">北魏主要历史功绩</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="p-4 bg-light rounded-lg">
+                        <h4 class="font-bold text-primary mb-2"><i class="fa fa-shield mr-2"></i>政治统一</h4>
+                        <p class="text-gray-700">结束北方百年战乱，为隋唐大一统奠定基础，完善均田制、三长制等制度。</p>
+                    </div>
+                    <div class="p-4 bg-light rounded-lg">
+                        <h4 class="font-bold text-primary mb-2"><i class="fa fa-users mr-2"></i>民族融合</h4>
+                        <p class="text-gray-700">迁都洛阳、说汉话、改汉姓、穿汉服、通汉婚，促进鲜卑与汉民族深度融合。</p>
+                    </div>
+                    <div class="p-4 bg-light rounded-lg">
+                        <h4 class="font-bold text-primary mb-2"><i class="fa fa-paint-brush mr-2"></i>文化艺术</h4>
+                        <p class="text-gray-700">云冈石窟、龙门石窟等佛教艺术巅峰，魏碑书法成为楷书发展重要阶段。</p>
+                    </div>
+                    <div class="p-4 bg-light rounded-lg">
+                        <h4 class="font-bold text-primary mb-2"><i class="fa fa-cogs mr-2"></i>制度奠基</h4>
+                        <p class="text-gray-700">均田制、三长制、班禄制等制度创新，影响后世数百年。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 魏碑书法部分 -->
+        <section id="calligraphy" class="mb-20">
+            <div class="flex items-center mb-8">
+                <div class="bg-accent text-light text-3xl p-3 rounded-full mr-4">
+                    <i class="fa fa-pencil"></i>
+                </div>
+                <h2 class="text-3xl font-calligraphy text-accent">魏碑书法艺术</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- 魏碑风格特点 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border-r-4 border-accent">
+                    <h3 class="text-xl font-semibold mb-4 text-accent">魏碑风格特点</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                            <span><strong>隶意尚存</strong>：部分笔画保留隶书波磔感，上承汉隶</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                            <span><strong>方笔为主</strong>：起笔切笔，棱角分明，如斩钉截铁</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                            <span><strong>斜画紧结</strong>：横画左低右高，字形欹侧，险中求正</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                            <span><strong>中宫收紧</strong>：笔画紧凑，主笔舒展，疏密有致</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                            <span><strong>金石气</strong>：刀刻与笔意结合，线条雄强苍劲</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 p-4 bg-light rounded-lg">
+                        <p class="text-gray-700 italic">魏碑是隶书向楷书过渡的重要阶段，"上承汉隶，下启唐楷"，为楷书发展奠定基础。</p>
+                    </div>
+                </div>
+
+                <!-- 临写要点 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-accent">
+                    <h3 class="text-xl font-semibold mb-4 text-accent">魏碑临写要点</h3>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-light rounded-lg">
+                            <h4 class="font-bold text-primary mb-2">用笔技巧</h4>
+                            <p class="text-gray-700">起笔重顿，行笔稳健，收笔顿挫有力。转折处方中带圆，既有方劲又不失圆润。</p>
+                        </div>
+                        <div class="p-4 bg-light rounded-lg">
+                            <h4 class="font-bold text-primary mb-2">结构规律</h4>
+                            <p class="text-gray-700">整体呈左低右高之势，中宫收紧，四周舒展。注意笔画间的呼应关系，形成环抱之势。</p>
+                        </div>
+                        <div class="p-4 bg-light rounded-lg">
+                            <h4 class="font-bold text-primary mb-2">金石质感</h4>
+                            <p class="text-gray-700">模仿碑刻效果，线条粗细变化自然，避免过于油滑，体现雄强古朴的气息。</p>
+                        </div>
+                        <div class="p-4 bg-light rounded-lg">
+                            <h4 class="font-bold text-primary mb-2">精准定位</h4>
+                            <p class="text-gray-700">利用米字格找准笔画位置，把握重心与平衡，做到斜中求正，险中求稳。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 范字解析部分 + 你的范例图片 -->
+        <section id="characters" class="mb-16">
+            <div class="flex items-center mb-8">
+                <div class="bg-primary text-light text-3xl p-3 rounded-full mr-4">
+                    <i class="fa fa-font"></i>
+                </div>
+                <h2 class="text-3xl font-calligraphy text-primary">魏碑范字解析（九、凡、力、同）</h2>
+            </div>
+
+            <!-- 范例字帖图片区域 -->
+            <div class="bg-white p-6 rounded-xl shadow-lg mb-10 text-center">
+                <h3 class="text-xl font-semibold text-primary mb-4">字帖范例原图</h3>
+                <img src="/images/wei-bei-example.jpg" 
+                     alt="魏碑楷书范例字帖" 
+                     class="mx-auto border-4 border-primary rounded-lg max-w-full h-auto shadow-lg"
+                     style="max-height: 400px;">
+                <p class="text-gray-500 mt-2">魏碑楷书范例字帖</p>
+            </div>
+
+            <!-- 四字解析卡片 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- 九 -->
+                <div class="character-card bg-white rounded-xl shadow-lg p-6">
+                    <div class="mi-grid w-full h-48 border-2 border-primary rounded-lg mb-4 flex items-center justify-center text-7xl font-calligraphy text-primary">
+                        九
+                    </div>
+                    <h3 class="text-xl font-bold text-primary text-center mb-2">九</h3>
+                    <ul class="text-sm space-y-1 text-gray-700">
+                        <li>• 左收右放，撇高钩低</li>
+                        <li>• 横画左低右高</li>
+                        <li>• 弯钩圆劲，环抱之势</li>
+                    </ul>
+                </div>
+
+                <!-- 凡 -->
+                <div class="character-card bg-white rounded-xl shadow-lg p-6">
+                    <div class="mi-grid w-full h-48 border-2 border-primary rounded-lg mb-4 flex items-center justify-center text-7xl font-calligraphy text-primary">
+                        凡
+                    </div>
+                    <h3 class="text-xl font-bold text-primary text-center mb-2">凡</h3>
+                    <ul class="text-sm space-y-1 text-gray-700">
+                        <li>• 上窄下宽，外紧内松</li>
+                        <li>• 撇画舒展，弯钩饱满</li>
+                        <li>• 左右对称，重心平稳</li>
+                    </ul>
+                </div>
+
+                <!-- 力 -->
+                <div class="character-card bg-white rounded-xl shadow-lg p-6">
+                    <div class="mi-grid w-full h-48 border-2 border-primary rounded-lg mb-4 flex items-center justify-center text-7xl font-calligraphy text-primary">
+                        力
+                    </div>
+                    <h3 class="text-xl font-bold text-primary text-center mb-2">力</h3>
+                    <ul class="text-sm space-y-1 text-gray-700">
+                        <li>• 撇画劲挺，折角方劲</li>
+                        <li>• 斜中求正，雄强有力</li>
+                        <li>• 笔画简练，金石气足</li>
+                    </ul>
+                </div>
+
+                <!-- 同 -->
+                <div class="character-card bg-white rounded-xl shadow-lg p-6">
+                    <div class="mi-grid w-full h-48 border-2 border-primary rounded-lg mb-4 flex items-center justify-center text-7xl font-calligraphy text-primary">
+                        同
+                    </div>
+                    <h3 class="text-xl font-bold text-primary text-center mb-2">同</h3>
+                    <ul class="text-sm space-y-1 text-gray-700">
+                        <li>• 上开下合，框形端正</li>
+                        <li>• 横画均匀，竖画劲挺</li>
+                        <li>• 内宫收紧，外框舒展</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 底部 -->
+    <footer class="bg-primary text-light py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p class="font-calligraphy text-xl">北魏历史与魏碑书法速记手册</p>
+            <p class="text-sm opacity-80 mt-2">上承汉隶，下启唐楷 · 雄强峻利，古朴大气</p>
+        </div>
+    </footer>
+</body>
+</html>
