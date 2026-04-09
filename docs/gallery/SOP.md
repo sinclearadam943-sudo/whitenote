@@ -311,12 +311,179 @@ error: unknown command 'run-tool'
 | 构建失败-图片 | 引用了不存在的图片 | 使用文本占位符 |
 | 脚本工具调用失败 | openclaw run-tool 不存在 | 已修复脚本，直接调用 kimi_search |
 | Token 失效 | GitHub Token 过期 | 需要管理员重新配置 |
+| **画廊首页未更新** | 只更新了 artworks.json，忘记更新 index.md | **必须手动添加卡片到画廊首页** |
+| **GitHub Actions 排队** | 多个提交同时推送 | 等待上一个部署完成后再检查 |
 
 **关键原则**:  
 1. **永远使用 workspace 中的仓库**（已配置好认证）  
 2. **不要尝试 SSH 认证**（没有配置 key）  
 3. **构建失败先检查图片引用**  
 4. **推送前确认远程地址格式**
+5. **画廊首页必须手动更新**（不是自动从 artworks.json 读取）
+6. **部署有延迟**（GitHub Actions 需要 30-60 秒）
+
+---
+
+## 📋 今日完整发布流程实录（2026-04-09）
+
+### 背景
+今日任务：新增张大千《爱痕湖》画作赏析
+
+### 完整 8 步流程
+
+#### Step 1: 拉取最新代码
+```bash
+cd /root/.openclaw/workspace/whitenote
+git pull
+```
+✅ 成功
+
+#### Step 2: 选择艺术家
+- 检查 artworks.json 已有：梵高、齐白石、毕加索
+- 选择：**张大千**（未生成过）
+- 作品：《爱痕湖》（泼墨泼彩山水画代表作）
+
+#### Step 3: 搜索资料
+使用 kimi_search 搜索：
+```
+张大千 代表作品 泼墨画 艺术风格 历史背景
+```
+获取内容：
+- 艺术家生平（1899-1983，四川内江）
+- 《爱痕湖》创作背景（1968年，奥地利亚琛湖灵感）
+- 泼墨泼彩技法介绍
+- 2010年亿元拍卖记录
+- 外网资源链接
+
+#### Step 4: 生成详情页
+创建文件：`docs/gallery/works/aihenhu-zhangdaqian.md`
+
+**内容结构**：
+- 标题和元信息表格
+- 6大章节完整内容
+- 外网资源链接（Wikipedia、Google Arts）
+
+**⚠️ 踩坑**：不要引用不存在的图片！
+```markdown
+# ❌ 错误
+![爱痕湖](/whitenote/images/aihenhu.jpg)
+
+# ✅ 正确
+> 🎨 张大千泼墨泼彩山水代表作 | 1968年
+```
+
+#### Step 5: 更新 artworks.json
+在数组开头添加新记录：
+```json
+{
+  "id": "art_20260409_004",
+  "date": "2026-04-09",
+  "title": "爱痕湖",
+  "artist": "张大千",
+  "period": "近现代 · 1968年",
+  "category": "chinese",
+  "type": "国画",
+  "description": "张大千泼墨泼彩山水画的巅峰代表作...",
+  "tags": ["国画", "泼墨泼彩", "张大千", "山水画"],
+  "imageUrl": "",
+  "pageUrl": "/gallery/works/aihenhu-zhangdaqian"
+}
+```
+
+#### Step 6: 本地构建
+```bash
+pnpm install
+pnpm run build
+```
+✅ 构建成功
+
+#### Step 7: 提交并推送
+```bash
+git add -A
+git commit -m "🎨 新增画作赏析: 张大千《爱痕湖》"
+git push
+```
+✅ 推送成功（提交：21aed72）
+
+#### Step 8: 验证（⚠️ 关键步骤）
+
+**8.1 检查 GitHub Actions 状态**
+- 访问：https://github.com/sinclearadam943-sudo/whitenote/actions
+- 确认 Run 状态为 "completed successfully"
+- 部署完成需要 30-60 秒
+
+**8.2 验证画廊首页**
+- 访问：https://sinclearadam943-sudo.github.io/whitenote/gallery/
+- **⚠️ 踩坑**：发现首页只有3个作品，没有显示新添加的《爱痕湖》！
+
+**问题原因**：画廊首页的卡片是**硬编码**在 `index.md` 中的，不是自动从 `artworks.json` 读取的！
+
+**修复**：手动添加卡片到 `docs/gallery/index.md`
+```markdown
+<a href="./works/aihenhu-zhangdaqian.html" class="art-card">
+  <div class="card-image-placeholder">🎨</div>
+  <div class="card-content">
+    <div class="card-meta">
+      <span class="category chinese">中国书画</span>
+      <span class="date">1968年</span>
+    </div>
+    <h3>《爱痕湖》</h3>
+    <p class="artist">张大千</p>
+    <p class="desc">...</p>
+    <div class="tags">
+      <span class="tag">泼墨泼彩</span>
+      ...
+    </div>
+  </div>
+</a>
+```
+
+**重新推送**：
+```bash
+git add -A
+git commit -m "🎨 画廊首页：新增张大千《爱痕湖》作品卡片"
+git push
+```
+✅ 推送成功（提交：a3cab15）
+
+**等待部署**：
+- Run 90 排队中 → 部署中 → 完成
+- 约 30-40 秒后页面更新
+
+**8.3 最终验证**
+- ✅ 画廊首页显示4个作品
+- ✅ 《爱痕湖》卡片可点击
+- ✅ 详情页内容完整
+- ✅ 链接跳转正常
+
+---
+
+### 今日发布产出
+
+| 项目 | 内容 |
+|------|------|
+| **作品** | 张大千《爱痕湖》 |
+| **详情页** | `/gallery/works/aihenhu-zhangdaqian.html` |
+| **数据更新** | `artworks.json` 新增记录 |
+| **首页更新** | `gallery/index.md` 新增卡片 |
+| **GitHub 提交** | `21aed72`, `a3cab15` |
+| **SOP 更新** | 添加踩坑记录和完整流程 |
+
+---
+
+### 明日发布检查清单
+
+在明天 20:00 定时任务执行前，确认以下事项：
+
+- [ ] 工作目录是 `/root/.openclaw/workspace/whitenote`
+- [ ] 远程地址是 `https://TOKEN@github.com/...`
+- [ ] artworks.json 中没有明日要发布的艺术家
+- [ ] 记得同时更新画廊首页 `index.md`
+- [ ] 构建成功后推送
+- [ ] 等待 GitHub Actions 部署完成（30-60秒）
+- [ ] 验证画廊页面显示新作品
+
+---
 
 ---
 
@@ -328,5 +495,5 @@ error: unknown command 'run-tool'
 
 ---
 
-*SOP 版本: 2026-04-09 v2*  
-*更新内容: 添加踩坑记录、故障排查详细步骤、工作目录和认证方式说明*
+*SOP 版本: 2026-04-09 v3*  
+*更新内容: 添加今日完整发布流程实录、明日检查清单、画廊首页更新提醒*
