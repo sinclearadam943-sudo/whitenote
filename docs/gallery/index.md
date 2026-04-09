@@ -11,7 +11,7 @@ title: 艺境画廊
 ## 最新作品
 
 <div class="gallery-grid">
-  <a href="/gallery/works/starry-night" class="art-card">
+  <a href="/gallery/works/starry-night.html" class="art-card">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/400px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg" alt="星月夜" class="card-image" />
     <div class="card-content">
       <div class="card-meta">
@@ -47,7 +47,7 @@ title: 艺境画廊
     </div>
   </a>
 
-  <a href="/gallery/works/guernica" class="art-card">
+  <a href="/gallery/works/guernica.html" class="art-card">
     <div class="card-image-placeholder guernica">🏛️</div>
     <div class="card-content">
       <div class="card-meta">
