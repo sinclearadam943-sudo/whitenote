@@ -4,9 +4,7 @@ title: 艺术家
 
 # 艺术家
 
-<div id="artists-container">
-  加载中...
-</div>
+<div id="artists-container">加载中...</div>
 
 <script setup>
 import { onMounted } from 'vue'
@@ -15,9 +13,7 @@ import data from '../data/artworks.json'
 const categoryLabels = {
   chinese: '中国书画',
   western: '西方绘画',
-  calligraphy: '书法艺术',
-  oil: '油画',
-  ink: '水墨画'
+  calligraphy: '书法艺术'
 }
 
 onMounted(() => {
@@ -27,7 +23,6 @@ onMounted(() => {
     return
   }
   
-  // 按艺术家分组
   const artistMap = {}
   data.forEach(art => {
     if (!artistMap[art.artist]) {
@@ -47,7 +42,7 @@ onMounted(() => {
         <h3>${artist.name}</h3>
         <div class="categories">
           ${Array.from(artist.categories).map(cat => 
-            `<span class="category-badge">${categoryLabels[cat] || cat}</span>`
+            '<span class="category-badge">' + (categoryLabels[cat] || cat) + '</span>'
           ).join('')}
         </div>
       </div>
@@ -62,7 +57,7 @@ onMounted(() => {
     </div>
   `).join('')
   
-  container.innerHTML = `<div class="artists-grid">${html}</div>`
+  container.innerHTML = '<div class="artists-grid">' + html + '</div>'
 })
 </script>
 
