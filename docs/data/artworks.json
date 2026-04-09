@@ -1,0 +1,41 @@
+[
+  {
+    "id": "art_20260409_003",
+    "date": "2026-04-09",
+    "title": "格尔尼卡",
+    "artist": "巴勃罗·毕加索",
+    "period": "立体主义 · 1937年",
+    "category": "western",
+    "type": "油画",
+    "description": "毕加索最著名的巨幅油画，创作于西班牙内战期间，描绘了格尔尼卡轰炸的惨状。作品以黑白灰三色为主，融合立体主义与超现实主义手法，是20世纪最重要的反战艺术作品之一。现藏于马德里索菲亚王后国家艺术中心博物馆。",
+    "tags": ["油画", "立体主义", "毕加索", "格尔尼卡", "西方绘画", "反战艺术", "西班牙内战"],
+    "imageUrl": "",
+    "feishuDoc": "https://www.feishu.cn/wiki/VtaqwRCAXi5x99knl7Bc1G02nqb"
+  },
+  {
+    "id": "art_20260409_002",
+    "date": "2026-04-09",
+    "title": "墨虾图",
+    "artist": "齐白石",
+    "period": "近现代 · 大写意",
+    "category": "chinese",
+    "type": "国画",
+    "description": "齐白石画虾已入化境，被誉为中国画虾第一人。运用侧锋、破墨之法，墨色浓淡相宜，虾须柔中带刚。虽不画水而水意自生，虽不求似而形神兼备。开创红花墨叶一派，达到中国现代花鸟画巅峰。",
+    "tags": ["国画", "大写意", "齐白石", "墨虾", "花鸟画", "中国书画"],
+    "imageUrl": "",
+    "feishuDoc": "https://www.feishu.cn/docx/MU51d0HIco3cFmxiL82cacrPnHg"
+  },
+  {
+    "id": "art_20260409_001",
+    "date": "2026-04-09",
+    "title": "星月夜",
+    "artist": "文森特·梵高",
+    "period": "后印象派 · 1889年",
+    "category": "western",
+    "type": "油画",
+    "description": "梵高最著名的风景油画，创作于法国圣雷米精神病院期间。画中漩涡状的天空笔触营造出强烈的运动感，弯曲长线与破碎短线交互运用，构成眩目的奇幻景象。深蓝与橙黄的色彩对比、厚涂技法创造出丰富的质感。现藏于纽约现代艺术博物馆。",
+    "tags": ["油画", "后印象派", "梵高", "星月夜", "西方绘画", "MoMA"],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/640px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
+    "feishuDoc": "https://www.feishu.cn/docx/WigNdhUvioDhFwx6mFlcrRbWngf"
+  }
+]

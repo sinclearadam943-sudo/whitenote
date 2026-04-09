@@ -28,8 +28,8 @@ features:
     details: 每天发现一点小进步，给自己一点鼓励，慢慢变好
   - title: 📖 原创故事
     details: 《字节阿赖耶》—— Python字节码与佛教唯识学的科幻碰撞
-  - title: 🎨 柔和舒适
-    details: 低饱和绿色主调，浅灰背景，充足留白，长时间阅读更护眼
+  - title: 🎨 艺境画廊
+    details: 每日中外书画艺术赏析，涵盖梵高、齐白石、毕加索等大师名作
 ---
 
 <script>
@@ -41,5 +41,4 @@ if (typeof window !== 'undefined') {
       window.location.href = '/whitenote/login.html';
     }
   });
-}
 </script>

@@ -61,7 +61,14 @@ export default defineConfig({
           { text: '10 统合超越——数学之美=物理真=哲学善=艺术美', link: '/posts/philosophy-10-unity-transcend' },
         ]
       },
-      { text: '宇宙科普', link: '/cosmos-science.html', target: '_blank' },
+      {
+        text: '艺境画廊',
+        items: [
+          { text: '🎨 画作赏析', link: '/gallery/' },
+          { text: '👨‍🎨 艺术家', link: '/artists/' },
+          { text: 'ℹ️ 关于艺境', link: '/about/' },
+        ]
+      },
       { text: '任务监控', link: '/task-monitor.html', target: '_blank' },
     ],
     sidebar: false,
