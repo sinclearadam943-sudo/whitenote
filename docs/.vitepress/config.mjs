@@ -63,10 +63,7 @@ export default defineConfig({
       },
       {
         text: '艺境画廊',
-        items: [
-          { text: '🎨 画作赏析', link: '/gallery/' },
-          { text: 'ℹ️ 关于艺境', link: '/about/' },
-        ]
+        link: '/gallery/'
       },
       { text: '任务监控', link: '/task-monitor.html', target: '_blank' },
     ],
