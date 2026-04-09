@@ -11,6 +11,24 @@ title: 艺境画廊
 ## 最新作品
 
 <div class="gallery-grid">
+  <a href="./works/aihenhu-zhangdaqian.html" class="art-card">
+    <div class="card-image-placeholder">🎨</div>
+    <div class="card-content">
+      <div class="card-meta">
+        <span class="category chinese">中国书画</span>
+        <span class="date">1968年</span>
+      </div>
+      <h3>《爱痕湖》</h3>
+      <p class="artist">张大千</p>
+      <p class="desc">张大千泼墨泼彩山水画的巅峰代表作，以奥地利亚琛湖为灵感，墨色与石青、石绿交融，形成绚烂而典雅的视觉效果。</p>
+      <div class="tags">
+        <span class="tag">泼墨泼彩</span>
+        <span class="tag">山水画</span>
+        <span class="tag">亿元作品</span>
+      </div>
+    </div>
+  </a>
+
   <a href="./works/starry-night.html" class="art-card">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/400px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg" alt="星月夜" class="card-image" />
     <div class="card-content">
