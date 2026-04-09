@@ -99,7 +99,7 @@ title: 星月夜 - 文森特·梵高
 ### 外网资源
 - [MoMA 官方页面](https://www.moma.org/collection/works/79802)
 - [Wikipedia - The Starry Night](https://en.wikipedia.org/wiki/The_Starry_Night)
-- [Google Arts & Culture](https://artsandculture.google.com/asset/the-starry-night-vincent-van-gogh/wQKSt5OyZoXzKA)
+- [Google Arts & Culture](https://artsandculture.google.com/entity/%E6%96%87%E6%A3%AE%E7%89%B9%C2%B7%E6%A2%B5%E9%AB%98/m07_m2)
 
 ---
 
