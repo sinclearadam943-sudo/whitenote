@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小学奥数应用题的解题艺术与思维哲学</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #fafaf8;
+            --color-text: #1a1a1a;
+            --color-text-secondary: #666;
+            --color-accent: #c41e3a;
+            --color-accent-light: #f5e6e8;
+            --color-border: #e0e0e0;
+            --color-philosophy-bg: #f8f6f3;
+            --color-philosophy-border: #d4c8b8;
+            --font-serif: 'Noto Serif SC', serif;
+            --font-sans: 'Noto Sans SC', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-serif);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 100vh;
+            background: #fff;
+            border-right: 1px solid var(--color-border);
+            padding: 40px 30px;
+            overflow-y: auto;
+            z-index: 100;
+        }
+
+        nav h1 {
+            font-family: var(--font-sans);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-accent);
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--color-accent);
+        }
+
+        nav .nav-title {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            color: var(--color-text);
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav li {
+            margin-bottom: 4px;
+        }
+
+        nav a {
+            display: block;
+            padding: 12px 16px;
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-family: var(--font-sans);
+            font-size: 14px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+        }
+
+        nav a:hover {
+            background: var(--color-philosophy-bg);
+            color: var(--color-text);
+            border-left-color: var(--color-accent);
+        }
+
+        nav a.active {
+            background: var(--color-accent-light);
+            color: var(--color-accent);
+            border-left-color: var(--color-accent);
+            font-weight: 500;
+        }
+
+        nav .chapter-num {
+            display: inline-block;
+            width: 24px;
+            font-weight: 700;
+            color: var(--color-accent);
+        }
+
+        /* Main Content */
+        main {
+            margin-left: 280px;
+            max-width: 800px;
+            padding: 60px 60px 100px;
+        }
+
+        /* Header */
+        .book-header {
+            text-align: center;
+            padding: 80px 0 60px;
+            margin-bottom: 60px;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .book-header h1 {
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .book-header .subtitle {
+            font-family: var(--font-sans);
+            font-size: 16px;
+            color: var(--color-text-secondary);
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .book-header .divider {
+            width: 60px;
+            height: 3px;
+            background: var(--color-accent);
+            margin: 30px auto;
+        }
+
+        /* Chapter Styling */
+        h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin: 80px 0 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--color-text);
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+        }
+
+        h2 .chapter-label {
+            font-family: var(--font-sans);
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--color-text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 50px 0 25px;
+            color: var(--color-text);
+        }
+
+        h4 {
+            font-family: var(--font-sans);
+            font-size: 16px;
+            font-weight: 700;
+            margin: 35px 0 15px;
+            color: var(--color-accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* Problem Box */
+        .problem-box {
+            background: #fff;
+            border: 1px solid var(--color-border);
+            border-left: 4px solid var(--color-accent);
+            padding: 30px;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .problem-box::before {
+            content: "例题";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: var(--color-accent);
+            color: #fff;
+            padding: 4px 12px;
+            font-family: var(--font-sans);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .problem-box p:first-of-type {
+            font-weight: 600;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Solution */
+        .solution {
+            background: var(--color-philosophy-bg);
+            padding: 25px 30px;
+            margin: 20px 0;
+            border-radius: 0;
+        }
+
+        .solution-title {
+            font-family: var(--font-sans);
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--color-text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        /* Philosophy Box */
+        .philosophy-box {
+            background: var(--color-philosophy-bg);
+            border: 1px solid var(--color-philosophy-border);
+            border-left: 4px solid var(--color-philosophy-border);
+            padding: 30px;
+            margin: 35px 0;
+        }
+
+        .philosophy-box::before {
+            content: "思维启示";
+            display: block;
+            font-family: var(--font-sans);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--color-philosophy-border);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .philosophy-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Emphasis */
+        strong {
+            font-weight: 700;
+            color: var(--color-text);
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-family: var(--font-sans);
+            font-size: 15px;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        th {
+            font-weight: 600;
+            background: var(--color-philosophy-bg);
+            border-top: 2px solid var(--color-text);
+            border-bottom: 2px solid var(--color-text);
+        }
+
+        tr:last-child td {
+            border-bottom: 2px solid var(--color-text);
+        }
+
+        /* Blockquote */
+        blockquote {
+            border-left: 3px solid var(--color-accent);
+            padding-left: 25px;
+            margin: 25px 0;
+            color: var(--color-text-secondary);
+            font-style: italic;
+        }
+
+        /* Section Divider */
+        .section-divider {
+            text-align: center;
+            margin: 60px 0;
+            color: var(--color-border);
+            font-size: 20px;
+            letter-spacing: 10px;
+        }
+
+        /* Summary Box */
+        .summary-box {
+            background: var(--color-text);
+            color: var(--color-bg);
+            padding: 40px;
+            margin: 50px 0;
+        }
+
+        .summary-box h3 {
+            color: var(--color-bg);
+            margin-top: 0;
+        }
+
+        .summary-box p {
+            color: rgba(250, 250, 248, 0.9);
+        }
+
+        /* Quote at end */
+        .final-quote {
+            text-align: center;
+            padding: 60px 40px;
+            margin-top: 80px;
+            border-top: 1px solid var(--color-border);
+            font-style: italic;
+        }
+
+        .final-quote p {
+            font-size: 20px;
+            color: var(--color-text-secondary);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .final-quote .author {
+            font-family: var(--font-sans);
+            font-size: 14px;
+            font-style: normal;
+            color: var(--color-text);
+        }
+
+        /* Math styling */
+        .math-inline {
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+        }
+
+        /* Responsive */
+        @media (max-width: 1100px) {
+            nav {
+                width: 100%;
+                height: auto;
+                position: relative;
+                border-right: none;
+                border-bottom: 1px solid var(--color-border);
+                padding: 20px;
+            }
+
+            nav ul {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            nav li {
+                margin: 0;
+            }
+
+            nav a {
+                padding: 8px 12px;
+                border: 1px solid var(--color-border);
+                border-left: 3px solid var(--color-border);
+            }
+
+            main {
+                margin-left: 0;
+                padding: 40px 30px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .book-header h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+
+            main {
+                padding: 30px 20px;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Selection */
+        ::selection {
+            background: var(--color-accent-light);
+            color: var(--color-accent);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>目录</h1>
+        <div class="nav-title">小学奥数应用题的解题艺术与思维哲学</div>
+        <ul>
+            <li><a href="#chapter1" class="active"><span class="chapter-num">01</span>启蒙</a></li>
+            <li><a href="#chapter2"><span class="chapter-num">02</span>建模</a></li>
+            <li><a href="#chapter3"><span class="chapter-num">03</span>破题</a></li>
+            <li><a href="#chapter4"><span class="chapter-num">04</span>顿悟</a></li>
+            <li><a href="#chapter5"><span class="chapter-num">05</span>回归</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <header class="book-header">
+            <div class="subtitle">Mathematical Thinking</div>
+            <h1>小学奥数应用题的<br>解题艺术与思维哲学</h1>
+            <div class="divider"></div>
+            <p style="font-family: var(--font-sans); font-size: 14px; color: var(--color-text-secondary);">
+                从启蒙到回归，探索数学思维的深层智慧
+            </p>
+        </header>
+
+        <!-- Chapter 1 -->
+        <section id="chapter1">
+            <h2><span class="chapter-label">Chapter 01</span>启蒙</h2>
+            
+            <h3>那个最初的问题</h3>
+            <p>记得第一次看到儿子盯着一道奥数题发呆的情景。那是他三年级的暑假，题目很简单："小明今年8岁，爸爸今年35岁，问几年后爸爸的年龄是小明的2倍？"</p>
+            
+            <p>他咬着笔头，眉头皱成一团。我在旁边看着，没有急于给出答案。因为我看到了某种珍贵的东西正在发生——那是困惑，更是好奇。他的小脑袋里，一定在不停地问"为什么"。</p>
+            
+            <p>这就是奥数思维的启蒙时刻。不是算出答案的那一刻，而是<strong>敢于不知道</strong>的那一刻。</p>
+
+            <div class="problem-box">
+                <p>小明今年8岁，爸爸今年35岁。几年后，爸爸的年龄是小明年龄的2倍？</p>
+            </div>
+
+            <h4>解法一：枚举尝试</h4>
+            <p>一年后：小明9岁，爸爸36岁，36÷9=4，不是2倍。</p>
+            <p>两年后：小明10岁，爸爸37岁，37÷10=3.7，接近了。</p>
+            <p>这个方法虽然笨，但对初学者很友好。它教会我们：<strong>不怕试错，只怕不试</strong>。</p>
+
+            <h4>解法二：找规律</h4>
+            <div class="solution">
+                <div class="solution-title">解题过程</div>
+                <p>爸爸永远比小明大：35 - 8 = 27岁。</p>
+                <p>当爸爸年龄是小明的2倍时，爸爸比小明多的那一份就是27岁。</p>
+                <p>所以那时小明27岁，爸爸54岁。</p>
+                <p>需要经过：27 - 8 = <strong>19年</strong>。</p>
+            </div>
+
+            <h4>解法三：方程思维</h4>
+            <div class="solution">
+                <div class="solution-title">代数解法</div>
+                <p>设x年后满足条件：</p>
+                <p style="font-family: 'Times New Roman', serif; margin-left: 20px;">
+                    35 + x = 2(8 + x)<br>
+                    35 + x = 16 + 2x<br>
+                    x = 19
+                </p>
+            </div>
+
+            <p>三种方法，殊途同归。但最关键的是第一种解法中被很多人忽视的"笨办法"。正是通过笨拙的尝试，孩子才能真正理解问题的结构。急于使用方程，反而可能跳过宝贵的思维训练。</p>
+
+            <div class="philosophy-box">
+                <p>年龄问题的本质是<strong>不变量</strong>——两人的年龄差永远不变。发现不变量，是数学思维的第一课。</p>
+            </div>
+
+            <h3>有序思考的力量</h3>
+            
+            <div class="problem-box">
+                <p>甲、乙、丙三个人分别来自北京、上海、广州。已知：</p>
+                <ol>
+                    <li>甲不是北京人；</li>
+                    <li>乙不是上海人；</li>
+                    <li>北京人不是最年轻的；</li>
+                    <li>乙比广州人年纪大。</li>
+                </ol>
+                <p>问：三个人分别来自哪里？</p>
+            </div>
+
+            <div class="solution">
+                <div class="solution-title">推理过程</div>
+                <p><strong>第一步：</strong>从条件4入手：乙不是广州人。</p>
+                <p><strong>第二步：</strong>结合条件2：乙不是上海人。</p>
+                <p><strong>第三步：</strong>所以乙只能是北京人。</p>
+                <p><strong>第四步：</strong>从条件3：北京人（乙）不是最年轻的。</p>
+                <p><strong>第五步：</strong>从条件4：乙比广州人年纪大，所以广州人比乙年轻。</p>
+                <p><strong>结论：</strong>通过列表排除法可进一步确定甲和丙的归属。</p>
+            </div>
+
+            <div class="philosophy-box">
+                <p>这道题的价值恰恰在于它的推理过程。它告诉我们：<strong>不是所有问题都有唯一答案，但有序思考——从确定的信息出发，一步步推理——能让我们尽可能地接近真相</strong>。这比答案本身更重要。</p>
+            </div>
+
+            <div class="summary-box">
+                <h3>本章小结</h3>
+                <p>奥数启蒙，启的是什么蒙？</p>
+                <p>不是解题技巧，而是<strong>提问的勇气</strong>。从"这道题怎么做"到"这道题为什么这么出"，从"答案是什么"到"有没有其他解法"，这是思维质的飞跃。</p>
+                <p>每个孩子最初都是天生的哲学家。奥数题不过是把这种天性引导到一个具体而有趣的领域。保护这种好奇心，比教会任何解法都重要。</p>
+                <p style="margin-top: 20px; font-weight: 600;">因为数学思维，从"敢于不知道"开始。</p>
+            </div>
+        </section>
+
+        <div class="section-divider">* * *</div>
+
+        <!-- Chapter 2 -->
+        <section id="chapter2">
+            <h2><span class="chapter-label">Chapter 02</span>建模</h2>
+            
+            <h3>千年一问</h3>
+            <p>大约在1500年前，《孙子算经》里记载了这样一道题：</p>
+            
+            <blockquote>
+                今有雉兔同笼，上有三十五头，下有九十四足，问雉兔各几何？
+            </blockquote>
+            
+            <p>翻译成现代汉语：笼子里有鸡和兔子，从上面数有35个头，从下面数有94只脚。问鸡和兔各有多少只？</p>
+            
+            <p>这就是著名的"鸡兔同笼"问题。它之所以流传千年，不仅因为有趣，更因为它浓缩了一种强大的思维方式：<strong>数学建模</strong>。</p>
+
+            <div class="problem-box">
+                <p>笼子里有鸡和兔子，从上面数有35个头，从下面数有94只脚。问鸡和兔各有多少只？</p>
+            </div>
+
+            <h4>解法一：假设法（经典解法）</h4>
+            <div class="solution">
+                <div class="solution-title">解题过程</div>
+                <p>假设笼子里全是鸡。</p>
+                <p>35个头，应该有35×2=70只脚。</p>
+                <p>但实际有94只脚，多出了94-70=24只脚。</p>
+                <p>每只兔子比鸡多2只脚，所以兔子有24÷2=12只。</p>
+                <p>鸡有35-12=<strong>23只</strong>。</p>
+            </div>
+
+            <h4>解法二：抬脚法（童趣解法）</h4>
+            <div class="solution">
+                <div class="solution-title">想象过程</div>
+                <p>想象一下：吹一声哨子，所有动物都抬起一只脚。</p>
+                <p>还剩94-35=59只脚在地上。</p>
+                <p>再吹一声哨子，所有动物再抬起一只脚。</p>
+                <p>还剩59-35=24只脚在地上。</p>
+                <p>此时鸡都坐地上了（两只脚都抬起来了），只有兔子还站着（每只兔子剩2只脚站着）。</p>
+                <p>所以兔子有24÷2=12只，鸡有23只。</p>
+            </div>
+
+            <h4>解法三：方程法</h4>
+            <div class="solution">
+                <div class="solution-title">代数建模</div>
+                <p style="font-family: 'Times New Roman', serif; margin-left: 20px;">
+                    设鸡x只，兔y只：<br><br>
+                    x + y = 35<br>
+                    2x + 4y = 94<br><br>
+                    解得：x=23, y=12
+                </p>
+            </div>
+
+            <p>三种方法，各有妙处。假设法体现<strong>逻辑推理</strong>，抬脚法展现<strong>创造性思维</strong>，方程法是<strong>代数建模</strong>的典范。</p>
+
+            <div class="philosophy-box">
+                <p>鸡兔同笼的本质是一个二元一次方程组。古人没有代数工具，却用巧妙的假设解决了问题。这告诉我们：<strong>工具会进步，但思维方式是永恒的</strong>。</p>
+            </div>
+
+            <h3>模型的迁移</h3>
+            
+            <div class="problem-box">
+                <p>小明去邮局买邮票，买了5角和8角的邮票共20张，总共花了13元6角。问两种邮票各买了多少张？</p>
+            </div>
+
+            <div class="solution">
+                <div class="solution-title">识别模型</div>
+                <p><strong>分析对照：</strong></p>
+                <ul>
+                    <li>"头"对应"邮票张数"：共20张</li>
+                    <li>"脚"对应"面值总和"：136角</li>
+                    <li>"鸡"→ 5角邮票（5单位）</li>
+                    <li>"兔"→ 8角邮票（8单位）</li>
+                </ul>
+            </div>
+
+            <div class="solution">
+                <div class="solution-title">解题过程</div>
+                <p>假设全是5角邮票：20×5=100角</p>
+                <p>实际136角，多了36角</p>
+                <p>每张8角比5角多3角</p>
+                <p>所以8角邮票有36÷3=12张</p>
+                <p>5角邮票有20-12=<strong>8张</strong></p>
+                <p style="margin-top: 15px; color: var(--color-text-secondary);">验证：12×8 + 8×5 = 96 + 40 = 136角 = 13元6角 ✓</p>
+            </div>
+
+            <div class="philosophy-box">
+                <p>问题的表象千变万化，但结构可能完全相同。学会识别<strong>模型</strong>，是数学思维的核心能力。生活中的很多决策问题——资源分配、投资组合、时间规划——本质上都是"鸡兔同笼"。</p>
+            </div>
+
+            <h3>建模的艺术</h3>
+            
+            <p>什么是数学建模？简单来说，就是<strong>把现实世界的语言翻译成数学语言</strong>。</p>
+
+            <table>
+                <tr>
+                    <th>现实世界</th>
+                    <th>数学世界</th>
+                </tr>
+                <tr>
+                    <td>鸡和兔</td>
+                    <td>变量x和y</td>
+                </tr>
+                <tr>
+                    <td>头和脚</td>
+                    <td>约束条件</td>
+                </tr>
+                <tr>
+                    <td>"各几何"</td>
+                    <td>求解方程</td>
+                </tr>
+            </table>
+
+            <p>这种转化能力，是数学给予人类最宝贵的礼物之一。</p>
+
+            <div class="summary-box">
+                <h3>本章小结</h3>
+                <p>建模的本质，是<strong>抓住结构而非表象</strong>。</p>
+                <p>1500年前的鸡兔同笼，今天的资源优化问题，它们共享着相同的数学骨架。学会看到这种深层的联系，我们就能以不变应万变。</p>
+                <p>这也解释了为什么学习奥数有意义——不是为了记住某道题的解法，而是为了训练这种<strong>识别模式、建立模型</strong>的能力。这种能力，在任何时代、任何领域，都是稀缺的。</p>
+                <p style="margin-top: 20px;">千年前的智慧，今天依然闪闪发光。不是因为它古老，而是因为它触及了思维的永恒本质。</p>
+            </div>
+        </section>
+
+        <div class="section-divider">* * *</div>
+
+        <!-- Chapter 3 -->
+        <section id="chapter3">
+            <h2><span class="chapter-label">Chapter 03</span>破题</h2>
+            
+            <h3>面对"大怪兽"</h3>
+            <p>每个做过奥数题的人都有过这样的经历：</p>
+            
+            <p>读完题目，大脑一片空白。条件很多，关系复杂，不知道从哪里下手。那种感觉，就像面对一只张牙舞爪的大怪兽。</p>
+            
+            <p>这时候，真正的奥数高手会做什么？</p>
+            
+            <p>他们不会盲目冲锋，而是<strong>分解</strong>——把大怪兽拆成一个个可以对付的小怪兽。</p>
+
+            <div class="problem-box">
+                <p>甲、乙两人分别从A、B两地同时出发，相向而行。甲每小时走6公里，乙每小时走4公里。相遇后，两人继续前进，到达对方起点后立即返回。已知两人第二次相遇时，甲一共走了36公里。求A、B两地的距离。</p>
+            </div>
+
+            <h4>分解策略</h4>
+            
+            <div class="solution">
+                <div class="solution-title">第一步：画图</div>
+                <p>画一条线段表示AB两地，标出两个人的运动轨迹。</p>
+                <p style="font-family: monospace; margin: 15px 0; padding: 15px; background: #fff;">
+                    A —————————————————————— B<br>
+                    甲→　　　　　　　　　　　←乙<br>
+                    　　　　第一次相遇点
+                </p>
+            </div>
+
+            <div class="solution">
+                <div class="solution-title">第二步：分析运动过程</div>
+                <ul>
+                    <li>第一次相遇：两人共走1个全程</li>
+                    <li>从第一次相遇到第二次相遇：两人共走2个全程（各自走到对方起点再返回相遇）</li>
+                    <li>总共：两人共走<strong>3个全程</strong></li>
+                </ul>
+            </div>
+
+            <div class="solution">
+                <div class="solution-title">第三步：利用速度比</div>
+                <p>甲速:乙速 = 6:4 = 3:2</p>
+                <p>在相同时间内，路程比也是3:2</p>
+            </div>
+
+            <div class="solution">
+                <div class="solution-title">第四步：计算</div>
+                <p>两人共走3个全程，甲走了其中的3/(3+2) = 3/5</p>
+                <p>所以甲走了 3/5 × 3 = 9/5 个全程</p>
+                <p>已知甲走了36公里，所以：</p>
+                <p style="font-family: 'Times New Roman', serif;">9/5 × 全程 = 36</p>
+                <p>全程 = 36 × 5/9 = <strong>20公里</strong></p>
+            </div>
+
+            <div class="philosophy-box">
+                <p>复杂问题的突破点往往在于<strong>识别不变的规律</strong>。这里的关键洞察是：两人第二次相遇时，合起来走了3个全程。这个规律一旦被发现，问题就迎刃而解。</p>
+            </div>
+
+            <h3>变量与不变量</h3>
+            
+            <div class="problem-box">
+                <p>一片草地，24头牛6天可以吃完，21头牛8天可以吃完。问：</p>
+                <ol>
+                    <li>要让草永远吃不完，最多能放养多少头牛？</li>
+                    <li>36头牛几天可以吃完？</li>
+                </ol>
+            </div>
+
+            <div class="solution">
+                <div class="solution-title">识别变量和不变量</div>
+                <ul>
+                    <li><strong>变量：</strong>草的总量（每天都在变）</li>
+                    <li><strong>不变量：</strong>草的初始量、草的生长速度、每头牛每天吃草量</li>
+                </ul>
+            </div>
+
+            <div class="solution">
+                <div class="solution-title">建立方程</div>
+                <p>设草地原有草量为G，草每天生长量为g，每头牛每天吃草量为1份</p>
+                <p style="font-family: 'Times New Roman', serif; margin: 15px 0;">
+                    G + 6g = 24×6 = 144<br>
+                    G + 8g = 21×8 = 168
+                </p>
+                <p>两式相减：2g = 24，所以g = 12</p>
+                <p>代入第一式：G = 144 - 72 = 72</p>
+            </div>
+
+            <div class="solution">
+                <div class="solution-title">回答问题</div>
+                <p><strong>问题1：</strong>草每天生长12份，所以最多养<strong>12头牛</strong>，刚好抵消生长量，草地永远吃不完。</p>
+                <p><strong>问题2：</strong>36头牛：每天净消耗36-12=24份原有草。原有72份，72÷24=<strong>3天</strong>吃完。</p>
+            </div>
+
+            <div class="philosophy-box">
+                <p>牛吃草问题的精髓在于<strong>找出动态平衡</strong>。生活中很多问题都像这片草地——有消耗，有增长，关键是要找到那个临界点。</p>
+            </div>
+
+            <div class="summary-box">
+                <h3>本章小结</h3>
+                <p>破题的艺术，本质是<strong>化繁为简</strong>。</p>
+                <p>面对复杂问题，我们有三把利器：</p>
+                <ol>
+                    <li><strong>可视化</strong>——画图，让抽象变具体</li>
+                    <li><strong>找规律</strong>——识别变量中的不变量</li>
+                    <li><strong>分而治之</strong>——大问题分解为小问题</li>
+                </ol>
+                <p style="margin-top: 20px;">这也解释了为什么奥数训练对成年后的工作有帮助。项目管理、商业决策、科学研究——哪个不需要分解复杂问题的能力？</p>
+                <p>耐心是解题的美德，也是人生的智慧。当面对一个看似无解的问题时，记住：<strong>复杂不是问题的本质，而是我们的视角</strong>。</p>
+            </div>
+        </section>
+
+        <div class="section-divider">* * *</div>
+
+        <!-- Chapter 4 -->
+        <section id="chapter4">
+            <h2><span class="chapter-label">Chapter 04</span>顿悟</h2>
+            
+            <h3>那个"啊哈"时刻</h3>
+            <p>如果你做过足够多的数学题，一定经历过这样的瞬间：</p>
+            
+            <p>盯着题目，百思不得其解。时间一分一秒过去，大脑仿佛陷入泥潭。然后，突然——灵光一闪！原本混乱的思绪瞬间清晰，答案如水晶般透明。</p>
+            
+            <p>这就是"顿悟"（Aha! Moment），解题过程中最美妙的体验。</p>
+
+            <div class="problem-box">
+                <p>证明：13个小朋友中，至少有两个人的生日在同一个月。</p>
+            </div>
+
+            <h4>顿悟时刻</h4>
+            <div class="solution">
+                <div class="solution-title">抽屉原理</div>
+                <p>想象一下有12个"抽屉"，分别代表12个月份。现在要把13个"苹果"（小朋友）放进这些抽屉里。</p>
+                <p>即使最均匀地分配：12个小朋友各占据一个月，第13个小朋友无论放到哪个月，那个月就有两个小朋友了。</p>
+                <p>所以，<strong>必然存在</strong>至少一个月有两个或以上的小朋友。</p>
+            </div>
+
+            <p>这就是<strong>抽屉原理</strong>（鸽巢原理）：n+1个物体放入n个抽屉，至少有一个抽屉里有不止一个物体。</p>
+
+            <div class="philosophy-box">
+                <p>抽屉原理的美妙在于它的<strong>普适性</strong>。从生日问题到"任意367个人中必有两人同一天生日"，从"5双手套拿几只才能保证配成一对"到计算机科学的哈希碰撞分析——这个简单的原理应用无穷。</p>
+                <p>更重要的是，它展示了数学的一个特点：<strong>有些真理是结构性的，不需要具体计算就能证明</strong>。</p>
+            </div>
+
+            <h3>跳出常规的创造</h3>
+            
+            <div class="problem-box">
+                <p>计算：1 + 2 + 3 + ... + 100 = ?</p>
+            </div>
+
+            <h4>高斯的故事</h4>
+            <p>据说小高斯在小学时遇到这道题，他没有机械相加，而是发现：</p>
+
+            <div class="solution">
+                <div class="solution-title">对称配对</div>
+                <p style="font-family: 'Times New Roman', serif; margin-left: 20px;">
+                    1 + 100 = 101<br>
+                    2 + 99 = 101<br>
+                    3 + 98 = 101<br>
+                    ...<br>
+                    50 + 51 = 101
+                </p>
+                <p style="margin-top: 15px;">一共有50对，每对都是101，所以答案是<strong>50×101=5050</strong>。</p>
+            </div>
+
+            <div class="philosophy-box">
+                <p>高斯的方法之所以巧妙，在于他<strong>改变了视角</strong>——不是从前往后依次相加，而是把数列"对折"，发现对称性。这种"换个角度看问题"的能力，是创造性思维的核心。</p>
+            </div>
+
+            <h3>直觉与逻辑</h3>
+            
+            <p>顿悟时刻常常给人一种"直觉"的印象——答案突然出现在脑海中，仿佛来自上天的启示。</p>
+            
+            <p>但真的是这样吗？</p>
+            
+            <p>心理学家发现，顿悟并非无中生有。它是<strong>潜意识加工</strong>的结果：在我们"休息"的时候，大脑仍在后台处理信息，试图建立新的连接。当某个连接突然建立，我们就感受到了"啊哈"。</p>
+
+            <div class="philosophy-box">
+                <p><strong>第一，积累是基础。</strong>没有大量的练习和思考，潜意识就没有原材料可以加工。</p>
+                <p><strong>第二，放松很重要。</strong>过度紧张会阻碍顿悟的产生。有时候，放下题目去散步，回来时反而有新思路。</p>
+                <p><strong>第三，要相信直觉。</strong>经过训练的数学直觉，往往比繁琐的计算更可靠。当然，直觉之后还需要逻辑验证。</p>
+            </div>
+
+            <div class="summary-box">
+                <h3>本章小结</h3>
+                <p>顿悟不是天赋，而是<strong>积累的质变</strong>。</p>
+                <p>当我们经历了足够多的困惑、尝试、失败，大脑会逐渐建立起丰富的"连接网络"。顿悟，就是某个新连接突然被激活的瞬间。</p>
+                <p style="margin-top: 15px;"><strong>培养数学直觉的方法：</strong></p>
+                <ol>
+                    <li>大量练习——给潜意识提供原材料</li>
+                    <li>多元思考——尝试不同的解法和角度</li>
+                    <li>保持好奇——对"为什么"保持敏感</li>
+                    <li>欣赏美——感受数学的优雅与深刻</li>
+                </ol>
+                <p style="margin-top: 20px;">顿悟时刻的愉悦，是数学给予解题者最好的奖赏。它让我们体验到人类心智的无限可能。</p>
+            </div>
+        </section>
+
+        <div class="section-divider">* * *</div>
+
+        <!-- Chapter 5 -->
+        <section id="chapter5">
+            <h2><span class="chapter-label">Chapter 05</span>回归</h2>
+            
+            <h3>摘下数学眼镜之后</h3>
+            <p>学完了奥数，解过了几百道题，然后呢？</p>
+            
+            <p>如果有一天，你发现自己不再做奥数题了——也许是升学压力消失了，也许是兴趣转移了——那些花在做题上的时间，是不是就浪费了？</p>
+            
+            <p>这个问题，我问过自己，也问过许多曾经学过奥数的朋友。</p>
+            
+            <p>答案出奇地一致：<strong>数学思维一旦养成，就再也回不去了</strong>。</p>
+
+            <h3>思维的迁移</h3>
+            
+            <p>让我们看看奥数思维如何迁移到其他领域：</p>
+
+            <table>
+                <tr>
+                    <th>奥数思维</th>
+                    <th>生活应用</th>
+                </tr>
+                <tr>
+                    <td>建模思维</td>
+                    <td>理解复杂社会现象——找出关键变量，识别约束条件，寻找最优解</td>
+                </tr>
+                <tr>
+                    <td>分解策略</td>
+                    <td>项目管理——把大目标拆成小任务，识别依赖关系，找出关键路径</td>
+                </tr>
+                <tr>
+                    <td>逻辑推理</td>
+                    <td>避免认知谬误——识别因果关系的真伪，做出理性判断</td>
+                </tr>
+            </table>
+
+            <h3>数学即生活</h3>
+            
+            <p>有人说，数学是脱离现实的抽象游戏。但在我看来，<strong>数学是现实的提炼</strong>。</p>
+
+            <div class="philosophy-box">
+                <p>当我们在做鸡兔同笼时，我们在学习资源分配；</p>
+                <p>当我们在解行程问题时，我们在理解相对运动；</p>
+                <p>当我们在用抽屉原理时，我们在把握必然与偶然。</p>
+            </div>
+
+            <p>这些不是"应用题"意义上的应用，而是<strong>思维结构</strong>上的同构。</p>
+
+            <h3>回望与展望</h3>
+            
+            <p>回顾这五个章节，我们走过了一段旅程：</p>
+
+            <ul>
+                <li><strong>启蒙：</strong>从"敢于不知道"开始</li>
+                <li><strong>建模：</strong>学会把现实翻译为数学</li>
+                <li><strong>破题：</strong>掌握分解复杂问题的艺术</li>
+                <li><strong>顿悟：</strong>体验直觉与逻辑的交汇</li>
+                <li><strong>回归：</strong>把数学思维带回生活</li>
+            </ul>
+
+            <p>这是一个完整的循环。从生活出发，经过数学的淬炼，最终回到生活——但已经是一个更深刻的层次。</p>
+
+            <div class="summary-box">
+                <h3>结语</h3>
+                <p>奥数的真正价值，从来不在于竞赛的奖牌，而在于<strong>思维的训练</strong>。</p>
+                <p>这种训练赋予我们的，是看待世界的新维度。</p>
+                <p style="margin-top: 20px;">数学是一座桥，连接着现象与本质、已知与未知、逻辑与直觉。</p>
+                <p>走过这座桥，你会发现世界变得更清晰，但也更神秘。因为每一个答案，都引出新的问题；每一次顿悟，都开启新的探索。</p>
+                <p style="margin-top: 20px; font-size: 20px; font-weight: 600;">这就是数学的魅力，也是生活的魅力。</p>
+            </div>
+        </section>
+
+        <div class="final-quote">
+            <p>"数学是一种精神，一种理性的精神。<br>正是这种精神，激发、促进、鼓舞并驱使人类的思维<br>得以运用到最完善的程度。"</p>
+            <p class="author">—— 克莱因</p>
+        </div>
+    </main>
+
+    <script>
+        // Navigation active state
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a');
+
+        function updateActiveNav() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNav);
+        updateActiveNav();
+    </script>
+</body>
+</html>
