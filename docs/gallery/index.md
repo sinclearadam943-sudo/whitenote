@@ -11,6 +11,24 @@ title: 艺境画廊
 ## 最新作品
 
 <div class="gallery-grid">
+  <a href="./works/yingshishanhua-pantianshou.html" class="art-card">
+    <div class="card-image-placeholder">🦅</div>
+    <div class="card-content">
+      <div class="card-meta">
+        <span class="category chinese">中国书画</span>
+        <span class="date">1960年代</span>
+      </div>
+      <h3>《鹰石山花图》</h3>
+      <p class="artist">潘天寿</p>
+      <p class="desc">潘天寿独创的山水与花鸟相结合的代表作，逾23平尺的巨幅，2015年以2.7945亿元成交，创下艺术家拍卖纪录。</p>
+      <div class="tags">
+        <span class="tag">大写意</span>
+        <span class="tag">花鸟</span>
+        <span class="tag">亿元作品</span>
+      </div>
+    </div>
+  </a>
+
   <a href="./works/aihenhu-zhangdaqian.html" class="art-card">
     <div class="card-image-placeholder">🎨</div>
     <div class="card-content">
