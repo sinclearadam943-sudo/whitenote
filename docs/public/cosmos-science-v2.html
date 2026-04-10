@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宇宙奥秘 | COSMOS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Serif+SC:wght@200;300;400;500;600&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @layer base {
+            :root {
+                --color-cosmos: #0a0a0f;
+                --color-void: #050508;
+                --color-nebula: #1a1a2e;
+                --color-dust: #2d2d3a;
+                --color-starlight: #f5f0e8;
+                --color-gold: #c9a962;
+                --color-gold-dim: #8b7355;
+                --color-accent: #4a5568;
+            }
+            
+            * {
+                box-sizing: border-box;
+            }
+            
+            html {
+                scroll-behavior: smooth;
+            }
+            
+            body {
+                background-color: var(--color-cosmos);
+                color: var(--color-starlight);
+                font-family: 'Noto Serif SC', 'Cormorant Garamond', serif;
+                line-height: 1.7;
+                overflow-x: hidden;
+            }
+            
+            /* Noise texture overlay */
+            body::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+                opacity: 0.03;
+                pointer-events: none;
+                z-index: 1000;
+            }
+        }
+        
+        @layer components {
+            /* Starfield canvas */
+            #starfield {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                opacity: 0.6;
+            }
+            
+            /* Typography */
+            .font-display {
+                font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
+            }
+            
+            .font-mono-tech {
+                font-family: 'Space Grotesk', monospace;
+            }
+            
+            /* Editorial pull quote */
+            .pull-quote {
+                font-size: clamp(1.5rem, 4vw, 2.5rem);
+                font-style: italic;
+                font-weight: 300;
+                line-height: 1.4;
+                color: var(--color-gold);
+                border-left: 1px solid var(--color-gold-dim);
+                padding-left: 2rem;
+                margin: 3rem 0;
+            }
+            
+            /* Section markers */
+            .section-marker {
+                font-family: 'Space Grotesk', monospace;
+                font-size: 0.75rem;
+                letter-spacing: 0.3em;
+                text-transform: uppercase;
+                color: var(--color-gold-dim);
+                margin-bottom: 1rem;
+            }
+            
+            /* Large display numbers */
+            .mega-number {
+                font-family: 'Space Grotesk', monospace;
+                font-size: clamp(4rem, 15vw, 12rem);
+                font-weight: 300;
+                line-height: 0.9;
+                color: rgba(245, 240, 232, 0.05);
+                position: absolute;
+                z-index: 0;
+                user-select: none;
+            }
+            
+            /* Gold accent line */
+            .accent-line {
+                width: 60px;
+                height: 1px;
+                background: linear-gradient(90deg, var(--color-gold), transparent);
+            }
+            
+            /* Navigation */
+            .nav-link {
+                position: relative;
+                padding: 0.5rem 0;
+                color: var(--color-starlight);
+                opacity: 0.6;
+                transition: opacity 0.3s ease;
+            }
+            
+            .nav-link::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 1px;
+                background: var(--color-gold);
+                transition: width 0.3s ease;
+            }
+            
+            .nav-link:hover {
+                opacity: 1;
+            }
+            
+            .nav-link:hover::after {
+                width: 100%;
+            }
+            
+            /* Scroll reveal animation */
+            .reveal {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                            transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            
+            .reveal.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            .reveal-delay-1 { transition-delay: 0.1s; }
+            .reveal-delay-2 { transition-delay: 0.2s; }
+            .reveal-delay-3 { transition-delay: 0.3s; }
+            
+            /* Card hover effects */
+            .cosmos-card {
+                background: rgba(26, 26, 46, 0.3);
+                border: 1px solid rgba(245, 240, 232, 0.08);
+                transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            
+            .cosmos-card:hover {
+                background: rgba(26, 26, 46, 0.5);
+                border-color: rgba(201, 169, 98, 0.3);
+                transform: translateY(-4px);
+            }
+            
+            /* Planet visualization */
+            .planet-visual {
+                position: relative;
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                overflow: hidden;
+            }
+            
+            .planet-mars {
+                background: radial-gradient(circle at 30% 30%, #c1440e, #8b3a0e, #4a1f08);
+                box-shadow: inset -20px -20px 40px rgba(0,0,0,0.5), 0 0 60px rgba(193, 68, 14, 0.2);
+            }
+            
+            .planet-jupiter {
+                background: linear-gradient(180deg, #8b7355 0%, #d4a574 20%, #a0826d 40%, #c9b896 60%, #8b7355 80%, #6b5344 100%);
+                box-shadow: inset -20px -20px 40px rgba(0,0,0,0.5), 0 0 60px rgba(139, 115, 85, 0.2);
+            }
+            
+            .planet-saturn {
+                background: radial-gradient(circle at 30% 30%, #e8d5a3, #c9b896, #a08b6d);
+                box-shadow: inset -20px -20px 40px rgba(0,0,0,0.5), 0 0 60px rgba(201, 184, 150, 0.2);
+            }
+            
+            .planet-saturn::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 280px;
+                height: 280px;
+                border: 15px solid rgba(201, 184, 150, 0.3);
+                border-radius: 50%;
+                transform: translate(-50%, -50%) rotateX(75deg);
+            }
+            
+            /* Dimension list styling */
+            .dimension-item {
+                border-bottom: 1px solid rgba(245, 240, 232, 0.1);
+                padding: 1.5rem 0;
+                transition: all 0.3s ease;
+            }
+            
+            .dimension-item:hover {
+                border-color: var(--color-gold-dim);
+                padding-left: 1rem;
+            }
+            
+            .dimension-number {
+                font-family: 'Space Grotesk', monospace;
+                font-size: 0.875rem;
+                color: var(--color-gold-dim);
+                margin-right: 1.5rem;
+            }
+            
+            /* CTA Button */
+            .cta-button {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.75rem;
+                padding: 1rem 2.5rem;
+                border: 1px solid var(--color-gold-dim);
+                color: var(--color-gold);
+                font-family: 'Space Grotesk', monospace;
+                font-size: 0.875rem;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                transition: all 0.3s ease;
+                background: transparent;
+                cursor: pointer;
+            }
+            
+            .cta-button:hover {
+                background: var(--color-gold);
+                color: var(--color-cosmos);
+                border-color: var(--color-gold);
+            }
+            
+            /* Footer */
+            .footer-divider {
+                width: 100%;
+                height: 1px;
+                background: linear-gradient(90deg, transparent, var(--color-gold-dim), transparent);
+                opacity: 0.3;
+            }
+            
+            /* Mobile adjustments */
+            @media (max-width: 768px) {
+                .mega-number {
+                    font-size: clamp(3rem, 20vw, 6rem);
+                }
+                
+                .pull-quote {
+                    padding-left: 1rem;
+                    font-size: 1.25rem;
+                }
+                
+                .planet-visual {
+                    width: 150px;
+                    height: 150px;
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Starfield Background -->
+    <canvas id="starfield"></canvas>
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 px-6 md:px-12 py-6 bg-gradient-to-b from-[#0a0a0f] via-[#0a0a0f]/80 to-transparent">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="font-mono-tech text-sm tracking-widest text-[#f5f0e8]">COSMOS</a>
+            <div class="hidden md:flex gap-8">
+                <a href="#origin" class="nav-link">起源</a>
+                <a href="#planets" class="nav-link">行星</a>
+                <a href="#philosophy" class="nav-link">哲学</a>
+                <a href="#boundary" class="nav-link">边界</a>
+            </div>
+            <button class="md:hidden text-[#f5f0e8]" id="mobile-menu-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-[#0a0a0f]/95 backdrop-blur-md py-6 px-6">
+            <div class="flex flex-col gap-4">
+                <a href="#origin" class="nav-link">起源</a>
+                <a href="#planets" class="nav-link">行星</a>
+                <a href="#philosophy" class="nav-link">哲学</a>
+                <a href="#boundary" class="nav-link">边界</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center relative px-6 md:px-12 pt-24">
+        <div class="max-w-6xl mx-auto text-center relative">
+            <div class="mega-number -top-20 left-1/2 -translate-x-1/2 reveal">∞</div>
+            <p class="section-marker reveal">探索未知的边界</p>
+            <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-light leading-tight mb-8 reveal reveal-delay-1">
+                <span class="block">宇宙</span>
+                <span class="block text-[#c9a962] italic">奥秘</span>
+            </h1>
+            <div class="accent-line mx-auto mb-8 reveal reveal-delay-2"></div>
+            <p class="text-lg md:text-xl text-[#f5f0e8]/70 max-w-2xl mx-auto font-light reveal reveal-delay-2">
+                从138亿年前的奇点，到930亿光年的边界。探索时间与空间的终极命题。
+            </p>
+            <div class="mt-16 reveal reveal-delay-3">
+                <a href="#origin" class="cta-button">
+                    <span>开始探索</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 5v14M19 12l-7 7-7-7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a962" stroke-width="1" opacity="0.5">
+                <path d="M12 5v14M19 12l-7 7-7-7"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Section 1: Origin -->
+    <section id="origin" class="py-32 md:py-48 px-6 md:px-12 relative overflow-hidden">
+        <div class="mega-number -left-10 top-20 reveal">01</div>
+        <div class="max-w-5xl mx-auto relative">
+            <div class="grid md:grid-cols-12 gap-12 items-start">
+                <div class="md:col-span-4">
+                    <p class="section-marker reveal">第一章</p>
+                    <h2 class="font-display text-4xl md:text-5xl font-light leading-tight reveal reveal-delay-1">
+                        <span class="block">起源</span>
+                        <span class="block text-[#c9a962]/60 text-2xl md:text-3xl mt-2 italic">The Beginning</span>
+                    </h2>
+                </div>
+                <div class="md:col-span-8">
+                    <div class="pull-quote reveal reveal-delay-2">
+                        "在那一刻，整个宇宙挤在一个比原子还小的点里。"
+                    </div>
+                    <div class="prose prose-invert prose-lg max-w-none text-[#f5f0e8]/80 font-light reveal reveal-delay-3">
+                        <p class="mb-6">
+                            138亿年前，一个无法想象的奇点。没有时间，没有空间，只有纯粹的能量密度——无限大，无限热，无限致密。
+                        </p>
+                        <p class="mb-6">
+                            然后，大爆炸。不是发生在空间中的爆炸，而是空间本身的膨胀。在10^-43秒之内，宇宙从量子尺度膨胀到拳头大小。第一个基本粒子诞生，引力、电磁力、强核力和弱核力开始分道扬镳。
+                        </p>
+                        <p>
+                            38万年后，宇宙冷却到足以让电子与原子核结合，形成了第一批中性氢原子。光终于能够自由传播——这就是我们今天观测到的宇宙微波背景辐射，大爆炸的余晖，穿越138亿年到达我们的眼睛。
+                        </p>
+                    </div>
+                    
+                    <!-- Stats -->
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-8 mt-12 pt-12 border-t border-[#f5f0e8]/10 reveal">
+                        <div>
+                            <p class="font-mono-tech text-3xl md:text-4xl text-[#c9a962]">138亿</p>
+                            <p class="text-sm text-[#f5f0e8]/50 mt-1">年前</p>
+                        </div>
+                        <div>
+                            <p class="font-mono-tech text-3xl md:text-4xl text-[#c9a962]">10^-43</p>
+                            <p class="text-sm text-[#f5f0e8]/50 mt-1">秒（普朗克时间）</p>
+                        </div>
+                        <div>
+                            <p class="font-mono-tech text-3xl md:text-4xl text-[#c9a962]">2.725K</p>
+                            <p class="text-sm text-[#f5f0e8]/50 mt-1">宇宙微波背景温度</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Planets -->
+    <section id="planets" class="py-32 md:py-48 px-6 md:px-12 relative bg-[#050508]/50">
+        <div class="mega-number -right-10 top-20 text-right reveal">02</div>
+        <div class="max-w-6xl mx-auto relative">
+            <div class="text-center mb-20">
+                <p class="section-marker reveal">第二章</p>
+                <h2 class="font-display text-4xl md:text-6xl font-light reveal reveal-delay-1">
+                    <span class="block">行星</span>
+                    <span class="block text-[#c9a962]/60 text-2xl md:text-3xl mt-2 italic">The Wanderers</span>
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 md:gap-12">
+                <!-- Mars -->
+                <div class="cosmos-card p-8 reveal">
+                    <div class="flex justify-center mb-8">
+                        <div class="planet-visual planet-mars"></div>
+                    </div>
+                    <p class="font-mono-tech text-xs tracking-widest text-[#c9a962] mb-2">MARS</p>
+                    <h3 class="font-display text-2xl mb-4">火星</h3>
+                    <p class="text-[#f5f0e8]/70 text-sm leading-relaxed mb-6">
+                        红色星球，古罗马战神之名。直径约为地球的一半，拥有太阳系最高的山峰——奥林帕斯山，高度达21公里。曾经的河流痕迹暗示着液态水的存在。
+                    </p>
+                    <div class="flex justify-between text-xs font-mono-tech text-[#f5f0e8]/50">
+                        <span>距离: 2.28亿km</span>
+                        <span>卫星: 2颗</span>
+                    </div>
+                </div>
+                
+                <!-- Jupiter -->
+                <div class="cosmos-card p-8 reveal reveal-delay-1">
+                    <div class="flex justify-center mb-8">
+                        <div class="planet-visual planet-jupiter"></div>
+                    </div>
+                    <p class="font-mono-tech text-xs tracking-widest text-[#c9a962] mb-2">JUPITER</p>
+                    <h3 class="font-display text-2xl mb-4">木星</h3>
+                    <p class="text-[#f5f0e8]/70 text-sm leading-relaxed mb-6">
+                        太阳系之王，质量是其他所有行星总和的2.5倍。标志性的大红斑是一个持续了数百年的巨型风暴，直径可容纳两个地球。
+                    </p>
+                    <div class="flex justify-between text-xs font-mono-tech text-[#f5f0e8]/50">
+                        <span>距离: 7.78亿km</span>
+                        <span>卫星: 95颗</span>
+                    </div>
+                </div>
+                
+                <!-- Saturn -->
+                <div class="cosmos-card p-8 reveal reveal-delay-2">
+                    <div class="flex justify-center mb-8">
+                        <div class="planet-visual planet-saturn"></div>
+                    </div>
+                    <p class="font-mono-tech text-xs tracking-widest text-[#c9a962] mb-2">SATURN</p>
+                    <h3 class="font-display text-2xl mb-4">土星</h3>
+                    <p class="text-[#f5f0e8]/70 text-sm leading-relaxed mb-6">
+                        环之王。由无数冰块和岩石碎片组成的环系，厚度仅约10米，直径却达28万公里。密度比水还小，理论上可以漂浮在水面上。
+                    </p>
+                    <div class="flex justify-between text-xs font-mono-tech text-[#f5f0e8]/50">
+                        <span>距离: 14.3亿km</span>
+                        <span>卫星: 146颗</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Philosophy -->
+    <section id="philosophy" class="py-32 md:py-48 px-6 md:px-12 relative">
+        <div class="mega-number -left-10 top-20 reveal">03</div>
+        <div class="max-w-5xl mx-auto relative">
+            <div class="mb-16">
+                <p class="section-marker reveal">第三章</p>
+                <h2 class="font-display text-4xl md:text-6xl font-light reveal reveal-delay-1">
+                    <span class="block">哲学</span>
+                    <span class="block text-[#c9a962]/60 text-2xl md:text-3xl mt-2 italic">Where Science Meets Wonder</span>
+                </h2>
+            </div>
+            
+            <div class="pull-quote max-w-3xl reveal reveal-delay-2">
+                "科学描述宇宙如何运作，哲学追问它为何存在。当两者相遇，我们得以窥见存在的本质。"
+            </div>
+            
+            <div class="mt-16">
+                <p class="text-[#f5f0e8]/60 mb-8 reveal">十个维度，科学与哲学的融合思考：</p>
+                
+                <div class="space-y-0">
+                    <div class="dimension-item reveal">
+                        <span class="dimension-number">01</span>
+                        <span class="text-lg">时间的本质——物理学的第四维度，哲学的永恒之谜</span>
+                    </div>
+                    <div class="dimension-item reveal reveal-delay-1">
+                        <span class="dimension-number">02</span>
+                        <span class="text-lg">空间的曲率——爱因斯坦的几何，康德的先验形式</span>
+                    </div>
+                    <div class="dimension-item reveal reveal-delay-1">
+                        <span class="dimension-number">03</span>
+                        <span class="text-lg">量子不确定性——海森堡的测不准，存在的或然性</span>
+                    </div>
+                    <div class="dimension-item reveal reveal-delay-2">
+                        <span class="dimension-number">04</span>
+                        <span class="text-lg">熵增定律——热力学箭头，秩序的消逝与时间的方向</span>
+                    </div>
+                    <div class="dimension-item reveal reveal-delay-2">
+                        <span class="dimension-number">05</span>
+                        <span class="text-lg">观察者效应——量子测量的悖论，主体与客体的界限</span>
+                    </div>
+                    <div class="dimension-item reveal reveal-delay-3">
+                        <span class="dimension-number">06</span>
+                        <span class="text-lg">人择原理——宇宙的微调，存在与观察的共生</span>
+                    </div>
+                    <div class="dimension-item reveal reveal-delay-3">
+                        <span class="dimension-number">07</span>
+                        <span class="text-lg">无限概念——数学的极限，思维的边界</span>
+                    </div>
+                    <div class="dimension-item reveal">
+                        <span class="dimension-number">08</span>
+                        <span class="text-lg">因果链条——物理定律的决定论，自由意志的悖论</span>
+                    </div>
+                    <div class="dimension-item reveal">
+                        <span class="dimension-number">09</span>
+                        <span class="text-lg">意识之谜——神经科学的涌现，心灵的不可还原性</span>
+                    </div>
+                    <div class="dimension-item reveal">
+                        <span class="dimension-number">10</span>
+                        <span class="text-lg">终极问题——存在的理由，莱布尼茨的追问</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Boundary -->
+    <section id="boundary" class="py-32 md:py-48 px-6 md:px-12 relative bg-[#050508]/50 overflow-hidden">
+        <div class="mega-number right-0 top-1/2 -translate-y-1/2 text-right reveal">04</div>
+        <div class="max-w-5xl mx-auto relative">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-7">
+                    <p class="section-marker reveal">终章</p>
+                    <h2 class="font-display text-4xl md:text-6xl font-light mb-8 reveal reveal-delay-1">
+                        <span class="block">边界</span>
+                        <span class="block text-[#c9a962]/60 text-2xl md:text-3xl mt-2 italic">The Observable Limit</span>
+                    </h2>
+                    
+                    <div class="pull-quote border-none pl-0 reveal reveal-delay-2">
+                        "930亿光年，那是光从我们出发时所能到达的最远边界。"
+                    </div>
+                    
+                    <div class="prose prose-invert max-w-none text-[#f5f0e8]/80 font-light reveal reveal-delay-3">
+                        <p class="mb-6">
+                            可观测宇宙的边界不是空间的终点，而是时间的起点。来自更远处的光还没有足够的时间到达我们这里——宇宙太年轻了。
+                        </p>
+                        <p class="mb-6">
+                            在这个边界上，星系以超光速远离我们，不是因为它们运动得快，而是因为空间本身在膨胀。那里的光子被拉伸成射电波，永无止境的红移。
+                        </p>
+                        <p>
+                            宇宙学家估计，整个宇宙可能是无限的，或者至少是我们在可观测范围内看到的250倍。我们无法知道边界之外是什么——也许更多相同的宇宙，也许完全不同的物理定律，也许什么都不存在。
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-5">
+                    <div class="space-y-8">
+                        <div class="cosmos-card p-6 reveal">
+                            <p class="font-mono-tech text-5xl md:text-6xl text-[#c9a962]">930亿</p>
+                            <p class="text-sm text-[#f5f0e8]/50 mt-2">光年直径</p>
+                        </div>
+                        <div class="cosmos-card p-6 reveal reveal-delay-1">
+                            <p class="font-mono-tech text-5xl md:text-6xl text-[#c9a962]">2万亿</p>
+                            <p class="text-sm text-[#f5f0e8]/50 mt-2">星系数量估计</p>
+                        </div>
+                        <div class="cosmos-card p-6 reveal reveal-delay-2">
+                            <p class="font-mono-tech text-5xl md:text-6xl text-[#c9a962]">∞</p>
+                            <p class="text-sm text-[#f5f0e8]/50 mt-2">宇宙可能是无限的</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 px-6 md:px-12">
+        <div class="footer-divider mb-12"></div>
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <p class="font-mono-tech text-sm tracking-widest text-[#c9a962] mb-2">COSMOS</p>
+                <p class="text-xs text-[#f5f0e8]/40">探索宇宙奥秘，追问存在本质</p>
+            </div>
+            <div class="flex gap-6 text-xs text-[#f5f0e8]/40">
+                <span>© 2026</span>
+                <span>whitenote</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Starfield Animation
+        const canvas = document.getElementById('starfield');
+        const ctx = canvas.getContext('2d');
+        
+        let width, height;
+        let stars = [];
+        const starCount = 200;
+        
+        function resize() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+        }
+        
+        class Star {
+            constructor() {
+                this.reset();
+            }
+            
+            reset() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.size = Math.random() * 1.5 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.2;
+                this.speedY = (Math.random() - 0.5) * 0.2;
+                this.opacity = Math.random() * 0.5 + 0.2;
+                this.twinkleSpeed = Math.random() * 0.02 + 0.01;
+                this.twinklePhase = Math.random() * Math.PI * 2;
+            }
+            
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                this.twinklePhase += this.twinkleSpeed;
+                
+                if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) {
+                    this.reset();
+                }
+            }
+            
+            draw() {
+                const twinkle = Math.sin(this.twinklePhase) * 0.3 + 0.7;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(245, 240, 232, ${this.opacity * twinkle})`;
+                ctx.fill();
+            }
+        }
+        
+        function initStars() {
+            stars = [];
+            for (let i = 0; i < starCount; i++) {
+                stars.push(new Star());
+            }
+        }
+        
+        function animateStars() {
+            ctx.clearRect(0, 0, width, height);
+            stars.forEach(star => {
+                star.update();
+                star.draw();
+            });
+            requestAnimationFrame(animateStars);
+        }
+        
+        resize();
+        initStars();
+        animateStars();
+        
+        window.addEventListener('resize', () => {
+            resize();
+            initStars();
+        });
+        
+        // Scroll Reveal Animation
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
