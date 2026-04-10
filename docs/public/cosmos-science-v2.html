@@ -11,6 +11,7 @@
     <style type="text/tailwindcss">
         @layer base {
             :root {
+                /* 暖色调主题（默认） */
                 --color-cosmos: #0a0a0f;
                 --color-void: #050508;
                 --color-nebula: #1a1a2e;
@@ -19,6 +20,46 @@
                 --color-gold: #c9a962;
                 --color-gold-dim: #8b7355;
                 --color-accent: #4a5568;
+                --theme-name: 'warm';
+            }
+            
+            /* 冷色调主题 */
+            [data-theme="cool"] {
+                --color-cosmos: #0a0f14;
+                --color-void: #05080a;
+                --color-nebula: #1a2a3e;
+                --color-dust: #2d3d4a;
+                --color-starlight: #e8f4f8;
+                --color-gold: #62c9d4;
+                --color-gold-dim: #5598a8;
+                --color-accent: #4a6878;
+                --theme-name: 'cool';
+            }
+            
+            /* 暗金主题 */
+            [data-theme="dark-gold"] {
+                --color-cosmos: #0a0a0a;
+                --color-void: #050505;
+                --color-nebula: #1a1510;
+                --color-dust: #3d3020;
+                --color-starlight: #f0e8d8;
+                --color-gold: #d4a852;
+                --color-gold-dim: #a08040;
+                --color-accent: #5a4a3a;
+                --theme-name: 'dark-gold';
+            }
+            
+            /* 紫罗兰主题 */
+            [data-theme="violet"] {
+                --color-cosmos: #0f0a14;
+                --color-void: #080510;
+                --color-nebula: #2a1a3e;
+                --color-dust: #4a2d5a;
+                --color-starlight: #f0e8f5;
+                --color-gold: #c962d4;
+                --color-gold-dim: #9555a8;
+                --color-accent: #684a78;
+                --theme-name: 'violet';
             }
             
             * {
@@ -35,6 +76,7 @@
                 font-family: 'Noto Serif SC', 'Cormorant Garamond', serif;
                 line-height: 1.7;
                 overflow-x: hidden;
+                transition: background-color 0.5s ease, color 0.5s ease;
             }
             
             /* Noise texture overlay */
@@ -50,6 +92,68 @@
                 pointer-events: none;
                 z-index: 1000;
             }
+            
+            /* Theme Switcher */
+            .theme-switcher {
+                position: fixed;
+                top: 1.5rem;
+                right: 1.5rem;
+                z-index: 9999;
+                display: flex;
+                gap: 0.5rem;
+                background: rgba(10, 10, 15, 0.8);
+                backdrop-filter: blur(10px);
+                padding: 0.5rem;
+                border-radius: 2rem;
+                border: 1px solid rgba(201, 169, 98, 0.2);
+                transition: all 0.3s ease;
+            }
+            
+            .theme-switcher:hover {
+                border-color: rgba(201, 169, 98, 0.4);
+            }
+            
+            .theme-btn {
+                width: 2rem;
+                height: 2rem;
+                border-radius: 50%;
+                border: 2px solid transparent;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                position: relative;
+            }
+            
+            .theme-btn:hover {
+                transform: scale(1.1);
+            }
+            
+            .theme-btn.active {
+                border-color: var(--color-starlight);
+                box-shadow: 0 0 10px rgba(201, 169, 98, 0.5);
+            }
+            
+            .theme-btn::after {
+                content: attr(data-label);
+                position: absolute;
+                bottom: -1.5rem;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 0.6rem;
+                color: var(--color-starlight);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                white-space: nowrap;
+                font-family: 'Space Grotesk', sans-serif;
+            }
+            
+            .theme-btn:hover::after {
+                opacity: 0.7;
+            }
+            
+            .theme-warm { background: linear-gradient(135deg, #f5f0e8 0%, #c9a962 100%); }
+            .theme-cool { background: linear-gradient(135deg, #e8f4f8 0%, #62c9d4 100%); }
+            .theme-dark-gold { background: linear-gradient(135deg, #f0e8d8 0%, #d4a852 100%); }
+            .theme-violet { background: linear-gradient(135deg, #f0e8f5 0%, #c962d4 100%); }
         }
         
         @layer components {
@@ -278,6 +382,14 @@
     </style>
 </head>
 <body>
+    <!-- Theme Switcher -->
+    <div class="theme-switcher">
+        <button class="theme-btn theme-warm active" data-theme="warm" data-label="暖色" title="暖色调"></button>
+        <button class="theme-btn theme-cool" data-theme="cool" data-label="冷色" title="冷色调"></button>
+        <button class="theme-btn theme-dark-gold" data-theme="dark-gold" data-label="暗金" title="暗金色调"></button>
+        <button class="theme-btn theme-violet" data-theme="violet" data-label="紫罗兰" title="紫罗兰色调"></button>
+    </div>
+
     <!-- Starfield Background -->
     <canvas id="starfield"></canvas>
     
@@ -581,6 +693,36 @@
     </footer>
 
     <script>
+        // Theme Switcher
+        const themeBtns = document.querySelectorAll('.theme-btn');
+        const body = document.body;
+        
+        // 从localStorage读取保存的主题，默认为warm
+        const savedTheme = localStorage.getItem('cosmos-theme') || 'warm';
+        body.setAttribute('data-theme', savedTheme);
+        
+        // 更新按钮状态
+        themeBtns.forEach(btn => {
+            if (btn.dataset.theme === savedTheme) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+        
+        // 绑定点击事件
+        themeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const theme = btn.dataset.theme;
+                body.setAttribute('data-theme', theme);
+                localStorage.setItem('cosmos-theme', theme);
+                
+                // 更新按钮状态
+                themeBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+
         // Starfield Animation
         const canvas = document.getElementById('starfield');
         const ctx = canvas.getContext('2d');
