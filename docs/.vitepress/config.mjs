@@ -66,7 +66,13 @@ export default defineConfig({
         text: '专题',
         items: [
           { text: '🎨 艺境画廊', link: '/gallery/' },
-          { text: '📜 北魏书法', link: 'https://sinclearadam943-sudo.github.io/whitenote/wei-bei-guide.html' },
+          {
+            text: '📜 书法艺术',
+            items: [
+              { text: '中国书法史深度解析', link: '/posts/calligraphy/中国书法艺术史深度解析' },
+              { text: '北魏书法专题', link: 'https://sinclearadam943-sudo.github.io/whitenote/wei-bei-guide.html' },
+            ]
+          },
           { text: '🌐 优质内容源', link: 'https://sinclearadam943-sudo.github.io/whitenote/quality-sources.html' },
           { text: '🌌 宇宙科学', link: 'https://sinclearadam943-sudo.github.io/whitenote/cosmos-science.html' },
         ]
