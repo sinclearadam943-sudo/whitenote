@@ -1,5 +1,18 @@
 [
   {
+    "id": "art_20260411_001",
+    "date": "2026-04-11",
+    "title": "百骏图",
+    "artist": "郎世宁",
+    "period": "清代 · 1724-1728年",
+    "category": "chinese",
+    "type": "国画",
+    "description": "郎世宁耗时四年完成的鸿篇巨制，共绘有100匹姿态各异的骏马和11名牧马人。融合中西绘画技法——以中国传统工笔为基础，结合西方焦点透视、解剖学造型及光影处理。是中国十大传世名画中唯一一幅外国人的作品，现藏于台北故宫博物院（绢本设色）和纽约大都会艺术博物馆（纸本白描稿本）。",
+    "tags": ["国画", "中西合璧", "郎世宁", "百骏图", "宫廷绘画", "马", "中国十大传世名画"],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/One_Hundred_Horses_-_Giuseppe_Castiglione.jpg/1280px-One_Hundred_Horses_-_Giuseppe_Castiglione.jpg",
+    "pageUrl": "/gallery/works/baijuntu-castiglione"
+  },
+  {
     "id": "art_20260410_001",
     "date": "2026-04-10",
     "title": "鹰石山花图",
