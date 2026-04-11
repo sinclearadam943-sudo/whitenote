@@ -69,7 +69,7 @@ export default defineConfig({
           {
             text: '📜 书法艺术',
             items: [
-              { text: '中国书法史深度解析', link: '/posts/calligraphy/中国书法艺术史深度解析' },
+              { text: '中国书法史深度解析', link: 'https://sinclearadam943-sudo.github.io/whitenote/中国书法艺术史深度解析.html' },
               { text: '北魏书法专题', link: 'https://sinclearadam943-sudo.github.io/whitenote/wei-bei-guide.html' },
             ]
           },
