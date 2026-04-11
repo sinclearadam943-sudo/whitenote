@@ -74,8 +74,14 @@ export default defineConfig({
               { text: '北魏书法专题', link: 'https://sinclearadam943-sudo.github.io/whitenote/wei-bei-guide.html' },
             ]
           },
+          {
+            text: '🌌 宇宙哲学',
+            items: [
+              { text: '宇宙哲学思辨录', link: 'https://sinclearadam943-sudo.github.io/whitenote/宇宙哲学思辨录.html' },
+              { text: '宇宙科学', link: 'https://sinclearadam943-sudo.github.io/whitenote/cosmos-science.html' },
+            ]
+          },
           { text: '🌐 优质内容源', link: 'https://sinclearadam943-sudo.github.io/whitenote/quality-sources.html' },
-          { text: '🌌 宇宙科学', link: 'https://sinclearadam943-sudo.github.io/whitenote/cosmos-science.html' },
         ]
       },
       { text: '监控', link: 'https://sinclearadam943-sudo.github.io/whitenote/task-monitor.html', target: '_blank' },
