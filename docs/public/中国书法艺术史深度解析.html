@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国书法艺术史深度解析</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --bg-paper: #F9F6F0;
+            --bg-paper-dark: #F0EBE3;
+            --text-ink: #2C2C2C;
+            --text-ink-light: #5C5C5C;
+            --accent-red: #B85450;
+            --accent-red-dark: #8B3A36;
+            --accent-brown: #8B4513;
+            --accent-gold: #C9A961;
+            --border-light: #D4C4B0;
+            --border-dark: #A89080;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Serif SC', 'SimSun', 'STSong', serif;
+            background: linear-gradient(135deg, var(--bg-paper) 0%, var(--bg-paper-dark) 100%);
+            color: var(--text-ink);
+            line-height: 1.9;
+            font-size: 17px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* 封面样式 */
+        .cover {
+            text-align: center;
+            padding: 80px 40px;
+            background: linear-gradient(180deg, var(--bg-paper-dark) 0%, var(--bg-paper) 100%);
+            border: 3px double var(--border-dark);
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .cover::before,
+        .cover::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 2px solid var(--accent-gold);
+        }
+        
+        .cover::before {
+            top: 20px;
+            left: 20px;
+            border-right: none;
+            border-bottom: none;
+        }
+        
+        .cover::after {
+            bottom: 20px;
+            right: 20px;
+            border-left: none;
+            border-top: none;
+        }
+        
+        .cover h1 {
+            font-size: 3em;
+            font-weight: 700;
+            color: var(--text-ink);
+            letter-spacing: 0.15em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .cover .subtitle {
+            font-size: 1.2em;
+            color: var(--text-ink-light);
+            font-style: italic;
+            margin-bottom: 40px;
+        }
+        
+        .cover .meta {
+            color: var(--accent-brown);
+            font-size: 0.95em;
+            letter-spacing: 0.1em;
+        }
+        
+        /* 目录样式 */
+        .toc {
+            background: var(--bg-paper-dark);
+            padding: 40px;
+            margin: 40px 0;
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .toc h2 {
+            color: var(--accent-red-dark);
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .toc li {
+            padding: 10px 0;
+            border-bottom: 1px dashed var(--border-light);
+            display: flex;
+            align-items: baseline;
+        }
+        
+        .toc li:last-child {
+            border-bottom: none;
+        }
+        
+        .toc .chapter-num {
+            color: var(--accent-red);
+            font-weight: 600;
+            min-width: 60px;
+        }
+        
+        .toc .chapter-title {
+            flex: 1;
+        }
+        
+        /* 章节标题 */
+        h2 {
+            font-size: 2em;
+            color: var(--accent-red-dark);
+            margin: 60px 0 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--accent-gold);
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100px;
+            height: 2px;
+            background: var(--accent-red);
+        }
+        
+        h3 {
+            font-size: 1.5em;
+            color: var(--accent-brown);
+            margin: 40px 0 20px;
+            padding-left: 15px;
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        h4 {
+            font-size: 1.2em;
+            color: var(--text-ink);
+            margin: 30px 0 15px;
+        }
+        
+        /* 段落 */
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+            text-indent: 2em;
+        }
+        
+        /* 引用块 */
+        blockquote {
+            background: var(--bg-paper-dark);
+            border-left: 4px solid var(--accent-red);
+            padding: 20px 25px;
+            margin: 30px 0;
+            font-style: italic;
+            color: var(--text-ink-light);
+        }
+        
+        blockquote p {
+            text-indent: 0;
+            margin-bottom: 10px;
+        }
+        
+        blockquote p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* 表格 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: var(--bg-paper);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        th {
+            background: var(--accent-red);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        tr:hover {
+            background: var(--bg-paper-dark);
+        }
+        
+        /* 列表 */
+        ul, ol {
+            margin: 20px 0;
+            padding-left: 2em;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        /* 强调 */
+        strong {
+            color: var(--accent-red-dark);
+            font-weight: 600;
+        }
+        
+        em {
+            color: var(--accent-brown);
+        }
+        
+        /* 分隔线 */
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-dark), transparent);
+            margin: 50px 0;
+        }
+        
+        /* 书家卡片 */
+        .calligrapher-card {
+            background: linear-gradient(135deg, var(--bg-paper-dark) 0%, var(--bg-paper) 100%);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        .calligrapher-card h4 {
+            color: var(--accent-red-dark);
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+        
+        .calligrapher-card .info-grid {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .calligrapher-card .label {
+            color: var(--accent-brown);
+            font-weight: 600;
+        }
+        
+        .calligrapher-card .value {
+            color: var(--text-ink);
+        }
+        
+        /* 作品展示 */
+        .work-showcase {
+            background: var(--bg-paper-dark);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+            border: 1px solid var(--border-light);
+        }
+        
+        .work-showcase h5 {
+            color: var(--accent-red);
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        /* 页脚 */
+        .footer {
+            text-align: center;
+            padding: 60px 40px;
+            margin-top: 80px;
+            border-top: 2px solid var(--border-light);
+            color: var(--text-ink-light);
+        }
+        
+        .footer .seal {
+            width: 80px;
+            height: 80px;
+            margin: 20px auto;
+            background: var(--accent-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5em;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(184, 84, 80, 0.3);
+        }
+        
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .cover h1 {
+                font-size: 2em;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+            
+            h3 {
+                font-size: 1.2em;
+            }
+            
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .calligrapher-card .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* 打印优化 */
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .cover {
+                page-break-after: always;
+            }
+            
+            h2 {
+                page-break-before: always;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 封面 -->
+        <div class="cover">
+            <h1>中国书法艺术史深度解析</h1>
+            <p class="subtitle">按朝代·流派·书家的系统性研究与人性透视</p>
+            <p class="meta">从魏晋风流到碑学复兴 · 五章深度剖析</p>
+        </div>
+        
+        <!-- 正文内容 -->
+        <div id="content">
+            <!-- 这里将通过 JavaScript 加载 Markdown 内容 -->
+            <p style="text-align: center; color: var(--text-ink-light); padding: 40px;">
+                正在加载内容...
+            </p>
+        </div>
+        
+        <!-- 页脚 -->
+        <div class="footer">
+            <div class="seal">书</div>
+            <p>中国书法艺术史深度解析</p>
+            <p style="font-size: 0.9em; margin-top: 10px;">
+                魏晋风流 · 唐楷法度 · 宋人意趣 · 魏碑金石
+            </p>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        // 加载并渲染 Markdown 内容
+        fetch('CALLIG-001-final.md')
+            .then(response => response.text())
+            .then(markdown => {
+                // 配置 marked
+                marked.setOptions({
+                    headerIds: true,
+                    gfm: true,
+                    breaks: true
+                });
+                
+                // 渲染 Markdown
+                const html = marked.parse(markdown);
+                document.getElementById('content').innerHTML = html;
+                
+                // 为书家部分添加特殊样式
+                addCalligrapherStyles();
+            })
+            .catch(error => {
+                document.getElementById('content').innerHTML = `
+                    <p style="text-align: center; color: var(--accent-red); padding: 40px;">
+                        内容加载失败，请刷新页面重试
+                    </p>
+                `;
+            });
+        
+        function addCalligrapherStyles() {
+            // 为书家分析部分添加卡片样式
+            const headings = document.querySelectorAll('h4');
+            headings.forEach(h => {
+                if (h.textContent.includes('深度分析') || 
+                    h.textContent.includes('王羲之') ||
+                    h.textContent.includes('颜真卿') ||
+                    h.textContent.includes('苏轼') ||
+                    h.textContent.includes('柳公权') ||
+                    h.textContent.includes('欧阳询') ||
+                    h.textContent.includes('黄庭坚') ||
+                    h.textContent.includes('米芾') ||
+                    h.textContent.includes('王献之')) {
+                    const card = document.createElement('div');
+                    card.className = 'calligrapher-card';
+                    
+                    // 收集该卡片下的内容
+                    let nextEl = h.parentElement || h;
+                    const content = [];
+                    
+                    // 添加标题样式
+                    h.style.color = '#8B3A36';
+                    h.style.fontSize = '1.4em';
+                    h.style.marginBottom = '20px';
+                    h.style.paddingBottom = '10px';
+                    h.style.borderBottom = '2px solid #C9A961';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
