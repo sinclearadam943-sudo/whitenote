@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python 全栈开发完全指南</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --python-blue: #306998;
+            --python-yellow: #FFD43B;
+            --python-light: #4B8BBE;
+            --code-bg: #1E1E1E;
+            --code-gray: #2D2D2D;
+            --paper: #FAFAF8;
+            --paper-warm: #F5F5F0;
+            --text-primary: #2C3E50;
+            --text-secondary: #5D6D7E;
+            --accent-warm: #E67E22;
+            --accent-green: #27AE60;
+            --border: #E0E0E0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Noto Serif SC', 'Songti SC', serif;
+            background: var(--paper);
+            color: var(--text-primary);
+            line-height: 1.85;
+            font-size: 16px;
+        }
+        
+        /* 导航 */
+        .nav-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(180deg, var(--python-blue) 0%, #2a5d84 100%);
+            padding: 12px 25px;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(48,105,152,0.3);
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-fixed.visible {
+            transform: translateY(0);
+        }
+        
+        .nav-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .nav-title::before {
+            content: '🐍';
+            font-size: 1.3em;
+        }
+        
+        .nav-chapters {
+            display: flex;
+            gap: 8px;
+            font-size: 0.8em;
+        }
+        
+        .nav-chapters a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            transition: all 0.3s;
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .nav-chapters a:hover {
+            background: var(--python-yellow);
+            color: var(--python-blue);
+        }
+        
+        /* 封面 */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+            background: 
+                radial-gradient(ellipse at 20% 50%, rgba(48,105,152,0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 50%, rgba(255,212,59,0.1) 0%, transparent 50%),
+                var(--paper);
+            position: relative;
+        }
+        
+        .hero-badge {
+            background: linear-gradient(135deg, var(--python-blue), var(--python-light));
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-bottom: 30px;
+            letter-spacing: 0.1em;
+        }
+        
+        .hero-title {
+            font-size: clamp(2.5rem, 7vw, 4.5rem);
+            font-weight: 700;
+            color: var(--python-blue);
+            margin-bottom: 15px;
+            letter-spacing: 0.05em;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.4em;
+            color: var(--text-secondary);
+            font-weight: 300;
+            max-width: 650px;
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 50px;
+            margin-top: 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--python-yellow);
+            text-shadow: 2px 2px 0 var(--python-blue);
+        }
+        
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: var(--text-secondary);
+            font-size: 0.85em;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+        
+        /* 章节容器 */
+        .chapter {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 30px;
+            position: relative;
+        }
+        
+        .chapter:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--python-yellow), transparent);
+        }
+        
+        /* 章节标题 */
+        .chapter-title {
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
+            font-weight: 600;
+            color: var(--python-blue);
+            margin-bottom: 10px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--python-yellow);
+        }
+        
+        .chapter-number {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.5em;
+            font-weight: 500;
+            color: var(--accent-warm);
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .chapter-subtitle {
+            font-size: 1.1em;
+            color: var(--text-secondary);
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+        
+        /* 小节标题 */
+        h3 {
+            font-size: 1.35em;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 45px 0 20px;
+            padding-left: 15px;
+            border-left: 4px solid var(--python-yellow);
+        }
+        
+        h4 {
+            font-size: 1.15em;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin: 30px 0 12px;
+        }
+        
+        /* 段落 */
+        p {
+            margin-bottom: 18px;
+            text-align: justify;
+            text-indent: 2em;
+        }
+        
+        /* 代码块 */
+        pre {
+            background: var(--code-bg);
+            border-radius: 8px;
+            padding: 20px;
+            overflow-x: auto;
+            margin: 25px 0;
+            position: relative;
+        }
+        
+        pre::before {
+            content: 'Python';
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--python-yellow);
+            color: var(--python-blue);
+            font-size: 0.7em;
+            padding: 4px 12px;
+            border-radius: 0 8px 0 8px;
+            font-family: 'Fira Code', monospace;
+            font-weight: 600;
+        }
+        
+        code {
+            font-family: 'Fira Code', 'Consolas', monospace;
+            font-size: 0.9em;
+        }
+        
+        pre code {
+            color: #E8E8E8;
+            background: none;
+            padding: 0;
+            font-size: 0.9em;
+            line-height: 1.7;
+        }
+        
+        /* 行内代码 */
+        p code, li code {
+            background: rgba(48,105,152,0.1);
+            color: var(--python-blue);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        
+        /* 引用块 */
+        blockquote {
+            background: linear-gradient(135deg, rgba(48,105,152,0.08) 0%, rgba(255,212,59,0.05) 100%);
+            border-left: 4px solid var(--python-blue);
+            padding: 20px 25px;
+            margin: 25px 0;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        blockquote p {
+            text-indent: 0;
+            margin-bottom: 10px;
+        }
+        
+        blockquote p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* 表格 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            font-size: 0.95em;
+        }
+        
+        th {
+            background: var(--python-blue);
+            color: white;
+            padding: 14px;
+            text-align: left;
+            font-weight: 500;
+        }
+        
+        td {
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        tr:hover {
+            background: rgba(48,105,152,0.03);
+        }
+        
+        /* 列表 */
+        ul, ol {
+            margin: 18px 0;
+            padding-left: 2em;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        /* 强调 */
+        strong {
+            color: var(--python-blue);
+            font-weight: 600;
+        }
+        
+        /* 分隔线 */
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--python-yellow), transparent);
+            margin: 50px 0;
+        }
+        
+        /* 代码模板卡片 */
+        .template-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .template-title {
+            color: var(--python-blue);
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .template-title::before {
+            content: '⚡';
+        }
+        
+        /* 页脚 */
+        .footer {
+            text-align: center;
+            padding: 80px 40px;
+            background: linear-gradient(180deg, var(--paper-warm) 0%, var(--paper) 100%);
+            border-top: 1px solid var(--border);
+        }
+        
+        .footer-logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, var(--python-blue), var(--python-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5em;
+            box-shadow: 0 10px 30px rgba(48,105,152,0.3);
+        }
+        
+        .footer-text {
+            color: var(--text-secondary);
+            font-size: 1.1em;
+            max-width: 500px;
+            margin: 0 auto 20px;
+        }
+        
+        .footer-quote {
+            font-style: italic;
+            color: var(--python-blue);
+            font-size: 1.1em;
+        }
+        
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .nav-chapters {
+                display: none;
+            }
+            
+            .hero-title {
+                font-size: 2.2em;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .chapter {
+                padding: 50px 20px;
+            }
+            
+            pre {
+                padding: 15px;
+                font-size: 0.85em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航 -->
+    <nav class="nav-fixed" id="navbar">
+        <div class="nav-content">
+            <div class="nav-title">Python 全栈开发指南</div>
+            <div class="nav-chapters">
+                <a href="#ch1">基础</a>
+                <a href="#ch2">高级</a>
+                <a href="#ch3">游戏</a>
+                <a href="#ch4">数据</a>
+                <a href="#ch5">LLM</a>
+                <a href="#ch6">记忆</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- 封面 -->
+    <header class="hero">
+        <div class="hero-badge">PYTHON FULL-STACK GUIDE</div>
+        <h1 class="hero-title">Python 全栈开发完全指南</h1>
+        <p class="hero-subtitle">从基础语法到 LLM 应用 · 六章系统学习 · 代码模板即查即用</p>
+        
+        <div class="hero-stats">
+            <div class="stat-item">
+                <div class="stat-number">6</div>
+                <div class="stat-label">系统章节</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">20万+</div>
+                <div class="stat-label">详尽文字</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">300+</div>
+                <div class="stat-label">代码示例</div>
+            </div>
+        </div>
+        
+        <div class="scroll-hint">向下滚动开始探索 ↓</div>
+    </header>
+    
+    <!-- 正文内容 -->
+    <main id="main-content">
+        <section class="chapter" id="ch1"><div id="content-ch1"></div></section>
+        <section class="chapter" id="ch2"><div id="content-ch2"></div></section>
+        <section class="chapter" id="ch3"><div id="content-ch3"></div></section>
+        <section class="chapter" id="ch4"><div id="content-ch4"></div></section>
+        <section class="chapter" id="ch5"><div id="content-ch5"></div></section>
+        <section class="chapter" id="ch6"><div id="content-ch6"></div></section>
+    </main>
+    
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-logo">🐍</div>
+        <p class="footer-text">
+            掌握 Python，驾驭代码之力
+        </p>
+        <p class="footer-quote">"Simple is better than complex." — The Zen of Python</p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        // 导航显示/隐藏
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('visible', window.pageYOffset > 400);
+        });
+        
+        // 加载并渲染各章节内容
+        async function loadContent() {
+            try {
+                const response = await fetch('PYTHON-001-final.md');
+                const markdown = await response.text();
+                
+                marked.setOptions({
+                    headerIds: true,
+                    gfm: true,
+                    breaks: true
+                });
+                
+                // 按章节分割并渲染
+                const sections = markdown.split(/## 第[一二三四五六]章：/);
+                
+                for (let i = 1; i <= 6; i++) {
+                    if (sections[i]) {
+                        const numMap = ['零', '一', '二', '三', '四', '五', '六'];
+                        document.getElementById(`content-ch${i}`).innerHTML = 
+                            marked.parse(`## 第${numMap[i]}章：` + sections[i]);
+                    }
+                }
+            } catch (error) {
+                console.error('加载失败:', error);
+            }
+        }
+        
+        loadContent();
+    </script>
+</body>
+</html>

@@ -81,6 +81,12 @@ export default defineConfig({
               { text: '宇宙科学', link: 'https://sinclearadam943-sudo.github.io/whitenote/cosmos-science.html' },
             ]
           },
+          {
+            text: '🐍 Python',
+            items: [
+              { text: 'Python 全栈开发完全指南', link: 'https://sinclearadam943-sudo.github.io/whitenote/Python全栈开发完全指南.html' },
+            ]
+          },
           { text: '🌐 优质内容源', link: 'https://sinclearadam943-sudo.github.io/whitenote/quality-sources.html' },
         ]
       },
