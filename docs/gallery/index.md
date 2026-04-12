@@ -11,6 +11,24 @@ title: 艺境画廊
 ## 最新作品
 
 <div class="gallery-grid">
+  <a href="./works/mona-lisa-da-vinci.html" class="art-card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/400px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg" alt="蒙娜丽莎" class="card-image" />
+    <div class="card-content">
+      <div class="card-meta">
+        <span class="category western">西方绘画</span>
+        <span class="date">1503-1519年</span>
+      </div>
+      <h3>《蒙娜丽莎》</h3>
+      <p class="artist">列奥纳多·达·芬奇</p>
+      <p class="desc">世界上最著名的肖像画，卢浮宫镇馆之宝。画中人物神秘的微笑通过晕涂法营造出似笑非笑的效果，体现了文艺复兴盛期的人文主义精神。</p>
+      <div class="tags">
+        <span class="tag">文艺复兴</span>
+        <span class="tag">肖像画</span>
+        <span class="tag">卢浮宫</span>
+      </div>
+    </div>
+  </a>
+
   <a href="./works/yingshishanhua-pantianshou.html" class="art-card">
     <div class="card-image-placeholder">🦅</div>
     <div class="card-content">

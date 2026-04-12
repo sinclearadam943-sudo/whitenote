@@ -1,0 +1,13 @@
+[
+  {
+    "id": "mona-lisa-da-vinci",
+    "title": "蒙娜丽莎",
+    "en_title": "Mona Lisa",
+    "artist": "达芬奇",
+    "en_artist": "Leonardo da Vinci",
+    "year": "1503-1519",
+    "category": "西方绘画",
+    "tags": ["文艺复兴", "肖像画", "卢浮宫"],
+    "created_at": "2026-04-12"
+  }
+]
