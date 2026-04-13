@@ -1,5 +1,16 @@
 [
   {
+    "id": "the-great-wave-off-kanagawa",
+    "title": "神奈川冲浪里",
+    "en_title": "The Great Wave off Kanagawa",
+    "artist": "葛饰北斋",
+    "en_artist": "Katsushika Hokusai",
+    "year": "约1831年",
+    "category": "浮世绘",
+    "tags": ["日本艺术", "版画", "富士山", "风景画"],
+    "created_at": "2026-04-13"
+  },
+  {
     "id": "mona-lisa-da-vinci",
     "title": "蒙娜丽莎",
     "en_title": "Mona Lisa",
