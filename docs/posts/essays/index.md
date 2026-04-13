@@ -12,7 +12,7 @@ sidebar: false
 
 ## 文章列表
 
-### [003 The Art of Waiting](/whitenote/posts/essays/003-the-art-of-waiting.html)
+### [003 The Art of Waiting](./003-the-art-of-waiting.html)
 **等待的艺术** — 从《基督山伯爵》中学到的等待智慧。
 
 "人类的所有智慧都包含在这五个字里：等待和希望。"
@@ -21,12 +21,12 @@ sidebar: false
 
 ---
 
-### [001 婆媳关系的千年演变](/whitenote/posts/essays/001-evolution-of-mother-in-law-daughter-in-law-relationship.html)
+### [001 婆媳关系的千年演变](./001-evolution-of-mother-in-law-daughter-in-law-relationship.html)
 从古到今的案例剖析与相处智慧。从《孔雀东南飞》的悲剧殉情到今天城市里的"周末婆媳"，穿越千年的相处智慧。
 
 ---
 
-### [001 破析](/whitenote/posts/essays/001-poxi-analysis.html)
+### [001 破析](./001-poxi-analysis.html)
 对传统家庭结构中权力代际传递的观察与剖析。
 
 ---
