@@ -4,37 +4,158 @@ layout: home
 
 hero:
   name: "浩哥的文字花园"
-  text: "WhiteNote"
-  tagline: 
+  text: ""
+  tagline: 在文字中整理自己
+  image:
+    src: /garden-icon.svg
+    alt: 文字花园
   actions:
     - theme: brand
-      text: 走进花园
-      link: /landing.html
+      text: 进入花园
+      link: /landing-v2.html
     - theme: alt
-      text: 开始阅读《字节阿赖耶》
+      text: 阅读《字节阿赖耶》
       link: /posts/byte-alaya
     - theme: alt
-      text: 查看 GitHub
+      text: GitHub
       link: https://github.com/sinclearadam943-sudo/whitenote
 
 features:
-  - title: 💭 自我的感悟
-    details: 记录生活思考、哲学感悟、技术观察，在文字中整理自己
-  - title: 🏢 今天工作
-    details: 工作日志、项目进展、问题记录，梳理一天的收获与成长
-  - title: 🌤️ 今天天气
-    details: 感受季节变化，记录日常点滴，让生活多一点诗意
-  - title: 🌈 夸夸自己
-    details: 每天发现一点小进步，给自己一点鼓励，慢慢变好
-  - title: 📖 原创故事
-    details: 《字节阿赖耶》—— Python字节码与佛教唯识学的科幻碰撞
-  - title: 🎨 艺境画廊
-    details: 每日中外书画艺术赏析，涵盖梵高、齐白石、毕加索等大师名作
-  - title: 📜 北魏书法
-    details: 北魏历史速记与魏碑书法临习指南，含四字帖范例
-  - title: 🌐 优质内容源
-    details: 精选互联网高质量内容源，新闻、科技、中文媒体、专栏等58+网站
+  - icon: 📖
+    title: 原创小说
+    details: 《字节阿赖耶》—— Python字节码与佛教唯识学的科幻碰撞，探索AI与意识的边界
+    link: /posts/novels/
+  - icon: ✍️
+    title: 随笔散文
+    details: 记录生活思考、日常观察，在平凡中发现诗意与哲思
+    link: /posts/essays/
+  - icon: 💭
+    title: 哲学思辨
+    details: 时间、空间、存在与意识——关于世界本质的深度思考
+    link: /posts/philosophy-08-time-philosophy
+  - icon: 🖌️
+    title: 北魏书法
+    details: 北魏历史速记与魏碑书法临习指南，感受汉字之美
+    link: /posts/calligraphy/
+  - icon: 🎨
+    title: 艺境画廊
+    details: 每日中外书画艺术赏析，梵高、齐白石、毕加索等大师名作
+    link: /gallery.html
+  - icon: 🌤️
+    title: 今日随记
+    details: 记录每一天的思考、感悟与发现，见证时间的痕迹
+    link: /daily
 ---
+
+<style>
+/* 自定义首页样式 - Editorial 风格 */
+:root {
+  --vp-home-hero-name-color: #1A1A1A;
+  --vp-home-hero-name-background: transparent;
+  --vp-button-brand-bg: #B8956A;
+  --vp-button-brand-hover-bg: #9A7B56;
+  --vp-button-brand-text: #FDFBF8;
+  --vp-button-alt-border: #D4CFC8;
+  --vp-button-alt-text: #6B6560;
+  --vp-button-alt-hover-border: #1A1A1A;
+  --vp-button-alt-hover-text: #1A1A1A;
+}
+
+.VPHome {
+  background: #FDFBF8;
+}
+
+.VPHero {
+  padding: 120px 24px 80px !important;
+}
+
+.VPHero .name {
+  font-family: 'Noto Serif SC', 'Source Han Serif SC', serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.VPHero .tagline {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.5rem;
+  color: #6B6560;
+  font-style: italic;
+}
+
+.VPHero .actions {
+  margin-top: 3rem;
+}
+
+.VPHero .action .VPButton {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 12px 28px;
+}
+
+.VPButton.brand {
+  background: #1A1A1A !important;
+}
+
+.VPButton.brand:hover {
+  background: #B8956A !important;
+}
+
+.VPFeatures {
+  padding: 60px 24px 100px !important;
+}
+
+.VPFeatures .VPFeature {
+  background: #F8F5F1;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  padding: 32px;
+}
+
+.VPFeatures .VPFeature:hover {
+  border-color: #D4CFC8;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.04);
+}
+
+.VPFeatures .icon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.VPFeatures .title {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: #1A1A1A;
+  margin-bottom: 8px;
+}
+
+.VPFeatures .details {
+  font-size: 0.9375rem;
+  color: #6B6560;
+  line-height: 1.7;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .VPHero {
+    padding: 80px 20px 60px !important;
+  }
+  
+  .VPHero .name {
+    font-size: 2.5rem;
+  }
+  
+  .VPHero .tagline {
+    font-size: 1.125rem;
+  }
+  
+  .VPFeatures {
+    padding: 40px 20px 60px !important;
+  }
+}
+</style>
 
 <script>
 // 登录检测，如果没登录跳转到登录页
