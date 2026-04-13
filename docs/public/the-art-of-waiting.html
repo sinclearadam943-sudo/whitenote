@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Art of Waiting: Lessons from the Count of Monte Cristo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --amber: #F59E0B;
+            --gold: #FCD34D;
+            --burgundy: #7C2D12;
+            --deep-red: #991B1B;
+            --cream: #FEF3C7;
+            --warm-white: #FFFBEB;
+            --dark: #292524;
+            --light-text: #FFFBEB;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background-color: var(--cream);
+            color: var(--dark);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--burgundy) 0%, var(--deep-red) 50%, var(--burgundy) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F59E0B' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--cream);
+            font-style: italic;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .hero-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--light-text);
+            font-style: italic;
+            border-left: 3px solid var(--amber);
+            padding-left: 1.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+
+        .scroll-indicator svg {
+            width: 30px;
+            height: 30px;
+            stroke: var(--gold);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* Section Styling */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--burgundy);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--deep-red);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            opacity: 0.8;
+        }
+
+        /* Technique Cards */
+        .techniques {
+            background-color: var(--warm-white);
+        }
+
+        .techniques-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .technique-card {
+            background: linear-gradient(145deg, var(--warm-white), var(--cream));
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(124, 45, 18, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(245, 158, 11, 0.2);
+        }
+
+        .technique-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--amber), var(--gold));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .technique-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(124, 45, 18, 0.2);
+        }
+
+        .technique-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .technique-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            color: var(--amber);
+            opacity: 0.3;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .technique-card h3 {
+            font-size: 1.5rem;
+            color: var(--burgundy);
+            margin-bottom: 0.5rem;
+        }
+
+        .technique-chinese {
+            font-size: 0.9rem;
+            color: var(--deep-red);
+            opacity: 0.7;
+            margin-bottom: 1rem;
+        }
+
+        .technique-card p {
+            color: var(--dark);
+            line-height: 1.7;
+        }
+
+        /* Timeline */
+        .timeline {
+            background: linear-gradient(180deg, var(--warm-white), var(--cream));
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--amber), var(--burgundy));
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: calc(50% + 2rem);
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: calc(50% + 2rem);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--amber);
+            border: 4px solid var(--warm-white);
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px var(--amber);
+        }
+
+        .timeline-content {
+            background: var(--warm-white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            max-width: 300px;
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.02);
+        }
+
+        .timeline-year {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--burgundy);
+            font-weight: 600;
+        }
+
+        .timeline-desc {
+            color: var(--dark);
+            margin-top: 0.5rem;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background: linear-gradient(135deg, var(--burgundy), var(--deep-red));
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .quote-section blockquote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: var(--gold);
+            font-style: italic;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        .quote-section blockquote::before {
+            content: '"';
+            font-size: 6rem;
+            position: absolute;
+            top: -2rem;
+            left: -2rem;
+            color: var(--amber);
+            opacity: 0.3;
+            font-family: Georgia, serif;
+        }
+
+        .quote-section cite {
+            display: block;
+            margin-top: 2rem;
+            color: var(--cream);
+            font-size: 1.1rem;
+            font-style: normal;
+        }
+
+        /* Mastery Levels */
+        .mastery {
+            background-color: var(--warm-white);
+        }
+
+        .mastery-table {
+            width: 100%;
+            border-collapse: collapse;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .mastery-table th,
+        .mastery-table td {
+            padding: 1.2rem 1.5rem;
+            text-align: left;
+        }
+
+        .mastery-table th {
+            background: linear-gradient(135deg, var(--burgundy), var(--deep-red));
+            color: var(--gold);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+        }
+
+        .mastery-table tr:nth-child(even) {
+            background-color: var(--cream);
+        }
+
+        .mastery-table tr:hover {
+            background-color: rgba(245, 158, 11, 0.1);
+        }
+
+        .mastery-table td:first-child {
+            font-weight: 600;
+            color: var(--burgundy);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--burgundy);
+            color: var(--cream);
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .timeline-line {
+                left: 1rem;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                justify-content: flex-start;
+                padding-left: 3rem;
+                padding-right: 0;
+            }
+
+            .timeline-dot {
+                left: 1rem;
+            }
+
+            .techniques-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>The Art of Waiting</h1>
+            <p class="hero-subtitle">Lessons from the Count of Monte Cristo</p>
+            <blockquote class="hero-quote">
+                "All human wisdom is contained in these five words: Wait and Hope."
+            </blockquote>
+        </div>
+        <div class="scroll-indicator" onclick="document.getElementById('techniques').scrollIntoView({behavior: 'smooth'})">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+        </div>
+    </header>
+
+    <!-- Techniques Section -->
+    <section id="techniques" class="techniques">
+        <h2 class="section-title">The Seven Techniques</h2>
+        <p class="section-subtitle">Mental methods forged in fourteen years of darkness</p>
+        
+        <div class="techniques-grid">
+            <div class="technique-card">
+                <div class="technique-number">01</div>
+                <h3>Hiding Edge in Desperation</h3>
+                <div class="technique-chinese">绝境藏锋 · Accept darkness, find light</div>
+                <p>When hope seems lost, resist the urge to struggle blindly. Stillness is not surrender—it's the first move of the patient warrior.</p>
+            </div>
+
+            <div class="technique-card">
+                <div class="technique-number">02</div>
+                <h3>Learning from Masters</h3>
+                <div class="technique-chinese">遇高人虚心 · Humility accelerates growth</div>
+                <p>Seek out those who have walked the path before you. True mastery begins with the courage to be a student again.</p>
+            </div>
+
+            <div class="technique-card">
+                <div class="technique-number">03</div>
+                <h3>Daily Progress</h3>
+                <div class="technique-chinese">每日精进 · Consistency over intensity</div>
+                <p>A tunnel is dug one spoonful at a time. Small actions, repeated daily, create transformations that appear impossible.</p>
+            </div>
+
+            <div class="technique-card">
+                <div class="technique-number">04</div>
+                <h3>Concealing Sharpness</h3>
+                <div class="technique-chinese">藏锋守拙 · Preparation before action</div>
+                <p>The hunter who reveals himself too early catches nothing. Speak less. Prepare more. Strike only when ready.</p>
+            </div>
+
+            <div class="technique-card">
+                <div class="technique-number">05</div>
+                <h3>Returning the Favor</h3>
+                <div class="technique-chinese">以彼之道 · Precision in justice</div>
+                <p>Justice need not be cruel to be complete. Let others receive exactly what they gave—not through your hand, but through their own actions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline">
+        <h2 class="section-title">Fourteen Years of Transformation</h2>
+        <p class="section-subtitle">The journey from sailor to count</p>
+        
+        <div class="timeline-container">
+            <div class="timeline-line"></div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">Year 0</div>
+                    <div class="timeline-desc">Wrongfully imprisoned at Château d'If. Rage, despair, and thoughts of revenge.</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">Year 3</div>
+                    <div class="timeline-desc">Hope extinguished. Attempts suicide by starvation. The darkest night before the dawn.</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">Year 4</div>
+                    <div class="timeline-desc">Meets Abbé Faria. Begins intensive study: languages, history, mathematics, philosophy.</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">Year 11</div>
+                    <div class="timeline-desc">Faria dies. Dantès escapes disguised as the dead man's body. The tunnel is complete.</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">Year 12-13</div>
+                    <div class="timeline-desc">Finds the treasure. Establishes the Count of Monte Cristo identity. Builds his network.</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">Year 14</div>
+                    <div class="timeline-desc">Returns to Paris. Executes precise justice. Learns the final lesson: forgiveness.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Quote -->
+    <section class="quote-section">
+        <blockquote>
+            In prison, I learned to read. In darkness, I learned to see. In solitude, I learned to wait. In waiting, I found hope.
+            <cite>— Edmond Dantès, The Count of Monte Cristo</cite>
+        </blockquote>
+    </section>
+
+    <!-- Mastery Levels -->
+    <section class="mastery">
+        <h2 class="section-title">The Five Levels of Mastery</h2>
+        <p class="section-subtitle">From beginner to grandmaster</p>
+        
+        <table class="mastery-table">
+            <thead>
+                <tr>
+                    <th>Level</th>
+                    <th>Title</th>
+                    <th>The Marker of Achievement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>入门</td>
+                    <td>Beginner</td>
+                    <td>You wait without panicking</td>
+                </tr>
+                <tr>
+                    <td>进阶</td>
+                    <td>Intermediate</td>
+                    <td>You learn from masters</td>
+                </tr>
+                <tr>
+                    <td>小成</td>
+                    <td>Adept</td>
+                    <td>You endure what others cannot</td>
+                </tr>
+                <tr>
+                    <td>大成</td>
+                    <td>Master</td>
+                    <td>You act with precision</td>
+                </tr>
+                <tr>
+                    <td>宗师</td>
+                    <td>Grandmaster</td>
+                    <td>You forgive and move on</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>"What are you waiting for, and what do you hope for?"</p>
+        <p style="margin-top: 1rem; font-style: italic;">The Art of Waiting · Based on The Count of Monte Cristo by Alexandre Dumas</p>
+    </footer>
+
+    <script>
+        // Smooth reveal on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Add reveal animation to cards
+        document.querySelectorAll('.technique-card, .timeline-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Parallax effect for hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero-content');
+            if (hero && scrolled < window.innerHeight) {
+                hero.style.transform = `translateY(${scrolled * 0.4}px)`;
+                hero.style.opacity = 1 - (scrolled / window.innerHeight);
+            }
+        });
+    </script>
+</body>
+</html>
