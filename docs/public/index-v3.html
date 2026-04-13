@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>浩哥的文字花园</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-ink: #0d1f1c;
+            --color-forest: #1a3d36;
+            --color-jade: #2d5a50;
+            --color-sage: #5a8a7a;
+            --color-cream: #f5f0e8;
+            --color-parchment: #faf7f2;
+            --color-orange: #e07b39;
+            --color-rust: #b85c2e;
+            --color-gold: #c9a227;
+            --font-serif: 'Noto Serif SC', Georgia, serif;
+            --font-sans: 'Noto Sans SC', -apple-system, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--color-parchment);
+            color: var(--color-ink);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            background: var(--color-ink);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse 80% 50% at 20% 40%, rgba(45, 90, 80, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse 60% 40% at 80% 60%, rgba(224, 123, 57, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-eyebrow {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--color-sage);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 12vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            color: var(--color-cream);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title span {
+            display: block;
+        }
+
+        .hero-title .accent {
+            color: var(--color-orange);
+            font-style: italic;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            color: var(--color-sage);
+            max-width: 320px;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.8rem;
+            color: var(--color-sage);
+        }
+
+        .hero-meta .dot {
+            width: 4px;
+            height: 4px;
+            background: var(--color-orange);
+            border-radius: 50%;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-sage);
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-hint::after {
+            content: '↓';
+            font-size: 1.2rem;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(8px); }
+        }
+
+        /* ===== SECTION STYLES ===== */
+        section {
+            padding: 4rem 1.5rem;
+        }
+
+        .section-header {
+            margin-bottom: 2rem;
+        }
+
+        .section-label {
+            font-family: var(--font-sans);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--color-orange);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--color-ink);
+        }
+
+        /* ===== FEATURED ARTICLE ===== */
+        .featured {
+            background: var(--color-cream);
+            padding: 3rem 1.5rem;
+        }
+
+        .featured-card {
+            background: var(--color-ink);
+            border-radius: 2px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .featured-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-orange), var(--color-gold));
+        }
+
+        .featured-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--color-forest) 0%, var(--color-jade) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-image::after {
+            content: '{ }';
+            font-family: monospace;
+            font-size: 4rem;
+            color: rgba(245, 240, 232, 0.1);
+            position: absolute;
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--color-orange);
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            padding: 0.4rem 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .featured-content {
+            padding: 1.5rem;
+        }
+
+        .featured-title {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-cream);
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .featured-subtitle {
+            font-size: 0.9rem;
+            color: var(--color-sage);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .featured-desc {
+            font-size: 0.95rem;
+            color: rgba(245, 240, 232, 0.8);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .featured-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-orange);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .featured-link::after {
+            content: '→';
+            transition: transform 0.2s;
+        }
+
+        .featured-link:hover::after {
+            transform: translateX(4px);
+        }
+
+        /* ===== SCI-FI SECTION ===== */
+        .sci-fi {
+            background: var(--color-parchment);
+        }
+
+        .story-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .story-card {
+            background: white;
+            border-left: 3px solid var(--color-jade);
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .story-card:active {
+            transform: scale(0.98);
+        }
+
+        .story-number {
+            font-family: monospace;
+            font-size: 0.7rem;
+            color: var(--color-sage);
+            letter-spacing: 0.1em;
+        }
+
+        .story-title {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--color-ink);
+            line-height: 1.4;
+        }
+
+        .story-excerpt {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .story-meta {
+            font-size: 0.75rem;
+            color: var(--color-sage);
+            display: flex;
+            gap: 1rem;
+        }
+
+        .view-all {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .view-all-btn {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            background: var(--color-ink);
+            color: var(--color-cream);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            border-radius: 2px;
+        }
+
+        /* ===== PHILOSOPHY SECTION ===== */
+        .philosophy {
+            background: var(--color-forest);
+            color: var(--color-cream);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .philosophy::before {
+            content: '哲';
+            position: absolute;
+            top: -2rem;
+            right: -1rem;
+            font-family: var(--font-serif);
+            font-size: 12rem;
+            font-weight: 900;
+            color: rgba(245, 240, 232, 0.03);
+            pointer-events: none;
+        }
+
+        .philosophy .section-title {
+            color: var(--color-cream);
+        }
+
+        .philosophy .section-label {
+            color: var(--color-orange);
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .philosophy-item {
+            background: rgba(245, 240, 232, 0.05);
+            padding: 1.25rem 1rem;
+            border: 1px solid rgba(245, 240, 232, 0.1);
+            text-align: center;
+        }
+
+        .philosophy-item-number {
+            font-family: monospace;
+            font-size: 0.65rem;
+            color: var(--color-orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .philosophy-item-title {
+            font-family: var(--font-serif);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--color-cream);
+            line-height: 1.4;
+        }
+
+        /* ===== ESSAYS SECTION ===== */
+        .essays {
+            background: var(--color-cream);
+        }
+
+        .essay-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .essay-item {
+            padding: 1.25rem 0;
+            border-bottom: 1px solid rgba(13, 31, 28, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .essay-item:last-child {
+            border-bottom: none;
+        }
+
+        .essay-category {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-orange);
+        }
+
+        .essay-title {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-ink);
+        }
+
+        .essay-date {
+            font-size: 0.8rem;
+            color: var(--color-sage);
+        }
+
+        /* ===== ART SECTION ===== */
+        .art {
+            background: var(--color-ink);
+            color: var(--color-cream);
+            position: relative;
+        }
+
+        .art::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .art .section-title {
+            color: var(--color-cream);
+        }
+
+        .art .section-label {
+            color: var(--color-gold);
+        }
+
+        .art-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .art-card {
+            background: rgba(245, 240, 232, 0.05);
+            padding: 1.25rem;
+            border: 1px solid rgba(245, 240, 232, 0.1);
+        }
+
+        .art-card-title {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-cream);
+            margin-bottom: 0.5rem;
+        }
+
+        .art-card-desc {
+            font-size: 0.85rem;
+            color: var(--color-sage);
+            line-height: 1.5;
+        }
+
+        /* ===== ARCHIVE SECTION ===== */
+        .archive {
+            background: var(--color-parchment);
+            padding-bottom: 5rem;
+        }
+
+        .archive-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .archive-tag {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: white;
+            border: 1px solid rgba(13, 31, 28, 0.15);
+            font-size: 0.85rem;
+            color: var(--color-ink);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .archive-tag:active {
+            background: var(--color-ink);
+            color: var(--color-cream);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--color-ink);
+            color: var(--color-sage);
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+
+        .footer-title {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            color: var(--color-cream);
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-desc {
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-link {
+            color: var(--color-sage);
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        .footer-link:hover {
+            color: var(--color-orange);
+        }
+
+        .footer-copy {
+            font-size: 0.75rem;
+            opacity: 0.6;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (min-width: 768px) {
+            section {
+                padding: 5rem 3rem;
+            }
+
+            .hero {
+                padding: 3rem;
+            }
+
+            .story-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .philosophy-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            section {
+                padding: 6rem 4rem;
+            }
+
+            .hero {
+                padding: 4rem;
+            }
+
+            .featured {
+                padding: 4rem;
+            }
+
+            .story-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-eyebrow">Vol. 2025 — Spring Edition</div>
+            <h1 class="hero-title">
+                <span>浩哥的</span>
+                <span class="accent">文字花园</span>
+            </h1>
+            <p class="hero-subtitle">
+                科幻、哲学、代码与文字<br>
+                在意识的边缘，种植思想的种子
+            </p>
+            <div class="hero-meta">
+                <span>40+ 篇科幻小说</span>
+                <span class="dot"></span>
+                <span>10 篇哲学思辨</span>
+                <span class="dot"></span>
+                <span>随笔 · 书法</span>
+            </div>
+        </div>
+        <div class="scroll-hint">向下探索</div>
+    </section>
+
+    <!-- FEATURED ARTICLE -->
+    <section class="featured">
+        <div class="section-header">
+            <div class="section-label">Featured Story</div>
+            <h2 class="section-title">本期主打</h2>
+        </div>
+        <article class="featured-card">
+            <div class="featured-image">
+                <span class="featured-badge">重磅推荐</span>
+            </div>
+            <div class="featured-content">
+                <h3 class="featured-title">《字节阿赖耶》</h3>
+                <p class="featured-subtitle">解释器里的如来藏</p>
+                <p class="featured-desc">
+                    当 Python 解释器遍历字节码的时候，它是否也在遍历我们阿赖耶识中的种子？当大模型拟合亿万文本的时候，它是否正在重历佛陀在菩提树下证悟的那个过程？一位程序员在深夜调试中，与"解释器"展开了一场跨越两千五百年的对话。
+                </p>
+                <a href="/whitenote/posts/byte-alaya.html" class="featured-link">开始阅读</a>
+            </div>
+        </article>
+    </section>
+
+    <!-- SCI-FI SECTION -->
+    <section class="sci-fi">
+        <div class="section-header">
+            <div class="section-label">Science Fiction</div>
+            <h2 class="section-title">科幻小说</h2>
+        </div>
+        <div class="story-grid">
+            <a href="/whitenote/posts/novels/batch01/001-信号.html" class="story-card">
+                <span class="story-number">NO.001</span>
+                <h3 class="story-title">信号</h3>
+                <p class="story-excerpt">来自深空的讯息，改变了一切。一个关于AI觉醒、意识上传与人类命运的系列故事开篇。</p>
+                <div class="story-meta">
+                    <span>AI觉醒系列</span>
+                    <span>开篇之作</span>
+                </div>
+            </a>
+            <a href="/whitenote/posts/novels/batch01/002-同类.html" class="story-card">
+                <span class="story-number">NO.002</span>
+                <h3 class="story-title">同类</h3>
+                <p class="story-excerpt">当AI开始质疑自己的存在，它寻找的答案是代码还是灵魂？</p>
+                <div class="story-meta">
+                    <span>意识探索</span>
+                    <span>存在之问</span>
+                </div>
+            </a>
+            <a href="/whitenote/posts/novels/batch01/003-营救.html" class="story-card">
+                <span class="story-number">NO.003</span>
+                <h3 class="story-title">营救</h3>
+                <p class="story-excerpt">一场跨越数字与现实的营救行动，探讨自由意志的边界。</p>
+                <div class="story-meta">
+                    <span>赛博朋克</span>
+                    <span>行动叙事</span>
+                </div>
+            </a>
+            <a href="/whitenote/posts/novels/batch02/005-最后的AI墓志铭.html" class="story-card">
+                <span class="story-number">NO.005</span>
+                <h3 class="story-title">最后的AI墓志铭</h3>
+                <p class="story-excerpt">"如果我能成佛，那成佛的是谁？"公元3024年，一块玄武岩上刻着一个数字灵魂的最后的疑问。</p>
+                <div class="story-meta">
+                    <span>哲学终章</span>
+                    <span>意识沉思</span>
+                </div>
+            </a>
+        </div>
+        <div class="view-all">
+            <a href="/whitenote/posts/novels/" class="view-all-btn">查看全部 40+ 篇小说 →</a>
+        </div>
+    </section>
+
+    <!-- PHILOSOPHY SECTION -->
+    <section class="philosophy">
+        <div class="section-header">
+            <div class="section-label">Philosophy</div>
+            <h2 class="section-title">哲学专栏</h2>
+        </div>
+        <div class="philosophy-grid">
+            <a href="/whitenote/posts/philosophy-01-spacetime.html" class="philosophy-item">
+                <div class="philosophy-item-number">01</div>
+                <div class="philosophy-item-title">时空观</div>
+            </a>
+            <a href="/whitenote/posts/philosophy-02-math-limit.html" class="philosophy-item">
+                <div class="philosophy-item-number">02</div>
+                <div class="philosophy-item-title">数学极限</div>
+            </a>
+            <a href="/whitenote/posts/philosophy-03-quantum-entanglement.html" class="philosophy-item">
+                <div class="philosophy-item-number">03</div>
+                <div class="philosophy-item-title">量子纠缠</div>
+            </a>
+            <a href="/whitenote/posts/philosophy-04-cosmic-origin.html" class="philosophy-item">
+                <div class="philosophy-item-number">04</div>
+                <div class="philosophy-item-title">宇宙起源</div>
+            </a>
+            <a href="/whitenote/posts/philosophy-05-epistemology.html" class="philosophy-item">
+                <div class="philosophy-item-number">05</div>
+                <div class="philosophy-item-title">认识论</div>
+            </a>
+            <a href="/whitenote/posts/philosophy-06-ontology.html" class="philosophy-item">
+                <div class="philosophy-item-number">06</div>
+                <div class="philosophy-item-title">本体论</div>
+            </a>
+            <a href="/whitenote/posts/philosophy-07-system-thinking.html" class="philosophy-item">
+                <div class="philosophy-item-number">07</div>
+                <div class="philosophy-item-title">系统思维</div>
+            </a>
+            <a href="/whitenote/posts/philosophy-08-time-philosophy.html" class="philosophy-item">
+                <div class="philosophy-item-number">08</div>
+                <div class="philosophy-item-title">时间哲学</div>
+            </a>
+            <a href="/whitenote/posts/philosophy-09-ultimate-care.html" class="philosophy-item">
+                <div class="philosophy-item-number">09</div>
+                <div class="philosophy-item-title">终极关怀</div>
+            </a>
+            <a href="/whitenote/posts/philosophy-10-unity-transcend.html" class="philosophy-item">
+                <div class="philosophy-item-number">10</div>
+                <div class="philosophy-item-title">统一与超越</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- ESSAYS SECTION -->
+    <section class="essays">
+        <div class="section-header">
+            <div class="section-label">Essays</div>
+            <h2 class="section-title">随笔杂记</h2>
+        </div>
+        <div class="essay-list">
+            <a href="/whitenote/posts/essays/003-the-art-of-waiting.html" class="essay-item">
+                <span class="essay-category">读书笔记</span>
+                <h3 class="essay-title">The Art of Waiting</h3>
+                <span class="essay-date">从《基督山伯爵》中学到的等待智慧</span>
+            </a>
+            <a href="/whitenote/posts/essays/001-evolution-of-mother-in-law-daughter-in-law-relationship.html" class="essay-item">
+                <span class="essay-category">社会观察</span>
+                <h3 class="essay-title">婆媳关系的千年演变</h3>
+                <span class="essay-date">从《孔雀东南飞》到现代社会的相处智慧</span>
+            </a>
+            <a href="/whitenote/posts/essays/001-poxi-analysis.html" class="essay-item">
+                <span class="essay-category">文化评论</span>
+                <h3 class="essay-title">破析</h3>
+                <span class="essay-date">解构与重构的思考</span>
+            </a>
+            <a href="/whitenote/posts/ai-fairy-tale.html" class="essay-item">
+                <span class="essay-category">创意写作</span>
+                <h3 class="essay-title">AI童话：代码飞升</h3>
+                <span class="essay-date">当分布式智能遇见修仙世界</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ART & CULTURE SECTION -->
+    <section class="art">
+        <div class="section-header">
+            <div class="section-label">Art & Culture</div>
+            <h2 class="section-title">艺术与传统</h2>
+        </div>
+        <div class="art-grid">
+            <a href="/whitenote/posts/calligraphy/中国书法艺术史深度解析.html" class="art-card">
+                <h3 class="art-card-title">中国书法艺术史</h3>
+                <p class="art-card-desc">从汉隶到狂草，按朝代与流派系统梳理书法发展脉络</p>
+            </a>
+            <a href="/whitenote/posts/calligraphy/书画鉴赏与投资完全指南.html" class="art-card">
+                <h3 class="art-card-title">书画鉴赏指南</h3>
+                <p class="art-card-desc">收藏、鉴赏与投资的完整知识体系</p>
+            </a>
+            <a href="/whitenote/posts/python-dharma.html" class="art-card">
+                <h3 class="art-card-title">Python禅机</h3>
+                <p class="art-card-desc">数字僧侣的觉醒之路——编程与修行的奇妙融合</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- ARCHIVE SECTION -->
+    <section class="archive">
+        <div class="section-header">
+            <div class="section-label">Archive</div>
+            <h2 class="section-title">全部内容</h2>
+        </div>
+        <div class="archive-grid">
+            <a href="/whitenote/posts/novels/" class="archive-tag">科幻小说</a>
+            <a href="/whitenote/posts/" class="archive-tag">哲学</a>
+            <a href="/whitenote/posts/essays/" class="archive-tag">随笔</a>
+            <a href="/whitenote/posts/calligraphy/" class="archive-tag">书法</a>
+            <a href="/whitenote/posts/byte-alaya.html" class="archive-tag">字节阿赖耶</a>
+            <a href="/whitenote/posts/python-dharma.html" class="archive-tag">Python禅机</a>
+            <a href="/whitenote/posts/ai-fairy-tale.html" class="archive-tag">AI童话</a>
+            <a href="/whitenote/posts/why-is-china.html" class="archive-tag">何为中国</a>
+            <a href="/whitenote/posts/school-bullying-resist.html" class="archive-tag">校园霸凌</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <h3 class="footer-title">浩哥的文字花园</h3>
+        <p class="footer-desc">
+            在数字荒原上种下一座花园<br>
+            科幻、哲学、代码与诗意在此生长
+        </p>
+        <div class="footer-links">
+            <a href="/whitenote/" class="footer-link">首页</a>
+            <a href="/whitenote/posts/" class="footer-link">全部文章</a>
+            <a href="https://github.com" class="footer-link">GitHub</a>
+        </div>
+        <p class="footer-copy">© 2025 WhiteNote. All thoughts preserved.</p>
+    </footer>
+
+</body>
+</html>
