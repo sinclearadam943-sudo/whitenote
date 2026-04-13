@@ -58,9 +58,9 @@
 
 | 编号 | 主题 | 推荐文章 |
 |------|------|----------|
-| 10.10 | 元认知 | [认识论](/whitenote/posts/philosophy-05-epistemology.html) |
-| 10.20 | 存在论 | [本体论](/whitenote/posts/philosophy-06-ontology.html) |
-| 10.40 | 时间观 | [时间哲学](/whitenote/posts/philosophy-08-time-philosophy.html) |
+| 10.10 | 元认知 | [认识论](../posts/philosophy-05-epistemology.md) |
+| 10.20 | 存在论 | [本体论](../posts/philosophy-06-ontology.md) |
+| 10.40 | 时间观 | [时间哲学](../posts/philosophy-08-time-philosophy.md) |
 
 ### 20 法 - 方法论
 
@@ -68,10 +68,10 @@
 
 | 编号 | 方法 | 文档 |
 |------|------|------|
-| 20.10 | 分类学 | [标签体系](/whitenote/metadata/tagging-system.md) |
-| 20.20 | 思维模型 | [系统思维](/whitenote/posts/philosophy-07-system-thinking.html) |
+| 20.10 | 分类学 | [标签体系](../metadata/tagging-system.md) |
+| 20.20 | 思维模型 | [系统思维](../posts/philosophy-07-system-thinking.md) |
 | 20.30 | 叙事框架 | 科幻设定指南 |
-| 20.40 | 评价体系 | [A+评级标准](/whitenote/metadata/tagging-system.md) |
+| 20.40 | 评价体系 | [A+评级标准](../metadata/tagging-system.md) |
 
 ### 30 术 - 具体技艺
 
@@ -81,8 +81,8 @@
 |------|------|------|
 | 30.10 | 创作术 | 科幻写作、技术写作 |
 | 30.20 | 阅读术 | 精读、主题阅读 |
-| 30.30 | 修行术 | [等待之道](/whitenote/posts/essays/003-the-art-of-waiting.html) |
-| 30.40 | 编程术 | [Python禅机](/whitenote/posts/python-dharma.html) |
+| 30.30 | 修行术 | [等待之道](../posts/essays/003-the-art-of-waiting.md) |
+| 30.40 | 编程术 | [Python禅机](../posts/python-dharma.md) |
 | 30.50 | 思考术 | 概念拆解、思想实验 |
 
 ### 50 境 - 语境维度
@@ -168,9 +168,27 @@
 
 ## 🔗 相关文档
 
-- [完整框架文档](/whitenote/system/johnny-decimal-framework.md)
-- [标签体系](/whitenote/metadata/tagging-system.md)
-- [文章索引](/whitenote/metadata/index.md)
+- [完整框架文档](./johnny-decimal-framework.md) - 道法术器六层详解
+- [生活维度扩展](./life-extension.md) - 70-90 层：身体、财富、工作、记忆、传承
+- [体系总览](./README.md) - 九层架构全景
+- [标签体系](../metadata/tagging-system.md) - 评分与标签标准
+- [文章索引](../metadata/index.md) - 所有文章列表
+
+---
+
+## 🌱 生活维度 (70-90)
+
+个人生活维度的内容建议本地维护，不与公开内容混合：
+
+| 维度 | 编号 | 核心内容 |
+|------|------|----------|
+| **身体** | 70.10 | 健康数据、运动体系、精力管理 |
+| **财富** | 70.20 | 收入体系、投资策略、财务自由 |
+| **工作** | 70.30 | 职业规划、技能树、人脉网络 |
+| **记忆** | 70.40 | 日记系统、照片档案、旅行记录 |
+| **传承** | 80.10 | 下一代教育、家族历史、知识遗产 |
+
+详细框架见：[生活维度扩展文档](./life-extension.md)
 
 ---
 
