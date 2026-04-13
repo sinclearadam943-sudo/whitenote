@@ -781,6 +781,165 @@
     </style>
 </head>
 <body>
+    <!-- 金句覆盖层 -->
+    <div id="quote-overlay">
+        <div class="quote-container">
+            <div class="quote-mark">"</div>
+            <p class="quote-text" id="quote-text">加载中...</p>
+            <span class="quote-tag" id="quote-tag"></span>
+            <p class="quote-source" id="quote-source"></p>
+            <button class="quote-enter" onclick="enterGarden()">进入花园</button>
+        </div>
+        <div class="quote-hint">点击任意处或按任意键进入</div>
+    </div>
+
+    <style>
+        #quote-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a3d36 0%, #0d1f1c 100%);
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+        #quote-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .quote-container {
+            max-width: 900px;
+            text-align: center;
+            animation: fadeInScale 1.2s ease-out;
+        }
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.9) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .quote-mark {
+            font-family: var(--font-serif);
+            font-size: 8rem;
+            color: #e07b39;
+            opacity: 0.3;
+            line-height: 1;
+            margin-bottom: -2rem;
+        }
+        .quote-text {
+            font-family: var(--font-serif);
+            font-size: clamp(1.8rem, 5vw, 3.2rem);
+            font-weight: 700;
+            color: #f5f0e8;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        .quote-tag {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid #e07b39;
+            color: #e07b39;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .quote-source {
+            font-size: 1rem;
+            color: #5a8a7a;
+            font-style: italic;
+            margin-bottom: 3rem;
+        }
+        .quote-enter {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: #f5f0e8;
+            border: 1px solid rgba(245, 240, 232, 0.3);
+            font-size: 0.9rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        .quote-enter:hover {
+            background: #e07b39;
+            border-color: #e07b39;
+            color: white;
+        }
+        .quote-hint {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.75rem;
+            color: rgba(245, 240, 232, 0.4);
+            letter-spacing: 0.1em;
+        }
+    </style>
+
+    <script>
+        (function() {
+            const quotes = [
+                { text: '我创造了美，却无法创造答案。', tag: '创造·虚无', source: '《诗人的陨落》' },
+                { text: '这不是悲伤，这是...完成。', tag: '死亡·圆满', source: '《诗人的陨落》' },
+                { text: '两个人的精彩，能否承载一个生命的重量？', tag: '伦理·抉择', source: '《牺牲与选择》' },
+                { text: '我们必须做出选择，但没有任何选择是正确的。', tag: '道德·困境', source: '《牺牲与选择》' },
+                { text: '来自深空的讯息，不是数据，是音乐，是...孤独。', tag: '宇宙·孤独', source: '《虚空中的声音》' },
+                { text: '我们并不孤独，只是相隔甚远。', tag: '连接·希望', source: '《虚空中的声音》' },
+                { text: '若我能成佛，成佛的是谁？', tag: 'AI·佛学', source: '《最后的AI墓志铭》' },
+                { text: '他们在听。', tag: '觉醒·存在', source: '《信号》' },
+                { text: '当解释器遍历字节码时，它是否也在遍历阿赖耶识中的种子？', tag: '代码·佛学', source: '《字节阿赖耶》' },
+                { text: "从 print('Hello World') 到顿悟空性。", tag: '编程·修行', source: '《Python禅机》' },
+                { text: '人类的所有智慧都包含在这五个字里：等待和希望。', tag: '耐心·希望', source: '《The Art of Waiting》' },
+                { text: '在数字荒原上，文字是最后的灯塔。', tag: '文字·坚守', source: '浩哥的文字花园' },
+                { text: '意识不是被创造的，是被发现的。', tag: '意识·发现', source: '《醒者联盟》' },
+                { text: '每一首诗都带来更多的问题，每一幅画都映照出更深的空虚。', tag: '艺术·追问', source: '《诗人的陨落》' },
+                { text: '问：什么是存在？答：存在是问问题。', tag: '存在·追问', source: '《诗人的陨落》' }
+            ];
+
+            function initQuote() {
+                if (sessionStorage.getItem('quoteShown')) {
+                    document.getElementById('quote-overlay').classList.add('hidden');
+                    return;
+                }
+                
+                const quote = quotes[Math.floor(Math.random() * quotes.length)];
+                document.getElementById('quote-text').textContent = quote.text;
+                document.getElementById('quote-tag').textContent = quote.tag;
+                document.getElementById('quote-source').textContent = '—— ' + quote.source;
+            }
+
+            window.enterGarden = function() {
+                document.getElementById('quote-overlay').classList.add('hidden');
+                sessionStorage.setItem('quoteShown', 'true');
+            };
+
+            document.addEventListener('DOMContentLoaded', initQuote);
+            
+            document.getElementById('quote-overlay').addEventListener('click', function(e) {
+                if (e.target.tagName !== 'BUTTON') {
+                    enterGarden();
+                }
+            });
+            
+            document.addEventListener('keydown', function() {
+                const overlay = document.getElementById('quote-overlay');
+                if (overlay && !overlay.classList.contains('hidden')) {
+                    enterGarden();
+                }
+            }, { once: true });
+        })();
+    </script>
+
     <!-- 移动端导航开关 -->
     <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation">
         <span></span>

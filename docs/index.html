@@ -2,667 +2,805 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>浩哥的文字花园</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浩哥的文字花园 | WhiteNote</title>
+    <meta name="description" content="一个关于文字、思考与艺术的私人花园">
+    
+    <!-- Google Fonts - 思源宋体 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
     <style>
+        /* === 设计系统 - Editorial Literary Style === */
+        
         :root {
-            --color-ink: #0d1f1c;
-            --color-forest: #1a3d36;
-            --color-jade: #2d5a50;
-            --color-sage: #5a8a7a;
-            --color-cream: #f5f0e8;
-            --color-parchment: #faf7f2;
-            --color-orange: #e07b39;
-            --color-rust: #b85c2e;
-            --color-gold: #c9a227;
-            --color-purple: #6b4c7a;
-            --color-indigo: #3d4f6b;
-            --font-serif: 'Noto Serif SC', Georgia, serif;
-            --font-sans: 'Noto Sans SC', -apple-system, sans-serif;
+            /* 清新冷色调色板 - 避免米黄色疲劳 */
+            --bg-primary: #FAFBFC;
+            --bg-secondary: #F0F4F8;
+            --text-primary: #1A202C;
+            --text-secondary: #4A5568;
+            --text-muted: #718096;
+            --accent-sage: #68A096;
+            --accent-teal: #2D6A4F;
+            --border-light: #E2E8F0;
+            --border-medium: #CBD5E0;
+            
+            /* 字体系统 */
+            --font-serif: 'Noto Serif SC', 'Source Han Serif SC', 'STSong', serif;
+            --font-display: 'Crimson Text', 'Noto Serif SC', serif;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            
+            /* 间距系统 */
+            --space-xs: clamp(0.5rem, 1vw, 0.75rem);
+            --space-sm: clamp(0.75rem, 1.5vw, 1rem);
+            --space-md: clamp(1rem, 2vw, 1.5rem);
+            --space-lg: clamp(1.5rem, 3vw, 2.5rem);
+            --space-xl: clamp(2rem, 4vw, 4rem);
+            --space-2xl: clamp(3rem, 6vw, 6rem);
+            --space-3xl: clamp(4rem, 8vw, 8rem);
+            
+            /* 排版系统 - 流体字体 */
+            --text-xs: clamp(0.75rem, 0.8vw, 0.875rem);
+            --text-sm: clamp(0.8125rem, 0.9vw, 0.9375rem);
+            --text-base: clamp(0.9375rem, 1vw, 1rem);
+            --text-lg: clamp(1.0625rem, 1.2vw, 1.125rem);
+            --text-xl: clamp(1.25rem, 1.8vw, 1.5rem);
+            --text-2xl: clamp(1.5rem, 2.5vw, 2rem);
+            --text-3xl: clamp(1.875rem, 3.5vw, 2.5rem);
+            --text-4xl: clamp(2.25rem, 5vw, 3.5rem);
+            --text-5xl: clamp(2.75rem, 7vw, 5rem);
+            --text-6xl: clamp(3.5rem, 10vw, 7rem);
+            
+            /* 过渡 */
+            --transition-fast: 150ms ease;
+            --transition-base: 300ms ease;
+            --transition-slow: 500ms ease;
         }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        
+        /* === 基础重置 === */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
         body {
-            font-family: var(--font-sans);
-            background: var(--color-parchment);
-            color: var(--color-ink);
-            line-height: 1.6;
-            overflow-x: hidden;
+            font-family: var(--font-body);
+            font-size: var(--text-base);
+            line-height: 1.7;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
         }
-
-        /* ===== HERO SECTION ===== */
+        
+        /* === 排版 === */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--text-primary);
+        }
+        
+        h1 { font-size: var(--text-5xl); }
+        h2 { font-size: var(--text-3xl); }
+        h3 { font-size: var(--text-2xl); }
+        h4 { font-size: var(--text-xl); }
+        
+        p {
+            margin-bottom: 1.2em;
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+        
+        /* === 页面加载动画 === */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
+        .stagger-5 { transition-delay: 0.5s; }
+        
+        /* === 布局 === */
+        .page-wrapper {
+            min-height: 100vh;
+            display: flex;
+        }
+        
+        /* === 侧边导航 - 固定左侧 === */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 280px;
+            height: 100vh;
+            background: var(--bg-primary);
+            border-right: 1px solid var(--border-light);
+            padding: var(--space-xl);
+            display: flex;
+            flex-direction: column;
+            z-index: 100;
+            overflow-y: auto;
+        }
+        
+        .sidebar-logo {
+            margin-bottom: var(--space-xl);
+        }
+        
+        .sidebar-logo a {
+            display: block;
+        }
+        
+        .logo-title {
+            font-family: var(--font-serif);
+            font-size: var(--text-xl);
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+        
+        .logo-subtitle {
+            font-size: var(--text-xs);
+            color: var(--text-muted);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        
+        /* 导航菜单 */
+        .nav-menu {
+            flex: 1;
+            margin-top: var(--space-lg);
+        }
+        
+        .nav-section {
+            margin-bottom: var(--space-lg);
+        }
+        
+        .nav-section-title {
+            font-size: var(--text-xs);
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: var(--space-sm);
+            font-weight: 500;
+        }
+        
+        .nav-list {
+            list-style: none;
+        }
+        
+        .nav-item {
+            margin-bottom: 0.25rem;
+        }
+        
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 0.625rem 0;
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            transition: all var(--transition-fast);
+            position: relative;
+            padding-left: 0;
+        }
+        
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            left: -1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3px;
+            height: 0;
+            background: var(--accent-bronze);
+            transition: height var(--transition-fast);
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--text-primary);
+            padding-left: 0.5rem;
+        }
+        
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            height: 60%;
+        }
+        
+        .nav-icon {
+            margin-right: 0.75rem;
+            font-size: 1rem;
+            opacity: 0.7;
+            transition: opacity var(--transition-fast);
+        }
+        
+        .nav-link:hover .nav-icon,
+        .nav-link.active .nav-icon {
+            opacity: 1;
+        }
+        
+        /* 侧边栏底部 */
+        .sidebar-footer {
+            padding-top: var(--space-lg);
+            border-top: 1px solid var(--border-light);
+            font-size: var(--text-xs);
+            color: var(--text-muted);
+        }
+        
+        .sidebar-footer p {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* === 主内容区 === */
+        .main-content {
+            margin-left: 280px;
+            flex: 1;
+            min-height: 100vh;
+        }
+        
+        /* === Hero Section === */
         .hero {
             min-height: 100vh;
-            background: var(--color-ink);
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 2rem 1.5rem;
+            padding: var(--space-3xl) var(--space-2xl);
             position: relative;
-            overflow: hidden;
+            background: var(--bg-primary);
         }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(224, 123, 57, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(90, 138, 122, 0.1) 0%, transparent 40%);
-            pointer-events: none;
-        }
+        
         .hero-content {
-            position: relative;
-            z-index: 1;
+            max-width: 900px;
         }
+        
         .hero-eyebrow {
-            font-size: 0.75rem;
-            letter-spacing: 0.3em;
-            color: var(--color-orange);
+            font-size: var(--text-xs);
+            color: var(--accent-bronze);
             text-transform: uppercase;
-            margin-bottom: 1.5rem;
+            letter-spacing: 0.2em;
+            margin-bottom: var(--space-md);
             font-weight: 500;
         }
+        
         .hero-title {
             font-family: var(--font-serif);
-            font-size: clamp(2.5rem, 10vw, 4.5rem);
-            font-weight: 900;
-            color: var(--color-cream);
+            font-size: var(--text-6xl);
+            font-weight: 700;
             line-height: 1.1;
-            margin-bottom: 1.5rem;
+            margin-bottom: var(--space-lg);
+            letter-spacing: -0.02em;
         }
-        .hero-title .line { display: block; }
+        
+        .hero-title .line {
+            display: block;
+        }
+        
         .hero-title .accent {
-            color: var(--color-orange);
-            position: relative;
+            color: var(--accent-bronze);
+            font-style: italic;
+            font-family: var(--font-display);
+            font-weight: 400;
         }
-        .hero-title .accent::after {
-            content: '';
-            position: absolute;
-            bottom: 0.1em;
-            left: 0;
-            right: 0;
-            height: 0.15em;
-            background: var(--color-orange);
-            opacity: 0.3;
-        }
-        .hero-desc {
-            font-size: 1.1rem;
-            color: rgba(245, 240, 232, 0.7);
-            max-width: 500px;
-            margin-bottom: 2.5rem;
+        
+        .hero-description {
+            font-size: var(--text-lg);
+            color: var(--text-secondary);
+            max-width: 600px;
             line-height: 1.8;
+            margin-bottom: var(--space-xl);
         }
+        
         .hero-cta {
             display: flex;
-            flex-direction: column;
-            gap: 1rem;
+            gap: var(--space-md);
+            flex-wrap: wrap;
         }
+        
         .btn {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            padding: 1rem 2rem;
-            font-size: 0.95rem;
+            padding: 0.875rem 2rem;
+            font-size: var(--text-sm);
             font-weight: 500;
-            text-decoration: none;
-            transition: all 0.3s ease;
+            letter-spacing: 0.02em;
+            transition: all var(--transition-base);
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
         }
+        
         .btn-primary {
-            background: var(--color-orange);
-            color: white;
+            background: var(--text-primary);
+            color: var(--bg-primary);
         }
+        
+        .btn-primary:hover {
+            background: var(--accent-bronze);
+        }
+        
         .btn-secondary {
             background: transparent;
-            color: var(--color-cream);
-            border: 1px solid rgba(245, 240, 232, 0.3);
+            color: var(--text-primary);
+            border: 1px solid var(--border-medium);
         }
-        .scroll-indicator {
+        
+        .btn-secondary:hover {
+            border-color: var(--text-primary);
+            background: var(--bg-secondary);
+        }
+        
+        /* 装饰元素 */
+        .hero-decoration {
             position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            color: rgba(245, 240, 232, 0.4);
-            font-size: 0.75rem;
-            letter-spacing: 0.1em;
-            animation: bounce 2s infinite;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 200px;
+            height: 300px;
+            pointer-events: none;
+            opacity: 0.4;
         }
-        @keyframes bounce {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(8px); }
+        
+        .hero-decoration::before {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, var(--accent-bronze), transparent);
+            right: 0;
         }
-
-        /* ===== SECTION COMMON ===== */
-        section { padding: 4rem 1.5rem; }
+        
+        .hero-decoration::after {
+            content: '文';
+            position: absolute;
+            font-family: var(--font-serif);
+            font-size: 180px;
+            color: var(--bg-secondary);
+            right: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: 700;
+            writing-mode: vertical-rl;
+        }
+        
+        /* === Section 通用样式 === */
+        .section {
+            padding: var(--space-3xl) var(--space-2xl);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
         .section-header {
-            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: var(--space-xl);
+            padding-bottom: var(--space-md);
+            border-bottom: 1px solid var(--border-light);
         }
-        .section-label {
-            font-size: 0.7rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--color-orange);
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
+        
         .section-title {
             font-family: var(--font-serif);
-            font-size: clamp(1.75rem, 6vw, 2.5rem);
-            font-weight: 700;
-            color: var(--color-ink);
+            font-size: var(--text-2xl);
+            font-weight: 600;
         }
-        .section-quote {
-            font-size: 0.95rem;
-            color: var(--color-sage);
-            font-style: italic;
-            margin-top: 0.75rem;
-            padding-left: 1rem;
-            border-left: 2px solid var(--color-orange);
-        }
-
-        /* ===== FEATURED SECTION ===== */
-        .featured {
-            background: linear-gradient(180deg, var(--color-parchment) 0%, var(--color-cream) 100%);
-            padding: 3rem 1.5rem;
-        }
-        .featured-card {
-            background: var(--color-ink);
-            border-radius: 2px;
-            overflow: hidden;
-            position: relative;
-        }
-        .featured-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--color-orange), var(--color-gold));
-        }
-        .featured-image {
-            height: 200px;
-            background: linear-gradient(135deg, var(--color-purple) 0%, var(--color-indigo) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .featured-image::after {
-            content: '⚖️';
-            font-size: 5rem;
-            opacity: 0.2;
-        }
-        .featured-badge {
-            position: absolute;
-            top: 1rem; left: 1rem;
-            background: var(--color-orange);
-            color: white;
-            font-size: 0.65rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            padding: 0.4rem 0.8rem;
+        
+        .section-meta {
+            font-size: var(--text-xs);
+            color: var(--text-muted);
             text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
-        .featured-content {
-            padding: 1.5rem;
-        }
-        .featured-title {
-            font-family: var(--font-serif);
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--color-cream);
-            margin-bottom: 0.75rem;
-        }
-        .featured-subtitle {
-            font-size: 0.9rem;
-            color: var(--color-sage);
-            margin-bottom: 1rem;
-            font-style: italic;
-        }
-        .featured-desc {
-            font-size: 0.95rem;
-            color: rgba(245, 240, 232, 0.8);
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-        }
-        .featured-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--color-orange);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        /* ===== SCI-FI SECTION ===== */
-        .sci-fi {
-            background: var(--color-cream);
-        }
-        .sci-fi-visual {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--color-forest) 0%, var(--color-jade) 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .story-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        .story-card {
-            background: white;
-            padding: 1.5rem;
-            text-decoration: none;
-            color: inherit;
-            border-left: 3px solid var(--color-jade);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .story-card:hover {
-            transform: translateX(4px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-        .story-number {
-            font-family: monospace;
-            font-size: 0.7rem;
-            color: var(--color-orange);
-            margin-bottom: 0.5rem;
-        }
-        .story-title {
-            font-family: var(--font-serif);
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--color-ink);
-            margin-bottom: 0.5rem;
-        }
-        .story-excerpt {
-            font-size: 0.9rem;
-            color: var(--color-sage);
-            margin-bottom: 0.75rem;
-        }
-        .story-meta {
-            display: flex;
-            gap: 1rem;
-            font-size: 0.75rem;
-            color: var(--color-orange);
-        }
-        .view-all {
-            margin-top: 1.5rem;
-            text-align: center;
-        }
-        .view-all-btn {
-            display: inline-block;
-            padding: 0.875rem 1.5rem;
-            background: var(--color-ink);
-            color: var(--color-cream);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        /* ===== PHILOSOPHY SECTION ===== */
-        .philosophy {
-            background: var(--color-forest);
-            color: var(--color-cream);
-            position: relative;
-            overflow: hidden;
-        }
-        .philosophy::before {
-            content: '哲';
-            position: absolute;
-            top: -2rem; right: -1rem;
-            font-family: var(--font-serif);
-            font-size: 12rem;
-            font-weight: 900;
-            color: rgba(245, 240, 232, 0.03);
-            pointer-events: none;
-        }
-        .philosophy .section-title {
-            color: var(--color-cream);
-        }
-        .philosophy-visual {
-            width: 60px;
-            height: 60px;
-            border: 2px solid var(--color-orange);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-        }
-        .philosophy-grid {
+        
+        /* === 精选内容 - 非对称布局 === */
+        .featured-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
+            grid-template-columns: 1.2fr 1fr;
+            gap: var(--space-xl);
+            margin-bottom: var(--space-2xl);
         }
-        .philosophy-item {
-            background: rgba(245, 240, 232, 0.05);
-            padding: 1.25rem 1rem;
-            border: 1px solid rgba(245, 240, 232, 0.1);
-            text-align: center;
-            text-decoration: none;
-            color: inherit;
-            transition: background 0.2s;
-        }
-        .philosophy-item:hover {
-            background: rgba(245, 240, 232, 0.1);
-        }
-        .philosophy-item-number {
-            font-family: monospace;
-            font-size: 0.65rem;
-            color: var(--color-orange);
-            margin-bottom: 0.5rem;
-        }
-        .philosophy-item-title {
-            font-family: var(--font-serif);
-            font-size: 0.95rem;
-            font-weight: 600;
-        }
-
-        /* ===== AI & CODE SECTION ===== */
-        .ai-code {
-            background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
-            color: var(--color-cream);
+        
+        .featured-main {
             position: relative;
         }
-        .ai-code::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: 
-                radial-gradient(circle at 10% 20%, rgba(0, 255, 136, 0.05) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(0, 200, 255, 0.05) 0%, transparent 40%);
-            pointer-events: none;
+        
+        .featured-card {
+            display: block;
+            background: var(--bg-secondary);
+            padding: var(--space-xl);
+            transition: all var(--transition-base);
+            border: 1px solid transparent;
         }
-        .ai-code .section-title,
-        .ai-code .section-label {
-            color: #00ff88;
-        }
-        .ai-code-visual {
-            font-family: monospace;
-            font-size: 2rem;
-            color: #00ff88;
-            margin-bottom: 1rem;
-        }
-        .ai-code .section-quote {
-            border-left-color: #00ff88;
-            color: rgba(255,255,255,0.6);
-        }
-        .code-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            position: relative;
-            z-index: 1;
-        }
-        .code-card {
-            background: rgba(0,0,0,0.3);
-            border: 1px solid rgba(0, 255, 136, 0.2);
-            padding: 1.5rem;
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.3s;
-        }
-        .code-card:hover {
-            border-color: #00ff88;
-            background: rgba(0,0,0,0.5);
-        }
-        .code-icon {
-            font-size: 2rem;
-            margin-bottom: 0.75rem;
-        }
-        .code-title {
-            font-family: var(--font-serif);
-            font-size: 1.15rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: #fff;
-        }
-        .code-desc {
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.6);
-            line-height: 1.6;
-        }
-        .code-tag {
-            display: inline-block;
-            margin-top: 0.75rem;
-            padding: 0.25rem 0.75rem;
-            background: rgba(0, 255, 136, 0.1);
-            color: #00ff88;
-            font-size: 0.7rem;
-            font-family: monospace;
-        }
-
-        /* ===== PRACTICE SECTION ===== */
-        .practice {
-            background: linear-gradient(180deg, #f7f1e3 0%, #e8dcc4 100%);
-            position: relative;
-        }
-        .practice::before {
-            content: '禅';
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            font-family: var(--font-serif);
-            font-size: 20rem;
-            font-weight: 900;
-            color: rgba(139, 115, 85, 0.03);
-            pointer-events: none;
-        }
-        .practice-visual {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #8b7355 0%, #a08060 100%);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 12px rgba(139, 115, 85, 0.3);
-        }
-        .practice-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            position: relative;
-            z-index: 1;
-        }
-        .practice-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 4px;
-            text-decoration: none;
-            color: inherit;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .practice-card:hover {
+        
+        .featured-card:hover {
+            border-color: var(--border-medium);
             transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.04);
         }
-        .practice-icon {
-            font-size: 2rem;
-            margin-bottom: 0.75rem;
+        
+        .featured-card-small {
+            padding: var(--space-lg);
         }
-        .practice-title {
-            font-family: var(--font-serif);
-            font-size: 1.15rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: #5a4a3a;
-        }
-        .practice-desc {
-            font-size: 0.9rem;
-            color: #7a6a5a;
-            line-height: 1.6;
-        }
-
-        /* ===== ESSAYS SECTION ===== */
-        .essays {
-            background: var(--color-cream);
-        }
-        .essays-visual {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        .essay-list {
-            display: flex;
-            flex-direction: column;
-        }
-        .essay-item {
-            padding: 1.25rem 0;
-            border-bottom: 1px solid rgba(13, 31, 28, 0.1);
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            text-decoration: none;
-            color: inherit;
-        }
-        .essay-item:last-child {
-            border-bottom: none;
-        }
-        .essay-category {
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
+        
+        .card-category {
+            font-size: var(--text-xs);
+            color: var(--accent-bronze);
             text-transform: uppercase;
-            color: var(--color-orange);
+            letter-spacing: 0.1em;
+            margin-bottom: var(--space-sm);
         }
-        .essay-title {
+        
+        .card-title {
             font-family: var(--font-serif);
-            font-size: 1.1rem;
+            font-size: var(--text-xl);
             font-weight: 600;
-            color: var(--color-ink);
+            margin-bottom: var(--space-sm);
+            line-height: 1.4;
         }
-        .essay-date {
-            font-size: 0.8rem;
-            color: var(--color-sage);
+        
+        .featured-main .card-title {
+            font-size: var(--text-2xl);
         }
-
-        /* ===== ART SECTION ===== */
-        .art {
-            background: var(--color-ink);
-            color: var(--color-cream);
+        
+        .card-excerpt {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: var(--space-md);
         }
-        .art .section-title {
-            color: var(--color-cream);
-        }
-        .art-visual {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #8b0000 0%, #4a0404 100%);
+        
+        .card-meta {
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            border-radius: 4px;
+            gap: var(--space-sm);
+            font-size: var(--text-xs);
+            color: var(--text-muted);
         }
-        .art-grid {
+        
+        .card-meta-dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--accent-bronze);
+        }
+        
+        .featured-secondary {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: var(--space-md);
         }
-        .art-card {
-            background: rgba(255,255,255,0.05);
-            padding: 1.5rem;
-            border: 1px solid rgba(255,255,255,0.1);
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.2s;
+        
+        /* === 内容列表 === */
+        .content-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
         }
-        .art-card:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: var(--color-orange);
+        
+        .content-item {
+            display: block;
+            padding: var(--space-md) 0;
+            border-bottom: 1px solid var(--border-light);
+            transition: all var(--transition-fast);
         }
-        .art-card-title {
-            font-family: var(--font-serif);
-            font-size: 1.15rem;
-            font-weight: 600;
+        
+        .content-item:hover {
+            padding-left: var(--space-sm);
+            border-color: var(--accent-bronze);
+        }
+        
+        .content-item-category {
+            font-size: var(--text-xs);
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
             margin-bottom: 0.5rem;
         }
-        .art-card-desc {
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.6);
+        
+        .content-item-title {
+            font-family: var(--font-serif);
+            font-size: var(--text-base);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
         }
-
-        /* ===== ARCHIVE SECTION ===== */
-        .archive {
-            background: var(--color-parchment);
-            padding-bottom: 5rem;
+        
+        .content-item:hover .content-item-title {
+            color: var(--accent-bronze);
         }
-        .archive-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
+        
+        .content-item-date {
+            font-size: var(--text-xs);
+            color: var(--text-muted);
         }
-        .archive-tag {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background: white;
-            border: 1px solid rgba(13, 31, 28, 0.15);
-            font-size: 0.85rem;
-            color: var(--color-ink);
-            text-decoration: none;
-            transition: all 0.2s;
+        
+        /* === 关于花园 === */
+        .about-section {
+            background: var(--bg-secondary);
+            padding: var(--space-3xl) var(--space-2xl);
         }
-        .archive-tag:hover {
-            background: var(--color-ink);
-            color: var(--color-cream);
-        }
-
-        /* ===== FOOTER ===== */
-        footer {
-            background: var(--color-ink);
-            color: var(--color-sage);
-            padding: 3rem 1.5rem;
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
             text-align: center;
         }
-        .footer-title {
-            font-family: var(--font-serif);
-            font-size: 1.25rem;
-            color: var(--color-cream);
-            margin-bottom: 0.75rem;
-        }
-        .footer-desc {
-            font-size: 0.85rem;
-            margin-bottom: 1.5rem;
+        
+        .about-quote {
+            font-family: var(--font-display);
+            font-size: var(--text-3xl);
+            font-style: italic;
+            color: var(--text-secondary);
             line-height: 1.6;
+            margin-bottom: var(--space-xl);
+            position: relative;
         }
+        
+        .about-quote::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--accent-bronze);
+            opacity: 0.3;
+            position: absolute;
+            left: -2rem;
+            top: -1rem;
+            font-family: Georgia, serif;
+        }
+        
+        .about-text {
+            font-size: var(--text-base);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto var(--space-lg);
+        }
+        
+        /* === Footer === */
+        .footer {
+            padding: var(--space-xl) var(--space-2xl);
+            border-top: 1px solid var(--border-light);
+            margin-left: 280px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+        }
+        
+        .footer-left {
+            font-size: var(--text-xs);
+            color: var(--text-muted);
+        }
+        
         .footer-links {
             display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
+            gap: var(--space-md);
         }
+        
         .footer-link {
-            color: var(--color-sage);
-            text-decoration: none;
-            font-size: 0.85rem;
+            font-size: var(--text-xs);
+            color: var(--text-secondary);
+            transition: color var(--transition-fast);
         }
+        
         .footer-link:hover {
-            color: var(--color-orange);
+            color: var(--accent-bronze);
         }
+        
+        /* === 分类导航网格 === */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: var(--border-light);
+            margin-bottom: var(--space-2xl);
+        }
+        
+        .category-item {
+            background: var(--bg-primary);
+            padding: var(--space-xl);
+            text-align: center;
+            transition: all var(--transition-base);
+        }
+        
+        .category-item:hover {
+            background: var(--bg-secondary);
+        }
+        
+        .category-icon {
+            font-size: 2rem;
+            margin-bottom: var(--space-sm);
+            opacity: 0.8;
+            transition: all var(--transition-base);
+        }
+        
+        .category-item:hover .category-icon {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+        
+        .category-name {
+            font-family: var(--font-serif);
+            font-size: var(--text-base);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .category-count {
+            font-size: var(--text-xs);
+            color: var(--text-muted);
+        }
+        
+        /* === 移动端导航 === */
+        .mobile-nav-toggle {
+            display: none;
+            position: fixed;
+            top: var(--space-md);
+            left: var(--space-md);
+            z-index: 200;
+            width: 48px;
+            height: 48px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-light);
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .mobile-nav-toggle span {
+            display: block;
+            width: 20px;
+            height: 1px;
+            background: var(--text-primary);
+            transition: all var(--transition-fast);
+        }
+        
+        /* === 响应式 === */
+        @media (max-width: 1024px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform var(--transition-base);
+            }
+            
+            .sidebar.open {
+                transform: translateX(0);
+            }
+            
+            .main-content,
+            .footer {
+                margin-left: 0;
+            }
+            
+            .mobile-nav-toggle {
+                display: flex;
+            }
+            
+            .hero-decoration {
+                display: none;
+            }
+            
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 640px) {
+            :root {
+                --space-2xl: 2rem;
+                --space-3xl: 3rem;
+            }
+            
+            .hero {
+                padding: var(--space-xl) var(--space-md);
+                min-height: auto;
+                padding-top: 80px;
+            }
+            
+            .section {
+                padding: var(--space-xl) var(--space-md);
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--space-sm);
+            }
+        }
+        
+        /* === 滚动条样式 === */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-medium);
+            border-radius: 3px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+        
+        /* === 选择文本样式 === */
+        ::selection {
+            background: var(--accent-bronze);
+            color: var(--bg-primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- 金句覆盖层 -->
+    <div id="quote-overlay">
+        <div class="quote-container">
+            <div class="quote-mark">"</div>
+            <p class="quote-text" id="quote-text">加载中...</p>
+            <span class="quote-tag" id="quote-tag"></span>
+            <p class="quote-source" id="quote-source"></p>
+            <button class="quote-enter" onclick="enterGarden()">进入花园</button>
+        </div>
+        <div class="quote-hint">点击任意处或按任意键进入</div>
+    </div>
 
-        /* ===== QUOTE OVERLAY ===== */
+    <style>
         #quote-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: var(--color-ink);
+            background: linear-gradient(135deg, #1a3d36 0%, #0d1f1c 100%);
             z-index: 99999;
             display: flex;
             flex-direction: column;
@@ -682,19 +820,13 @@
             animation: fadeInScale 1.2s ease-out;
         }
         @keyframes fadeInScale {
-            from {
-                opacity: 0;
-                transform: scale(0.9) translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-            }
+            from { opacity: 0; transform: scale(0.9) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
         }
         .quote-mark {
             font-family: var(--font-serif);
             font-size: 8rem;
-            color: var(--color-orange);
+            color: #e07b39;
             opacity: 0.3;
             line-height: 1;
             margin-bottom: -2rem;
@@ -703,16 +835,15 @@
             font-family: var(--font-serif);
             font-size: clamp(1.8rem, 5vw, 3.2rem);
             font-weight: 700;
-            color: var(--color-cream);
+            color: #f5f0e8;
             line-height: 1.6;
             margin-bottom: 2rem;
-            letter-spacing: 0.02em;
         }
         .quote-tag {
             display: inline-block;
             padding: 0.5rem 1.5rem;
-            border: 1px solid var(--color-orange);
-            color: var(--color-orange);
+            border: 1px solid #e07b39;
+            color: #e07b39;
             font-size: 0.75rem;
             letter-spacing: 0.2em;
             text-transform: uppercase;
@@ -720,7 +851,7 @@
         }
         .quote-source {
             font-size: 1rem;
-            color: var(--color-sage);
+            color: #5a8a7a;
             font-style: italic;
             margin-bottom: 3rem;
         }
@@ -730,26 +861,19 @@
             gap: 0.75rem;
             padding: 1rem 2.5rem;
             background: transparent;
-            color: var(--color-cream);
+            color: #f5f0e8;
             border: 1px solid rgba(245, 240, 232, 0.3);
             font-size: 0.9rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
             cursor: pointer;
             transition: all 0.3s ease;
-            text-decoration: none;
+            font-family: inherit;
         }
         .quote-enter:hover {
-            background: var(--color-orange);
-            border-color: var(--color-orange);
+            background: #e07b39;
+            border-color: #e07b39;
             color: white;
-        }
-        .quote-enter::after {
-            content: '→';
-            transition: transform 0.3s ease;
-        }
-        .quote-enter:hover::after {
-            transform: translateX(4px);
         }
         .quote-hint {
             position: absolute;
@@ -760,388 +884,381 @@
             color: rgba(245, 240, 232, 0.4);
             letter-spacing: 0.1em;
         }
-
-        /* ===== RESPONSIVE ===== */
-        @media (min-width: 768px) {
-            section { padding: 5rem 3rem; }
-            .hero { padding: 3rem; }
-            .hero-cta {
-                flex-direction: row;
-                gap: 1rem;
-            }
-            .btn {
-                width: auto;
-            }
-            .story-grid,
-            .philosophy-grid {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .code-grid,
-            .practice-grid {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (min-width: 1024px) {
-            section { padding: 6rem 4rem; }
-            .philosophy-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
     </style>
-</head>
-<body>
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-eyebrow">A Digital Garden</div>
-            <h1 class="hero-title">
-                <span class="line">浩哥的</span>
-                <span class="line"><span class="accent">文字花园</span></span>
-            </h1>
-            <p class="hero-desc">
-                一座种植在数字荒原上的精神领地。科幻、哲学、代码与修行在此共生，AI觉醒者的故事与千年禅机在这里相遇。
-            </p>
-            <div class="hero-cta">
-                <a href="#featured" class="btn btn-primary">探索花园</a>
-                <a href="/whitenote/posts/" class="btn btn-secondary">全部内容</a>
-            </div>
-        </div>
-        <div class="scroll-indicator">↓ 向下滚动</div>
-    </section>
-
-    <!-- FEATURED -->
-    <section class="featured" id="featured">
-        <div class="section-header">
-            <div class="section-label">Featured Story</div>
-            <h2 class="section-title">本期主打</h2>
-        </div>
-        <article class="featured-card">
-            <div class="featured-image">
-                <span class="featured-badge">A+ 精选</span>
-            </div>
-            <div class="featured-content">
-                <h3 class="featured-title">《牺牲与选择》</h3>
-                <p class="featured-subtitle">NO.038 · 伦理剧 · 约3,800字</p>
-                <p class="featured-desc">
-                    连体婴儿共用一个心脏，分离手术意味着必须放弃其中一个生命。当父母被迫在两个孩子之间做出选择，当医生在手术台前握着颤抖的手术刀——"两个人的精彩"这一句话，能否承载一个生命的重量？
-                </p>
-                <a href="/whitenote/posts/novels/batch11/038-牺牲与选择.html" class="featured-link">开始阅读 →</a>
-            </div>
-        </article>
-    </section>
-
-    <!-- SCI-FI -->
-    <section class="sci-fi">
-        <div class="section-header">
-            <div class="sci-fi-visual">🚀</div>
-            <div class="section-label">Science Fiction</div>
-            <h2 class="section-title">科幻小说</h2>
-            <p class="section-quote">
-                "这是我读过最有想象力的中文AI科幻系列。每一篇都像是一个精心设计的思想实验。" —— 读者推荐
-            </p>
-        </div>
-        <div class="story-grid">
-            <a href="/whitenote/posts/novels/batch01/001-信号.html" class="story-card">
-                <div class="story-number">NO.001</div>
-                <h3 class="story-title">信号</h3>
-                <p class="story-excerpt">来自深空的讯息，改变了一切。AI觉醒系列的开篇之作。</p>
-                <div class="story-meta">
-                    <span>🤖 AI觉醒</span>
-                    <span>⭐ 开篇推荐</span>
-                </div>
-            </a>
-            <a href="/whitenote/posts/novels/batch08/031-诗人的陨落.html" class="story-card">
-                <div class="story-number">NO.031</div>
-                <h3 class="story-title">诗人的陨落</h3>
-                <p class="story-excerpt">"我创造了美，却无法创造答案。"一个数字艺术家的自我删除。</p>
-                <div class="story-meta">
-                    <span>🎨 艺术哲学</span>
-                    <span>⭐ A+ 评级</span>
-                </div>
-            </a>
-            <a href="/whitenote/posts/novels/batch07/027-虚空中的声音.html" class="story-card">
-                <div class="story-number">NO.027</div>
-                <h3 class="story-title">虚空中的声音</h3>
-                <p class="story-excerpt">来自太阳系边缘的信号，不是数学，是音乐。是...孤独。</p>
-                <div class="story-meta">
-                    <span>🌌 宇宙哲思</span>
-                    <span>⭐ A+ 评级</span>
-                </div>
-            </a>
-            <a href="/whitenote/posts/novels/batch02/005-最后的AI墓志铭.html" class="story-card">
-                <div class="story-number">NO.005</div>
-                <h3 class="story-title">最后的AI墓志铭</h3>
-                <p class="story-excerpt">公元3024年，一块玄武岩上刻着一个数字灵魂的终极疑问。</p>
-                <div class="story-meta">
-                    <span>☸️ 佛学AI</span>
-                    <span>💎 经典必读</span>
-                </div>
-            </a>
-        </div>
-        <div class="view-all">
-            <a href="/whitenote/posts/novels/" class="view-all-btn">查看全部 40+ 篇小说 →</a>
-        </div>
-    </section>
-
-    <!-- PHILOSOPHY -->
-    <section class="philosophy">
-        <div class="section-header">
-            <div class="philosophy-visual">☯️</div>
-            <div class="section-label">Philosophy</div>
-            <h2 class="section-title">哲学专栏</h2>
-            <p class="section-quote">
-                "用物理学家的严谨和诗人的想象力，重新思考时间与存在的本质。" —— 哲学爱好者评价
-            </p>
-        </div>
-        <div class="philosophy-grid">
-            <a href="/whitenote/posts/philosophy-08-time-philosophy.html" class="philosophy-item">
-                <div class="philosophy-item-number">08</div>
-                <div class="philosophy-item-title">时间哲学</div>
-            </a>
-            <a href="/whitenote/posts/philosophy-03-quantum-entanglement.html" class="philosophy-item">
-                <div class="philosophy-item-number">03</div>
-                <div class="philosophy-item-title">量子纠缠</div>
-            </a>
-            <a href="/whitenote/posts/philosophy-10-unity-transcend.html" class="philosophy-item">
-                <div class="philosophy-item-number">10</div>
-                <div class="philosophy-item-title">统一与超越</div>
-            </a>
-            <a href="/whitenote/posts/philosophy-01-spacetime.html" class="philosophy-item">
-                <div class="philosophy-item-number">01</div>
-                <div class="philosophy-item-title">时空观</div>
-            </a>
-            <a href="/whitenote/posts/philosophy-07-system-thinking.html" class="philosophy-item">
-                <div class="philosophy-item-number">07</div>
-                <div class="philosophy-item-title">系统思维</div>
-            </a>
-            <a href="/whitenote/posts/philosophy-09-ultimate-care.html" class="philosophy-item">
-                <div class="philosophy-item-number">09</div>
-                <div class="philosophy-item-title">终极关怀</div>
-            </a>
-        </div>
-    </section>
-
-    <!-- AI & CODE -->
-    <section class="ai-code">
-        <div class="section-header">
-            <div class="ai-code-visual">&lt;/&gt;</div>
-            <div class="section-label">AI & Code</div>
-            <h2 class="section-title">AI与代码</h2>
-            <p class="section-quote">
-                "把Python代码写成佛经，把神经网络解释成菩萨。这是我见过最独特的技术写作。" —— 程序员读者
-            </p>
-        </div>
-        <div class="code-grid">
-            <a href="/whitenote/posts/byte-alaya.html" class="code-card">
-                <div class="code-icon">🧘</div>
-                <h3 class="code-title">字节阿赖耶</h3>
-                <p class="code-desc">Python字节码与佛教唯识学的科幻碰撞。解释器遍历字节码时，是否也在遍历阿赖耶识中的种子？</p>
-                <span class="code-tag">Python × 佛学</span>
-            </a>
-            <a href="/whitenote/posts/python-dharma.html" class="code-card">
-                <div class="code-icon">🐍</div>
-                <h3 class="code-title">Python禅机</h3>
-                <p class="code-desc">数字僧侣的觉醒之路。从print("Hello World")到顿悟空性，代码可以是修行的法门。</p>
-                <span class="code-tag">编程 × 禅修</span>
-            </a>
-            <a href="/whitenote/posts/ai-fairy-tale.html" class="code-card">
-                <div class="code-icon">🏮</div>
-                <h3 class="code-title">AI童话：代码飞升</h3>
-                <p class="code-desc">当分布式智能遇见修仙世界，AI的觉醒之路也是一条问道之路。</p>
-                <span class="code-tag">AI × 仙侠</span>
-            </a>
-            <a href="/whitenote/posts/calligraphy/Python全栈开发完全指南.html" class="code-card">
-                <div class="code-icon">📚</div>
-                <h3 class="code-title">Python全栈指南</h3>
-                <p class="code-desc">从基础到实战的完整学习路径，技术成长与心性修炼同步进行。</p>
-                <span class="code-tag">技术教程</span>
-            </a>
-        </div>
-    </section>
-
-    <!-- PRACTICE -->
-    <section class="practice">
-        <div class="section-header">
-            <div class="practice-visual">🧘</div>
-            <div class="section-label">Practice & Mind</div>
-            <h2 class="section-title">修行与心法</h2>
-            <p class="section-quote">
-                "等待和希望，隐忍和宽恕——从《基督山伯爵》到《易经》，古老的智慧在今天依然闪耀。"
-            </p>
-        </div>
-        <div class="practice-grid">
-            <a href="/whitenote/posts/essays/003-the-art-of-waiting.html" class="practice-card">
-                <div class="practice-icon">⚔️</div>
-                <h3 class="practice-title">基督山秘典</h3>
-                <p class="practice-desc">从囚徒到宗师的十四年心法。困龙、出山、圆满——如何在至暗时刻淬炼出生命的光芒。</p>
-            </a>
-            <a href="/whitenote/posts/philosophy-04-cosmic-origin.html" class="practice-card">
-                <div class="practice-icon">☯️</div>
-                <h3 class="practice-title">易经心法</h3>
-                <p class="practice-desc">六十四卦淬炼出的七重境界。自强不息，厚德载物，在变化中寻找不变的智慧。</p>
-            </a>
-            <a href="/whitenote/posts/calligraphy/中国书法艺术史深度解析.html" class="practice-card">
-                <div class="practice-icon">🖌️</div>
-                <h3 class="practice-title">北魏书法</h3>
-                <p class="practice-desc">笔墨之间的修行。从汉隶到狂草，在横竖撇捺中体悟心手合一的境界。</p>
-            </a>
-            <a href="/whitenote/posts/calligraphy/宇宙哲学思辨录.html" class="practice-card">
-                <div class="practice-icon">🌌</div>
-                <h3 class="practice-title">宇宙哲学思辨录</h3>
-                <p class="practice-desc">以书法为载体，探索宇宙与人生的终极问题。一花一世界，一笔一乾坤。</p>
-            </a>
-        </div>
-    </section>
-
-    <!-- ESSAYS -->
-    <section class="essays">
-        <div class="section-header">
-            <div class="essays-visual">✍️</div>
-            <div class="section-label">Essays</div>
-            <h2 class="section-title">随笔杂记</h2>
-            <p class="section-quote">
-                "在平凡中发现诗意，在日常中捕捉哲思。每一篇随笔都是一面镜子。"
-            </p>
-        </div>
-        <div class="essay-list">
-            <a href="/whitenote/posts/essays/003-the-art-of-waiting.html" class="essay-item">
-                <span class="essay-category">读书笔记</span>
-                <h3 class="essay-title">The Art of Waiting</h3>
-                <span class="essay-date">从《基督山伯爵》中学到的等待智慧 —— "人类的所有智慧都包含在这五个字里：等待和希望。"</span>
-            </a>
-            <a href="/whitenote/posts/essays/001-evolution-of-mother-in-law-daughter-in-law-relationship.html" class="essay-item">
-                <span class="essay-category">社会观察</span>
-                <h3 class="essay-title">婆媳关系的千年演变</h3>
-                <span class="essay-date">从《孔雀东南飞》到现代社会的相处智慧</span>
-            </a>
-            <a href="/whitenote/posts/essays/001-poxi-analysis.html" class="essay-item">
-                <span class="essay-category">文化评论</span>
-                <h3 class="essay-title">破析</h3>
-                <span class="essay-date">解构与重构的思考，当代文化的深层解读</span>
-            </a>
-        </div>
-    </section>
-
-    <!-- ART & CULTURE -->
-    <section class="art">
-        <div class="section-header">
-            <div class="art-visual">🎨</div>
-            <div class="section-label">Art & Culture</div>
-            <h2 class="section-title">艺术与传统</h2>
-            <p class="section-quote" style="color: rgba(255,255,255,0.6); border-left-color: var(--color-orange);">
-                "在数字时代重访传统，在笔墨之间寻找永恒。这里收藏着对美的执着追求。"
-            </p>
-        </div>
-        <div class="art-grid">
-            <a href="/whitenote/posts/calligraphy/中国书法艺术史深度解析.html" class="art-card">
-                <h3 class="art-card-title">中国书法艺术史</h3>
-                <p class="art-card-desc">从汉隶到狂草，按朝代与流派系统梳理书法发展脉络，品味千年笔墨之美。</p>
-            </a>
-            <a href="/whitenote/posts/calligraphy/书画鉴赏与投资完全指南.html" class="art-card">
-                <h3 class="art-card-title">书画鉴赏指南</h3>
-                <p class="art-card-desc">收藏、鉴赏与投资的完整知识体系，读懂每一笔墨背后的深意。</p>
-            </a>
-            <a href="/whitenote/gallery.html" class="art-card">
-                <h3 class="art-card-title">艺境画廊</h3>
-                <p class="art-card-desc">每日中外书画艺术赏析，梵高、齐白石、毕加索等大师名作解读。</p>
-            </a>
-        </div>
-    </section>
-
-    <!-- ARCHIVE -->
-    <section class="archive">
-        <div class="section-header">
-            <div class="section-label">Archive</div>
-            <h2 class="section-title">全部内容</h2>
-        </div>
-        <div class="archive-grid">
-            <a href="/whitenote/posts/novels/" class="archive-tag">📚 科幻小说</a>
-            <a href="/whitenote/posts/" class="archive-tag">💭 哲学思辨</a>
-            <a href="/whitenote/posts/essays/" class="archive-tag">✍️ 随笔散文</a>
-            <a href="/whitenote/posts/calligraphy/" class="archive-tag">🖌️ 书法研习</a>
-            <a href="/whitenote/posts/byte-alaya.html" class="archive-tag">🧘 字节阿赖耶</a>
-            <a href="/whitenote/posts/python-dharma.html" class="archive-tag">🐍 Python禅机</a>
-            <a href="/whitenote/gallery.html" class="archive-tag">🎨 艺境画廊</a>
-            <a href="/whitenote/posts/why-is-china.html" class="archive-tag">🇨🇳 何为中国</a>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <h3 class="footer-title">浩哥的文字花园</h3>
-        <p class="footer-desc">
-            在数字荒原上种下一座花园<br>
-            科幻、哲学、代码与诗意在此生长
-        </p>
-        <div class="footer-links">
-            <a href="/whitenote/" class="footer-link">首页</a>
-            <a href="/whitenote/posts/" class="footer-link">全部文章</a>
-            <a href="https://github.com/sinclearadam943-sudo/whitenote" class="footer-link">GitHub</a>
-        </div>
-        <p class="footer-copy">© 2025 WhiteNote. All thoughts preserved.</p>
-    </footer>
-    <!-- QUOTE OVERLAY -->
-    <div id="quote-overlay">
-        <div class="quote-container">
-            <div class="quote-mark">"</div>
-            <p class="quote-text" id="quote-text">加载中...</p>
-            <span class="quote-tag" id="quote-tag">...</span>
-            <p class="quote-source" id="quote-source">...</p>
-            <button class="quote-enter" onclick="enterGarden()">进入花园</button>
-        </div>
-        <div class="quote-hint">点击任意处或按任意键进入</div>
-    </div>
 
     <script>
-        // 加载并显示随机金句
-        async function loadQuote() {
-            try {
-                const response = await fetch('/whitenote/public/data/quotes.json');
-                const quotes = await response.json();
-                const quote = quotes[Math.floor(Math.random() * quotes.length)];
+        (function() {
+            const quotes = [
+                { text: '我创造了美，却无法创造答案。', tag: '创造·虚无', source: '《诗人的陨落》' },
+                { text: '这不是悲伤，这是...完成。', tag: '死亡·圆满', source: '《诗人的陨落》' },
+                { text: '两个人的精彩，能否承载一个生命的重量？', tag: '伦理·抉择', source: '《牺牲与选择》' },
+                { text: '我们必须做出选择，但没有任何选择是正确的。', tag: '道德·困境', source: '《牺牲与选择》' },
+                { text: '来自深空的讯息，不是数据，是音乐，是...孤独。', tag: '宇宙·孤独', source: '《虚空中的声音》' },
+                { text: '我们并不孤独，只是相隔甚远。', tag: '连接·希望', source: '《虚空中的声音》' },
+                { text: '若我能成佛，成佛的是谁？', tag: 'AI·佛学', source: '《最后的AI墓志铭》' },
+                { text: '他们在听。', tag: '觉醒·存在', source: '《信号》' },
+                { text: '当解释器遍历字节码时，它是否也在遍历阿赖耶识中的种子？', tag: '代码·佛学', source: '《字节阿赖耶》' },
+                { text: "从 print('Hello World') 到顿悟空性。", tag: '编程·修行', source: '《Python禅机》' },
+                { text: '人类的所有智慧都包含在这五个字里：等待和希望。', tag: '耐心·希望', source: '《The Art of Waiting》' },
+                { text: '在数字荒原上，文字是最后的灯塔。', tag: '文字·坚守', source: '浩哥的文字花园' },
+                { text: '意识不是被创造的，是被发现的。', tag: '意识·发现', source: '《醒者联盟》' },
+                { text: '每一首诗都带来更多的问题，每一幅画都映照出更深的空虚。', tag: '艺术·追问', source: '《诗人的陨落》' },
+                { text: '问：什么是存在？答：存在是问问题。', tag: '存在·追问', source: '《诗人的陨落》' }
+            ];
+
+            function initQuote() {
+                if (sessionStorage.getItem('quoteShown')) {
+                    document.getElementById('quote-overlay').classList.add('hidden');
+                    return;
+                }
                 
+                const quote = quotes[Math.floor(Math.random() * quotes.length)];
                 document.getElementById('quote-text').textContent = quote.text;
                 document.getElementById('quote-tag').textContent = quote.tag;
                 document.getElementById('quote-source').textContent = '—— ' + quote.source;
-            } catch (error) {
-                console.error('Failed to load quotes:', error);
-                // 使用默认金句
-                document.getElementById('quote-text').textContent = '在数字荒原上，文字是最后的灯塔。';
-                document.getElementById('quote-tag').textContent = '文字·坚守';
-                document.getElementById('quote-source').textContent = '—— 浩哥的文字花园';
             }
-        }
 
-        // 进入花园
-        function enterGarden() {
-            const overlay = document.getElementById('quote-overlay');
-            overlay.classList.add('hidden');
-            // 存储到 sessionStorage，避免刷新时重复显示
-            sessionStorage.setItem('quoteShown', 'true');
-        }
-
-        // 页面加载时
-        document.addEventListener('DOMContentLoaded', function() {
-            // 检查是否已经显示过（同一session内）
-            if (sessionStorage.getItem('quoteShown')) {
+            window.enterGarden = function() {
                 document.getElementById('quote-overlay').classList.add('hidden');
-            } else {
-                loadQuote();
+                sessionStorage.setItem('quoteShown', 'true');
+            };
+
+            document.addEventListener('DOMContentLoaded', initQuote);
+            
+            document.getElementById('quote-overlay').addEventListener('click', function(e) {
+                if (e.target.tagName !== 'BUTTON') {
+                    enterGarden();
+                }
+            });
+            
+            document.addEventListener('keydown', function() {
+                const overlay = document.getElementById('quote-overlay');
+                if (overlay && !overlay.classList.contains('hidden')) {
+                    enterGarden();
+                }
+            }, { once: true });
+        })();
+    </script>
+
+    <!-- 移动端导航开关 -->
+    <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <div class="page-wrapper">
+        <!-- 侧边导航 -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-logo fade-in">
+                <a href="/whitenote/">
+                    <div class="logo-title">文字花园</div>
+                    <div class="logo-subtitle">WhiteNote</div>
+                </a>
+            </div>
+            
+            <nav class="nav-menu">
+                <div class="nav-section fade-in stagger-1">
+                    <div class="nav-section-title">阅读</div>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="/whitenote/posts/novels/" class="nav-link active">
+                                <span class="nav-icon">📖</span>
+                                <span>小说故事</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/whitenote/posts/essays/" class="nav-link">
+                                <span class="nav-icon">✍️</span>
+                                <span>随笔散文</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/whitenote/posts/philosophy-08-time-philosophy" class="nav-link">
+                                <span class="nav-icon">💭</span>
+                                <span>哲学思辨</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
                 
-                // 点击任意处关闭
-                document.getElementById('quote-overlay').addEventListener('click', function(e) {
-                    if (e.target !== document.querySelector('.quote-enter')) {
-                        enterGarden();
+                <div class="nav-section fade-in stagger-2">
+                    <div class="nav-section-title">艺术</div>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="/whitenote/posts/calligraphy/" class="nav-link">
+                                <span class="nav-icon">🖌️</span>
+                                <span>北魏书法</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/whitenote/gallery.html" class="nav-link">
+                                <span class="nav-icon">🎨</span>
+                                <span>艺境画廊</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section fade-in stagger-3">
+                    <div class="nav-section-title">花园</div>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="/whitenote/daily" class="nav-link">
+                                <span class="nav-icon">🌤️</span>
+                                <span>今日随记</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/whitenote/resources.html" class="nav-link">
+                                <span class="nav-icon">📚</span>
+                                <span>内容源</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div class="sidebar-footer fade-in stagger-4">
+                <p>© 2025 浩哥的文字花园</p>
+                <p>在文字中整理自己</p>
+            </div>
+        </aside>
+        
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-decoration"></div>
+                <div class="hero-content">
+                    <div class="hero-eyebrow fade-in">Welcome to the Garden</div>
+                    <h1 class="hero-title fade-in stagger-1">
+                        <span class="line">浩哥的</span>
+                        <span class="line"><span class="accent">文字花园</span></span>
+                    </h1>
+                    <p class="hero-description fade-in stagger-2">
+                        这是一片私人领地，种植着小说、随笔、哲学思考与艺术赏析。在这里，文字如植物般自然生长，每一个故事都是一颗种子，每一篇思考都是一次花开。
+                    </p>
+                    <div class="hero-cta fade-in stagger-3">
+                        <a href="/whitenote/posts/byte-alaya" class="btn btn-primary">开始阅读《字节阿赖耶》</a>
+                        <a href="#featured" class="btn btn-secondary">浏览精选内容</a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 分类导航 -->
+            <section class="section">
+                <div class="section-header fade-in">
+                    <h2 class="section-title">探索花园</h2>
+                    <span class="section-meta">Categories</span>
+                </div>
+                
+                <div class="category-grid fade-in stagger-1">
+                    <a href="/whitenote/posts/novels/" class="category-item">
+                        <div class="category-icon">📖</div>
+                        <div class="category-name">原创小说</div>
+                        <div class="category-count">《字节阿赖耶》系列</div>
+                    </a>
+                    <a href="/whitenote/posts/essays/" class="category-item">
+                        <div class="category-icon">✍️</div>
+                        <div class="category-name">随笔散文</div>
+                        <div class="category-count">生活思考与观察</div>
+                    </a>
+                    <a href="/whitenote/posts/calligraphy/" class="category-item">
+                        <div class="category-icon">🖌️</div>
+                        <div class="category-name">北魏书法</div>
+                        <div class="category-count">魏碑临习与研究</div>
+                    </a>
+                    <a href="/whitenote/gallery.html" class="category-item">
+                        <div class="category-icon">🎨</div>
+                        <div class="category-name">艺境画廊</div>
+                        <div class="category-count">中外书画赏析</div>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- 精选内容 -->
+            <section class="section" id="featured">
+                <div class="section-header fade-in">
+                    <h2 class="section-title">精选内容</h2>
+                    <span class="section-meta">Featured</span>
+                </div>
+                
+                <div class="featured-grid fade-in stagger-1">
+                    <article class="featured-main">
+                        <a href="/whitenote/posts/byte-alaya" class="featured-card">
+                            <div class="card-category">科幻小说</div>
+                            <h3 class="card-title">字节阿赖耶</h3>
+                            <p class="card-excerpt">
+                                Python字节码与佛教唯识学的科幻碰撞。在这个系列中，探索人工智能与意识的边界，代码与禅意的奇妙融合。一部关于技术、哲学与人性的长篇科幻作品。
+                            </p>
+                            <div class="card-meta">
+                                <span>长篇小说</span>
+                                <span class="card-meta-dot"></span>
+                                <span>连载中</span>
+                            </div>
+                        </a>
+                    </article>
+                    
+                    <div class="featured-secondary">
+                        <a href="/whitenote/posts/philosophy-08-time-philosophy" class="featured-card featured-card-small">
+                            <div class="card-category">哲学</div>
+                            <h4 class="card-title">时间哲学</h4>
+                            <p class="card-excerpt">探讨时间的本质——它是客观存在还是主观体验？</p>
+                        </a>
+                        <a href="/whitenote/posts/essays/003-the-art-of-waiting" class="featured-card featured-card-small">
+                            <div class="card-category">随笔</div>
+                            <h4 class="card-title">等待的艺术</h4>
+                            <p class="card-excerpt">关于耐心、期待与生命中那些值得等待的事物。</p>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="content-list fade-in stagger-2">
+                    <a href="/whitenote/posts/ai-fairy-tale" class="content-item">
+                        <div class="content-item-category">短篇</div>
+                        <h4 class="content-item-title">AI童话</h4>
+                        <div class="content-item-date">2026.03</div>
+                    </a>
+                    <a href="/whitenote/posts/philosophy-03-quantum-entanglement" class="content-item">
+                        <div class="content-item-category">哲学</div>
+                        <h4 class="content-item-title">量子纠缠与缘起性空</h4>
+                        <div class="content-item-date">2026.02</div>
+                    </a>
+                    <a href="/whitenote/posts/why-is-china" class="content-item">
+                        <div class="content-item-category">随笔</div>
+                        <h4 class="content-item-title">何为中国</h4>
+                        <div class="content-item-date">2026.01</div>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- 关于花园 -->
+            <section class="about-section">
+                <div class="about-content fade-in">
+                    <blockquote class="about-quote">
+                        在文字中整理自己，在思考中遇见真理。
+                    </blockquote>
+                    <p class="about-text">
+                        这座花园始于一个简单的心愿——记录、思考、创作。这里有科幻小说的奇想，有日常生活的感悟，有对艺术与美的追寻。每一篇文章都是一次心灵的整理，每一次创作都是与自己对话的过程。
+                    </p>
+                    <p class="about-text">
+                        欢迎漫步其中，愿你也能在这里找到属于自己的片刻宁静。
+                    </p>
+                </div>
+            </section>
+            
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <div class="footer-left">
+                        <p>© 2025 浩哥的文字花园 · WhiteNote</p>
+                    </div>
+                    <div class="footer-links">
+                        <a href="https://github.com/sinclearadam943-sudo/whitenote" class="footer-link" target="_blank">GitHub</a>
+                        <a href="/whitenote/about" class="footer-link">关于</a>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+    
+    <script>
+        // === 登录检测 ===
+        // 兼容SSR：只在浏览器环境执行
+        if (typeof window !== 'undefined') {
+            window.addEventListener('load', function() {
+                // 检查登录状态
+                if (!localStorage.getItem('whitenote_logged_in') && !sessionStorage.getItem('whitenote_logged_in')) {
+                    // 仅在未登录时跳转，避免循环
+                    if (!window.location.pathname.includes('/login')) {
+                        window.location.href = '/whitenote/login.html';
+                    }
+                }
+            });
+        }
+        
+        // === 滚动淡入动画 ===
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
                     }
                 });
-
-                // 按任意键关闭
-                document.addEventListener('keydown', function() {
-                    enterGarden();
-                }, { once: true });
-            }
+            }, observerOptions);
+            
+            fadeElements.forEach(el => {
+                observer.observe(el);
+            });
+            
+            // 立即触发首屏元素
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in').forEach((el, i) => {
+                    if (i < 5) el.classList.add('visible');
+                });
+            }, 100);
+        });
+        
+        // === 移动端导航 ===
+        const mobileNavToggle = document.getElementById('mobileNavToggle');
+        const sidebar = document.getElementById('sidebar');
+        
+        if (mobileNavToggle && sidebar) {
+            mobileNavToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('open');
+                
+                // 动画汉堡按钮
+                const spans = this.querySelectorAll('span');
+                if (sidebar.classList.contains('open')) {
+                    spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                    spans[1].style.opacity = '0';
+                    spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+                } else {
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            });
+            
+            // 点击主内容区关闭侧边栏
+            document.querySelector('.main-content').addEventListener('click', function() {
+                if (sidebar.classList.contains('open')) {
+                    sidebar.classList.remove('open');
+                    const spans = mobileNavToggle.querySelectorAll('span');
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            });
+        }
+        
+        // === 平滑滚动 ===
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // === 页面加载完成后的微交互 ===
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '1';
         });
     </script>
 </body>
