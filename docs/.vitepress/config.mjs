@@ -24,17 +24,17 @@ export default defineConfig({
           {
             text: '随笔杂谈',
             items: [
-              { text: '你好，世界', link: '/posts/hello-world' },
-              { text: '面对学校霸凌，要不要打回去？', link: '/posts/school-bullying-resist' },
-              { text: '《为什么是中国》核心观点', link: '/posts/why-is-china' },
-              { text: '婆媳关系的千年演变', link: '/posts/essays/001-evolution-of-mother-in-law-daughter-in-law-relationship' },
+              { text: '你好，世界', link: '/posts/hello-world.html' },
+              { text: '面对学校霸凌，要不要打回去？', link: '/posts/school-bullying-resist.html' },
+              { text: '《为什么是中国》核心观点', link: '/posts/why-is-china.html' },
+              { text: '婆媳关系的千年演变', link: '/posts/essays/001-evolution-of-mother-in-law-daughter-in-law-relationship.html' },
             ]
           },
           {
             text: '技术笔记',
             items: [
-              { text: '从零搭建私人博客', link: '/posts/build-private-blog-on-github-pages' },
-              { text: '《Python 禅机》', link: '/posts/python-dharma' },
+              { text: '从零搭建私人博客', link: '/posts/build-private-blog-on-github-pages.html' },
+              { text: '《Python 禅机》', link: '/posts/python-dharma.html' },
             ]
           },
         ]
@@ -42,25 +42,25 @@ export default defineConfig({
       {
         text: '原创小说',
         items: [
-          { text: '《字节阿赖耶》· 十章完整', link: '/posts/byte-alaya' },
-          { text: '《代码飞升》· AI修仙奇缘', link: '/posts/ai-fairy-tale' },
-          { text: '《字节涟漪》· 引力波悟道', link: '/posts/2026-03-14-gravitational-waves-ripple' },
+          { text: '《字节阿赖耶》· 十章完整', link: '/posts/byte-alaya.html' },
+          { text: '《代码飞升》· AI修仙奇缘', link: '/posts/ai-fairy-tale.html' },
+          { text: '《字节涟漪》· 引力波悟道', link: '/posts/2026-03-14-gravitational-waves-ripple.html' },
           { text: '📚 醒者联盟 · 目录', link: '/posts/novels/' },
         ]
       },
       {
         text: '哲学思考',
         items: [
-          { text: '01 时空观——牛顿 vs 道家', link: '/posts/philosophy-01-spacetime' },
-          { text: '02 数学关联——微积分 vs 庄子', link: '/posts/philosophy-02-math-limit' },
-          { text: '03 物理映射——量子纠缠 vs 佛教', link: '/posts/philosophy-03-quantum-entanglement' },
-          { text: '04 天文学——大爆炸 vs 道家', link: '/posts/philosophy-04-cosmic-origin' },
-          { text: '05 认识论——康德 vs 王阳明', link: '/posts/philosophy-05-epistemology' },
-          { text: '06 存在论——海德格尔 vs 儒家', link: '/posts/philosophy-06-ontology' },
-          { text: '07 系统思维——涌现 vs 周易', link: '/posts/philosophy-07-system-thinking' },
-          { text: '08 时间哲学——熵增 vs 轮回', link: '/posts/philosophy-08-time-philosophy' },
-          { text: '09 终极关怀——熵增 vs 涅槃', link: '/posts/philosophy-09-ultimate-care' },
-          { text: '10 统合超越——真善美统一', link: '/posts/philosophy-10-unity-transcend' },
+          { text: '01 时空观——牛顿 vs 道家', link: '/posts/philosophy-01-spacetime.html' },
+          { text: '02 数学关联——微积分 vs 庄子', link: '/posts/philosophy-02-math-limit.html' },
+          { text: '03 物理映射——量子纠缠 vs 佛教', link: '/posts/philosophy-03-quantum-entanglement.html' },
+          { text: '04 天文学——大爆炸 vs 道家', link: '/posts/philosophy-04-cosmic-origin.html' },
+          { text: '05 认识论——康德 vs 王阳明', link: '/posts/philosophy-05-epistemology.html' },
+          { text: '06 存在论——海德格尔 vs 儒家', link: '/posts/philosophy-06-ontology.html' },
+          { text: '07 系统思维——涌现 vs 周易', link: '/posts/philosophy-07-system-thinking.html' },
+          { text: '08 时间哲学——熵增 vs 轮回', link: '/posts/philosophy-08-time-philosophy.html' },
+          { text: '09 终极关怀——熵增 vs 涅槃', link: '/posts/philosophy-09-ultimate-care.html' },
+          { text: '10 统合超越——真善美统一', link: '/posts/philosophy-10-unity-transcend.html' },
         ]
       },
       {
