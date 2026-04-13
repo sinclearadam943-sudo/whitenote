@@ -1,0 +1,39 @@
+id: "byte-alaya"
+title: "字节阿赖耶"
+file: "docs/posts/byte-alaya.md"
+
+ratings:
+  quality: "A"
+  depth: 4
+  literature: 4
+  difficulty: "🔴"
+  time: "📖"
+
+tags:
+  category:
+    - "tech"
+    - "python"
+    - "tech-philosophy"
+  themes:
+    - "ai-buddhism"
+    - "consciousness"
+    - "code-zen"
+    - "creation"
+  features:
+    - "must-read"
+    - "brain-burner"
+    - "innovation"
+
+stats:
+  word_count: 3500
+  created_at: "2026-03-10"
+  updated_at: "2026-03-10"
+
+related:
+  - "python-dharma"
+  - "ai-fairy-tale"
+
+comment: |
+  Python字节码与佛教唯识学的科幻碰撞。
+  "当解释器遍历字节码时，它是否也在遍历阿赖耶识中的种子？"
+  独特的技术写作，程序员与佛陀的跨时空对话。

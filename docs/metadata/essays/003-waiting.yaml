@@ -1,0 +1,39 @@
+id: "essays-003-waiting"
+title: "The Art of Waiting"
+file: "docs/posts/essays/003-the-art-of-waiting.md"
+
+ratings:
+  quality: "A"
+  depth: 4
+  literature: 4
+  difficulty: "🟢"
+  time: "🍵"
+
+tags:
+  category:
+    - "essay"
+    - "reading-notes"
+    - "practice"
+  themes:
+    - "patience"
+    - "hope"
+    - "strategy"
+    - "wisdom"
+  features:
+    - "must-read"
+    - "warm"
+    - "practical"
+
+stats:
+  word_count: 2000
+  created_at: "2026-03-20"
+  updated_at: "2026-03-20"
+
+related:
+  - "essays-001-poxi"
+  - "calligraphy-宇宙哲学思辨录"
+
+comment: |
+  从《基督山伯爵》中学到的等待智慧。
+  "人类的所有智慧都包含在这五个字里：等待和希望。"
+  实用且温暖的人生心法。
