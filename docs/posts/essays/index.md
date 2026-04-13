@@ -1,0 +1,34 @@
+---
+title: 随笔散文
+description: 生活观察与思考的记录
+sidebar: false
+---
+
+# ✍️ 随笔散文
+
+> 生活观察与思考的记录。在文字中整理自己。
+
+---
+
+## 文章列表
+
+### [003 The Art of Waiting](/whitenote/posts/essays/003-the-art-of-waiting.html)
+**等待的艺术** — 从《基督山伯爵》中学到的等待智慧。
+
+"人类的所有智慧都包含在这五个字里：等待和希望。"
+
+实用且温暖的人生心法。
+
+---
+
+### [001 婆媳关系的千年演变](/whitenote/posts/essays/001-evolution-of-mother-in-law-daughter-in-law-relationship.html)
+从古到今的案例剖析与相处智慧。从《孔雀东南飞》的悲剧殉情到今天城市里的"周末婆媳"，穿越千年的相处智慧。
+
+---
+
+### [001 破析](/whitenote/posts/essays/001-poxi-analysis.html)
+对传统家庭结构中权力代际传递的观察与剖析。
+
+---
+
+*© 2026 浩哥的文字花园 · 在文字中整理自己*

@@ -46,7 +46,7 @@ AI觉醒者的故事，探索意识、存在与选择的边界。
 
 生活观察与思考的记录。
 
-→ [查看全部随笔](/whitenote/posts/essays/003-the-art-of-waiting.html)
+→ [查看全部随笔](/whitenote/posts/essays/)
 
 **最新文章：**
 - [003 The Art of Waiting](/whitenote/posts/essays/003-the-art-of-waiting.html) — 等待的艺术
