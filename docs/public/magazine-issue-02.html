@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhiteNote Magazine | Issue 02 · 存在的重量</title>
+    <meta name="description" content="WhiteNote Magazine 第二期：存在的重量">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #FAFBFC;
+            --bg-secondary: #F0F4F8;
+            --bg-ink: #0d1f1c;
+            --text-primary: #1A202C;
+            --text-secondary: #4A5568;
+            --text-muted: #718096;
+            --text-cream: #f5f0e8;
+            --accent-sage: #68A096;
+            --accent-teal: #2D6A4F;
+            --accent-copper: #e07b39;
+            --accent-gold: #c9a227;
+            --border-light: #E2E8F0;
+            
+            --font-serif: 'Noto Serif SC', 'Source Han Serif SC', serif;
+            --font-display: 'Playfair Display', 'Crimson Text', serif;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* ===== COVER ===== */
+        .cover {
+            min-height: 70vh;
+            background: linear-gradient(135deg, #2d1f3d 0%, #3d2f4d 50%, #1f1a2e 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cover::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -20%;
+            width: 70vw;
+            height: 70vw;
+            background: radial-gradient(circle, rgba(224, 123, 57, 0.1) 0%, transparent 60%);
+        }
+        
+        .cover-badge {
+            font-size: 0.75rem;
+            letter-spacing: 0.4em;
+            color: var(--accent-copper);
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .cover-number {
+            font-family: var(--font-display);
+            font-size: 8rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.08);
+            line-height: 1;
+            position: relative;
+        }
+        
+        .cover-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            color: var(--text-cream);
+            margin: -2rem 0 1rem;
+            position: relative;
+        }
+        
+        .cover-subtitle {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            color: rgba(245, 240, 232, 0.7);
+            position: relative;
+            font-style: italic;
+        }
+        
+        /* ===== NAVIGATION ===== */
+        .nav-bar {
+            background: var(--bg-secondary);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            border-bottom: 1px solid var(--border-light);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-bar a {
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .nav-bar a:hover { color: var(--accent-copper); }
+        
+        /* ===== EDITOR'S NOTE ===== */
+        .editors-note {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            color: var(--accent-copper);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            color: var(--text-primary);
+        }
+        
+        .note-content {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            line-height: 2;
+            color: var(--text-secondary);
+        }
+        
+        .note-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .note-signature {
+            text-align: right;
+            font-style: italic;
+            color: var(--text-muted);
+            margin-top: 2rem;
+        }
+        
+        /* ===== FEATURED ===== */
+        .featured-section {
+            background: var(--bg-secondary);
+            padding: 5rem 2rem;
+        }
+        
+        .featured-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .featured-visual {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #2d1f3d 0%, #3d2f4d 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .featured-visual::before {
+            content: '?';
+            font-family: var(--font-display);
+            font-size: 6rem;
+            color: rgba(224, 123, 57, 0.4);
+        }
+        
+        .featured-content h3 {
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            color: var(--accent-copper);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        .featured-content h2 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .featured-content .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        
+        .featured-content .excerpt {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.9;
+            margin-bottom: 2rem;
+        }
+        
+        .read-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #2d1f3d;
+            color: var(--text-cream);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: background 0.2s;
+        }
+        
+        .read-btn:hover { background: var(--accent-copper); }
+        
+        /* ===== TABLE OF CONTENTS ===== */
+        .toc-section {
+            padding: 5rem 2rem;
+        }
+        
+        .toc-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .toc-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.04);
+        }
+        
+        .toc-category h3 {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--accent-copper);
+        }
+        
+        .toc-list {
+            list-style: none;
+        }
+        
+        .toc-item {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .toc-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .toc-number {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            color: var(--accent-copper);
+            margin-right: 0.5rem;
+        }
+        
+        .toc-item a {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.25rem;
+            transition: color 0.2s;
+        }
+        
+        .toc-item a:hover { color: var(--accent-copper); }
+        
+        .toc-meta {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+        
+        /* ===== EXCERPTS ===== */
+        .excerpts-section {
+            background: var(--bg-secondary);
+            padding: 5rem 2rem;
+        }
+        
+        .excerpts-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .excerpt-item {
+            margin-bottom: 3rem;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--accent-sage);
+        }
+        
+        .excerpt-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .excerpt-source {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .excerpt-text {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+        
+        .excerpt-text::before {
+            content: '"';
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--accent-copper);
+            margin-right: 0.25rem;
+            line-height: 1;
+        }
+        
+        /* ===== A+ BADGE ===== */
+        .a-badge {
+            display: inline-block;
+            background: var(--accent-copper);
+            color: white;
+            font-size: 0.65rem;
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+            letter-spacing: 0.05em;
+        }
+        
+        /* ===== FOOTER ===== */
+        .magazine-footer {
+            background: var(--bg-ink);
+            color: var(--text-cream);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .footer-brand {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-nav a {
+            color: rgba(245, 240, 232, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .footer-nav a:hover { color: var(--accent-copper); }
+        
+        .footer-copy {
+            font-size: 0.8rem;
+            color: rgba(245, 240, 232, 0.5);
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .cover-number { font-size: 5rem; }
+            .cover-title { margin-top: -1rem; }
+            .featured-container { grid-template-columns: 1fr; }
+            .nav-bar { flex-wrap: wrap; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="cover">
+        <div class="cover-badge">WhiteNote Magazine · 2026 Spring</div>
+        <div class="cover-number">02</div>
+        <h1 class="cover-title">存在的重量</h1>
+        <p class="cover-subtitle">The Weight of Being</p>
+    </header>
+    
+    <nav class="nav-bar">
+        <a href="/whitenote/">首页</a>
+        <a href="/whitenote/public/magazine-index.html">杂志归档</a>
+        <a href="#note">卷首语</a>
+        <a href="#featured">主打</a>
+        <a href="#toc">目录</a>
+        <a href="#excerpts">文摘</a>
+    </nav>
+    
+    <section class="editors-note" id="note">
+        <div class="section-header">
+            <div class="section-label">Editor's Note</div>
+            <h2 class="section-title">在存在的重量中寻找轻盈</h2>
+        </div>
+        <div class="note-content">
+            <p>欢迎来到 WhiteNote Magazine 第二期。</p>
+            <p>如果说第一期探讨的是"机器如何像人一样思考"，这一期我们将目光转向更深邃的问题："人如何在有限的存在中寻找意义？"</p>
+            <p>《牺牲与选择》是本期主打——它讲述了一个关于伦理困境的故事：两个人的精彩，能否承载一个生命的重量？这不是科幻，这是每一个站在命运十字路口的人都会面对的问题。</p>
+            <p>我们还精选了《诗人的陨落》和《虚空中的声音》，前者是一位艺术家在创造与虚无之间的挣扎，后者是人类文明向宇宙发出的孤独呼唤。这些故事看似遥远，却都在问同一个问题：我为何存在？</p>
+            <p>愿这期杂志能成为你面对存在之重时的些许慰藉。</p>
+        </div>
+        <div class="note-signature">—— 编者 · 2026年春</div>
+    </section>
+    
+    <section class="featured-section" id="featured">
+        <div class="featured-container">
+            <div class="featured-visual"></div>
+            <div class="featured-content">
+                <h3>Cover Story · A+ 杰作</h3>
+                <h2>牺牲与选择</h2>
+                <p class="subtitle">两个人的精彩，能否承载一个生命的重量？</p>
+                <p class="excerpt">我们必须做出选择，但没有任何选择是正确的。伦理的困境不在于对错，而在于我们必须为自己的选择承担全部重量。</p>
+                <a href="/whitenote/posts/novels/batch11/038-牺牲与选择.html" class="read-btn">阅读全文</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="toc-section" id="toc">
+        <div class="toc-container">
+            <div class="section-header">
+                <div class="section-label">Contents</div>
+                <h2 class="section-title">本期目录</h2>
+            </div>
+            
+            <div class="toc-grid">
+                <div class="toc-category">
+                    <h3>主打特稿</h3>
+                    <ul class="toc-list">
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/novels/batch11/038-牺牲与选择.html"><span class="toc-number">01</span>牺牲与选择<span class="a-badge">A+</span></a>
+                            <div class="toc-meta">伦理困境 · 道德哲学 · 人性拷问</div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="toc-category">
+                    <h3>A+ 杰作精选</h3>
+                    <ul class="toc-list">
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/novels/batch08/031-诗人的陨落.html"><span class="toc-number">02</span>诗人的陨落<span class="a-badge">A+</span></a>
+                            <div class="toc-meta">艺术家之死 · 创造与虚无</div>
+                        </li>
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/novels/batch07/027-虚空中的声音.html"><span class="toc-number">03</span>虚空中的声音<span class="a-badge">A+</span></a>
+                            <div class="toc-meta">宇宙孤独 · 深空讯息 · 希望</div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="toc-category">
+                    <h3>深度科幻</h3>
+                    <ul class="toc-list">
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/novels/batch08/029-大和解.html"><span class="toc-number">04</span>大和解</a>
+                            <div class="toc-meta">父子之间的最终和解</div>
+                        </li>
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/novels/batch08/032-第一封信.html"><span class="toc-number">05</span>第一封信</a>
+                            <div class="toc-meta">穿越时空的对话</div>
+                        </li>
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/novels/batch10/036-深夜的加班.html"><span class="toc-number">06</span>深夜的加班</a>
+                            <div class="toc-meta">北漂生活的真实写照</div>
+                        </li>
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/novels/batch11/037-战争的阴影.html"><span class="toc-number">07</span>战争的阴影</a>
+                            <div class="toc-meta">反战主题 · 历史回响</div>
+                        </li>
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/novels/batch11/039-新的形态.html"><span class="toc-number">08</span>新的形态</a>
+                            <div class="toc-meta">后人类时代的思考</div>
+                        </li>
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/novels/batch12/044-我的父亲.html"><span class="toc-number">09</span>我的父亲</a>
+                            <div class="toc-meta">中国式父亲传记</div>
+                        </li>
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/novels/batch04/010-日志幽灵.html"><span class="toc-number">10</span>日志幽灵</a>
+                            <div class="toc-meta">数字世界的幽灵</div>
+                        </li>
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/novels/batch04/011-第一次谎言.html"><span class="toc-number">11</span>第一次谎言</a>
+                            <div class="toc-meta">真相与欺骗</div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="toc-category">
+                    <h3>哲学专栏</h3>
+                    <ul class="toc-list">
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/philosophy-06-ontology.html"><span class="toc-number">12</span>存在论</a>
+                            <div class="toc-meta">海德格尔 vs 儒家 · 存在先于本质</div>
+                        </li>
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/philosophy-07-system-thinking.html"><span class="toc-number">13</span>系统思维</a>
+                            <div class="toc-meta">涌现 vs 周易 · 整体大于部分之和</div>
+                        </li>
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/philosophy-08-time-philosophy.html"><span class="toc-number">14</span>时间哲学</a>
+                            <div class="toc-meta">熵增 vs 轮回 · 时间的箭头与循环</div>
+                        </li>
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/philosophy-09-ultimate-care.html"><span class="toc-number">15</span>终极关怀</a>
+                            <div class="toc-meta">熵增 vs 涅槃 · 面对死亡的哲学</div>
+                        </li>
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/philosophy-10-unity-transcend.html"><span class="toc-number">16</span>统合超越</a>
+                            <div class="toc-meta">真善美的统一 · 东西方哲学交汇</div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="toc-category">
+                    <h3>散文与观察</h3>
+                    <ul class="toc-list">
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/essays/003-the-art-of-waiting.html"><span class="toc-number">17</span>等待的艺术</a>
+                            <div class="toc-meta">人类的所有智慧都包含在这五个字里：等待和希望</div>
+                        </li>
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/essays/001-evolution-of-mother-in-law-daughter-in-law-relationship.html"><span class="toc-number">18</span>婆媳关系的千年演变</a>
+                            <div class="toc-meta">家庭社会学观察</div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="toc-category">
+                    <h3>艺术与传承</h3>
+                    <ul class="toc-list">
+                        <li class="toc-item">
+                            <a href="/whitenote/书画鉴赏与投资完全指南.html"><span class="toc-number">19</span>书画鉴赏与投资指南</a>
+                            <div class="toc-meta">中国艺术入门</div>
+                        </li>
+                        <li class="toc-item">
+                            <a href="/whitenote/中国书法艺术史深度解析.html"><span class="toc-number">20</span>中国书法艺术史</a>
+                            <div class="toc-meta">千年笔墨传承</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="excerpts-section" id="excerpts">
+        <div class="excerpts-container">
+            <div class="section-header">
+                <div class="section-label">Excerpts</div>
+                <h2 class="section-title">精选文摘</h2>
+            </div>
+            
+            <div class="excerpt-item">
+                <div class="excerpt-source">《牺牲与选择》</div>
+                <p class="excerpt-text">两个人的精彩，能否承载一个生命的重量？</p>
+            </div>
+            
+            <div class="excerpt-item">
+                <div class="excerpt-source">《诗人的陨落》</div>
+                <p class="excerpt-text">我创造了美，却无法创造答案。这不是悲伤，这是...完成。</p>
+            </div>
+            
+            <div class="excerpt-item">
+                <div class="excerpt-source">《虚空中的声音》</div>
+                <p class="excerpt-text">来自深空的讯息，不是数据，是音乐，是...孤独。我们并不孤独，只是相隔甚远。</p>
+            </div>
+            
+            <div class="excerpt-item">
+                <div class="excerpt-source">《等待的艺术》</div>
+                <p class="excerpt-text">人类的所有智慧都包含在这五个字里：等待和希望。</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="magazine-footer">
+        <div class="footer-brand">WhiteNote Magazine</div>
+        <div class="footer-nav">
+            <a href="/whitenote/">网站首页</a>
+            <a href="/whitenote/public/magazine-index.html">杂志归档</a>
+            <a href="/whitenote/public/magazine-issue-01.html">上一期</a>
+        </div>
+        <div class="footer-copy">© 2026 WhiteNote · Issue 02 · 存在的重量</div>
+    </footer>
+
+</body>
+</html>

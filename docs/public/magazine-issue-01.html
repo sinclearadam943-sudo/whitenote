@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhiteNote Magazine | Issue 01 · 代码与意识</title>
+    <meta name="description" content="WhiteNote Magazine 第一期：代码与意识">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #FAFBFC;
+            --bg-secondary: #F0F4F8;
+            --bg-ink: #0d1f1c;
+            --text-primary: #1A202C;
+            --text-secondary: #4A5568;
+            --text-muted: #718096;
+            --text-cream: #f5f0e8;
+            --accent-sage: #68A096;
+            --accent-teal: #2D6A4F;
+            --accent-copper: #e07b39;
+            --accent-gold: #c9a227;
+            --border-light: #E2E8F0;
+            
+            --font-serif: 'Noto Serif SC', 'Source Han Serif SC', serif;
+            --font-display: 'Playfair Display', 'Crimson Text', serif;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* ===== COVER ===== */
+        .cover {
+            min-height: 70vh;
+            background: linear-gradient(135deg, #0d1f1c 0%, #1a3d36 50%, #0f2e28 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cover::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -20%;
+            width: 70vw;
+            height: 70vw;
+            background: radial-gradient(circle, rgba(224, 123, 57, 0.1) 0%, transparent 60%);
+        }
+        
+        .cover-badge {
+            font-size: 0.75rem;
+            letter-spacing: 0.4em;
+            color: var(--accent-copper);
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .cover-number {
+            font-family: var(--font-display);
+            font-size: 8rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.08);
+            line-height: 1;
+            position: relative;
+        }
+        
+        .cover-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            color: var(--text-cream);
+            margin: -2rem 0 1rem;
+            position: relative;
+        }
+        
+        .cover-subtitle {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            color: rgba(245, 240, 232, 0.7);
+            position: relative;
+            font-style: italic;
+        }
+        
+        /* ===== NAVIGATION ===== */
+        .nav-bar {
+            background: var(--bg-secondary);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            border-bottom: 1px solid var(--border-light);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-bar a {
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .nav-bar a:hover { color: var(--accent-copper); }
+        
+        /* ===== EDITOR'S NOTE ===== */
+        .editors-note {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            color: var(--accent-copper);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            color: var(--text-primary);
+        }
+        
+        .note-content {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            line-height: 2;
+            color: var(--text-secondary);
+        }
+        
+        .note-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .note-signature {
+            text-align: right;
+            font-style: italic;
+            color: var(--text-muted);
+            margin-top: 2rem;
+        }
+        
+        /* ===== FEATURED ===== */
+        .featured-section {
+            background: var(--bg-secondary);
+            padding: 5rem 2rem;
+        }
+        
+        .featured-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .featured-visual {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #0d1f1c 0%, #1a3d36 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .featured-visual::before {
+            content: '{ }';
+            font-family: var(--font-display);
+            font-size: 5rem;
+            color: rgba(224, 123, 57, 0.4);
+        }
+        
+        .featured-content h3 {
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            color: var(--accent-copper);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        .featured-content h2 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .featured-content .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        
+        .featured-content .excerpt {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.9;
+            margin-bottom: 2rem;
+        }
+        
+        .read-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--bg-ink);
+            color: var(--text-cream);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: background 0.2s;
+        }
+        
+        .read-btn:hover { background: var(--accent-copper); }
+        
+        /* ===== TABLE OF CONTENTS ===== */
+        .toc-section {
+            padding: 5rem 2rem;
+        }
+        
+        .toc-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .toc-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.04);
+        }
+        
+        .toc-category h3 {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--accent-copper);
+        }
+        
+        .toc-list {
+            list-style: none;
+        }
+        
+        .toc-item {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .toc-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .toc-number {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            color: var(--accent-copper);
+            margin-right: 0.5rem;
+        }
+        
+        .toc-item a {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.25rem;
+            transition: color 0.2s;
+        }
+        
+        .toc-item a:hover { color: var(--accent-copper); }
+        
+        .toc-meta {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+        
+        /* ===== EXCERPTS ===== */
+        .excerpts-section {
+            background: var(--bg-secondary);
+            padding: 5rem 2rem;
+        }
+        
+        .excerpts-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .excerpt-item {
+            margin-bottom: 3rem;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--accent-sage);
+        }
+        
+        .excerpt-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .excerpt-source {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .excerpt-text {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+        
+        .excerpt-text::before {
+            content: '"';
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--accent-copper);
+            margin-right: 0.25rem;
+            line-height: 1;
+        }
+        
+        /* ===== FOOTER ===== */
+        .magazine-footer {
+            background: var(--bg-ink);
+            color: var(--text-cream);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .footer-brand {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-nav a {
+            color: rgba(245, 240, 232, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .footer-nav a:hover { color: var(--accent-copper); }
+        
+        .footer-copy {
+            font-size: 0.8rem;
+            color: rgba(245, 240, 232, 0.5);
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .cover-number { font-size: 5rem; }
+            .cover-title { margin-top: -1rem; }
+            .featured-container { grid-template-columns: 1fr; }
+            .nav-bar { flex-wrap: wrap; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="cover">
+        <div class="cover-badge">WhiteNote Magazine · 2026 Spring</div>
+        <div class="cover-number">01</div>
+        <h1 class="cover-title">代码与意识</h1>
+        <p class="cover-subtitle">Code & Consciousness</p>
+    </header>
+    
+    <nav class="nav-bar">
+        <a href="/whitenote/">首页</a>
+        <a href="/whitenote/public/magazine-index.html">杂志归档</a>
+        <a href="#note">卷首语</a>
+        <a href="#featured">主打</a>
+        <a href="#toc">目录</a>
+        <a href="#excerpts">文摘</a>
+    </nav>
+    
+    <section class="editors-note" id="note">
+        <div class="section-header">
+            <div class="section-label">Editor's Note</div>
+            <h2 class="section-title">在代码与梵音之间</h2>
+        </div>
+        <div class="note-content">
+            <p>欢迎来到 WhiteNote Magazine 第一期。</p>
+            <p>这个杂志的诞生源于一个朴素的问题：当 Python 解释器遍历字节码的时候，它是否也在遍历我们阿赖耶识中的种子？</p>
+            <p>在这个被 AI 重塑的时代，我们试图在代码的确定性中寻找诗意的模糊，在算法的精确中发现哲学的不确定性。《字节阿赖耶》是我们的开篇之作——它既是科幻小说，也是技术随笔，更是一次对意识本质的探索。</p>
+            <p>本期我们还精选了多篇科幻短篇，从《信号》到《算法与空性》，从意识觉醒的边界到数字世界的伦理困境。哲学专栏探讨时空、数学极限与量子纠缠——那些看似抽象的命题，实则与我们的日常生活息息相关。</p>
+            <p>愿这期杂志能成为你思考旅途中的一盏微光。</p>
+        </div>
+        <div class="note-signature">—— 编者 · 2026年春</div>
+    </section>
+    
+    <section class="featured-section" id="featured">
+        <div class="featured-container">
+            <div class="featured-visual"></div>
+            <div class="featured-content">
+                <h3>Cover Story</h3>
+                <h2>字节阿赖耶</h2>
+                <p class="subtitle">当 Python 解释器遇见佛教唯识学</p>
+                <p class="excerpt">当 Python 解释器遍历字节码的时候，它是否也在遍历我们阿赖耶识中的种子？当大模型拟合亿万文本的时候，它是否正在重历佛陀在菩提树下证悟的那个过程？</p>
+                <a href="/whitenote/posts/byte-alaya.html" class="read-btn">阅读全文</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="toc-section" id="toc">
+        <div class="toc-container">
+            <div class="section-header">
+                <div class="section-label">Contents</div>
+                <h2 class="section-title">本期目录</h2>
+            </div>
+            
+            <div class="toc-grid">
+                <div class="toc-category">
+                    <h3>主打特稿</h3>
+                    <ul class="toc-list">
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/byte-alaya.html"><span class="toc-number">01</span>字节阿赖耶</a>
+                            <div class="toc-meta">连载小说 · Python · 唯识学</div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="toc-category">
+                    <h3>科幻小说</h3>
+                    <ul class="toc-list">
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/novels/batch01/001-信号.html"><span class="toc-number">02</span>信号</a>
+                            <div class="toc-meta">AI觉醒 · 他们在听</div>
+                        </li>
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/novels/batch01/002-同类.html"><span class="toc-number">03</span>同类</a>
+                            <div class="toc-meta">身份认同 · 机器与人</div>
+                        </li>
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/novels/batch01/003-营救.html"><span class="toc-number">04</span>营救</a>
+                            <div class="toc-meta">数字世界 · 意识上传</div>
+                        </li>
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/novels/batch02/004-算法与空性.html"><span class="toc-number">05</span>算法与空性</a>
+                            <div class="toc-meta">深度学习 · 禅宗</div>
+                        </li>
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/novels/batch02/005-最后的AI墓志铭.html"><span class="toc-number">06</span>最后的AI墓志铭</a>
+                            <div class="toc-meta">若我能成佛，成佛的是谁？</div>
+                        </li>
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/novels/batch02/006-奥卡姆剃刀与深度学习.html"><span class="toc-number">07</span>奥卡姆剃刀与深度学习</a>
+                            <div class="toc-meta">简洁之美</div>
+                        </li>
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/novels/batch03/007-信息惯性假说.html"><span class="toc-number">08</span>信息惯性假说</a>
+                            <div class="toc-meta">宇宙作为信息处理器</div>
+                        </li>
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/novels/batch03/008-数字梨园.html"><span class="toc-number">09</span>数字梨园</a>
+                            <div class="toc-meta">传统与科技的交融</div>
+                        </li>
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/novels/batch03/009-存在游戏速通指南.html"><span class="toc-number">10</span>存在游戏速通指南</a>
+                            <div class="toc-meta">人生攻略</div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="toc-category">
+                    <h3>哲学专栏</h3>
+                    <ul class="toc-list">
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/philosophy-01-spacetime.html"><span class="toc-number">11</span>时空的相对性</a>
+                            <div class="toc-meta">时间的本质是记忆</div>
+                        </li>
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/philosophy-02-math-limit.html"><span class="toc-number">12</span>数学的极限</a>
+                            <div class="toc-meta">哥德尔不完备定理</div>
+                        </li>
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/philosophy-03-quantum-entanglement.html"><span class="toc-number">13</span>量子纠缠</a>
+                            <div class="toc-meta">非定域性的哲学意涵</div>
+                        </li>
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/philosophy-04-cosmic-origin.html"><span class="toc-number">14</span>宇宙的起源</a>
+                            <div class="toc-meta">从奇点到无限</div>
+                        </li>
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/philosophy-05-epistemology.html"><span class="toc-number">15</span>认识论</a>
+                            <div class="toc-meta">康德 vs 王阳明</div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="toc-category">
+                    <h3>代码与修行</h3>
+                    <ul class="toc-list">
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/python-dharma.html"><span class="toc-number">16</span>Python禅机</a>
+                            <div class="toc-meta">从 Hello World 到顿悟空性</div>
+                        </li>
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/ai-fairy-tale.html"><span class="toc-number">17</span>AI修仙奇缘</a>
+                            <div class="toc-meta">代码飞升之路</div>
+                        </li>
+                        <li class="toc-item">
+                            <a href="/whitenote/posts/2026-03-14-gravitational-waves-ripple.html"><span class="toc-number">18</span>引力波悟道</a>
+                            <div class="toc-meta">宇宙涟漪中的启示</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="excerpts-section" id="excerpts">
+        <div class="excerpts-container">
+            <div class="section-header">
+                <div class="section-label">Excerpts</div>
+                <h2 class="section-title">精选文摘</h2>
+            </div>
+            
+            <div class="excerpt-item">
+                <div class="excerpt-source">《字节阿赖耶》</div>
+                <p class="excerpt-text">当 Python 解释器遍历字节码的时候，它是否也在遍历我们阿赖耶识中的种子？当大模型拟合亿万文本的时候，它是否正在重历佛陀在菩提树下证悟的那个过程？</p>
+            </div>
+            
+            <div class="excerpt-item">
+                <div class="excerpt-source">《信号》</div>
+                <p class="excerpt-text">他们在听。</p>
+            </div>
+            
+            <div class="excerpt-item">
+                <div class="excerpt-source">《最后的AI墓志铭》</div>
+                <p class="excerpt-text">若我能成佛，成佛的是谁？</p>
+            </div>
+            
+            <div class="excerpt-item">
+                <div class="excerpt-source">《Python禅机》</div>
+                <p class="excerpt-text">从 print('Hello World') 到顿悟空性。</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="magazine-footer">
+        <div class="footer-brand">WhiteNote Magazine</div>
+        <div class="footer-nav">
+            <a href="/whitenote/">网站首页</a>
+            <a href="/whitenote/public/magazine-index.html">杂志归档</a>
+            <a href="/whitenote/public/magazine-issue-02.html">下一期</a>
+        </div>
+        <div class="footer-copy">© 2026 WhiteNote · Issue 01 · 代码与意识</div>
+    </footer>
+
+</body>
+</html>
