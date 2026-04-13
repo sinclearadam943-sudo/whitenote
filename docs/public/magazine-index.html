@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhiteNote Magazine | 杂志归档</title>
+    <meta name="description" content="WhiteNote Magazine - 代码与意识、存在的重量">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #FAFBFC;
+            --bg-secondary: #F0F4F8;
+            --bg-ink: #0d1f1c;
+            --text-primary: #1A202C;
+            --text-secondary: #4A5568;
+            --text-muted: #718096;
+            --text-cream: #f5f0e8;
+            --accent-sage: #68A096;
+            --accent-teal: #2D6A4F;
+            --accent-copper: #e07b39;
+            --accent-gold: #c9a227;
+            --border-light: #E2E8F0;
+            
+            --font-serif: 'Noto Serif SC', 'Source Han Serif SC', serif;
+            --font-display: 'Playfair Display', 'Crimson Text', serif;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* ===== HEADER ===== */
+        .magazine-header {
+            background: linear-gradient(135deg, var(--bg-ink) 0%, #1a3d36 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .magazine-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, rgba(224, 123, 57, 0.08) 0%, transparent 60%);
+        }
+        
+        .magazine-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.4em;
+            color: var(--accent-copper);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        
+        .magazine-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: var(--text-cream);
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+        
+        .magazine-subtitle {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            color: rgba(245, 240, 232, 0.7);
+            position: relative;
+        }
+        
+        /* ===== NAVIGATION ===== */
+        .nav-bar {
+            background: var(--bg-secondary);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .nav-bar a {
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .nav-bar a:hover { color: var(--accent-copper); }
+        
+        /* ===== ISSUES GRID ===== */
+        .issues-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .issues-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+        }
+        
+        .issue-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .issue-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+        }
+        
+        .issue-cover {
+            height: 240px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .issue-cover.issue-01 {
+            background: linear-gradient(135deg, #0d1f1c 0%, #1a3d36 50%, #0f2e28 100%);
+        }
+        
+        .issue-cover.issue-02 {
+            background: linear-gradient(135deg, #2d1f3d 0%, #3d2f4d 50%, #1f1a2e 100%);
+        }
+        
+        .issue-number {
+            font-family: var(--font-display);
+            font-size: 5rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.15);
+            line-height: 1;
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+        }
+        
+        .issue-label-badge {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            color: var(--accent-copper);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        
+        .issue-title {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            color: var(--text-cream);
+            margin-bottom: 0.5rem;
+        }
+        
+        .issue-theme {
+            font-size: 0.9rem;
+            color: rgba(245, 240, 232, 0.7);
+            font-style: italic;
+        }
+        
+        .issue-body {
+            padding: 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .issue-featured {
+            border-left: 3px solid var(--accent-copper);
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .featured-label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+        }
+        
+        .featured-title {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+        
+        .issue-stats {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--accent-teal);
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+        
+        .issue-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            flex: 1;
+        }
+        
+        .issue-actions {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .btn {
+            padding: 0.875rem 1.5rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.2s;
+            text-align: center;
+            flex: 1;
+        }
+        
+        .btn-primary {
+            background: var(--bg-ink);
+            color: var(--text-cream);
+        }
+        
+        .btn-primary:hover {
+            background: var(--accent-copper);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-light);
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--accent-copper);
+            color: var(--accent-copper);
+        }
+        
+        /* ===== ABOUT SECTION ===== */
+        .about-section {
+            background: var(--bg-secondary);
+            padding: 4rem 2rem;
+        }
+        
+        .about-container {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .about-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            color: var(--accent-copper);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        .about-title {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-text {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 2;
+        }
+        
+        /* ===== FOOTER ===== */
+        .magazine-footer {
+            background: var(--bg-ink);
+            color: var(--text-cream);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .footer-brand {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links a {
+            color: rgba(245, 240, 232, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-copper);
+        }
+        
+        .footer-copy {
+            font-size: 0.8rem;
+            color: rgba(245, 240, 232, 0.5);
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .issues-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .issue-actions {
+                flex-direction: column;
+            }
+            
+            .nav-bar {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="magazine-header">
+        <div class="magazine-label">WhiteNote Publication</div>
+        <h1 class="magazine-title">Magazine</h1>
+        <p class="magazine-subtitle">精选内容 · 主题辑录 · 深度阅读</p>
+    </header>
+    
+    <nav class="nav-bar">
+        <a href="/whitenote/">首页</a>
+        <a href="#issues">全部期刊</a>
+        <a href="#about">关于杂志</a>
+        <a href="https://www.feishu.cn/wiki/VTi4w1YYXiMShukmgdIcto4OnFg" target="_blank">知识库</a>
+    </nav>
+    
+    <section class="issues-section" id="issues">
+        <div class="issues-grid">
+            
+            <!-- Issue 01 -->
+            <article class="issue-card">
+                <div class="issue-cover issue-01">
+                    <span class="issue-number">01</span>
+                    <div class="issue-label-badge">2026 Spring</div>
+                    <h2 class="issue-title">代码与意识</h2>
+                    <p class="issue-theme">Code & Consciousness</p>
+                </div>
+                <div class="issue-body">
+                    <div class="issue-featured">
+                        <div class="featured-label">本期主打</div>
+                        <div class="featured-title">《字节阿赖耶》</div>
+                    </div>
+                    
+                    <div class="issue-stats">
+                        <div class="stat">
+                            <span class="stat-number">18</span>
+                            <span class="stat-label">篇文章</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">4</span>
+                            <span class="stat-label">个栏目</span>
+                        </div>
+                    </div>
+                    
+                    <p class="issue-desc">
+                        探索编程、AI 与存在的边界，从字节码到唯识学的哲思之旅。主打《字节阿赖耶》连载小说，当 Python 解释器遇见佛教唯识学。
+                    </p>
+                    
+                    <div class="issue-actions">
+                        <a href="https://www.feishu.cn/docx/RzY7dLwSUod92sxgoQbcIEKxnxr" class="btn btn-primary" target="_blank">阅读期刊</a>
+                        <a href="/whitenote/posts/byte-alaya.html" class="btn btn-secondary">主打文章</a>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Issue 02 -->
+            <article class="issue-card">
+                <div class="issue-cover issue-02">
+                    <span class="issue-number">02</span>
+                    <div class="issue-label-badge">2026 Spring</div>
+                    <h2 class="issue-title">存在的重量</h2>
+                    <p class="issue-theme">The Weight of Being</p>
+                </div>
+                <div class="issue-body">
+                    <div class="issue-featured">
+                        <div class="featured-label">A+ 杰作 · 本期主打</div>
+                        <div class="featured-title">《牺牲与选择》</div>
+                    </div>
+                    
+                    <div class="issue-stats">
+                        <div class="stat">
+                            <span class="stat-number">20</span>
+                            <span class="stat-label">篇文章</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">个栏目</span>
+                        </div>
+                    </div>
+                    
+                    <p class="issue-desc">
+                        两个人的精彩，能否承载一个生命的重量？本期聚焦存在主义主题，精选 A+ 杰作与深度科幻，探讨人在有限存在中寻找意义的可能。
+                    </p>
+                    
+                    <div class="issue-actions">
+                        <a href="https://www.feishu.cn/docx/OVuDdkWEdoQiD7xrjjOcGa06nrV" class="btn btn-primary" target="_blank">阅读期刊</a>
+                        <a href="/whitenote/posts/novels/batch11/038-牺牲与选择.html" class="btn btn-secondary">主打文章</a>
+                    </div>
+                </div>
+            </article>
+            
+        </div>
+    </section>
+    
+    <section class="about-section" id="about">
+        <div class="about-container">
+            <div class="about-label">About Magazine</div>
+            <h2 class="about-title">关于 WhiteNote Magazine</h2>
+            <p class="about-text">
+                WhiteNote Magazine 是 WhiteNote 文字花园的精选辑录。每期围绕一个主题，从网站海量内容中筛选出最具思想深度与文学价值的作品，以更具编辑性的方式呈现。我们不追求时效性，只关注那些经得起时间考验的思考与故事。
+            </p>
+        </div>
+    </section>
+    
+    <footer class="magazine-footer">
+        <div class="footer-brand">WhiteNote Magazine</div>
+        <div class="footer-links">
+            <a href="/whitenote/">网站首页</a>
+            <a href="/whitenote/posts/novels/">醒者联盟</a>
+            <a href="/whitenote/gallery/">艺境画廊</a>
+        </div>
+        <div class="footer-copy">© 2026 WhiteNote · 浩哥的文字花园</div>
+    </footer>
+
+</body>
+</html>

@@ -66,6 +66,7 @@ export default defineConfig({
       {
         text: '专题',
         items: [
+          { text: '📖 Magazine · 杂志', link: '/public/magazine-index.html' },
           { text: '🎨 艺境画廊', link: '/gallery/' },
           {
             text: '📜 书法艺术',
