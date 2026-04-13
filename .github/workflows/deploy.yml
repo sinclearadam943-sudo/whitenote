@@ -52,8 +52,10 @@ jobs:
       - name: Copy custom index.html
         run: cp docs/index.html docs/.vitepress/dist/index.html
 
-      - name: Copy public folder files
-        run: cp docs/public/*.html docs/.vitepress/dist/public/
+      - name: Copy public folder to dist/public
+        run: |
+          mkdir -p docs/.vitepress/dist/public
+          cp docs/public/*.html docs/.vitepress/dist/public/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
