@@ -655,6 +655,112 @@
             color: var(--color-orange);
         }
 
+        /* ===== QUOTE OVERLAY ===== */
+        #quote-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--color-ink);
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+        #quote-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .quote-container {
+            max-width: 900px;
+            text-align: center;
+            animation: fadeInScale 1.2s ease-out;
+        }
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        .quote-mark {
+            font-family: var(--font-serif);
+            font-size: 8rem;
+            color: var(--color-orange);
+            opacity: 0.3;
+            line-height: 1;
+            margin-bottom: -2rem;
+        }
+        .quote-text {
+            font-family: var(--font-serif);
+            font-size: clamp(1.8rem, 5vw, 3.2rem);
+            font-weight: 700;
+            color: var(--color-cream);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            letter-spacing: 0.02em;
+        }
+        .quote-tag {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid var(--color-orange);
+            color: var(--color-orange);
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .quote-source {
+            font-size: 1rem;
+            color: var(--color-sage);
+            font-style: italic;
+            margin-bottom: 3rem;
+        }
+        .quote-enter {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: var(--color-cream);
+            border: 1px solid rgba(245, 240, 232, 0.3);
+            font-size: 0.9rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .quote-enter:hover {
+            background: var(--color-orange);
+            border-color: var(--color-orange);
+            color: white;
+        }
+        .quote-enter::after {
+            content: '→';
+            transition: transform 0.3s ease;
+        }
+        .quote-enter:hover::after {
+            transform: translateX(4px);
+        }
+        .quote-hint {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.75rem;
+            color: rgba(245, 240, 232, 0.4);
+            letter-spacing: 0.1em;
+        }
+
         /* ===== RESPONSIVE ===== */
         @media (min-width: 768px) {
             section { padding: 5rem 3rem; }
@@ -976,5 +1082,67 @@
         </div>
         <p class="footer-copy">© 2025 WhiteNote. All thoughts preserved.</p>
     </footer>
+    <!-- QUOTE OVERLAY -->
+    <div id="quote-overlay">
+        <div class="quote-container">
+            <div class="quote-mark">"</div>
+            <p class="quote-text" id="quote-text">加载中...</p>
+            <span class="quote-tag" id="quote-tag">...</span>
+            <p class="quote-source" id="quote-source">...</p>
+            <button class="quote-enter" onclick="enterGarden()">进入花园</button>
+        </div>
+        <div class="quote-hint">点击任意处或按任意键进入</div>
+    </div>
+
+    <script>
+        // 加载并显示随机金句
+        async function loadQuote() {
+            try {
+                const response = await fetch('/whitenote/public/data/quotes.json');
+                const quotes = await response.json();
+                const quote = quotes[Math.floor(Math.random() * quotes.length)];
+                
+                document.getElementById('quote-text').textContent = quote.text;
+                document.getElementById('quote-tag').textContent = quote.tag;
+                document.getElementById('quote-source').textContent = '—— ' + quote.source;
+            } catch (error) {
+                console.error('Failed to load quotes:', error);
+                // 使用默认金句
+                document.getElementById('quote-text').textContent = '在数字荒原上，文字是最后的灯塔。';
+                document.getElementById('quote-tag').textContent = '文字·坚守';
+                document.getElementById('quote-source').textContent = '—— 浩哥的文字花园';
+            }
+        }
+
+        // 进入花园
+        function enterGarden() {
+            const overlay = document.getElementById('quote-overlay');
+            overlay.classList.add('hidden');
+            // 存储到 sessionStorage，避免刷新时重复显示
+            sessionStorage.setItem('quoteShown', 'true');
+        }
+
+        // 页面加载时
+        document.addEventListener('DOMContentLoaded', function() {
+            // 检查是否已经显示过（同一session内）
+            if (sessionStorage.getItem('quoteShown')) {
+                document.getElementById('quote-overlay').classList.add('hidden');
+            } else {
+                loadQuote();
+                
+                // 点击任意处关闭
+                document.getElementById('quote-overlay').addEventListener('click', function(e) {
+                    if (e.target !== document.querySelector('.quote-enter')) {
+                        enterGarden();
+                    }
+                });
+
+                // 按任意键关闭
+                document.addEventListener('keydown', function() {
+                    enterGarden();
+                }, { once: true });
+            }
+        });
+    </script>
 </body>
 </html>
