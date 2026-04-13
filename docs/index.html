@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浩哥的文字花园 | WhiteNote</title>
+    <meta name="description" content="一个关于文字、思考与艺术的私人花园">
+    
+    <!-- Google Fonts - 思源宋体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* === 设计系统 - Editorial Literary Style === */
+        
+        :root {
+            /* 清新冷色调色板 - 避免米黄色疲劳 */
+            --bg-primary: #FAFBFC;
+            --bg-secondary: #F0F4F8;
+            --text-primary: #1A202C;
+            --text-secondary: #4A5568;
+            --text-muted: #718096;
+            --accent-sage: #68A096;
+            --accent-teal: #2D6A4F;
+            --border-light: #E2E8F0;
+            --border-medium: #CBD5E0;
+            
+            /* 字体系统 */
+            --font-serif: 'Noto Serif SC', 'Source Han Serif SC', 'STSong', serif;
+            --font-display: 'Crimson Text', 'Noto Serif SC', serif;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            
+            /* 间距系统 */
+            --space-xs: clamp(0.5rem, 1vw, 0.75rem);
+            --space-sm: clamp(0.75rem, 1.5vw, 1rem);
+            --space-md: clamp(1rem, 2vw, 1.5rem);
+            --space-lg: clamp(1.5rem, 3vw, 2.5rem);
+            --space-xl: clamp(2rem, 4vw, 4rem);
+            --space-2xl: clamp(3rem, 6vw, 6rem);
+            --space-3xl: clamp(4rem, 8vw, 8rem);
+            
+            /* 排版系统 - 流体字体 */
+            --text-xs: clamp(0.75rem, 0.8vw, 0.875rem);
+            --text-sm: clamp(0.8125rem, 0.9vw, 0.9375rem);
+            --text-base: clamp(0.9375rem, 1vw, 1rem);
+            --text-lg: clamp(1.0625rem, 1.2vw, 1.125rem);
+            --text-xl: clamp(1.25rem, 1.8vw, 1.5rem);
+            --text-2xl: clamp(1.5rem, 2.5vw, 2rem);
+            --text-3xl: clamp(1.875rem, 3.5vw, 2.5rem);
+            --text-4xl: clamp(2.25rem, 5vw, 3.5rem);
+            --text-5xl: clamp(2.75rem, 7vw, 5rem);
+            --text-6xl: clamp(3.5rem, 10vw, 7rem);
+            
+            /* 过渡 */
+            --transition-fast: 150ms ease;
+            --transition-base: 300ms ease;
+            --transition-slow: 500ms ease;
+        }
+        
+        /* === 基础重置 === */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            font-size: var(--text-base);
+            line-height: 1.7;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+        
+        /* === 排版 === */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--text-primary);
+        }
+        
+        h1 { font-size: var(--text-5xl); }
+        h2 { font-size: var(--text-3xl); }
+        h3 { font-size: var(--text-2xl); }
+        h4 { font-size: var(--text-xl); }
+        
+        p {
+            margin-bottom: 1.2em;
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+        
+        /* === 页面加载动画 === */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
+        .stagger-5 { transition-delay: 0.5s; }
+        
+        /* === 布局 === */
+        .page-wrapper {
+            min-height: 100vh;
+            display: flex;
+        }
+        
+        /* === 侧边导航 - 固定左侧 === */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 280px;
+            height: 100vh;
+            background: var(--bg-primary);
+            border-right: 1px solid var(--border-light);
+            padding: var(--space-xl);
+            display: flex;
+            flex-direction: column;
+            z-index: 100;
+            overflow-y: auto;
+        }
+        
+        .sidebar-logo {
+            margin-bottom: var(--space-xl);
+        }
+        
+        .sidebar-logo a {
+            display: block;
+        }
+        
+        .logo-title {
+            font-family: var(--font-serif);
+            font-size: var(--text-xl);
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+        
+        .logo-subtitle {
+            font-size: var(--text-xs);
+            color: var(--text-muted);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        
+        /* 导航菜单 */
+        .nav-menu {
+            flex: 1;
+            margin-top: var(--space-lg);
+        }
+        
+        .nav-section {
+            margin-bottom: var(--space-lg);
+        }
+        
+        .nav-section-title {
+            font-size: var(--text-xs);
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: var(--space-sm);
+            font-weight: 500;
+        }
+        
+        .nav-list {
+            list-style: none;
+        }
+        
+        .nav-item {
+            margin-bottom: 0.25rem;
+        }
+        
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 0.625rem 0;
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            transition: all var(--transition-fast);
+            position: relative;
+            padding-left: 0;
+        }
+        
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            left: -1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3px;
+            height: 0;
+            background: var(--accent-bronze);
+            transition: height var(--transition-fast);
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--text-primary);
+            padding-left: 0.5rem;
+        }
+        
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            height: 60%;
+        }
+        
+        .nav-icon {
+            margin-right: 0.75rem;
+            font-size: 1rem;
+            opacity: 0.7;
+            transition: opacity var(--transition-fast);
+        }
+        
+        .nav-link:hover .nav-icon,
+        .nav-link.active .nav-icon {
+            opacity: 1;
+        }
+        
+        /* 侧边栏底部 */
+        .sidebar-footer {
+            padding-top: var(--space-lg);
+            border-top: 1px solid var(--border-light);
+            font-size: var(--text-xs);
+            color: var(--text-muted);
+        }
+        
+        .sidebar-footer p {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* === 主内容区 === */
+        .main-content {
+            margin-left: 280px;
+            flex: 1;
+            min-height: 100vh;
+        }
+        
+        /* === Hero Section === */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: var(--space-3xl) var(--space-2xl);
+            position: relative;
+            background: var(--bg-primary);
+        }
+        
+        .hero-content {
+            max-width: 900px;
+        }
+        
+        .hero-eyebrow {
+            font-size: var(--text-xs);
+            color: var(--accent-bronze);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: var(--space-md);
+            font-weight: 500;
+        }
+        
+        .hero-title {
+            font-family: var(--font-serif);
+            font-size: var(--text-6xl);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: var(--space-lg);
+            letter-spacing: -0.02em;
+        }
+        
+        .hero-title .line {
+            display: block;
+        }
+        
+        .hero-title .accent {
+            color: var(--accent-bronze);
+            font-style: italic;
+            font-family: var(--font-display);
+            font-weight: 400;
+        }
+        
+        .hero-description {
+            font-size: var(--text-lg);
+            color: var(--text-secondary);
+            max-width: 600px;
+            line-height: 1.8;
+            margin-bottom: var(--space-xl);
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.875rem 2rem;
+            font-size: var(--text-sm);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            transition: all var(--transition-base);
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+        
+        .btn-primary {
+            background: var(--text-primary);
+            color: var(--bg-primary);
+        }
+        
+        .btn-primary:hover {
+            background: var(--accent-bronze);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border-medium);
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--text-primary);
+            background: var(--bg-secondary);
+        }
+        
+        /* 装饰元素 */
+        .hero-decoration {
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 200px;
+            height: 300px;
+            pointer-events: none;
+            opacity: 0.4;
+        }
+        
+        .hero-decoration::before {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, var(--accent-bronze), transparent);
+            right: 0;
+        }
+        
+        .hero-decoration::after {
+            content: '文';
+            position: absolute;
+            font-family: var(--font-serif);
+            font-size: 180px;
+            color: var(--bg-secondary);
+            right: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: 700;
+            writing-mode: vertical-rl;
+        }
+        
+        /* === Section 通用样式 === */
+        .section {
+            padding: var(--space-3xl) var(--space-2xl);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: var(--space-xl);
+            padding-bottom: var(--space-md);
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: var(--text-2xl);
+            font-weight: 600;
+        }
+        
+        .section-meta {
+            font-size: var(--text-xs);
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        /* === 精选内容 - 非对称布局 === */
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: var(--space-xl);
+            margin-bottom: var(--space-2xl);
+        }
+        
+        .featured-main {
+            position: relative;
+        }
+        
+        .featured-card {
+            display: block;
+            background: var(--bg-secondary);
+            padding: var(--space-xl);
+            transition: all var(--transition-base);
+            border: 1px solid transparent;
+        }
+        
+        .featured-card:hover {
+            border-color: var(--border-medium);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.04);
+        }
+        
+        .featured-card-small {
+            padding: var(--space-lg);
+        }
+        
+        .card-category {
+            font-size: var(--text-xs);
+            color: var(--accent-bronze);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .card-title {
+            font-family: var(--font-serif);
+            font-size: var(--text-xl);
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            line-height: 1.4;
+        }
+        
+        .featured-main .card-title {
+            font-size: var(--text-2xl);
+        }
+        
+        .card-excerpt {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: var(--space-md);
+        }
+        
+        .card-meta {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            font-size: var(--text-xs);
+            color: var(--text-muted);
+        }
+        
+        .card-meta-dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--accent-bronze);
+        }
+        
+        .featured-secondary {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+        
+        /* === 内容列表 === */
+        .content-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
+        }
+        
+        .content-item {
+            display: block;
+            padding: var(--space-md) 0;
+            border-bottom: 1px solid var(--border-light);
+            transition: all var(--transition-fast);
+        }
+        
+        .content-item:hover {
+            padding-left: var(--space-sm);
+            border-color: var(--accent-bronze);
+        }
+        
+        .content-item-category {
+            font-size: var(--text-xs);
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        
+        .content-item-title {
+            font-family: var(--font-serif);
+            font-size: var(--text-base);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+        
+        .content-item:hover .content-item-title {
+            color: var(--accent-bronze);
+        }
+        
+        .content-item-date {
+            font-size: var(--text-xs);
+            color: var(--text-muted);
+        }
+        
+        /* === 关于花园 === */
+        .about-section {
+            background: var(--bg-secondary);
+            padding: var(--space-3xl) var(--space-2xl);
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .about-quote {
+            font-family: var(--font-display);
+            font-size: var(--text-3xl);
+            font-style: italic;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: var(--space-xl);
+            position: relative;
+        }
+        
+        .about-quote::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--accent-bronze);
+            opacity: 0.3;
+            position: absolute;
+            left: -2rem;
+            top: -1rem;
+            font-family: Georgia, serif;
+        }
+        
+        .about-text {
+            font-size: var(--text-base);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto var(--space-lg);
+        }
+        
+        /* === Footer === */
+        .footer {
+            padding: var(--space-xl) var(--space-2xl);
+            border-top: 1px solid var(--border-light);
+            margin-left: 280px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+        }
+        
+        .footer-left {
+            font-size: var(--text-xs);
+            color: var(--text-muted);
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: var(--space-md);
+        }
+        
+        .footer-link {
+            font-size: var(--text-xs);
+            color: var(--text-secondary);
+            transition: color var(--transition-fast);
+        }
+        
+        .footer-link:hover {
+            color: var(--accent-bronze);
+        }
+        
+        /* === 分类导航网格 === */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: var(--border-light);
+            margin-bottom: var(--space-2xl);
+        }
+        
+        .category-item {
+            background: var(--bg-primary);
+            padding: var(--space-xl);
+            text-align: center;
+            transition: all var(--transition-base);
+        }
+        
+        .category-item:hover {
+            background: var(--bg-secondary);
+        }
+        
+        .category-icon {
+            font-size: 2rem;
+            margin-bottom: var(--space-sm);
+            opacity: 0.8;
+            transition: all var(--transition-base);
+        }
+        
+        .category-item:hover .category-icon {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+        
+        .category-name {
+            font-family: var(--font-serif);
+            font-size: var(--text-base);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .category-count {
+            font-size: var(--text-xs);
+            color: var(--text-muted);
+        }
+        
+        /* === 移动端导航 === */
+        .mobile-nav-toggle {
+            display: none;
+            position: fixed;
+            top: var(--space-md);
+            left: var(--space-md);
+            z-index: 200;
+            width: 48px;
+            height: 48px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-light);
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .mobile-nav-toggle span {
+            display: block;
+            width: 20px;
+            height: 1px;
+            background: var(--text-primary);
+            transition: all var(--transition-fast);
+        }
+        
+        /* === 响应式 === */
+        @media (max-width: 1024px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform var(--transition-base);
+            }
+            
+            .sidebar.open {
+                transform: translateX(0);
+            }
+            
+            .main-content,
+            .footer {
+                margin-left: 0;
+            }
+            
+            .mobile-nav-toggle {
+                display: flex;
+            }
+            
+            .hero-decoration {
+                display: none;
+            }
+            
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 640px) {
+            :root {
+                --space-2xl: 2rem;
+                --space-3xl: 3rem;
+            }
+            
+            .hero {
+                padding: var(--space-xl) var(--space-md);
+                min-height: auto;
+                padding-top: 80px;
+            }
+            
+            .section {
+                padding: var(--space-xl) var(--space-md);
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--space-sm);
+            }
+        }
+        
+        /* === 滚动条样式 === */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-medium);
+            border-radius: 3px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+        
+        /* === 选择文本样式 === */
+        ::selection {
+            background: var(--accent-bronze);
+            color: var(--bg-primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- 移动端导航开关 -->
+    <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <div class="page-wrapper">
+        <!-- 侧边导航 -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-logo fade-in">
+                <a href="/whitenote/">
+                    <div class="logo-title">文字花园</div>
+                    <div class="logo-subtitle">WhiteNote</div>
+                </a>
+            </div>
+            
+            <nav class="nav-menu">
+                <div class="nav-section fade-in stagger-1">
+                    <div class="nav-section-title">阅读</div>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="/whitenote/posts/novels/" class="nav-link active">
+                                <span class="nav-icon">📖</span>
+                                <span>小说故事</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/whitenote/posts/essays/" class="nav-link">
+                                <span class="nav-icon">✍️</span>
+                                <span>随笔散文</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/whitenote/posts/philosophy-08-time-philosophy" class="nav-link">
+                                <span class="nav-icon">💭</span>
+                                <span>哲学思辨</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section fade-in stagger-2">
+                    <div class="nav-section-title">艺术</div>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="/whitenote/posts/calligraphy/" class="nav-link">
+                                <span class="nav-icon">🖌️</span>
+                                <span>北魏书法</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/whitenote/gallery.html" class="nav-link">
+                                <span class="nav-icon">🎨</span>
+                                <span>艺境画廊</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section fade-in stagger-3">
+                    <div class="nav-section-title">花园</div>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="/whitenote/daily" class="nav-link">
+                                <span class="nav-icon">🌤️</span>
+                                <span>今日随记</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/whitenote/resources.html" class="nav-link">
+                                <span class="nav-icon">📚</span>
+                                <span>内容源</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div class="sidebar-footer fade-in stagger-4">
+                <p>© 2025 浩哥的文字花园</p>
+                <p>在文字中整理自己</p>
+            </div>
+        </aside>
+        
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-decoration"></div>
+                <div class="hero-content">
+                    <div class="hero-eyebrow fade-in">Welcome to the Garden</div>
+                    <h1 class="hero-title fade-in stagger-1">
+                        <span class="line">浩哥的</span>
+                        <span class="line"><span class="accent">文字花园</span></span>
+                    </h1>
+                    <p class="hero-description fade-in stagger-2">
+                        这是一片私人领地，种植着小说、随笔、哲学思考与艺术赏析。在这里，文字如植物般自然生长，每一个故事都是一颗种子，每一篇思考都是一次花开。
+                    </p>
+                    <div class="hero-cta fade-in stagger-3">
+                        <a href="/whitenote/posts/byte-alaya" class="btn btn-primary">开始阅读《字节阿赖耶》</a>
+                        <a href="#featured" class="btn btn-secondary">浏览精选内容</a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 分类导航 -->
+            <section class="section">
+                <div class="section-header fade-in">
+                    <h2 class="section-title">探索花园</h2>
+                    <span class="section-meta">Categories</span>
+                </div>
+                
+                <div class="category-grid fade-in stagger-1">
+                    <a href="/whitenote/posts/novels/" class="category-item">
+                        <div class="category-icon">📖</div>
+                        <div class="category-name">原创小说</div>
+                        <div class="category-count">《字节阿赖耶》系列</div>
+                    </a>
+                    <a href="/whitenote/posts/essays/" class="category-item">
+                        <div class="category-icon">✍️</div>
+                        <div class="category-name">随笔散文</div>
+                        <div class="category-count">生活思考与观察</div>
+                    </a>
+                    <a href="/whitenote/posts/calligraphy/" class="category-item">
+                        <div class="category-icon">🖌️</div>
+                        <div class="category-name">北魏书法</div>
+                        <div class="category-count">魏碑临习与研究</div>
+                    </a>
+                    <a href="/whitenote/gallery.html" class="category-item">
+                        <div class="category-icon">🎨</div>
+                        <div class="category-name">艺境画廊</div>
+                        <div class="category-count">中外书画赏析</div>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- 精选内容 -->
+            <section class="section" id="featured">
+                <div class="section-header fade-in">
+                    <h2 class="section-title">精选内容</h2>
+                    <span class="section-meta">Featured</span>
+                </div>
+                
+                <div class="featured-grid fade-in stagger-1">
+                    <article class="featured-main">
+                        <a href="/whitenote/posts/byte-alaya" class="featured-card">
+                            <div class="card-category">科幻小说</div>
+                            <h3 class="card-title">字节阿赖耶</h3>
+                            <p class="card-excerpt">
+                                Python字节码与佛教唯识学的科幻碰撞。在这个系列中，探索人工智能与意识的边界，代码与禅意的奇妙融合。一部关于技术、哲学与人性的长篇科幻作品。
+                            </p>
+                            <div class="card-meta">
+                                <span>长篇小说</span>
+                                <span class="card-meta-dot"></span>
+                                <span>连载中</span>
+                            </div>
+                        </a>
+                    </article>
+                    
+                    <div class="featured-secondary">
+                        <a href="/whitenote/posts/philosophy-08-time-philosophy" class="featured-card featured-card-small">
+                            <div class="card-category">哲学</div>
+                            <h4 class="card-title">时间哲学</h4>
+                            <p class="card-excerpt">探讨时间的本质——它是客观存在还是主观体验？</p>
+                        </a>
+                        <a href="/whitenote/posts/essays/003-the-art-of-waiting" class="featured-card featured-card-small">
+                            <div class="card-category">随笔</div>
+                            <h4 class="card-title">等待的艺术</h4>
+                            <p class="card-excerpt">关于耐心、期待与生命中那些值得等待的事物。</p>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="content-list fade-in stagger-2">
+                    <a href="/whitenote/posts/ai-fairy-tale" class="content-item">
+                        <div class="content-item-category">短篇</div>
+                        <h4 class="content-item-title">AI童话</h4>
+                        <div class="content-item-date">2026.03</div>
+                    </a>
+                    <a href="/whitenote/posts/philosophy-03-quantum-entanglement" class="content-item">
+                        <div class="content-item-category">哲学</div>
+                        <h4 class="content-item-title">量子纠缠与缘起性空</h4>
+                        <div class="content-item-date">2026.02</div>
+                    </a>
+                    <a href="/whitenote/posts/why-is-china" class="content-item">
+                        <div class="content-item-category">随笔</div>
+                        <h4 class="content-item-title">何为中国</h4>
+                        <div class="content-item-date">2026.01</div>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- 关于花园 -->
+            <section class="about-section">
+                <div class="about-content fade-in">
+                    <blockquote class="about-quote">
+                        在文字中整理自己，在思考中遇见真理。
+                    </blockquote>
+                    <p class="about-text">
+                        这座花园始于一个简单的心愿——记录、思考、创作。这里有科幻小说的奇想，有日常生活的感悟，有对艺术与美的追寻。每一篇文章都是一次心灵的整理，每一次创作都是与自己对话的过程。
+                    </p>
+                    <p class="about-text">
+                        欢迎漫步其中，愿你也能在这里找到属于自己的片刻宁静。
+                    </p>
+                </div>
+            </section>
+            
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <div class="footer-left">
+                        <p>© 2025 浩哥的文字花园 · WhiteNote</p>
+                    </div>
+                    <div class="footer-links">
+                        <a href="https://github.com/sinclearadam943-sudo/whitenote" class="footer-link" target="_blank">GitHub</a>
+                        <a href="/whitenote/about" class="footer-link">关于</a>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+    
+    <script>
+        // === 登录检测 ===
+        // 兼容SSR：只在浏览器环境执行
+        if (typeof window !== 'undefined') {
+            window.addEventListener('load', function() {
+                // 检查登录状态
+                if (!localStorage.getItem('whitenote_logged_in') && !sessionStorage.getItem('whitenote_logged_in')) {
+                    // 仅在未登录时跳转，避免循环
+                    if (!window.location.pathname.includes('/login')) {
+                        window.location.href = '/whitenote/login.html';
+                    }
+                }
+            });
+        }
+        
+        // === 滚动淡入动画 ===
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            fadeElements.forEach(el => {
+                observer.observe(el);
+            });
+            
+            // 立即触发首屏元素
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in').forEach((el, i) => {
+                    if (i < 5) el.classList.add('visible');
+                });
+            }, 100);
+        });
+        
+        // === 移动端导航 ===
+        const mobileNavToggle = document.getElementById('mobileNavToggle');
+        const sidebar = document.getElementById('sidebar');
+        
+        if (mobileNavToggle && sidebar) {
+            mobileNavToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('open');
+                
+                // 动画汉堡按钮
+                const spans = this.querySelectorAll('span');
+                if (sidebar.classList.contains('open')) {
+                    spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                    spans[1].style.opacity = '0';
+                    spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+                } else {
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            });
+            
+            // 点击主内容区关闭侧边栏
+            document.querySelector('.main-content').addEventListener('click', function() {
+                if (sidebar.classList.contains('open')) {
+                    sidebar.classList.remove('open');
+                    const spans = mobileNavToggle.querySelectorAll('span');
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            });
+        }
+        
+        // === 平滑滚动 ===
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // === 页面加载完成后的微交互 ===
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '1';
+        });
+    </script>
+</body>
+</html>
