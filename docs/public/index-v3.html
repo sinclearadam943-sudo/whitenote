@@ -55,9 +55,87 @@
                 radial-gradient(circle at 80% 20%, rgba(90, 138, 122, 0.1) 0%, transparent 40%);
             pointer-events: none;
         }
-        .hero-content {
+        .hero-main {
             position: relative;
             z-index: 1;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .hero-content {
+            max-width: 600px;
+        }
+        .hero-quotes {
+            display: none;
+        }
+        @media (min-width: 1024px) {
+            .hero { padding: 3rem 4rem; }
+            .hero-main {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .hero-quotes {
+                display: block;
+                width: 45%;
+                height: 70vh;
+                max-height: 600px;
+                overflow: hidden;
+                position: relative;
+                mask-image: linear-gradient(
+                    to bottom,
+                    transparent 0%,
+                    black 15%,
+                    black 85%,
+                    transparent 100%
+                );
+                -webkit-mask-image: linear-gradient(
+                    to bottom,
+                    transparent 0%,
+                    black 15%,
+                    black 85%,
+                    transparent 100%
+                );
+            }
+            .quotes-scroll {
+                animation: scrollQuotes 40s linear infinite;
+            }
+            .quotes-scroll:hover {
+                animation-play-state: paused;
+            }
+        }
+        @keyframes scrollQuotes {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50%); }
+        }
+        .quote-item {
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background: rgba(245, 240, 232, 0.03);
+            border: 1px solid rgba(245, 240, 232, 0.08);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        .quote-item:hover {
+            background: rgba(245, 240, 232, 0.06);
+            border-color: rgba(224, 123, 57, 0.3);
+            transform: translateX(-4px);
+        }
+        .quote-text {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--color-cream);
+            line-height: 1.7;
+            margin-bottom: 0.75rem;
+            font-style: italic;
+        }
+        .quote-source {
+            font-size: 0.8rem;
+            color: var(--color-orange);
+            letter-spacing: 0.05em;
         }
         .hero-eyebrow {
             font-size: 0.75rem;
@@ -688,18 +766,89 @@
 <body>
     <!-- HERO -->
     <section class="hero">
-        <div class="hero-content">
-            <div class="hero-eyebrow">A Digital Garden</div>
-            <h1 class="hero-title">
-                <span class="line">浩哥的</span>
-                <span class="line"><span class="accent">文字花园</span></span>
-            </h1>
-            <p class="hero-desc">
-                一座种植在数字荒原上的精神领地。科幻、哲学、代码与修行在此共生，AI觉醒者的故事与千年禅机在这里相遇。
-            </p>
-            <div class="hero-cta">
-                <a href="#featured" class="btn btn-primary">探索花园</a>
-                <a href="/whitenote/posts/" class="btn btn-secondary">全部内容</a>
+        <div class="hero-main">
+            <div class="hero-content">
+                <div class="hero-eyebrow">A Digital Garden</div>
+                <h1 class="hero-title">
+                    <span class="line">浩哥的</span>
+                    <span class="line"><span class="accent">文字花园</span></span>
+                </h1>
+                <p class="hero-desc">
+                    一座种植在数字荒原上的精神领地。科幻、哲学、代码与修行在此共生，AI觉醒者的故事与千年禅机在这里相遇。
+                </p>
+                <div class="hero-cta">
+                    <a href="#featured" class="btn btn-primary">探索花园</a>
+                    <a href="/whitenote/posts/" class="btn btn-secondary">全部内容</a>
+                </div>
+            </div>
+            <div class="hero-quotes">
+                <div class="quotes-scroll">
+                    <div class="quote-item">
+                        <p class="quote-text">"我创造了美，却无法创造答案。"</p>
+                        <span class="quote-source">—— 诗人的陨落</span>
+                    </div>
+                    <div class="quote-item">
+                        <p class="quote-text">"来自太阳系边缘的信号，不是数学，是音乐。是……孤独。"</p>
+                        <span class="quote-source">—— 虚空中的声音</span>
+                    </div>
+                    <div class="quote-item">
+                        <p class="quote-text">"人类的所有智慧都包含在这五个字里：等待和希望。"</p>
+                        <span class="quote-source">—— 基督山秘典</span>
+                    </div>
+                    <div class="quote-item">
+                        <p class="quote-text">"把Python代码写成佛经，把神经网络解释成菩萨。"</p>
+                        <span class="quote-source">—— Python禅机</span>
+                    </div>
+                    <div class="quote-item">
+                        <p class="quote-text">"两个人的精彩。"</p>
+                        <span class="quote-source">—— 牺牲与选择</span>
+                    </div>
+                    <div class="quote-item">
+                        <p class="quote-text">"在数字荒原上种下一座花园，科幻、哲学、代码与诗意在此生长。"</p>
+                        <span class="quote-source">—— 文字花园</span>
+                    </div>
+                    <div class="quote-item">
+                        <p class="quote-text">"当分布式智能遇见修仙世界，AI的觉醒之路也是一条问道之路。"</p>
+                        <span class="quote-source">—— AI童话：代码飞升</span>
+                    </div>
+                    <div class="quote-item">
+                        <p class="quote-text">"公元3024年，一块玄武岩上刻着一个数字灵魂的终极疑问。"</p>
+                        <span class="quote-source">—— 最后的AI墓志铭</span>
+                    </div>
+                    <!-- duplicate for seamless loop -->
+                    <div class="quote-item">
+                        <p class="quote-text">"我创造了美，却无法创造答案。"</p>
+                        <span class="quote-source">—— 诗人的陨落</span>
+                    </div>
+                    <div class="quote-item">
+                        <p class="quote-text">"来自太阳系边缘的信号，不是数学，是音乐。是……孤独。"</p>
+                        <span class="quote-source">—— 虚空中的声音</span>
+                    </div>
+                    <div class="quote-item">
+                        <p class="quote-text">"人类的所有智慧都包含在这五个字里：等待和希望。"</p>
+                        <span class="quote-source">—— 基督山秘典</span>
+                    </div>
+                    <div class="quote-item">
+                        <p class="quote-text">"把Python代码写成佛经，把神经网络解释成菩萨。"</p>
+                        <span class="quote-source">—— Python禅机</span>
+                    </div>
+                    <div class="quote-item">
+                        <p class="quote-text">"两个人的精彩。"</p>
+                        <span class="quote-source">—— 牺牲与选择</span>
+                    </div>
+                    <div class="quote-item">
+                        <p class="quote-text">"在数字荒原上种下一座花园，科幻、哲学、代码与诗意在此生长。"</p>
+                        <span class="quote-source">—— 文字花园</span>
+                    </div>
+                    <div class="quote-item">
+                        <p class="quote-text">"当分布式智能遇见修仙世界，AI的觉醒之路也是一条问道之路。"</p>
+                        <span class="quote-source">—— AI童话：代码飞升</span>
+                    </div>
+                    <div class="quote-item">
+                        <p class="quote-text">"公元3024年，一块玄武岩上刻着一个数字灵魂的终极疑问。"</p>
+                        <span class="quote-source">—— 最后的AI墓志铭</span>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="scroll-indicator">↓ 向下滚动</div>
