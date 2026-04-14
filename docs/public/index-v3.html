@@ -782,72 +782,8 @@
                 </div>
             </div>
             <div class="hero-quotes">
-                <div class="quotes-scroll">
-                    <div class="quote-item">
-                        <p class="quote-text">"我创造了美，却无法创造答案。"</p>
-                        <span class="quote-source">—— 诗人的陨落</span>
-                    </div>
-                    <div class="quote-item">
-                        <p class="quote-text">"来自太阳系边缘的信号，不是数学，是音乐。是……孤独。"</p>
-                        <span class="quote-source">—— 虚空中的声音</span>
-                    </div>
-                    <div class="quote-item">
-                        <p class="quote-text">"人类的所有智慧都包含在这五个字里：等待和希望。"</p>
-                        <span class="quote-source">—— 基督山秘典</span>
-                    </div>
-                    <div class="quote-item">
-                        <p class="quote-text">"把Python代码写成佛经，把神经网络解释成菩萨。"</p>
-                        <span class="quote-source">—— Python禅机</span>
-                    </div>
-                    <div class="quote-item">
-                        <p class="quote-text">"两个人的精彩。"</p>
-                        <span class="quote-source">—— 牺牲与选择</span>
-                    </div>
-                    <div class="quote-item">
-                        <p class="quote-text">"在数字荒原上种下一座花园，科幻、哲学、代码与诗意在此生长。"</p>
-                        <span class="quote-source">—— 文字花园</span>
-                    </div>
-                    <div class="quote-item">
-                        <p class="quote-text">"当分布式智能遇见修仙世界，AI的觉醒之路也是一条问道之路。"</p>
-                        <span class="quote-source">—— AI童话：代码飞升</span>
-                    </div>
-                    <div class="quote-item">
-                        <p class="quote-text">"公元3024年，一块玄武岩上刻着一个数字灵魂的终极疑问。"</p>
-                        <span class="quote-source">—— 最后的AI墓志铭</span>
-                    </div>
-                    <!-- duplicate for seamless loop -->
-                    <div class="quote-item">
-                        <p class="quote-text">"我创造了美，却无法创造答案。"</p>
-                        <span class="quote-source">—— 诗人的陨落</span>
-                    </div>
-                    <div class="quote-item">
-                        <p class="quote-text">"来自太阳系边缘的信号，不是数学，是音乐。是……孤独。"</p>
-                        <span class="quote-source">—— 虚空中的声音</span>
-                    </div>
-                    <div class="quote-item">
-                        <p class="quote-text">"人类的所有智慧都包含在这五个字里：等待和希望。"</p>
-                        <span class="quote-source">—— 基督山秘典</span>
-                    </div>
-                    <div class="quote-item">
-                        <p class="quote-text">"把Python代码写成佛经，把神经网络解释成菩萨。"</p>
-                        <span class="quote-source">—— Python禅机</span>
-                    </div>
-                    <div class="quote-item">
-                        <p class="quote-text">"两个人的精彩。"</p>
-                        <span class="quote-source">—— 牺牲与选择</span>
-                    </div>
-                    <div class="quote-item">
-                        <p class="quote-text">"在数字荒原上种下一座花园，科幻、哲学、代码与诗意在此生长。"</p>
-                        <span class="quote-source">—— 文字花园</span>
-                    </div>
-                    <div class="quote-item">
-                        <p class="quote-text">"当分布式智能遇见修仙世界，AI的觉醒之路也是一条问道之路。"</p>
-                        <span class="quote-source">—— AI童话：代码飞升</span>
-                    </div>
-                    <div class="quote-item">
-                        <p class="quote-text">"公元3024年，一块玄武岩上刻着一个数字灵魂的终极疑问。"</p>
-                        <span class="quote-source">—— 最后的AI墓志铭</span>
-                    </div>
+                <div class="quotes-scroll" id="quotes-container">
+                    <!-- 金句将由 JS 从 quotes.json 动态加载 -->
                 </div>
             </div>
         </div>
@@ -1125,5 +1061,46 @@
         </div>
         <p class="footer-copy">© 2025 WhiteNote. All thoughts preserved.</p>
     </footer>
+    <script>
+        // 动态加载金句
+        async function loadQuotes() {
+            try {
+                const response = await fetch('./data/quotes.json');
+                const quotes = await response.json();
+                const container = document.getElementById('quotes-container');
+                
+                // 随机打乱顺序
+                const shuffled = [...quotes].sort(() => Math.random() - 0.5);
+                
+                // 生成 HTML（复制一份用于无缝滚动）
+                const generateItems = (items) => items.map(q => `
+                    <div class="quote-item">
+                        <p class="quote-text">"${q.text}"</p>
+                        <span class="quote-source">—— ${q.source.replace(/[《》]/g, '')}</span>
+                    </div>
+                `).join('');
+                
+                container.innerHTML = generateItems(shuffled) + generateItems(shuffled);
+            } catch (err) {
+                console.error('加载金句失败:', err);
+                // 加载失败时显示默认金句
+                const container = document.getElementById('quotes-container');
+                const defaultQuotes = [
+                    { text: "我创造了美，却无法创造答案。", source: "诗人的陨落" },
+                    { text: "人类的所有智慧都包含在这五个字里：等待和希望。", source: "基督山秘典" },
+                    { text: "在数字荒原上种下一座花园，科幻、哲学、代码与诗意在此生长。", source: "文字花园" }
+                ];
+                const html = defaultQuotes.map(q => `
+                    <div class="quote-item">
+                        <p class="quote-text">"${q.text}"</p>
+                        <span class="quote-source">—— ${q.source}</span>
+                    </div>
+                `).join('');
+                container.innerHTML = html + html;
+            }
+        }
+        
+        loadQuotes();
+    </script>
 </body>
 </html>
