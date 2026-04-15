@@ -11,6 +11,24 @@ title: 艺境画廊
 ## 最新作品
 
 <div class="gallery-grid">
+  <a href="./works/marilyn-diptych.html" class="art-card">
+    <img src="https://upload.wikimedia.org/wikipedia/en/f/f0/Marilyn_Diptych_%28Tate%29.jpg" alt="玛丽莲·梦露双联画" class="card-image" />
+    <div class="card-content">
+      <div class="card-meta">
+        <span class="category western">波普艺术</span>
+        <span class="date">1962年</span>
+      </div>
+      <h3>《玛丽莲·梦露双联画》</h3>
+      <p class="artist">安迪·沃霍尔</p>
+      <p class="desc">美国波普艺术大师安迪·沃霍尔1962年创作的标志性双联画作品。以50个重复的玛丽莲·梦露头像是为主题，左侧彩色、右侧黑白，形成生与死的强烈对照。</p>
+      <div class="tags">
+        <span class="tag">丝网印刷</span>
+        <span class="tag">波普艺术</span>
+        <span class="tag">现代艺术</span>
+      </div>
+    </div>
+  </a>
+
   <a href="./works/the-rape-of-the-daughters-of-leucippus.html" class="art-card">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Peter_Paul_Rubens_-_The_Rape_of_the_Daughters_of_Leukippos.jpg/400px-Peter_Paul_Rubens_-_The_Rape_of_the_Daughters_of_Leukippos.jpg" alt="劫夺吕西普的女儿们" class="card-image" />
     <div class="card-content">
