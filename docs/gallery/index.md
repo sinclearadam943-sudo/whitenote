@@ -11,6 +11,60 @@ title: 艺境画廊
 ## 最新作品
 
 <div class="gallery-grid">
+  <a href="./works/the-rape-of-the-daughters-of-leucippus.html" class="art-card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Peter_Paul_Rubens_-_The_Rape_of_the_Daughters_of_Leukippos.jpg/400px-Peter_Paul_Rubens_-_The_Rape_of_the_Daughters_of_Leukippos.jpg" alt="劫夺吕西普的女儿们" class="card-image" />
+    <div class="card-content">
+      <div class="card-meta">
+        <span class="category western">西方绘画</span>
+        <span class="date">1618年</span>
+      </div>
+      <h3>《劫夺吕西普的女儿们》</h3>
+      <p class="artist">彼得·保罗·鲁本斯</p>
+      <p class="desc">佛兰德斯巴洛克巨匠鲁本斯于1618年创作的历史画杰作，取材于希腊神话中卡斯托耳与波吕刻斯兄弟劫掠吕西普两个女儿的传说。</p>
+      <div class="tags">
+        <span class="tag">巴洛克</span>
+        <span class="tag">希腊神话</span>
+        <span class="tag">历史画</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="./works/the-great-wave-off-kanagawa.html" class="art-card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/The_Great_Wave_off_Kanagawa_-_Hokusai.jpg/400px-The_Great_Wave_off_Kanagawa_-_Hokusai.jpg" alt="神奈川冲浪里" class="card-image" />
+    <div class="card-content">
+      <div class="card-meta">
+        <span class="category chinese">日本浮世绘</span>
+        <span class="date">约1831年</span>
+      </div>
+      <h3>《神奈川冲浪里》</h3>
+      <p class="artist">葛饰北斋</p>
+      <p class="desc">日本江户时代浮世绘大师葛饰北斋的代表作，《富岳三十六景》系列最著名的一幅。是世界上最著名的日本艺术作品之一。</p>
+      <div class="tags">
+        <span class="tag">浮世绘</span>
+        <span class="tag">富岳三十六景</span>
+        <span class="tag">日本艺术</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="./works/baijuntu-castiglione.html" class="art-card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/One_Hundred_Horses_-_Giuseppe_Castiglione.jpg/400px-One_Hundred_Horses_-_Giuseppe_Castiglione.jpg" alt="百骏图" class="card-image" />
+    <div class="card-content">
+      <div class="card-meta">
+        <span class="category chinese">中国书画</span>
+        <span class="date">1724-1728年</span>
+      </div>
+      <h3>《百骏图》</h3>
+      <p class="artist">郎世宁</p>
+      <p class="desc">郎世宁耗时四年完成的鸿篇巨制，共绘有100匹姿态各异的骏马。融合中西绘画技法，是中国十大传世名画中唯一一幅外国人的作品。</p>
+      <div class="tags">
+        <span class="tag">中西合璧</span>
+        <span class="tag">宫廷绘画</span>
+        <span class="tag">百骏图</span>
+      </div>
+    </div>
+  </a>
+
   <a href="./works/mona-lisa-da-vinci.html" class="art-card">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/400px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg" alt="蒙娜丽莎" class="card-image" />
     <div class="card-content">
