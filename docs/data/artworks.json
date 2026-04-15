@@ -1,5 +1,44 @@
 [
   {
+    "id": "art_20260414_001",
+    "date": "2026-04-14",
+    "title": "劫夺吕西普的女儿们",
+    "artist": "彼得·保罗·鲁本斯",
+    "period": "巴洛克 · 1618年",
+    "category": "western",
+    "type": "油画",
+    "description": "佛兰德斯巴洛克巨匠鲁本斯于1618年创作的历史画杰作，取材于希腊神话中卡斯托耳与波吕刻斯兄弟劫掠吕西普两个女儿的传说。以X形动态构图、饱满色彩交响和雕塑般的人体塑造，展现巴洛克艺术的力量与美感。现藏于德国慕尼黑老绘画陈列馆。",
+    "tags": ["油画", "巴洛克", "鲁本斯", "西方绘画", "希腊神话", "历史画"],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Peter_Paul_Rubens_-_The_Rape_of_the_Daughters_of_Leukippos.jpg/1280px-Peter_Paul_Rubens_-_The_Rape_of_the_Daughters_of_Leukippos.jpg",
+    "pageUrl": "/gallery/works/the-rape-of-the-daughters-of-leucippus"
+  },
+  {
+    "id": "art_20260413_001",
+    "date": "2026-04-13",
+    "title": "神奈川冲浪里",
+    "artist": "葛饰北斋",
+    "period": "江户时代 · 约1831年",
+    "category": "chinese",
+    "type": "版画",
+    "description": "日本江户时代浮世绘大师葛饰北斋的代表作，《富岳三十六景》系列最著名的一幅。描绘神奈川海域汹涌澎湃的海浪与远处富士山雪顶，是世界上最著名的日本艺术作品之一，2024年印于日本新版1000日元纸币背面。",
+    "tags": ["版画", "浮世绘", "葛饰北斋", "日本艺术", "富岳三十六景"],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/The_Great_Wave_off_Kanagawa_-_Hokusai.jpg/1280px-The_Great_Wave_off_Kanagawa_-_Hokusai.jpg",
+    "pageUrl": "/gallery/works/the-great-wave-off-kanagawa"
+  },
+  {
+    "id": "art_20260412_001",
+    "date": "2026-04-12",
+    "title": "蒙娜丽莎",
+    "artist": "列奥纳多·达·芬奇",
+    "period": "文艺复兴 · 1503-1519年",
+    "category": "western",
+    "type": "油画",
+    "description": "达芬奇最著名的肖像画，意大利文艺复兴盛期杰作。画中女子神秘的微笑、深邃的眼神和交叠的双手成为永恒之谜。采用晕涂法(sm sfumato)创造出柔和的光影过渡效果，现藏于法国巴黎卢浮宫，是世界上最知名的艺术品之一。",
+    "tags": ["油画", "文艺复兴", "达芬奇", "西方绘画", "肖像画", "卢浮宫"],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/800px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg",
+    "pageUrl": "/gallery/works/mona-lisa-da-vinci"
+  },
+  {
     "id": "art_20260411_001",
     "date": "2026-04-11",
     "title": "百骏图",
