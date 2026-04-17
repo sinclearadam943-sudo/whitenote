@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>睡莲 - 克劳德·莫奈 | 艺境画廊</title>
+    <meta name="description" content="莫奈睡莲系列深度赏析，印象派光影与色彩的巅峰之作">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.8;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* 作品头部 */
+        .artwork-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .artwork-image {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+        
+        .artwork-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .artwork-title {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+        
+        .artwork-artist {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .meta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .meta-item {
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .meta-label {
+            font-size: 0.85rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        
+        .meta-value {
+            font-size: 1.1rem;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        /* 内容区域 */
+        .content-section {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        
+        .section-content {
+            font-size: 1.05rem;
+            line-height: 2;
+            color: #444;
+        }
+        
+        .section-content p {
+            margin-bottom: 20px;
+        }
+        
+        /* 引用块 */
+        .quote-block {
+            background: #f1f3f5;
+            border-left: 4px solid #40c057;
+            padding: 20px 25px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: #555;
+        }
+        
+        /* 标签 */
+        .tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .tag {
+            background: #e9ecef;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        
+        /* 延伸阅读 */
+        .reading-list {
+            list-style: none;
+        }
+        
+        .reading-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .reading-list a {
+            color: #339af0;
+            text-decoration: none;
+        }
+        
+        .reading-list a:hover {
+            text-decoration: underline;
+        }
+        
+        /* 返回按钮 */
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #666;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        
+        .back-link:hover {
+            color: #333;
+        }
+        
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .artwork-header {
+                grid-template-columns: 1fr;
+            }
+            
+            .artwork-title {
+                font-size: 1.8rem;
+            }
+            
+            .meta-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../" class="back-link">← 返回画廊</a>
+        
+        <!-- 作品头部 -->
+        <div class="artwork-header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Claude_Monet_-_Water_Lilies_-_1906%2C_Ryerson.jpg" 
+                 alt="睡莲" class="artwork-image">
+            <div class="artwork-info">
+                <h1 class="artwork-title">睡莲</h1>
+                <p class="artwork-artist">克劳德·莫奈 (Claude Monet)</p>
+                <div class="meta-grid">
+                    <div class="meta-item">
+                        <div class="meta-label">创作时间</div>
+                        <div class="meta-value">1897-1926年（系列作品）</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">材质</div>
+                        <div class="meta-value">布面油画</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">尺寸</div>
+                        <div class="meta-value"> varies (橘园美术馆壁画长达91米)</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">收藏地</div>
+                        <div class="meta-value">巴黎橘园美术馆、玛摩丹美术馆等</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 作品概览 -->
+        <div class="content-section">
+            <h2 class="section-title">作品概览</h2>
+            <div class="section-content">
+                <p>《睡莲》系列是法国印象派大师克劳德·莫奈晚年的巅峰之作，也是艺术史上最具影响力的系列作品之一。从1897年到1926年近三十年间，莫奈在吉维尼的花园中创作了超过250幅以睡莲为主题的作品。</p>
+                
+                <p>这些作品不再追求传统绘画的写实性，而是专注于捕捉光影在水面上的瞬间变化。莫奈以极其贴近水面的独特视角，创造出无边界的沉浸式视觉体验，观者仿佛置身于一片光影交织的水域之中。</p>
+                
+                <div class="quote-block">
+                    "他的睡莲蕴藏着一种内在的美，同时兼备了造型和理想，使他的画面更接近音乐和诗歌。"
+                </div>
+            </div>
+        </div>
+        
+        <!-- 艺术风格 -->
+        <div class="content-section">
+            <h2 class="section-title">艺术风格</h2>
+            <div class="section-content">
+                <p><strong>印象派的极致表达：</strong>《睡莲》系列代表了印象派绘画理念的巅峰。莫奈摒弃了传统的固定视点和透视法则，采用近乎抽象的构图方式。画面中的睡莲、水面、天空、倒影相互交融，边界模糊，形成一种梦幻般的视觉效果。</p>
+                
+                <p><strong>无边界构图：</strong>晚期的大型睡莲作品采用全景式构图，画面没有明确的地平线，睡莲和倒影充满整个画布。这种"无焦点"的构图方式打破了观众习惯的观看方式，创造出一种沉浸式的体验。</p>
+                
+                <p><strong>东方美学的影响：</strong>莫奈深受日本浮世绘的影响，尤其是葛饰北斋和歌川广重的作品。《睡莲》中平面化的处理、对自然瞬间的捕捉，都体现了东方美学的影子。莫奈甚至在花园中建造了一座日式拱桥，成为早期睡莲作品的标志性元素。</p>
+            </div>
+        </div>
+        
+        <!-- 技法分析 -->
+        <div class="content-section">
+            <h2 class="section-title">技法分析</h2>
+            <div class="section-content">
+                <p><strong>笔触的解放：</strong>莫奈放弃了传统油画光滑细腻的技法，转而采用自由奔放的笔触。短促、有力的笔触仿佛在画面上跳舞，通过色彩的并置和叠加，让观者的眼睛自然混合颜色，产生光与影的颤动效果。</p>
+                
+                <p><strong>色彩的交响：</strong>莫奈大胆使用高饱和度的现代颜料，将红绿、蓝黄等对比色并置，却通过细腻的过渡使画面和谐统一。晚期作品中的色彩更加自由，紫色、蓝色、绿色相互交织，创造出一种超越现实的梦幻氛围。</p>
+                
+                <p><strong>厚涂与薄染：</strong>莫奈对颜料的处理极具变化——描绘睡莲时颜料厚涂到几乎成为浮雕，而表现水面时则采用薄涂的透明色层，产生深度和流动的幻觉。</p>
+                
+                <div class="quote-block">
+                    "当晨曦的第一缕光线穿透吉维尼花园的薄雾，睡莲池的水面开始闪烁出难以言喻的色彩奇迹。"
+                </div>
+            </div>
+        </div>
+        
+        <!-- 历史背景 -->
+        <div class="content-section">
+            <h2 class="section-title">历史背景</h2>
+            <div class="section-content">
+                <p><strong>吉维尼花园：</strong>1883年，莫奈在巴黎郊外的吉维尼村定居。他对园艺充满热情，将花园视为一件活的艺术品。1893年，他买下了房子对面的一块地，建造了一个日式风格的睡莲池塘，这成为他余生创作的灵感源泉。</p>
+                
+                <p><strong>晚年的坚持：</strong>创作《睡莲》期间，莫奈经历了妻子爱丽丝和长子的离世，以及第一次世界大战的阴影。他的视力也因白内障逐渐衰退，但这些苦难似乎转化为作品中更深沉的情感力量。晚年的睡莲更加抽象，笔触更加自由，仿佛一个老人对生命和自然的终极感悟。</p>
+                
+                <p><strong>水景装饰画计划：</strong>1914年，莫奈构思了宏大的"水景装饰画"计划，希望创作巨幅睡莲作品作为对法国的捐赠。这些巨作在1927年（莫奈去世一年后）于巴黎橘园美术馆揭幕，被安置在两个椭圆形的展厅内，被称为"印象派的西斯廷教堂"。</p>
+            </div>
+        </div>
+        
+        <!-- 艺术价值 -->
+        <div class="content-section">
+            <h2 class="section-title">艺术价值</h2>
+            <div class="section-content">
+                <p><strong>印象派到现代艺术的桥梁：</strong>《睡莲》系列将印象派对光与色的研究推向了极致，其自由的笔触、强烈的绘画性和抽象性倾向，极大地启发了20世纪现代艺术的发展，特别是抽象表现主义和色域绘画。莫奈被视为现代抽象艺术的重要先驱。</p>
+                
+                <p><strong>观看方式的革命：</strong>《睡莲》挑战了传统绘画的观看方式。观众不再是被动的观看者，而是被邀请进入画面，在无边界的色彩空间中漫游。这种沉浸式的体验预示了后来装置艺术和环境艺术的发展方向。</p>
+                
+                <p><strong>生命与永恒的冥想：</strong>睡莲从清晨到黄昏的开放与闭合，象征着生命的循环。莫奈通过画笔将这些瞬间定格，试图对抗时间的流逝。那些巨大的睡莲壁画，更带有一种纪念碑式的庄严感，仿佛一个老人对生命、和平与永恒的祈祷。</p>
+            </div>
+        </div>
+        
+        <!-- 延伸阅读 -->
+        <div class="content-section">
+            <h2 class="section-title">延伸阅读</h2>
+            <ul class="reading-list">
+                <li>
+                    <strong>橘园美术馆</strong> - 
+                    <a href="https://www.musee-orangerie.fr/" target="_blank">https://www.musee-orangerie.fr/</a><br>
+                    欣赏《睡莲》系列巅峰之作的最佳场所
+                </li>
+                <li>
+                    <strong>玛摩丹莫奈美术馆</strong> - 
+                    <a href="https://www.marmottan.fr/" target="_blank">https://www.marmottan.fr/</a><br>
+                    拥有世界上最多的莫奈藏品
+                </li>
+                <li>
+                    <strong>莫奈花园</strong> - 
+                    <a href="https://www.fondation-monet.fr/" target="_blank">https://www.fondation-monet.fr/</a><br>
+                    吉维尼的睡莲池塘，如今向公众开放
+                </li>
+            </ul>
+            
+            <div class="tags">
+                <span class="tag">印象派</span>
+                <span class="tag">油画</span>
+                <span class="tag">光影</span>
+                <span class="tag">抽象艺术先驱</span>
+                <span class="tag">橘园美术馆</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

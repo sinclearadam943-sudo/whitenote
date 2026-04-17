@@ -1,6 +1,17 @@
 {
   "artworks": [
     {
+      "id": "water-lilies-monet",
+      "title": "睡莲",
+      "artist": "克劳德·莫奈",
+      "year": "1897-1926年",
+      "category": "western",
+      "categoryLabel": "西方绘画",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Claude_Monet_-_Water_Lilies_-_1906%2C_Ryerson.jpg",
+      "desc": "印象派大师莫奈晚年的巅峰之作，系列作品超过250幅。以吉维尼花园的睡莲池为灵感，探索光影与色彩的极致表达。",
+      "tags": ["印象派", "油画", "光影", "橘园美术馆"]
+    },
+    {
       "id": "the-zhenshang-studio",
       "title": "贞寿堂书画合璧卷",
       "artist": "文徵明",
