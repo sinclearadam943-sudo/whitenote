@@ -36,8 +36,8 @@ candidates = [
     {"name": "林风眠", "en_name": "Lin Fengmian", "work": "秋鹜", "en_work": "Wild Geese in Autumn"},
 ]
 
-# 已生成的艺术家（需要排除）
-existing_artists = ["潘天寿", "张大千", "巴勃罗·毕加索", "毕加索", "齐白石", "文森特·梵高", "梵高"]
+# 已生成的艺术家（从artworks.json读取）
+existing_artists = ["范宽", "安迪·沃霍尔", "鲁本斯", "葛饰北斋", "达芬奇"]
 
 # 过滤掉已生成的艺术家
 available = [c for c in candidates if c["name"] not in existing_artists]

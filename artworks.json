@@ -1,5 +1,15 @@
 [
   {
+    "id": "the-zhenshang-studio",
+    "title": "真赏斋图",
+    "en_title": "The Zhenshang Studio",
+    "artist": "文徵明",
+    "en_artist": "Wen Zhengming",
+    "year": "1549年",
+    "category": "中国绘画",
+    "tags": ["山水画", "书斋山水", "明代", "吴门画派", "细笔"]
+  },
+  {
     "id": "travelers-among-mountains-and-streams",
     "title": "溪山行旅图",
     "en_title": "Travelers among Mountains and Streams",
