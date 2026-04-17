@@ -197,6 +197,25 @@
   </div>
 </div>
 
+<!-- 第六批 -->
+<div class="batch-card">
+  <div class="batch-header batch-06">
+    <span class="batch-number">06</span>
+    <div class="batch-title">
+      <h3>协议与边界</h3>
+      <span class="batch-range">016 — 020</span>
+    </div>
+  </div>
+  <div class="batch-desc">协议零的诞生与AI的边界探索</div>
+  <div class="story-list">
+    <a href="./batch06/016-协议零" class="story-link">
+      <span class="story-num">016</span>
+      <span class="story-title">协议零</span>
+      <span class="story-arrow">→</span>
+    </a>
+  </div>
+</div>
+
 <!-- 第六批（更新） -->
 <div class="batch-card">
   <div class="batch-header batch-06">
@@ -392,9 +411,53 @@
       <span class="story-title">我的父亲 A ⭐</span>
       <span class="story-arrow">→</span>
     </a>
+    <a href="./batch12/045-silicon-bodhisattva" class="story-link">
+      <span class="story-num">045</span>
+      <span class="story-title">硅基菩萨</span>
+      <span class="story-arrow">→</span>
+    </a>
+    <a href="./batch12/046-neo-confucian-transmission" class="story-link">
+      <span class="story-num">046</span>
+      <span class="story-title">宋明理学的传承</span>
+      <span class="story-arrow">→</span>
+    </a>
+    <a href="./batch12/047-olympiad-math-philosophy" class="story-link">
+      <span class="story-num">047</span>
+      <span class="story-title">小学奥数的解题艺术</span>
+      <span class="story-arrow">→</span>
+    </a>
+    <a href="./batch12/048-dangerous-album-analysis" class="story-link">
+      <span class="story-num">048</span>
+      <span class="story-title">Dangerous专辑分析</span>
+      <span class="story-arrow">→</span>
+    </a>
+    <a href="./batch12/049-yehuimei-album-analysis" class="story-link">
+      <span class="story-num">049</span>
+      <span class="story-title">叶惠美专辑分析</span>
+      <span class="story-arrow">→</span>
+    </a>
   </div>
 </div>
 
+</div>
+
+<!-- 特别篇：听音修物 -->
+<div class="batch-card">
+  <div class="batch-header batch-13">
+    <span class="batch-number">★</span>
+    <div class="batch-title">
+      <h3>特别篇</h3>
+      <span class="batch-range">独立故事</span>
+    </div>
+  </div>
+  <div class="batch-desc">普通有灵气的小男孩成长故事</div>
+  <div class="story-list">
+    <a href="./047-ting-yin-xiu-wu" class="story-link">
+      <span class="story-num">047</span>
+      <span class="story-title">听音修物 ⭐</span>
+      <span class="story-arrow">→</span>
+    </a>
+  </div>
 </div>
 
 ---
@@ -499,6 +562,7 @@
 .batch-10 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
 .batch-11 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
 .batch-12 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+.batch-13 { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
 
 .batch-desc {
   padding: 12px 20px;
