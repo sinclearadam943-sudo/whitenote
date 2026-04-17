@@ -6,14 +6,21 @@
       :href="`./works/${artwork.id}.html`" 
       class="art-card"
     >
-      <img 
-        v-if="artwork.image" 
-        :src="artwork.image" 
-        :alt="artwork.title" 
-        class="card-image" 
-      />
-      <div v-else class="card-image-placeholder">
-        {{ getEmoji(artwork.title) }}
+      <div class="card-image-wrapper">
+        <img 
+          v-if="artwork.image" 
+          :src="artwork.image" 
+          :alt="artwork.title"
+          class="card-image"
+          loading="lazy"
+          @error="handleImageError"
+        />
+        <div v-else class="card-image-placeholder">
+          {{ getEmoji(artwork.title) }}
+        </div>
+        <div v-if="imageError[artwork.id]" class="card-image-fallback">
+          {{ getEmoji(artwork.title) }}
+        </div>
       </div>
       <div class="card-content">
         <div class="card-meta">
@@ -32,13 +39,23 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import artworksData from '../../../public/data/artworks.json'
 
+const imageError = ref({})
+
 const sortedArtworks = computed(() => {
-  // 按数组顺序显示（最新添加的在最前面）
   return artworksData.artworks
 })
+
+function handleImageError(event) {
+  const img = event.target
+  const artworkId = img.closest('.art-card')?.getAttribute('data-id')
+  if (artworkId) {
+    imageError.value[artworkId] = true
+  }
+  img.style.display = 'none'
+}
 
 function getEmoji(title) {
   const emojiMap = {
@@ -47,6 +64,12 @@ function getEmoji(title) {
     '马': '🐴',
     '湖': '🏞️',
     '格尔尼卡': '🏛️',
+    '睡莲': '🪷',
+    '梦露': '💋',
+    '蒙娜丽莎': '🎭',
+    '星月夜': '✨',
+    '神奈川': '🌊',
+    '百骏': '🐎',
     '默认': '🎨'
   }
   for (const key in emojiMap) {
@@ -79,21 +102,32 @@ function getEmoji(title) {
   box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 
-.card-image {
+.card-image-wrapper {
+  position: relative;
   width: 100%;
   height: 200px;
+  background: var(--vp-c-bg-soft);
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.card-image-placeholder {
+.card-image-placeholder,
+.card-image-fallback {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 200px;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 4rem;
-  background: var(--vp-c-bg-soft);
+  background: linear-gradient(135deg, var(--vp-c-bg-soft) 0%, var(--vp-c-bg) 100%);
 }
 
 .card-content {

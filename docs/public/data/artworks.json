@@ -89,6 +89,28 @@
       "tags": ["文艺复兴", "肖像画", "卢浮宫"]
     },
     {
+      "id": "guernica",
+      "title": "格尔尼卡",
+      "artist": "巴勃罗·毕加索",
+      "year": "1937年",
+      "category": "western",
+      "categoryLabel": "西方绘画",
+      "image": "https://upload.wikimedia.org/wikipedia/en/7/74/PicassoGuernica.jpg",
+      "desc": "毕加索最著名的巨幅油画，创作于西班牙内战期间，描绘了格尔尼卡轰炸的惨状。",
+      "tags": ["立体主义", "反战艺术", "超现实"]
+    },
+    {
+      "id": "starry-night",
+      "title": "星月夜",
+      "artist": "文森特·梵高",
+      "year": "1889年",
+      "category": "western",
+      "categoryLabel": "西方绘画",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/400px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
+      "desc": "梵高最著名的风景油画，创作于法国圣雷米精神病院期间。画中漩涡状的天空笔触营造出强烈的运动感。",
+      "tags": ["后印象派", "油画", "MoMA"]
+    },
+    {
       "id": "yingshishanhua-pantianshou",
       "title": "鹰石山花图",
       "artist": "潘天寿",
@@ -111,17 +133,6 @@
       "tags": ["泼墨泼彩", "山水画", "亿元作品"]
     },
     {
-      "id": "starry-night",
-      "title": "星月夜",
-      "artist": "文森特·梵高",
-      "year": "1889年",
-      "category": "western",
-      "categoryLabel": "西方绘画",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/400px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
-      "desc": "梵高最著名的风景油画，创作于法国圣雷米精神病院期间。画中漩涡状的天空笔触营造出强烈的运动感。",
-      "tags": ["后印象派", "油画", "MoMA"]
-    },
-    {
       "id": "shrimp-qi-baishi",
       "title": "墨虾图",
       "artist": "齐白石",
@@ -131,17 +142,6 @@
       "image": "",
       "desc": "齐白石画虾已入化境，被誉为中国画虾第一人。运用侧锋、破墨之法，墨色浓淡相宜。",
       "tags": ["大写意", "水墨", "花鸟画"]
-    },
-    {
-      "id": "guernica",
-      "title": "格尔尼卡",
-      "artist": "巴勃罗·毕加索",
-      "year": "1937年",
-      "category": "western",
-      "categoryLabel": "西方绘画",
-      "image": "",
-      "desc": "毕加索最著名的巨幅油画，创作于西班牙内战期间，描绘了格尔尼卡轰炸的惨状。",
-      "tags": ["立体主义", "反战艺术", "超现实"]
     }
   ]
 }
