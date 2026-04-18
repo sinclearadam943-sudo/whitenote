@@ -1,6 +1,17 @@
 {
   "artworks": [
     {
+      "id": "sketching-from-all-strange-peaks",
+      "title": "搜尽奇峰打草稿图",
+      "artist": "石涛",
+      "year": "1691年",
+      "category": "chinese",
+      "categoryLabel": "中国书画",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Shitao_Searching_for_the_Odd_Peaks_to_Make_Sketches.jpg/800px-Shitao_Searching_for_the_Odd_Peaks_to_Make_Sketches.jpg",
+      "desc": "清代画家石涛五十岁北游京师期间的代表作，中国山水画史上具有划时代意义的标杆作品。以"搜尽奇峰打草稿"为题，是石涛绘画理论的视觉宣言。",
+      "tags": ["清代", "山水画", "故宫博物院", "四僧"]
+    },
+    {
       "id": "water-lilies-monet",
       "title": "睡莲",
       "artist": "克劳德·莫奈",
