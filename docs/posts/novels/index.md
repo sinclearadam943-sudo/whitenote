@@ -401,7 +401,7 @@
     <span class="batch-number">12</span>
     <div class="batch-title">
       <h3>历史与传承</h3>
-      <span class="batch-range">041 — 044 精选</span>
+      <span class="batch-range">041 — 050</span>
     </div>
   </div>
   <div class="batch-desc">中国式父亲的牺牲精神与代际传承</div>
@@ -434,6 +434,11 @@
     <a href="./batch12/049-yehuimei-album-analysis" class="story-link">
       <span class="story-num">049</span>
       <span class="story-title">叶惠美专辑分析</span>
+      <span class="story-arrow">→</span>
+    </a>
+    <a href="./batch12/050-duan-xian-zhi-qin" class="story-link">
+      <span class="story-num">050</span>
+      <span class="story-title">断弦之琴 ⭐</span>
       <span class="story-arrow">→</span>
     </a>
   </div>
@@ -480,6 +485,7 @@
 | 038 | 牺牲与选择 | 11 | A+ | 伦理冲突激烈，"两个人的精彩"主题深刻 |
 | 039 | 新的形态 | 11 | A | 科幻哲学探讨有深度，身份认同追问到位 |
 | 044 | 我的父亲 | 12 | A | 中国式父亲传记真挚，代际传承主题动人 |
+| 050 | 断弦之琴 | 12 | A | 古琴修复隐喻父子关系，等待与和解主题深刻 |
 
 ---
 
