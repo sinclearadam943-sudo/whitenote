@@ -1,6 +1,17 @@
 {
   "artworks": [
     {
+      "id": "the-creation-of-adam",
+      "title": "创造亚当",
+      "artist": "米开朗基罗·博那罗蒂",
+      "year": "约1511年",
+      "category": "western",
+      "categoryLabel": "西方绘画",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg",
+      "desc": "文艺复兴盛期最标志性的画面，西斯廷礼拜堂天顶画《创世纪》组画的核心。上帝与亚当两指之间不到一厘米的间隙，成为人类艺术史上最富哲学意味的瞬间。",
+      "tags": ["文艺复兴", "湿壁画", "西斯廷教堂", "梵蒂冈"]
+    },
+    {
       "id": "the-night-watch-rembrandt",
       "title": "夜巡",
       "artist": "伦勃朗·哈尔曼松·凡·莱因",
