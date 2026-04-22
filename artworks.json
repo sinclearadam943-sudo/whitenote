@@ -1,5 +1,16 @@
 [
   {
+    "id": "the-rongxi-studio",
+    "title": "容膝斋图",
+    "en_title": "The Rongxi Studio",
+    "artist": "倪瓒",
+    "en_artist": "Ni Zan",
+    "year": "1372年",
+    "category": "中国绘画",
+    "tags": ["山水画", "元代", "元四家", "水墨", "文人画"],
+    "created_at": "2026-04-22"
+  },
+  {
     "id": "sketching-from-all-strange-peaks",
     "title": "搜尽奇峰打草稿图",
     "en_title": "Sketching from All Strange Peaks",
