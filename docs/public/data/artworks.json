@@ -1,6 +1,17 @@
 {
   "artworks": [
     {
+      "id": "the-card-players",
+      "title": "玩纸牌者",
+      "artist": "保罗·塞尚",
+      "year": "1890-1892年",
+      "category": "western",
+      "categoryLabel": "西方绘画",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Les_Joueurs_de_cartes%2C_par_Paul_C%C3%A9zanne.jpg/1280px-Les_Joueurs_de_cartes%2C_par_Paul_C%C3%A9zanne.jpg",
+      "desc": "塞尚晚年风格成熟的巅峰之作，描绘两名普罗旺斯农夫专注玩牌的静谧场景。以几何简化构图、沉稳大地色调和雕塑般的厚重质感，展现了从印象派走向立体主义的关键过渡。",
+      "tags": ["后印象派", "油画", "立体主义先驱", "大都会博物馆"]
+    },
+    {
       "id": "the-creation-of-adam",
       "title": "创造亚当",
       "artist": "米开朗基罗·博那罗蒂",
