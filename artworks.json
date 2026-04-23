@@ -1,5 +1,16 @@
 [
   {
+    "id": "the-card-players",
+    "title": "玩纸牌者",
+    "en_title": "The Card Players",
+    "artist": "保罗·塞尚",
+    "en_artist": "Paul Cézanne",
+    "year": "1890-1892年",
+    "category": "西方绘画",
+    "tags": ["油画", "后印象派", "塞尚", "玩纸牌者"],
+    "created_at": "2026-04-23"
+  },
+  {
     "id": "the-rongxi-studio",
     "title": "容膝斋图",
     "en_title": "The Rongxi Studio",

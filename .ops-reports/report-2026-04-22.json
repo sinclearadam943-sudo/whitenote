@@ -1,0 +1,67 @@
+{
+  "timestamp": "2026-04-22T19:00:43.247Z",
+  "status": "HEALTHY",
+  "summary": {
+    "criticalPaths": "5/5",
+    "quotes": "OK",
+    "actions": "OK"
+  },
+  "details": {
+    "criticalPaths": [
+      {
+        "path": "/",
+        "status": 200,
+        "responseTime": 764,
+        "ok": true
+      },
+      {
+        "path": "/index-v3.html",
+        "status": 200,
+        "responseTime": 348,
+        "ok": true
+      },
+      {
+        "path": "/data/quotes.json",
+        "status": 200,
+        "responseTime": 333,
+        "ok": true
+      },
+      {
+        "path": "/posts/",
+        "status": 200,
+        "responseTime": 343,
+        "ok": true
+      },
+      {
+        "path": "/gallery/",
+        "status": 200,
+        "responseTime": 332,
+        "ok": true
+      }
+    ],
+    "quotes": {
+      "ok": true,
+      "stats": {
+        "total": 50,
+        "withId": 50,
+        "withText": 50,
+        "withSource": 50,
+        "duplicates": 0
+      }
+    },
+    "actions": {
+      "ok": true,
+      "lastSuccess": "2026-04-22T12:12:51Z",
+      "recentFailures": 0
+    },
+    "content": {
+      "ok": true,
+      "stats": {
+        "novels": 46,
+        "essays": 3,
+        "gallery": 17,
+        "totalWords": 190435
+      }
+    }
+  }
+}
