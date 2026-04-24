@@ -1,5 +1,9 @@
 ---
 title: 艺境画廊
+head:
+  - - meta
+    - name: referrer
+      content: no-referrer
 ---
 
 # 艺境画廊
