@@ -5,11 +5,12 @@
       :key="artwork.id"
       :href="`./works/${artwork.id}.html`" 
       class="art-card"
+      :data-id="artwork.id"
     >
       <div class="card-image-wrapper">
         <img 
-          v-if="artwork.image" 
-          :src="artwork.image" 
+          v-if="artwork.imageUrl" 
+          :src="artwork.imageUrl" 
           :alt="artwork.title"
           class="card-image"
           loading="lazy"
@@ -24,12 +25,12 @@
       </div>
       <div class="card-content">
         <div class="card-meta">
-          <span :class="['category', artwork.category]">{{ artwork.categoryLabel }}</span>
-          <span class="date">{{ artwork.year }}</span>
+          <span :class="['category', artwork.category]">{{ artwork.category === 'western' ? '西方绘画' : (artwork.type || '中国书画') }}</span>
+          <span class="date">{{ artwork.period }}</span>
         </div>
         <h3>《{{ artwork.title }}》</h3>
         <p class="artist">{{ artwork.artist }}</p>
-        <p class="desc">{{ artwork.desc }}</p>
+        <p class="desc">{{ artwork.description }}</p>
         <div class="tags">
           <span v-for="tag in artwork.tags" :key="tag" class="tag">{{ tag }}</span>
         </div>
@@ -40,12 +41,13 @@
 
 <script setup>
 import { computed, ref } from 'vue'
-import artworksData from '../../../public/data/artworks.json'
+import artworksData from '../../../data/artworks.json'
 
 const imageError = ref({})
 
 const sortedArtworks = computed(() => {
-  return artworksData.artworks
+  // docs/data/artworks.json is a flat array
+  return artworksData
 })
 
 function handleImageError(event) {

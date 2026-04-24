@@ -8,7 +8,14 @@
     "category": "western",
     "type": "油画",
     "description": "墨西哥传奇女画家弗里达·卡罗于1939年创作的大型双自画像，也是她一生中尺幅最大的作品。画中并置了两个面貌相同却着装迥异的'弗里达'——身着欧洲白裙的弗里达与身穿墨西哥特瓦纳传统服饰的弗里达手牵着手坐在长凳上，暴露的心脏由一条血管相连，象征身份认同与文化根源的双重寓言。现藏于墨西哥城现代艺术博物馆。",
-    "tags": ["油画", "墨西哥文艺复兴", "弗里达·卡罗", "双自画像", "原始主义", "女性主义"],
+    "tags": [
+      "油画",
+      "墨西哥文艺复兴",
+      "弗里达·卡罗",
+      "双自画像",
+      "原始主义",
+      "女性主义"
+    ],
     "imageUrl": "https://upload.wikimedia.org/wikipedia/en/f/f0/The_Two_Fridas.jpg",
     "pageUrl": "/gallery/works/the-two-fridas"
   },
@@ -21,7 +28,13 @@
     "category": "western",
     "type": "油画",
     "description": "塞尚晚年风格成熟的巅峰之作，描绘两名普罗旺斯农夫专注玩牌的静谧场景。以几何简化构图、沉稳大地色调和雕塑般的厚重质感，展现了从印象派走向立体主义的关键过渡。2011年同系列另一版本以2.5亿美元成交创纪录。",
-    "tags": ["油画", "后印象派", "塞尚", "玩纸牌者", "西方绘画"],
+    "tags": [
+      "油画",
+      "后印象派",
+      "塞尚",
+      "玩纸牌者",
+      "西方绘画"
+    ],
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Les_Joueurs_de_cartes%2C_par_Paul_C%C3%A9zanne.jpg/1280px-Les_Joueurs_de_cartes%2C_par_Paul_C%C3%A9zanne.jpg",
     "pageUrl": "/gallery/works/the-card-players"
   },
@@ -34,12 +47,19 @@
     "category": "chinese",
     "type": "绢本设色",
     "description": "北宋画家范宽代表作，被誉为\"宋画第一神品\"。巨碑式山水构图，主峰占据画面三分之二，气势磅礡。独创雨点皴法，用墨浑厚苍莽。现藏于台北故宫博物院，是北宋山水画巅峰之作。",
-    "tags": ["山水画", "北宋", "范宽", "巨碑式", "雨点皴", "中国十大传世名画"],
+    "tags": [
+      "山水画",
+      "北宋",
+      "范宽",
+      "巨碑式",
+      "雨点皴",
+      "中国十大传世名画"
+    ],
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Travelers_Among_Mountains_and_Streams.jpg/1920px-Travelers_Among_Mountains_and_Streams.jpg",
     "pageUrl": "/gallery/works/travelers-among-mountains-and-streams"
   },
   {
-    "id": "art_20260415_001",
+    "id": "marilyn-diptych",
     "date": "2026-04-15",
     "title": "玛丽莲·梦露双联画",
     "artist": "安迪·沃霍尔",
@@ -47,12 +67,19 @@
     "category": "western",
     "type": "丝网印刷",
     "description": "美国波普艺术大师安迪·沃霍尔1962年创作的标志性双联画作品。以50个重复的玛丽莲·梦露头像是为主题，左侧彩色、右侧黑白，形成生与死的强烈对照。采用丝网印刷技术，故意制造套色错位效果，消解了艺术的精英气质。现藏于伦敦泰特现代艺术馆。",
-    "tags": ["丝网印刷", "波普艺术", "安迪·沃霍尔", "西方绘画", "现代艺术", "肖像画"],
+    "tags": [
+      "丝网印刷",
+      "波普艺术",
+      "安迪·沃霍尔",
+      "西方绘画",
+      "现代艺术",
+      "肖像画"
+    ],
     "imageUrl": "https://upload.wikimedia.org/wikipedia/en/f/f0/Marilyn_Diptych_%28Tate%29.jpg",
     "pageUrl": "/gallery/works/marilyn-diptych"
   },
   {
-    "id": "art_20260414_001",
+    "id": "the-rape-of-the-daughters-of-leucippus",
     "date": "2026-04-14",
     "title": "劫夺吕西普的女儿们",
     "artist": "彼得·保罗·鲁本斯",
@@ -60,12 +87,19 @@
     "category": "western",
     "type": "油画",
     "description": "佛兰德斯巴洛克巨匠鲁本斯于1618年创作的历史画杰作，取材于希腊神话中卡斯托耳与波吕刻斯兄弟劫掠吕西普两个女儿的传说。以X形动态构图、饱满色彩交响和雕塑般的人体塑造，展现巴洛克艺术的力量与美感。现藏于德国慕尼黑老绘画陈列馆。",
-    "tags": ["油画", "巴洛克", "鲁本斯", "西方绘画", "希腊神话", "历史画"],
+    "tags": [
+      "油画",
+      "巴洛克",
+      "鲁本斯",
+      "西方绘画",
+      "希腊神话",
+      "历史画"
+    ],
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Peter_Paul_Rubens_-_The_Rape_of_the_Daughters_of_Leukippos.jpg/1280px-Peter_Paul_Rubens_-_The_Rape_of_the_Daughters_of_Leukippos.jpg",
     "pageUrl": "/gallery/works/the-rape-of-the-daughters-of-leucippus"
   },
   {
-    "id": "art_20260413_001",
+    "id": "the-great-wave-off-kanagawa",
     "date": "2026-04-13",
     "title": "神奈川冲浪里",
     "artist": "葛饰北斋",
@@ -73,12 +107,18 @@
     "category": "chinese",
     "type": "版画",
     "description": "日本江户时代浮世绘大师葛饰北斋的代表作，《富岳三十六景》系列最著名的一幅。描绘神奈川海域汹涌澎湃的海浪与远处富士山雪顶，是世界上最著名的日本艺术作品之一，2024年印于日本新版1000日元纸币背面。",
-    "tags": ["版画", "浮世绘", "葛饰北斋", "日本艺术", "富岳三十六景"],
+    "tags": [
+      "版画",
+      "浮世绘",
+      "葛饰北斋",
+      "日本艺术",
+      "富岳三十六景"
+    ],
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/The_Great_Wave_off_Kanagawa_-_Hokusai.jpg/1280px-The_Great_Wave_off_Kanagawa_-_Hokusai.jpg",
     "pageUrl": "/gallery/works/the-great-wave-off-kanagawa"
   },
   {
-    "id": "art_20260412_001",
+    "id": "mona-lisa-da-vinci",
     "date": "2026-04-12",
     "title": "蒙娜丽莎",
     "artist": "列奥纳多·达·芬奇",
@@ -86,12 +126,19 @@
     "category": "western",
     "type": "油画",
     "description": "达芬奇最著名的肖像画，意大利文艺复兴盛期杰作。画中女子神秘的微笑、深邃的眼神和交叠的双手成为永恒之谜。采用晕涂法(sm sfumato)创造出柔和的光影过渡效果，现藏于法国巴黎卢浮宫，是世界上最知名的艺术品之一。",
-    "tags": ["油画", "文艺复兴", "达芬奇", "西方绘画", "肖像画", "卢浮宫"],
+    "tags": [
+      "油画",
+      "文艺复兴",
+      "达芬奇",
+      "西方绘画",
+      "肖像画",
+      "卢浮宫"
+    ],
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/800px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg",
     "pageUrl": "/gallery/works/mona-lisa-da-vinci"
   },
   {
-    "id": "art_20260411_001",
+    "id": "baijuntu-castiglione",
     "date": "2026-04-11",
     "title": "百骏图",
     "artist": "郎世宁",
@@ -99,12 +146,20 @@
     "category": "chinese",
     "type": "国画",
     "description": "郎世宁耗时四年完成的鸿篇巨制，共绘有100匹姿态各异的骏马和11名牧马人。融合中西绘画技法——以中国传统工笔为基础，结合西方焦点透视、解剖学造型及光影处理。是中国十大传世名画中唯一一幅外国人的作品，现藏于台北故宫博物院（绢本设色）和纽约大都会艺术博物馆（纸本白描稿本）。",
-    "tags": ["国画", "中西合璧", "郎世宁", "百骏图", "宫廷绘画", "马", "中国十大传世名画"],
+    "tags": [
+      "国画",
+      "中西合璧",
+      "郎世宁",
+      "百骏图",
+      "宫廷绘画",
+      "马",
+      "中国十大传世名画"
+    ],
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/One_Hundred_Horses_-_Giuseppe_Castiglione.jpg/1280px-One_Hundred_Horses_-_Giuseppe_Castiglione.jpg",
     "pageUrl": "/gallery/works/baijuntu-castiglione"
   },
   {
-    "id": "art_20260410_001",
+    "id": "yingshishanhua-pantianshou",
     "date": "2026-04-10",
     "title": "鹰石山花图",
     "artist": "潘天寿",
@@ -112,12 +167,20 @@
     "category": "chinese",
     "type": "国画",
     "description": "潘天寿独创山水与花鸟相结合的代表性巨作，逾23平尺。画面以巨石为主体，上方盘踞雄鹰，石缝间绽放烂漫山花。2015年以2.7945亿元成交，创潘天寿作品拍卖新纪录。体现了「沉雄奇崛、苍古高华」的艺术风格。",
-    "tags": ["国画", "大写意", "潘天寿", "花鸟画", "山水画", "中国书画", "鹰石山花"],
+    "tags": [
+      "国画",
+      "大写意",
+      "潘天寿",
+      "花鸟画",
+      "山水画",
+      "中国书画",
+      "鹰石山花"
+    ],
     "imageUrl": "",
     "pageUrl": "/gallery/works/yingshishanhua-pantianshou"
   },
   {
-    "id": "art_20260409_004",
+    "id": "aihenhu-zhangdaqian",
     "date": "2026-04-09",
     "title": "爱痕湖",
     "artist": "张大千",
@@ -125,12 +188,18 @@
     "category": "chinese",
     "type": "国画",
     "description": "张大千泼墨泼彩山水画的巅峰代表作，创作于1968年。以奥地利亚琛湖为灵感，运用泼墨泼彩技法，将墨色与石青、石绿等矿物颜料交融，形成绚烂而典雅的视觉效果。2010年以1.008亿元成交，开创近现代书画亿元时代。",
-    "tags": ["国画", "泼墨泼彩", "张大千", "山水画", "中国现代绘画"],
+    "tags": [
+      "国画",
+      "泼墨泼彩",
+      "张大千",
+      "山水画",
+      "中国现代绘画"
+    ],
     "imageUrl": "",
     "pageUrl": "/gallery/works/aihenhu-zhangdaqian"
   },
   {
-    "id": "art_20260409_003",
+    "id": "guernica",
     "date": "2026-04-09",
     "title": "格尔尼卡",
     "artist": "巴勃罗·毕加索",
@@ -138,12 +207,21 @@
     "category": "western",
     "type": "油画",
     "description": "毕加索最著名的巨幅油画，创作于西班牙内战期间，描绘了格尔尼卡轰炸的惨状。作品以黑白灰三色为主，融合立体主义与超现实主义手法，是20世纪最重要的反战艺术作品之一。现藏于马德里索菲亚王后国家艺术中心博物馆。",
-    "tags": ["油画", "立体主义", "毕加索", "格尔尼卡", "西方绘画", "反战艺术", "西班牙内战"],
+    "tags": [
+      "油画",
+      "立体主义",
+      "毕加索",
+      "格尔尼卡",
+      "西方绘画",
+      "反战艺术",
+      "西班牙内战"
+    ],
     "imageUrl": "",
-    "feishuDoc": "https://www.feishu.cn/wiki/VtaqwRCAXi5x99knl7Bc1G02nqb"
+    "feishuDoc": "https://www.feishu.cn/wiki/VtaqwRCAXi5x99knl7Bc1G02nqb",
+    "pageUrl": "/gallery/works/guernica"
   },
   {
-    "id": "art_20260409_002",
+    "id": "shrimp-qi-baishi",
     "date": "2026-04-09",
     "title": "墨虾图",
     "artist": "齐白石",
@@ -151,12 +229,20 @@
     "category": "chinese",
     "type": "国画",
     "description": "齐白石画虾已入化境，被誉为中国画虾第一人。运用侧锋、破墨之法，墨色浓淡相宜，虾须柔中带刚。虽不画水而水意自生，虽不求似而形神兼备。开创红花墨叶一派，达到中国现代花鸟画巅峰。",
-    "tags": ["国画", "大写意", "齐白石", "墨虾", "花鸟画", "中国书画"],
+    "tags": [
+      "国画",
+      "大写意",
+      "齐白石",
+      "墨虾",
+      "花鸟画",
+      "中国书画"
+    ],
     "imageUrl": "",
-    "feishuDoc": "https://www.feishu.cn/docx/MU51d0HIco3cFmxiL82cacrPnHg"
+    "feishuDoc": "https://www.feishu.cn/docx/MU51d0HIco3cFmxiL82cacrPnHg",
+    "pageUrl": "/gallery/works/shrimp-qi-baishi"
   },
   {
-    "id": "art_20260409_001",
+    "id": "starry-night",
     "date": "2026-04-09",
     "title": "星月夜",
     "artist": "文森特·梵高",
@@ -164,8 +250,119 @@
     "category": "western",
     "type": "油画",
     "description": "梵高最著名的风景油画，创作于法国圣雷米精神病院期间。画中漩涡状的天空笔触营造出强烈的运动感，弯曲长线与破碎短线交互运用，构成眩目的奇幻景象。深蓝与橙黄的色彩对比、厚涂技法创造出丰富的质感。现藏于纽约现代艺术博物馆。",
-    "tags": ["油画", "后印象派", "梵高", "星月夜", "西方绘画", "MoMA"],
+    "tags": [
+      "油画",
+      "后印象派",
+      "梵高",
+      "星月夜",
+      "西方绘画",
+      "MoMA"
+    ],
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/640px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
-    "feishuDoc": "https://www.feishu.cn/docx/WigNdhUvioDhFwx6mFlcrRbWngf"
+    "feishuDoc": "https://www.feishu.cn/docx/WigNdhUvioDhFwx6mFlcrRbWngf",
+    "pageUrl": "/gallery/works/starry-night"
+  },
+  {
+    "id": "the-rongxi-studio",
+    "date": "2026-04-20",
+    "title": "容膝斋图",
+    "artist": "倪瓒",
+    "period": "1372年",
+    "category": "chinese",
+    "type": "国画",
+    "description": "元末明初画家倪瓒七十二岁时所作，被视为其'绝笔之作'。采用标志性'一河两岸'三段式构图，画面疏朗简淡，意境空灵萧远。现藏于台北故宫博物院。",
+    "tags": [
+      "元代",
+      "山水画",
+      "文人画",
+      "一河两岸",
+      "台北故宫"
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Ni_Zan_-_The_Rongxi_Studio.jpg/1280px-Ni_Zan_-_The_Rongxi_Studio.jpg",
+    "pageUrl": "/gallery/works/the-rongxi-studio"
+  },
+  {
+    "id": "the-zhenshang-studio",
+    "date": "2026-04-20",
+    "title": "贞寿堂书画合璧卷",
+    "artist": "文徵明",
+    "period": "1542年",
+    "category": "chinese",
+    "type": "国画",
+    "description": "文徵明八十三岁时创作的书画合璧卷，以吴宽宅园贞寿堂为主题，融合山水、书法、叙事于一体。",
+    "tags": [
+      "明代",
+      "书画合璧",
+      "文人画"
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Wen_Zhengming_Zhenshang_Studio.jpg/800px-Wen_Zhengming_Zhenshang_Studio.jpg",
+    "pageUrl": "/gallery/works/the-zhenshang-studio"
+  },
+  {
+    "id": "the-creation-of-adam",
+    "date": "2026-04-20",
+    "title": "创造亚当",
+    "artist": "米开朗基罗·博那罗蒂",
+    "period": "约1511年",
+    "category": "western",
+    "type": "油画",
+    "description": "文艺复兴盛期最标志性的画面，西斯廷礼拜堂天顶画《创世纪》组画的核心。上帝与亚当两指之间不到一厘米的间隙，成为人类艺术史上最富哲学意味的瞬间。",
+    "tags": [
+      "文艺复兴",
+      "湿壁画",
+      "西斯廷教堂",
+      "梵蒂冈"
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg",
+    "pageUrl": "/gallery/works/the-creation-of-adam"
+  },
+  {
+    "id": "immortals-celebrating-birthday-renbonian",
+    "date": "2026-04-20",
+    "title": "群仙祝寿图",
+    "artist": "未知",
+    "period": "未知",
+    "category": "chinese",
+    "type": "国画",
+    "description": "未知的群仙祝寿图",
+    "tags": [],
+    "imageUrl": "",
+    "pageUrl": "/gallery/works/immortals-celebrating-birthday-renbonian"
+  },
+  {
+    "id": "sketching-from-all-strange-peaks",
+    "date": "2026-04-20",
+    "title": "搜尽奇峰打草稿图",
+    "artist": "石涛",
+    "period": "1691年",
+    "category": "chinese",
+    "type": "国画",
+    "description": "清代画家石涛五十岁北游京师期间的代表作，中国山水画史上具有划时代意义的标杆作品。以「搜尽奇峰打草稿」为题，是石涛绘画理论的视觉宣言。",
+    "tags": [
+      "清代",
+      "山水画",
+      "故宫博物院",
+      "四僧"
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Shitao_Searching_for_the_Odd_Peaks_to_Make_Sketches.jpg/800px-Shitao_Searching_for_the_Odd_Peaks_to_Make_Sketches.jpg",
+    "pageUrl": "/gallery/works/sketching-from-all-strange-peaks"
+  },
+  {
+    "id": "the-night-watch-rembrandt",
+    "date": "2026-04-20",
+    "title": "夜巡",
+    "artist": "伦勃朗·哈尔曼松·凡·莱因",
+    "period": "1642年",
+    "category": "western",
+    "type": "油画",
+    "description": "荷兰黄金时代巨匠伦勃朗的代表作，民兵团体群像画的革命性突破。以「伦勃朗光」技法闻名于世，被誉为世界三大名画之一。",
+    "tags": [
+      "巴洛克",
+      "光影大师",
+      "荷兰黄金时代",
+      "群像画"
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Nightwatch_by_Rembrandt.jpg/800px-Nightwatch_by_Rembrandt.jpg",
+    "pageUrl": "/gallery/works/the-night-watch-rembrandt"
   }
 ]
