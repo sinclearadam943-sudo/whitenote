@@ -1,5 +1,18 @@
 [
   {
+    "id": "the-two-fridas",
+    "date": "2026-04-24",
+    "title": "两个弗里达",
+    "artist": "弗里达·卡罗",
+    "period": "墨西哥文艺复兴 · 1939年",
+    "category": "western",
+    "type": "油画",
+    "description": "墨西哥传奇女画家弗里达·卡罗于1939年创作的大型双自画像，也是她一生中尺幅最大的作品。画中并置了两个面貌相同却着装迥异的'弗里达'——身着欧洲白裙的弗里达与身穿墨西哥特瓦纳传统服饰的弗里达手牵着手坐在长凳上，暴露的心脏由一条血管相连，象征身份认同与文化根源的双重寓言。现藏于墨西哥城现代艺术博物馆。",
+    "tags": ["油画", "墨西哥文艺复兴", "弗里达·卡罗", "双自画像", "原始主义", "女性主义"],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/f/f0/The_Two_Fridas.jpg",
+    "pageUrl": "/gallery/works/the-two-fridas"
+  },
+  {
     "id": "the-card-players",
     "date": "2026-04-23",
     "title": "玩纸牌者",

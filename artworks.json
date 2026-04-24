@@ -1,5 +1,16 @@
 [
   {
+    "id": "the-two-fridas",
+    "title": "两个弗里达",
+    "en_title": "The Two Fridas",
+    "artist": "弗里达·卡罗",
+    "en_artist": "Frida Kahlo",
+    "year": "1939年",
+    "category": "西方绘画",
+    "tags": ["油画", "墨西哥文艺复兴", "弗里达·卡罗", "双自画像", "原始主义", "女性主义"],
+    "created_at": "2026-04-24"
+  },
+  {
     "id": "the-card-players",
     "title": "玩纸牌者",
     "en_title": "The Card Players",
