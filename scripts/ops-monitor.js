@@ -23,7 +23,7 @@ const CONFIG = {
   criticalPaths: [
     '/',
     '/index-v3.html',
-    '/data/quotes.json',
+    '/quotes.json',
     '/posts/',
     '/gallery/'
   ]
@@ -107,7 +107,7 @@ async function checkCriticalPaths() {
 async function checkQuotesJson() {
   console.log('\n📜 检查金句库...');
   try {
-    const res = await fetch(`${CONFIG.baseUrl}/data/quotes.json`);
+    const res = await fetch(`${CONFIG.baseUrl}/quotes.json`);
     if (res.statusCode !== 200) {
       return { ok: false, error: `HTTP ${res.statusCode}` };
     }
