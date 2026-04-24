@@ -1,5 +1,25 @@
 [
   {
+    "id": "where-do-we-come-from",
+    "date": "2026-04-24",
+    "title": "我们从何处来？我们是谁？我们向何处去？",
+    "artist": "保罗·高更",
+    "period": "后印象派 · 1897年",
+    "category": "western",
+    "type": "布面油画",
+    "description": "高更艺术生涯中最具哲学深度的总结性巨作，横跨近四米的巨幅寓言画。画面从右至左描绘人生三阶段——婴儿与少女的纯真、壮年男女的日常、暮年老妪的沉思，将「我们从何处来？我们是谁？我们向何处去？」这一人类终极命题浓缩于塔希提岛的热带画布之上。1897年高更在丧女之痛、贫病交加、自杀未遂后完成此画，称之为「临终前的想法」。现藏于波士顿美术馆。",
+    "tags": [
+      "后印象派",
+      "象征主义",
+      "高更",
+      "西方绘画",
+      "哲学",
+      "波士顿美术馆"
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Gauguin_-_D%27ou_venons-nous_Que_sommes-nous_Ou_allons-nous.jpg/1280px-Gauguin_-_D%27ou_venons-nous_Que_sommes-nous_Ou_allons-nous.jpg",
+    "pageUrl": "/gallery/works/where-do-we-come-from"
+  },
+  {
     "id": "the-two-fridas",
     "date": "2026-04-24",
     "title": "两个弗里达",
