@@ -1,5 +1,16 @@
 [
   {
+    "id": "ink-grapes",
+    "title": "墨葡萄图",
+    "en_title": "Ink Grapes",
+    "artist": "徐渭",
+    "en_artist": "Xu Wei",
+    "year": "约1576年",
+    "category": "中国绘画",
+    "tags": ["花鸟画", "明代", "大写意", "泼墨", "徐渭", "青藤画派", "水墨"],
+    "created_at": "2026-04-25"
+  },
+  {
     "id": "the-two-fridas",
     "title": "两个弗里达",
     "en_title": "The Two Fridas",
