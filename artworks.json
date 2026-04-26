@@ -1,5 +1,16 @@
 [
   {
+    "id": "the-school-of-athens",
+    "title": "雅典学院",
+    "en_title": "The School of Athens",
+    "artist": "拉斐尔·桑西",
+    "en_artist": "Raffaello Sanzio",
+    "year": "1509-1511年",
+    "category": "西方绘画",
+    "tags": ["湿壁画", "文艺复兴盛期", "拉斐尔", "哲学", "透视法", "梵蒂冈"],
+    "created_at": "2026-04-26"
+  },
+  {
     "id": "ink-grapes",
     "title": "墨葡萄图",
     "en_title": "Ink Grapes",

@@ -1,5 +1,26 @@
 [
   {
+    "id": "the-school-of-athens",
+    "date": "2026-04-26",
+    "title": "雅典学院",
+    "artist": "拉斐尔·桑西",
+    "period": "文艺复兴盛期 · 1509-1511年",
+    "category": "western",
+    "type": "湿壁画",
+    "description": "拉斐尔为梵蒂冈宗座宫签名室绘制的巨幅壁画，被誉为文艺复兴精神的完美化身。画面以纵深展开的高大古典建筑为背景，描绘了柏拉图、亚里士多德、苏格拉底、毕达哥拉斯等五十七位古希腊与古罗马时期的哲学家、科学家济济一堂探讨真理的宏大场景。画面中央柏拉图手指向天、亚里士多德手掌向下，象征着唯心主义与唯物主义的对话。拉斐尔以登峰造极的透视法营造出宏伟的空间感，将建筑、雕塑与绘画完美融合。",
+    "tags": [
+      "湿壁画",
+      "文艺复兴盛期",
+      "拉斐尔",
+      "哲学",
+      "透视法",
+      "梵蒂冈",
+      "西方绘画"
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/49/La_scuola_di_Atene.jpg",
+    "pageUrl": "/gallery/works/the-school-of-athens"
+  },
+  {
     "id": "where-do-we-come-from",
     "date": "2026-04-24",
     "title": "我们从何处来？我们是谁？我们向何处去？",
