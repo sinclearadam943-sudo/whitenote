@@ -1,5 +1,27 @@
 [
   {
+    "id": "girl-with-a-pearl-earring",
+    "date": "2026-05-01",
+    "title": "戴珍珠耳环的少女",
+    "artist": "约翰内斯·维米尔",
+    "period": "荷兰黄金时代 · 约1665年",
+    "category": "western",
+    "type": "布面油画",
+    "description": "荷兰黄金时代绘画大师约翰内斯·维米尔约1665年创作的布面油画，被誉为'北方的蒙娜丽莎'。画中少女侧身转头，嘴唇微张，左耳佩戴一颗硕大的珍珠耳环，目光越过肩膀与观者对视。深色背景将所有视线聚焦于少女的面庞与那颗熠熠生辉的珍珠之上。现藏于荷兰海牙莫瑞泰斯皇家美术馆。",
+    "tags": [
+      "布面油画",
+      "荷兰黄金时代",
+      "维米尔",
+      "肖像画",
+      "特罗菲",
+      "北方的蒙娜丽莎",
+      "莫瑞泰斯皇家美术馆",
+      "西方绘画"
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0f/1665_Girl_with_a_Pearl_Earring.jpg",
+    "pageUrl": "/gallery/works/girl-with-a-pearl-earring"
+  },
+  {
     "id": "the-school-of-athens",
     "date": "2026-04-26",
     "title": "雅典学院",
