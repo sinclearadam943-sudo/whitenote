@@ -1,5 +1,27 @@
 [
   {
+    "id": "the-scream",
+    "date": "2026-05-02",
+    "title": "呐喊",
+    "artist": "爱德华·蒙克",
+    "period": "表现主义 · 1893年",
+    "category": "western",
+    "type": "油画、蛋彩与粉彩",
+    "description": "挪威表现主义画家爱德华·蒙克1893年创作的代表作，被誉为'现代精神焦虑的永恒象征'。画中一个面容扭曲、双手捂耳的人形站在桥上，背景是血红色的天空与漩涡般的线条，仿佛整个世界都在尖叫。这幅画的灵感源自蒙克本人的日记记载，被称为'我们时代的蒙娜丽莎'。",
+    "tags": [
+      "油画",
+      "表现主义",
+      "蒙克",
+      "呐喊",
+      "现代焦虑",
+      "挪威",
+      "西方绘画",
+      "生命饰带"
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg",
+    "pageUrl": "/gallery/works/the-scream"
+  },
+  {
     "id": "girl-with-a-pearl-earring",
     "date": "2026-05-01",
     "title": "戴珍珠耳环的少女",
