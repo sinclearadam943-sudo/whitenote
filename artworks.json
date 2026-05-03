@@ -1,5 +1,23 @@
 [
   {
+    "id": "the-dance-matisse",
+    "title": "舞蹈",
+    "en_title": "The Dance",
+    "artist": "亨利·马蒂斯",
+    "en_artist": "Henri Matisse",
+    "year": "1909年",
+    "category": "西方绘画",
+    "tags": [
+      "油画",
+      "野兽派",
+      "马蒂斯",
+      "舞蹈",
+      "色彩",
+      "现代艺术"
+    ],
+    "created_at": "2026-05-03"
+  },
+  {
     "id": "the-scream",
     "title": "呐喊",
     "en_title": "The Scream",

@@ -1,5 +1,15 @@
 [
   {
+    "id": "the-dance-matisse",
+    "title": "舞蹈",
+    "artist": "亨利·马蒂斯",
+    "year": "1909年",
+    "category": "西方绘画",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Matissedance.jpg/440px-Matissedance.jpg",
+    "pageUrl": "works/the-dance-matisse.md",
+    "description": "野兽派色彩狂欢的巅峰之作，五位裸体女性手拉手围圈舞蹈，以纯粹的色彩直接表达生命的欢愉与原始的力量。"
+  },
+  {
     "id": "the-scream",
     "date": "2026-05-02",
     "title": "呐喊",
