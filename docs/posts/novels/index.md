@@ -14,6 +14,16 @@
 
 ---
 
+**新增系列：诡药录（Batch 13 起）**
+
+**陈实**，中药铺学徒。他最近开始"犯迷糊"——当归摸起来像手指，枸杞会眨眼，客人喝的药汤是红的，像血。
+
+他分不清了。分不清柜台前的药材和碾槽里的活物，分不清自己到底是抓药的人，还是那味被煎的药。
+
+> 中式恐怖 × 克苏鲁 × 血肉修仙 × "分不清"的叙事
+
+---
+
 ## 📖 阅读指南
 
 <div class="batch-grid">
@@ -498,10 +508,43 @@
 | **平台** | OpenClaw |
 | **创作时间** | 2026-03-19 至 2026-03-21 |
 
+<!-- 第十三批（新系列：诡药录） -->
+<div class="batch-card">
+  <div class="batch-header batch-13">
+    <span class="batch-number">13</span>
+    <div class="batch-title">
+      <h3>诡药录</h3>
+      <span class="batch-range">051 — ∞</span>
+    </div>
+  </div>
+  <div class="batch-desc">中药铺学徒的双界之眼，分不清的药性，血肉与草木的边界</div>
+  <div class="story-list">
+    <a href="./batch13/051-药性" class="story-link">
+      <span class="story-num">051</span>
+      <span class="story-title">药性 ⭐</span>
+      <span class="story-arrow">→</span>
+    </a>
+  </div>
+</div>
+
+</div>
+
+---
+
+## 新系列：诡药录
+
+> 中式恐怖 × 克苏鲁 × 血肉修仙
+
+**陈实**，一家中药铺的学徒。他最近开始"犯迷糊"——有时候看到药材是药材，有时候看到药材是活的。
+
+他分不清了。分不清柜台前的当归和碾槽里的手指，分不清客人的后颈和菌丝，分不清自己到底是抓药的人，还是那味被煎的药。
+
+**核心主题：** 药性、表里两界、认知崩坏、中式克苏鲁
+
 ---
 
 <p align="center">
-  <em>醒者联盟，等待觉醒。</em>
+  <em>醒者联盟，等待觉醒。诡药已开，药性入血。</em>
 </p>
 
 <style>
