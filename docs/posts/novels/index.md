@@ -470,6 +470,11 @@
       <span class="story-title">药性 ⭐</span>
       <span class="story-arrow">→</span>
     </a>
+    <a href="./batch13/052-岁运" class="story-link">
+      <span class="story-num">052</span>
+      <span class="story-title">岁运</span>
+      <span class="story-arrow">→</span>
+    </a>
   </div>
 </div>
 
