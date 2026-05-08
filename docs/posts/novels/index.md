@@ -475,6 +475,26 @@
       <span class="story-title">岁运</span>
       <span class="story-arrow">→</span>
     </a>
+    <a href="./batch13/053-炮制" class="story-link">
+      <span class="story-num">053</span>
+      <span class="story-title">炮制</span>
+      <span class="story-arrow">→</span>
+    </a>
+    <a href="./batch13/054-归经" class="story-link">
+      <span class="story-num">054</span>
+      <span class="story-title">归经</span>
+      <span class="story-arrow">→</span>
+    </a>
+    <a href="./batch13/055-丹方" class="story-link">
+      <span class="story-num">055</span>
+      <span class="story-title">丹方</span>
+      <span class="story-arrow">→</span>
+    </a>
+    <a href="./batch13/056-火劫" class="story-link">
+      <span class="story-num">056</span>
+      <span class="story-title">火劫 ⭐</span>
+      <span class="story-arrow">→</span>
+    </a>
   </div>
 </div>
 
