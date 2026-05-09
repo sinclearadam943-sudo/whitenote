@@ -495,7 +495,21 @@
       <span class="story-title">火劫 ⭐</span>
       <span class="story-arrow">→</span>
     </a>
-    <a href="./batch13/057-丙辛年谱" class="story-link">
+  </div>
+</div>
+
+<!-- 第十四批（新系列：岁气录） -->
+<div class="batch-card">
+  <div class="batch-header batch-14">
+    <span class="batch-number">14</span>
+    <div class="batch-title">
+      <h3>岁气录</h3>
+      <span class="batch-range">057 — ∞</span>
+    </div>
+  </div>
+  <div class="batch-desc">中医世家的五运六气病史，天干地支与疾病实录</div>
+  <div class="story-list">
+    <a href="./batch14/057-丙辛年谱" class="story-link">
       <span class="story-num">057</span>
       <span class="story-title">丙辛年谱 ⭐</span>
       <span class="story-arrow">→</span>
@@ -626,6 +640,7 @@
 .batch-11 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
 .batch-12 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
 .batch-13 { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+.batch-14 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
 
 .batch-desc {
   padding: 12px 20px;
