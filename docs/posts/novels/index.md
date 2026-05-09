@@ -495,6 +495,11 @@
       <span class="story-title">火劫 ⭐</span>
       <span class="story-arrow">→</span>
     </a>
+    <a href="./batch13/057-丙辛年谱" class="story-link">
+      <span class="story-num">057</span>
+      <span class="story-title">丙辛年谱 ⭐</span>
+      <span class="story-arrow">→</span>
+    </a>
   </div>
 </div>
 

@@ -1,0 +1,66 @@
+{
+  "timestamp": "2026-05-07T19:00:13.465Z",
+  "status": "WARNING",
+  "summary": {
+    "criticalPaths": "5/5",
+    "quotes": "OK",
+    "actions": "WARNING"
+  },
+  "details": {
+    "criticalPaths": [
+      {
+        "path": "/",
+        "status": 200,
+        "responseTime": 1295,
+        "ok": true
+      },
+      {
+        "path": "/index-v3.html",
+        "status": 200,
+        "responseTime": 437,
+        "ok": true
+      },
+      {
+        "path": "/quotes.json",
+        "status": 200,
+        "responseTime": 422,
+        "ok": true
+      },
+      {
+        "path": "/posts/",
+        "status": 200,
+        "responseTime": 416,
+        "ok": true
+      },
+      {
+        "path": "/gallery/",
+        "status": 200,
+        "responseTime": 415,
+        "ok": true
+      }
+    ],
+    "quotes": {
+      "ok": true,
+      "stats": {
+        "total": 15,
+        "withId": 15,
+        "withText": 15,
+        "withSource": 15,
+        "duplicates": 0
+      }
+    },
+    "actions": {
+      "ok": false,
+      "error": "API Error 403"
+    },
+    "content": {
+      "ok": true,
+      "stats": {
+        "novels": 52,
+        "essays": 3,
+        "gallery": 26,
+        "totalWords": 227579
+      }
+    }
+  }
+}
